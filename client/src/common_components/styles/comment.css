@@ -1,0 +1,33 @@
+.comment {
+    padding: 12px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.486), rgba(255, 255, 255, 0.794));
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 50px;
+    cursor: progress;
+}
+.comment-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-info {
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-user-img {
+    width: 35px;
+    height: 35px;
+}
+.comment-user-name {
+    color:rgba(220, 238, 253, 0.534);
+}
+.comment-date {
+    color: rgba(2, 137, 255, 0.534)
+}
+.comment-body {
+    font-size: 13pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

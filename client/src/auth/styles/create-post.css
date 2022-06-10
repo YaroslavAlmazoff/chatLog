@@ -1,0 +1,14 @@
+@media screen and (width > 500px) {
+    .create-post {
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 10%;
+    }
+}
+@media screen and (width < 500px) {
+    .create-post {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+}

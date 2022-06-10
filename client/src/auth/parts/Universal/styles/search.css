@@ -1,0 +1,17 @@
+.search {
+    margin-left: 12px;
+    background-color: rgba(0, 0, 0, 0.418);
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 140, 255);
+}
+.search-field {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(0, 140, 255);
+    padding: 15px;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+}

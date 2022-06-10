@@ -1,0 +1,48 @@
+.users {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media screen and (width > 700px) {
+    .users-search-side {
+        width: 23%;
+        margin-top: 20px;
+    }
+    .users-filter-side {
+        width: 23%;
+        margin-top: 20px;
+    }
+    .users-list {
+        width: 40%;
+    }
+}
+@media screen and (width < 700px) and (width > 500px) {
+    .users-search-side {
+        width: 50%;
+        margin-top: 20px;
+    }
+    .users-filter-side {
+        width: 50%;
+        margin-top: 20px;
+    }
+    .users-list {
+        width: 100%;
+    }
+}
+@media screen and (width < 500px) {
+    .users-search-side {
+        width: 100%;
+        margin-top: 20px;
+        display: none;
+    }
+    .users-filter-side {
+        width: 23%;
+        margin-top: 20px;
+        display: none;
+    }
+    .users-list {
+        width: 93%;
+    }
+}

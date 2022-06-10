@@ -1,0 +1,91 @@
+.article {
+    width: 47%;
+    height: 180px;
+    border-radius: 11px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 140, 255);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 3px;
+    padding-right: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .portrait-crop {
+    height: 100%;
+    border-radius: 11px;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .article-image {
+    border-radius: 11px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .info {
+    width: 70%;
+    margin: 5%;
+  }
+  .l_and_c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .l_and_c_article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    padding: 12px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.486), rgba(255, 255, 255, 0.794));
+  }
+
+  .title {
+    color: black;
+    font-size: 11pt;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -50px;
+  }
+  .date {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    margin: 15px
+  }
+  .text {
+    font-weight: 100;
+    font-size: 12pt;
+  }
+  .delete-user-post {
+    color: rgba(0, 0, 0, 0.431);
+    margin-left: 99%;
+    margin-top: 0px;
+    font-size: 20pt;
+    cursor: pointer; 
+  }
+  .delete-user-video {
+    color: rgba(0, 0, 0, 0.431);
+    margin-left: 95%;
+    margin-top: 0px;
+    font-size: 20pt;
+    cursor: pointer; 
+  }
+  .image-preview {
+    margin-left: 1%;
+  }

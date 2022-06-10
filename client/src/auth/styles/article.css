@@ -1,0 +1,89 @@
+
+@media screen and (width > 500px) {
+    .article-post {
+        background-color: white;
+        width: 50%;
+        padding: 20px;
+        margin: 0 auto;
+        color: black !important;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+}
+@media screen and (width < 500px) {
+    .article-post {
+        background-color: white;
+        width: 95%;
+        padding: 20px;
+        margin: 0 auto;
+        color: black !important;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+}
+.ahead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adate {
+    color: rgba(0, 0, 0, 0.491);
+    font-size: 12pt;
+}
+.atitle {
+    color: black;
+    font-size: 16pt;
+}
+.atext {
+    color: black;
+    font-size: 14pt;
+}
+.comment-field {
+    padding: 12px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.486), rgba(255, 255, 255, 0.794));
+    border-radius: 12px;
+    text-align: left;
+}
+.comment-area {
+    width: 80%;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
+    background-image: linear-gradient(to right, rgb(20, 20, 32), rgba(20, 20, 32, 0.486));
+    border-radius: 11px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.send-comment {
+    background-image: linear-gradient(to bottom, rgb(147, 193, 252), rgb(52, 122, 252));
+    border: none;
+    border-radius: 20px;
+    padding: 11px;
+    margin: 10px;
+    width: 30%;
+    color: white;
+    transition: transform .3s ease, background-image .3s ease;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.send-comment:hover {
+    transform: scale(90%);
+    background-image: linear-gradient(to bottom, rgb(52, 122, 252), rgb(147, 193, 252)); 
+}
+.comment-title {
+    margin: 10px;
+    text-align: left;
+}
+.article-img {
+    border: 1px solid rgb(52, 122, 252);
+    border-radius: 11px;
+}
+@media screen and (width < 500px) {
+    .header {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+    }   
+}

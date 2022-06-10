@@ -1,0 +1,62 @@
+.comment {
+    padding: 12px;
+    background-image: linear-gradient(to right, rgba(102, 155, 254, 0.486), rgba(13, 1, 151, 0.794));
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 50px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: progress;
+}
+.comment-foto {
+    padding: 12px;
+    background-image: linear-gradient(to right, rgba(102, 155, 254, 0.486), rgba(13, 1, 151, 0.794));
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.comment-field {
+    margin-top: 20px;
+}
+.comment-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-info {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-user-img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.comment-user-name {
+    color:rgba(220, 238, 253, 0.534);
+    cursor: pointer;
+}
+.comment-date {
+    color: rgba(2, 137, 255, 0.534)
+}
+.comment-body {
+    font-size: 13pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.delete-comment {
+    color: white;
+    position: absolute;
+    margin-left: 48%;
+    margin-top: -0.5%;
+    font-size: 16pt;
+    cursor: pointer;
+}
+.comment-title {
+    font-size: 12pt;
+}

@@ -1,0 +1,29 @@
+.file-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+}
+.file-item:hover {
+    background-color: rgba(0, 140, 255, 0.438);
+    border: 1px solid rgb(0, 140, 255);
+    width: 98px;
+    height: 98px;
+}
+.file-img {
+    height: 50px;
+    width: 75px;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+}
+.file-icon {
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+.file-title {
+    color: white;
+    margin-top: -8px;
+}

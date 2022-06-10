@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(20, 20, 32);
+  overflow-x: hidden;
+}
+h1 {
+  color: white;
+}
+
+h3 {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+
+
+

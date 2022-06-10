@@ -1,0 +1,5 @@
+.file-storage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

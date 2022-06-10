@@ -1,0 +1,95 @@
+@media screen and (width > 500px) {
+    .form {
+        width: 30%;
+        padding: 12px;
+        margin: 0 auto;
+    }
+}
+@media screen and (width < 500px) {
+    .form {
+        width: 90%;
+        padding: 12px;
+        margin: 0 auto;
+    }
+}
+.form-field {
+    border: none;
+    padding: 12px;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px solid rgb(0, 140, 255);
+    width: 94%;
+    margin-top: 10px;
+    color: white;
+}
+.form-area {
+    border: 2px solid rgb(0, 140, 255);
+    padding: 12px;
+    background-color: transparent;
+    outline: none;
+    width: 94%;
+    height: 100px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 11px;
+}
+.submit {
+    background-color: rgb(0, 140, 255);
+    padding: 12px;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    transition: transform .3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+.submit:hover {
+    transform: scale(125%);
+}
+.form-title {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.theme-title {
+    color: white;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.theme-button {
+    color: white;
+    font-size: 12pt;
+    padding: 7px 10px 5px 10px;
+    background-size: cover;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+.theme-button-wb {
+    color: white;
+    font-size: 12pt;
+    padding: 7px 10px 5px 10px;
+    background-size: cover;
+    margin-left: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.theme-button:hover {
+    padding: 6px 9px 6px 9px;
+    border: 1px solid white;
+}
+.theme-button:visited {
+    padding: 6px 9px 6px 9px;
+    border: 1px solid white;
+}
+.theme-button-bg1 {
+    background-image: url(../../homepage/img/backgrounds/city/1.jpg);
+}
+.theme-button-bg2 {
+    background-image: url(../../homepage/img/backgrounds/mountain/1.jpg);
+}
+.theme-button-bg3 {
+    background-image: url(../../homepage/img/backgrounds/nature/1.jpg);
+}
+.theme-button-bg4 {
+    background-image: url(../../homepage/img/backgrounds/space/1.jpg);
+}

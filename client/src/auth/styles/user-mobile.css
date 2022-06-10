@@ -1,0 +1,128 @@
+.user-mobile {
+    margin: 1%;
+    text-align: left;
+}
+.user-nav-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+    height: 10vh;
+    width: 74.5%;
+    border: 1px solid rgb(0, 140, 255);
+    color: white;
+}
+.user-avatar-mobile {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 1px solid rgb(0, 140, 255)
+}
+.banner-mobile {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.user-nav-info-mobile {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.user-name-mobile {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11pt;
+}
+.user-age-mobile {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.548);
+    font-size: 10pt;
+}
+.user-friends-mobile {
+    background-color: rgba(0, 140, 255, 0.326);
+    border-radius: 0px 15px 15px 0px;
+    color: white;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 7vh;
+    width: 75%;
+}
+.user-friend-mobile {
+    width: 30px;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.user-friend-avatar-mobile {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(0, 140, 255);
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-friends-title-mobile {
+    margin: 5px;
+    color: white;
+    font-size: 9pt;
+}
+.user-friend-name-mobile {
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.user-add-foto-mobile {
+    background-color:transparent;
+    border: none;
+    color: rgb(0, 140, 255);
+    border-radius: 15px;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+    font-size: 8.5pt;
+}
+.user-mobile-actions-self {
+    width: 90%;
+}
+.user-mobile-actions {
+    width: 75%;
+    margin-top: 10px;
+    border-top: 1px solid rgb(0, 140, 255)
+}
+.user-fotos-mobile {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 75%;
+    background-color: rgba(0, 140, 255, 0.326);
+    border-radius: 11px;
+    height: 13vh;
+}
+
+.user-fotos-title-mobile {
+    color: white;
+    font-size: 10pt;
+    margin-left: 4px;
+}
+.foto-div-mobile {
+    border-radius: 11px;
+    margin: 5px;
+    display: inline-block;
+    width: 50px;
+}
+.user-posts-mobile {
+    width: 100%;
+}
+.user-center-side-mobile {
+    margin-top: 10px;
+    width: 75%;
+    border-top: 1px solid rgb(0, 140, 255)
+}
+@media screen and (width < 500px) {
+    .user-foto-preview {
+      width: 50px;
+    }
+  }

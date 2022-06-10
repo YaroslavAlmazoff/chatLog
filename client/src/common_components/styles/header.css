@@ -1,0 +1,94 @@
+.header::-webkit-scrollbar {
+    width: 0px;               /* ширина scrollbar */
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@font-face {
+    font-family: Cosmic;
+    src: url(./fonts/cosmic2.ttf);
+}
+@media screen and (width > 700px) {
+    .logo {
+        color: rgb(20, 20, 32);
+        font-weight: bold;
+        font-family: Cosmic;
+        margin: 15px;
+    }
+    .header {
+        display: flex;
+        height: 50px;
+        background-color: rgb(0, 140, 255);
+    }
+    .link {
+        padding: 15px;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        color: white;
+        font-size: 13pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+@media screen and (width < 700px) and (width > 500px) {
+    .logo {
+        color: rgb(20, 20, 32);
+        font-weight: bold;
+        font-family: Cosmic;
+        margin: 15px;
+    }
+    .header {
+        display: flex;
+        height: 50px;
+        background-color: rgb(0, 140, 255);
+    }
+    .link {
+        padding: 15px;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        color: white;
+        font-size: 12pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+@media screen and (width < 500px) {
+    .logo {
+        color: rgb(0, 140, 255);
+        font-weight: bold;
+        font-family: Cosmic;
+        margin: 15px;
+    }
+    .header {
+        display: flex;
+        height: 50px;
+        background-color: rgba(0, 140, 255, 0.326);
+        overflow-x: scroll;
+        z-index: 1;
+    }
+    .link {
+        padding: 15px;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        color: white;
+        font-size: 11pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.link:hover {
+    background-color: rgba(52, 123, 255, 0.705);
+    border-bottom: 4px solid white;
+    padding: 13px;
+}
+.link-visited {
+    text-decoration: none;
+    color: white;
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(52, 123, 255, 0.705);
+    border-bottom: 4px solid white;
+    padding: 13px;
+}

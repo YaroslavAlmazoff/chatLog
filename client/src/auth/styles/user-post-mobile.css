@@ -1,0 +1,87 @@
+.article-mobile {
+    width: 93%;
+    height: 51vh;
+    border-radius: 11px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 140, 255);
+    display: block;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 3px;
+    padding-right: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .article-video-mobile {
+    width: 93%;
+    height: 38vh;
+    border-radius: 11px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 140, 255);
+    display: block;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 3px;
+    padding-right: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .article-image-mobile {
+    width: 103%;
+    height: 35vh;
+    border-radius: 11px;
+    object-fit: cover;
+  }
+  .info-mobile {
+    width: 80%;
+    margin: 5%;
+  }
+  .l_and_c-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+
+  .title-mobile {
+    color: black;
+    font-size: 9pt;
+  }
+  .head-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -70px;
+  }
+  .date-mobile {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    margin: 15px;
+  }
+  .text-mobile {
+    font-weight: 100;
+    font-size: 12pt;
+  }
+  .delete-user-post-mobile {
+    color: rgba(0, 0, 0, 0.431);
+    margin-left: 99%;
+    margin-top: 0px;
+    font-size: 20pt;
+    cursor: pointer; 
+  }
+  .delete-user-video-mobile {
+    color: rgba(0, 0, 0, 0.431);
+    margin-left: 95%;
+    margin-top: 0px;
+    font-size: 20pt;
+    cursor: pointer; 
+  }
+  .image-preview-mobile {
+    margin-left: 1%;
+}

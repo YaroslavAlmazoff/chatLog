@@ -1,0 +1,66 @@
+import React, {useState, useEffect, useContext} from "react";
+import "../styles/comment.css"
+import api from "../api/auth"
+import { useNavigate, useParams } from "react-router";
+import { AuthContext } from "../../context/AuthContext";
+import useFiles from "../../common_hooks/files.hook";
+
+const UserVideoComment = ({comment, date, user, id, articleComments, setArticleComments, comments, setComments}) => {
+    const params = useParams()
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate()
+    //Комментарий к посту пользователя
+    useEffect(() => {
+        console.log(user)
+    }, [user])
+    //Инициализация состояния комментирующего пользователя
+    const [commenter, setCommenter] = useState({
+        name: 'User',
+        surname: 'User',
+        avatarUrl: 'user.png'
+    })
+    const {getAvatar} = useFiles()
+    const [avatarCode, setAvatarCode] = useState('')
+    useEffect(() => {
+        getAvatar(commenter.avatarUrl).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setAvatarCode(result)
+        }) 
+    }, [commenter])
+    const deleteComment = async (id) => {
+        setArticleComments(articleComments - 1)
+        setComments([...comments].filter(el => {
+            console.log(el._id === id)
+            return el._id !== id
+        }))
+        await api.delete(`/api/deletevideocomment/${id}/${params.id}`)
+    }
+    useEffect(() => {
+        //Получение комментирующего пользователя
+        const getCommenter = async () => {
+            const response = await api.get(`/api/user/${user}`)
+            setCommenter(response.data.user)
+        }
+        getCommenter()
+    }, [user])
+    const gotoCommenter = () => {
+        navigate(`/user/${user}`)
+    }
+    return (
+        <div className="comment-foto">
+            {user === auth.userId
+            ? <p className="delete-comment" onClick={() => deleteComment(id)}>&times;</p>
+            : <></>}
+            <div className="comment-head">
+                <div className="user-info">
+                    <img onClick={gotoCommenter} className="comment-user-img" src={avatarCode} alt="user"/>
+                    <p onClick={gotoCommenter} className="comment-user-name">{commenter.name} {commenter.surname}</p>
+                </div>
+                <p className="comment-date">{date}</p>
+            </div>
+            <h4 className="comment-body">{comment}</h4>
+        </div>
+    )
+}
+
+export default UserVideoComment

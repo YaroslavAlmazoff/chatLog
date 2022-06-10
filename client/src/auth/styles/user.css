@@ -1,0 +1,308 @@
+.user {
+    margin: 1%;
+    text-align: left;
+}
+.user-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+    height: 22vh;
+    border: 1px solid rgb(0, 140, 255);
+    color: white;
+}
+.user-avatar {
+    object-fit: cover;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 1px solid rgb(0, 140, 255)
+}
+.banner {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.user-nav-info {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.user-nav-actions {
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: 25%;
+}
+.user-age {
+    color: rgba(255, 255, 255, 0.548);
+}
+.user-nav-more-info {
+    width: 30px;
+    transform: rotate(-90deg);
+}
+.user-nav-more-info-forward-animation {
+    animation-name: arrow;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes arrow {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+.user-nav-more-info-backward-animation {
+    animation-name: arrow-back;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes arrow-back {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+.edit-profile {
+    border-radius: 15px;
+    padding: 12px;
+    color: white;
+    background-color: rgb(0, 140, 255);
+    border: none;
+}
+.user-right-side {
+    width: 16%;
+}
+.user-action {
+    border: none;
+    background-color: rgb(0, 140, 255);
+    padding: 12px;
+    border-radius: 0px 15px 15px 0px;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+.user-friends-title { 
+    color: black;
+}
+.user-friends {
+    background-color: rgb(0, 140, 255);
+    border-radius: 0px 15px 15px 0px;
+    color: white;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 37vh;
+}
+.user-friend {
+    width: 30px;
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.user-friend-avatar {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(0, 140, 255);
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-friends-title {
+    margin: 20px;
+    color: white;
+}
+.user-friend-name {
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.user-subscribe {
+    display: table;
+}
+.user-subscribe-avatar {
+    width: 40px;
+    float: left;
+}
+.user-subscribe-name {
+    float: right;
+    margin: 15px;
+}
+.user-center-side {
+    width: 70%;
+}
+.user-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.user-left-side {
+    width: 20%;
+}
+.user-fotos-title {
+    color: white;
+}
+
+.user-foto-preview {
+    width: 98%;
+    cursor: pointer;
+    border:1px solid rgb(0, 140, 255);
+}
+.foto-div {
+    margin-bottom: 10px;
+}
+.nothing {
+    color: white;
+    text-align: center;
+}
+.user-main-action {
+    background-color:rgb(0, 140, 255);
+    border: none;
+    padding: 12px;
+    color: white;
+    border-radius: 15px;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+    width: 48.5%;
+}
+.user-add-foto {
+    background-color:rgb(0, 140, 255);
+    border: none;
+    padding: 12px;
+    color: white;
+    border-radius: 15px;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+}
+.user-add-post {
+    background-color:rgb(0, 140, 255);
+    border: none;
+    padding: 12px;
+    color: white;
+    border-radius: 15px;
+    margin-top: 0.6vw;
+    margin-left: 0.5vw;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.post-field {
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgb(0, 140, 255);
+    padding: 12px;
+    background-color: transparent;
+    margin-left: 10px;
+    width: 65%;
+    outline: none;
+    margin-bottom: 10px;
+}
+.user-add-foto-right {
+    background-color:rgb(0, 140, 255);
+    border: none;
+    padding: 7px;
+    color: white;
+    border-radius: 15px;
+    margin: 2px;
+    margin-top: 0.6vw;
+    width: 48%;
+}
+
+.about-me {
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgba(0, 0, 0, 0.349);
+    border: 1px solid rgb(0, 140, 255);
+    border-radius: 11px;
+    padding: 5px;
+}
+.about-me-text {
+    text-align: justify;
+}
+.notice-img {
+    border-radius: 50%;
+    background-color: rgb(0, 140, 255);
+    margin-top: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.delete-friend {
+    position: absolute;
+    margin-left: 2.1%;
+    margin-top: -0.8%;
+    cursor: pointer;
+}
+input[type=file] {
+    display: none;
+}
+.user-videos {
+    height: 230px;
+    overflow-y: scroll;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 140, 255);
+    margin: 5px;
+}
+.user-videos::-webkit-scrollbar { width: 5px; }
+
+.user-posts {
+    height: 230px;
+    overflow-y: scroll;
+    border-radius: 15px;
+    border: .5px solid rgb(0, 140, 255);
+    margin: 5px;
+}
+
+.user-posts::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-posts::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-posts::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-videos::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-videos::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-videos::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+.user-fotos {
+    height: 430px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 5px;
+    width: 101%;
+}
+.user-fotos::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-fotos::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-fotos::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+

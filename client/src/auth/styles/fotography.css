@@ -1,0 +1,55 @@
+@media screen and (width > 500px) {
+    .dark-wrapper {
+        max-width: 50%; 
+        margin-top: 20px;
+        border: 10px solid white;
+        border-radius: 11px;
+        margin: 0 auto;
+        margin-top: 20px;
+        background-color: white;
+    }
+}
+@media screen and (width < 500px) {
+    .dark-wrapper {
+        max-width: 95%; 
+        margin-top: 20px;
+        border: 10px solid white;
+        border-radius: 11px;
+        margin: 0 auto;
+        margin-top: 20px;
+        background-color: white;
+    }
+}
+.delete-user-foto {
+    font-size: 11pt;
+    text-align: center;
+    cursor: pointer;
+}
+.fotography {
+    max-width: 100%;
+    border-radius: 11px;
+    background-color: white;
+}
+.window {
+    background-color: white;
+    border-radius: 11px;
+}
+.l_and_c_foto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.foto-likes {
+    background-color: rgb(52, 122, 252);
+    width: 50px;
+    color: white;
+    padding: 5px;
+    border-radius: 11px;
+    cursor: pointer;
+}
+.like-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

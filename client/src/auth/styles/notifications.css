@@ -1,0 +1,52 @@
+.notifications {
+    margin-top: 10px;
+    background-color: rgb(0, 140, 255);
+    width: 19%;
+    height: 545px;
+    overflow-y: scroll;
+    border-radius: 15px 0px 0px 15px;
+    padding: 12px;
+}
+.notifications::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.notifications::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.notifications::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+.notification {
+    background-color: white;
+    padding: 1px;
+    border-radius: 11px;
+    border: 1px double white;
+    margin-bottom: 8px;
+}
+.notice-title {
+    font-size: 11pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: left;
+    margin: 5px;
+}
+.delete-notification {
+    position: absolute;
+    margin-left: 17%;
+    margin-top: -1.5%;
+    color: black;
+    font-size: 20pt;
+    color: white;
+    cursor: pointer;
+}
+.notice-button {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    cursor: pointer;
+}
