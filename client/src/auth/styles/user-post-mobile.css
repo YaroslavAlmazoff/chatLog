@@ -1,5 +1,5 @@
 .article-mobile {
-    width: 100%;
+    width: 98%;
     height: 51vh;
     border-radius: 11px;
     background-color: rgb(255, 255, 255);
@@ -15,7 +15,7 @@
     cursor: pointer;
   }
   .article-video-mobile {
-    width: 100%;
+    width: 98%;
     height: 38vh;
     border-radius: 11px;
     background-color: rgb(255, 255, 255);
