@@ -1,6 +1,6 @@
 .article-mobile {
     width: 95%;
-    height: 51vh;
+    height: 52vh;
     border-radius: 11px;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(0, 140, 255);
@@ -31,7 +31,7 @@
     cursor: pointer;
   }
   .article-image-mobile {
-    width: 103%;
+    width: 102%;
     height: 35vh;
     border-radius: 11px;
     object-fit: cover;
