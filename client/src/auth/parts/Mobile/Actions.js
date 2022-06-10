@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import api from "../../api/auth"
 import '../../styles/user-mobile.css'
 
-const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef}) => {
+const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, setNotificationsDisplay}) => {
     const [friendsButtonDisplay, setFriendsButtonDisplay] = useState('block')
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
@@ -16,8 +16,8 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef}) => {
     const gotoCreatePostPage = () => {
         navigate('/createpost')
     }
-    const gotoNotifications = () => {
-        navigate('/notifications')
+    const openNotifications = () => {
+        setNotificationsDisplay(true)
     }
     useEffect(() => {
         //Проверка есть ли пользователь в друзьях у его посетителя
@@ -64,7 +64,7 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef}) => {
             {isOwner ? <div className="user-mobile-actions-self">
                 <p className="user-add-foto-mobile" onClick={gotoCreatePostPage}><img src={require('./img/pencil.png')} width="10" alt="create post" style={{marginTop: '5px'}} />&nbsp;&nbsp;Создать новую запись</p>
                 <p className="user-add-foto-mobile" onClick={gotoEdit} ><img src={require('./img/update.png')} width="10" alt="create post" />&nbsp;&nbsp;Обновить профиль</p>
-                <p className="user-add-foto-mobile" onClick={gotoNotifications} ><img src={require('./img/notifications.png')} alt="notifications" width="11"/>&nbsp;&nbsp;Уведомления</p>
+                <p className="user-add-foto-mobile" onClick={openNotifications} ><img src={require('./img/notifications.png')} alt="notifications" width="11"/>&nbsp;&nbsp;Уведомления</p>
                 </div> : <></>}
         </div>
     )

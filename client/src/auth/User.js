@@ -251,6 +251,20 @@ const User = () => {
         setNoticeText={setNoticeText} 
         noticeRef={noticeRef} 
     />
+    {notificationsDisplay ? 
+    <Notifications 
+        showNotifications={showNotifications} 
+        notifications={notifications} 
+        setNotifications={setNotifications}
+        userFriends={userFriends}
+        setUserFriends={setUserFriends}
+        setNoticeDisplay={setNoticeDisplay}
+        setNoticeText={setNoticeText}
+        noticeRef={noticeRef}
+        params={params}
+    />
+    : <></>    
+}
     <Fotos userFotos={userFotos} 
         setUserFotos={setUserFotos} 
         isOwner={isOwner} 
