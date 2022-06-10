@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import useFiles from "../../common_hooks/files.hook"
 
-const FotoItemMobile = ({imageUrl}) => {
+const FotoItem = ({imageUrl}) => {
     const {getFoto} = useFiles()
     const [imageCode, setImageCode] = useState('')
 
@@ -16,9 +16,9 @@ const FotoItemMobile = ({imageUrl}) => {
 
     return (
         <div>
-            <img className="user-foto-preview-mobile" alt="лень писать alt" src={imageCode}/>
+            <img className="user-foto-preview" alt="лень писать alt" src={imageCode}/>
         </div>
     )
 }
 
-export default FotoItemMobile
+export default FotoItem
