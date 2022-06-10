@@ -16,7 +16,7 @@ const FotoItemMobile = ({imageUrl}) => {
 
     return (
         <div>
-            <img className="user-foto-preview-mobile" alt="лень писать alt" src={imageCode}/>
+            <img className="user-foto-preview-mobile" alt="" src={imageCode}/>
         </div>
     )
 }

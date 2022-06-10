@@ -16,7 +16,7 @@ const FotoItem = ({imageUrl}) => {
 
     return (
         <div>
-            <img className="user-foto-preview" alt="лень писать alt" src={imageCode}/>
+            <img className="user-foto-preview" alt="" src={imageCode}/>
         </div>
     )
 }
