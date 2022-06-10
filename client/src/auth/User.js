@@ -238,11 +238,38 @@ const User = () => {
         noticeText={noticeText} 
         noticeRef={noticeRef} 
     />
-    <Friends userFriends={userFriends} isOwner={isOwner} setUserFriends={setUserFriends} setNoticeDisplay={setNoticeDisplay} setNoticeText={setNoticeText} noticeRef={noticeRef} />
-    <Actions isOwner={isOwner} setNoticeDisplay={setNoticeDisplay} setNoticeText={setNoticeText} noticeRef={noticeRef} />
-    <Fotos userFotos={userFotos} />
-    <Videos deletePost={deletePost} userPosts={userPosts} setUserPosts={setUserPosts} isOwner={isOwner} userVideos={userVideos} setUserVideos={setUserVideos} deleteVideo={deleteVideo} />
-    <Posts />
+    <Friends 
+        userFriends={userFriends} 
+        isOwner={isOwner} 
+        setUserFriends={setUserFriends} 
+        setNoticeDisplay={setNoticeDisplay} 
+        setNoticeText={setNoticeText} 
+        noticeRef={noticeRef} 
+    />
+    <Actions isOwner={isOwner} 
+        setNoticeDisplay={setNoticeDisplay} 
+        setNoticeText={setNoticeText} 
+        noticeRef={noticeRef} 
+    />
+    <Fotos userFotos={userFotos} 
+        setUserFotos={setUserFotos} 
+        isOwner={isOwner} 
+        showNotifications={showNotifications} 
+        getFile2={getFile2} 
+        emitOpen2={emitOpen2} 
+        fileRef2={fileRef2} 
+        file2={file2} 
+        imagePreviewDisplay2={imagePreviewDisplay2} 
+        imagePreviewUrl2={imagePreviewUrl2} 
+    />
+    <Videos deletePost={deletePost} 
+        userPosts={userPosts} 
+        setUserPosts={setUserPosts} 
+        isOwner={isOwner} 
+        userVideos={userVideos} 
+        setUserVideos={setUserVideos} 
+        deleteVideo={deleteVideo} 
+    />
 </div>
 } 
 </div> 

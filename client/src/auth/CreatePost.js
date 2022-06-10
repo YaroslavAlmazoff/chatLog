@@ -18,6 +18,7 @@ const CreatePost = () => {
     const [userPosts, setUserPosts] = useState([])
     const [userVideos, setUserVideos] = useState([])
     const [file, setFile] = useState('')
+    const [uploading, setUploading] = useState(false)
     //Создание ссылок на файловые поля ввода
     const fileRef = useRef()
     //Получение файла изображения поста пользователя
@@ -48,11 +49,13 @@ const CreatePost = () => {
             <input onChange={(e) => getFile(e)} ref={fileRef} type="file" accept=".jpg, .png, .gif .mp4" />
             <input className="post-field" type="text" value={articleTitle} onChange={(e) => setArticleTitle(e.target.value)} />
             <button onClick={(e) => emitOpen(e)} className="user-add-foto">Выбрать фото</button>
-            <button onClick={() => send(getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos)} className="user-add-post">Добавить запись</button>
+            <button onClick={() => send(getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading)} className="user-add-post">Добавить запись</button>
             {file.type === 'image/jpeg' || file.type === 'image/png'
             ? <ImagePreview1 imagePreviewUrl1={imagePreviewUrl1} imagePreviewDisplay1={imagePreviewDisplay1} />
             : <VideoPreview videoPreviewDisplay={videoPreviewDisplay} videoPreviewUrl={videoPreviewUrl} />
-            }          
+            } 
+            {uploading ? <p style={{color: 'white'}}>Подождите немного...</p>
+            : <></>}         
         </div>
     )
 }

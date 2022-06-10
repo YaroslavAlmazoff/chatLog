@@ -6,7 +6,8 @@ import { useContext } from "react"
 const usePosts = () => {
     const auth = useContext(AuthContext)
     const navigate = useNavigate()
-    const send = async (getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos) => {
+    const send = async (getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading) => {
+        setUploading(true)
         const currentDate = getCurrentDate()
         let formData = new FormData()
         formData.append('title', articleTitle)
