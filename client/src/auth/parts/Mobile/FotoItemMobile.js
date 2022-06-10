@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import useFiles from "../../common_hooks/files.hook"
+import useFiles from "../../../common_hooks/files.hook"
 
 const FotoItemMobile = ({imageUrl}) => {
     const {getFoto} = useFiles()
