@@ -65,7 +65,11 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, setNotifi
                 <p className="user-add-foto-mobile" onClick={gotoCreatePostPage}><img src={require('./img/pencil.png')} width="10" alt="create post" style={{marginTop: '5px'}} />&nbsp;&nbsp;Создать новую запись</p>
                 <p className="user-add-foto-mobile" onClick={gotoEdit} ><img src={require('./img/update.png')} width="10" alt="create post" />&nbsp;&nbsp;Обновить профиль</p>
                 <p className="user-add-foto-mobile" onClick={openNotifications} ><img src={require('./img/notifications.png')} alt="notifications" width="11"/>&nbsp;&nbsp;Уведомления</p>
-                </div> : <></>}
+                </div>
+                : <div className="user-mobile-actions-self">
+                    <p className="user-add-foto-mobile" onClick={makeFriends} ><img src={require('./img/friends.png')} width="10" alt="create post" />&nbsp;&nbsp;Добавить в друзья</p>
+                    <p className="user-add-foto-mobile" onClick={createRoom} ><img src={require('./img/messages.png')} alt="notifications" width="10"/>&nbsp;&nbsp;Написать сообщение</p>
+                  </div>}
         </div>
     )
 }
