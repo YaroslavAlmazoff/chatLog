@@ -95,7 +95,7 @@ const UserVideoMobile = ({title, date, imageUrl = 'user.png', likes, comments, i
                     <h2 className="title-mobile">{divideWord(title, 20)}</h2>
                     <p className="date-mobile">{date}</p>
                 </div>
-                <video width="300" controls style={{borderRadius: '11px'}} src={videoCode}>
+                <video width="330" controls style={{borderRadius: '11px'}} src={videoCode}>
             </video>
                 <div className="l_and_c-mobile">
                     <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
