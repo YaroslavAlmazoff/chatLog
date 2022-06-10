@@ -8,7 +8,7 @@
     justify-content: space-between;
     background-size: cover;
     height: 10vh;
-    width: 74.5%;
+    width: 100%;
     border: 1px solid rgb(0, 140, 255);
     color: white;
 }
@@ -50,7 +50,7 @@
     margin-top: 10px;
     overflow: hidden;
     height: 7vh;
-    width: 75%;
+    width: 100%;
 }
 .user-friend-mobile {
     width: 30px;
@@ -86,17 +86,17 @@
     font-size: 8.5pt;
 }
 .user-mobile-actions-self {
-    width: 90%;
+    width: 100%;
 }
 .user-mobile-actions {
-    width: 75%;
+    width: 100%;
     margin-top: 10px;
     border-top: 1px solid rgb(0, 140, 255)
 }
 .user-fotos-mobile {
     overflow-x: scroll;
     overflow-y: hidden;
-    width: 75%;
+    width: 100%;
     background-color: rgba(0, 140, 255, 0.326);
     border-radius: 11px;
     height: 13vh;
@@ -118,7 +118,7 @@
 }
 .user-center-side-mobile {
     margin-top: 10px;
-    width: 75%;
+    width: 100%;
     border-top: 1px solid rgb(0, 140, 255)
 }
 @media screen and (width < 500px) {
