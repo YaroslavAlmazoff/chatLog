@@ -40,7 +40,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
                 <div><img className="user-item-img" src={avatarCode} alt="user" /></div>
                 <div className="user-item-info">
                     <h3 className="user-item-name">{name} {surname}</h3>
-                    <p className="user-item-age">{age + ' лет'}</p>
+                    <p className="user-item-age">{age}</p>
                 </div>
             </div>
             <div className="user-item-actions">
