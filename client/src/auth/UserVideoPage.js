@@ -140,8 +140,8 @@ const UserVideoPage = () => {
                     <h1 className="atitle">{articleTitle}</h1>
                     <p className="adate">{articleDate}</p>
                 </div>
-                <video width="480" height="360" controls style={{borderRadius: '11px'}} src={videoCode}>
-            </video>
+                {imageUrl !== 'none.png' ? <video width="480" height="360" controls style={{borderRadius: '11px'}} src={videoCode}>
+                </video> : <></>}
                 
                 <p className="atext">{articleText}</p>
                 <div className="like-div">

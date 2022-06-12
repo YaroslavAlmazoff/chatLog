@@ -17,19 +17,35 @@ class UserVideoService {
         //Генерирование нового имени для файла изображения поста
         const filename = uuid.v4() + '.mp4'
         //Создание нового поста в базе данных
-        UserVideo.create({
-            title, date, likes, comments, imageUrl: filename, user: userid
-        }).then(() => {
-            //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
-            UserVideo.findOne({date}).then((newValue) => {
-                const id = newValue._id
-                friends.forEach(el => {
-                    NewsService.setNews(id, el)
+        if(req.files.file) {
+            UserVideo.create({
+                title, date, likes, comments, imageUrl: filename, user: userid
+            }).then(() => {
+                //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
+                UserVideo.findOne({date}).then((newValue) => {
+                    const id = newValue._id
+                    friends.forEach(el => {
+                        NewsService.setNews(id, el)
+                    })
+                    FileService.insertUserVideo(req.files.file, id, filename)
+                    res.json({id})
                 })
-                FileService.insertUserVideo(req.files.file, id, filename)
-                res.json({id})
             })
-        })
+        } else {
+            UserVideo.create({
+                title, date, likes, comments, imageUrl: 'none.png', user: userid
+            }).then(() => {
+                //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
+                UserVideo.findOne({date}).then((newValue) => {
+                    const id = newValue._id
+                    friends.forEach(el => {
+                        NewsService.setNews(id, el)
+                    })
+                    res.json({id})
+                })
+            })
+        }
+        
     }
     async receiveVideo(req, res) {
         const id = req.params.id

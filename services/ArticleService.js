@@ -21,19 +21,35 @@ class ArticleService {
             //Генерирование нового имени для файла изображения поста
             const filename = uuid.v4() + '.jpg'
             //Создание нового поста в базе данных
-            UserPost.create({
-                title, date, likes, comments, imageUrl: filename, user: userid
-            }).then(() => {
-                //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
-                UserPost.findOne({date}).then((newValue) => {
-                    const id = newValue._id
-                    friends.forEach(el => {
-                        NewsService.setNews(id, el)
+            if(req.files.file) {
+                UserPost.create({
+                    title, date, likes, comments, imageUrl: filename, user: userid
+                }).then(() => {
+                    //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
+                    UserPost.findOne({date}).then((newValue) => {
+                        const id = newValue._id
+                        friends.forEach(el => {
+                            NewsService.setNews(id, el)
+                        })
+                        FileService.insertUserPostImage(req.files.file, id, filename)
+                        res.json({id})
                     })
-                    FileService.insertUserPostImage(req.files.file, id, filename)
-                    res.json({id})
                 })
-            })
+            } else {
+                UserPost.create({
+                    title, date, likes, comments, imageUrl: 'none.png', user: userid
+                }).then(() => {
+                    //Когда новый пост создался в базе данных, получение ID поста и загрузка изображения на диск
+                    UserPost.findOne({date}).then((newValue) => {
+                        const id = newValue._id
+                        friends.forEach(el => {
+                            NewsService.setNews(id, el)
+                        })
+                        res.json({id})
+                    })
+                })
+            }
+            
         } catch(e) {
             console.log(e)
         }

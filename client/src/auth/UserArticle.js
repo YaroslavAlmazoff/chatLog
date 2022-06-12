@@ -136,8 +136,11 @@ const UserArticle = () => {
                 <div className="ahead">
                     <h1 className="atitle">{articleTitle}</h1>
                     <p className="adate">{articleDate}</p>
-                </div>
-                <img className="article-img" src={imageCode} width="300" alt="articleimg" />
+                </div>{
+                    imageUrl !== 'none.png' ? <img className="article-img" src={imageCode} width="300" alt="articleimg" />
+                    : <></>
+                }
+                
                 <p className="atext">{articleText}</p>
                 <div className="like-div">
                     <div className="l_and_c_foto">
