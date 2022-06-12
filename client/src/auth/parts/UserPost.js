@@ -19,6 +19,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     useEffect(() => {
         if(imageUrl === 'none.png' && window.innerWidth < 500) {
             articleRef.current.style.marginTop = '-300px'
+            console.log(articleRef.current.style.marginTop)
         }
         if(imageUrl !== 'none.png') {
             getPost(imageUrl).then((data) => {
