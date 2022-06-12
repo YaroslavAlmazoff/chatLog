@@ -134,11 +134,11 @@ const UserArticle = () => {
             {imageUrl === 'user.png' ? <Loader ml={'0%'} />
             : <div>
                 <div className="ahead">
-                    <h1 className="atitle">{articleTitle}</h1>
+                    <p></p>
                     <p className="adate">{articleDate}</p>
                 </div>{
                     imageUrl !== 'none.png' ? <img className="article-img" src={imageCode} width="300" alt="articleimg" />
-                    : <></>
+                    : <h1 className="atitle">{articleTitle}</h1>
                 }
                 
                 <p className="atext">{articleText}</p>
