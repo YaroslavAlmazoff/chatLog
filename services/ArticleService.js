@@ -11,7 +11,6 @@ class ArticleService {
     //Создание поста пользователя
     async createUserPost(req, res) {
         try {
-            console.log(req.files.file)
             //Получение поста из тела запроса и ID пользователя из параметров
             const {title, date, likes, comments} = req.body
             const userid = req.user.userId
