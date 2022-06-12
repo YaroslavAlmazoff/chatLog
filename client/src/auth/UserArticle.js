@@ -20,7 +20,7 @@ const UserArticle = () => {
         if(imageUrl !== 'none.png') {
             getPost(imageUrl).then((data) => {
                 const result = 'data:image/jpeg;base64,' + data
-                console.log(result)
+                console.log(imageUrl)
                 setImageCode(result)
             })
         }
