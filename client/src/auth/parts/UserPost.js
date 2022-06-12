@@ -21,7 +21,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
             articleRef.current.style.marginTop = '-300px'
             console.log(articleRef.current.style.marginTop)
         }
-        if(imageUrl !== 'none.png') {
+        if(imageUrl !== 'none.png' && imageUrl !== 'user.png') {
             getPost(imageUrl).then((data) => {
                 const result = 'data:image/jpeg;base64,' + data
                 console.log(result)
