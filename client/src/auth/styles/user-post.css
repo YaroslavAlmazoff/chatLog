@@ -25,6 +25,9 @@
     display: inline-block;
     overflow: hidden;
   }
+  .fakeimg {
+    width: 200px;
+  }
   .article-image {
     border-radius: 11px;
     width: 300px;
