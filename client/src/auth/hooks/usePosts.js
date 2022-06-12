@@ -17,8 +17,16 @@ const usePosts = () => {
         console.log(file)
         formData.append('file', file)
         console.log(formData)
-        if(file.type !== 'image/jpeg') {
-             const response = await api.post(`/api/uploaduservideo`, formData, {headers: 
+        if(!file) {
+            const response = await api.post(`/api/createuserpost`, formData, {headers: 
+                {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
+            })
+            setArticleTitle('Введите название статьи')
+            setUserPosts([...userPosts, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
+            navigate(`/user/${auth.userId}`)
+        }
+        else if(file.type !== 'image/jpeg') {
+            const response = await api.post(`/api/uploaduservideo`, formData, {headers: 
                 {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
             })
             setUserVideos([...userVideos, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])

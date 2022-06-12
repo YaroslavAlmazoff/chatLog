@@ -21,7 +21,7 @@ class ArticleService {
             //Генерирование нового имени для файла изображения поста
             const filename = uuid.v4() + '.jpg'
             //Создание нового поста в базе данных
-            if(req.files.file) {
+            if(req.files) {
                 UserPost.create({
                     title, date, likes, comments, imageUrl: filename, user: userid
                 }).then(() => {
