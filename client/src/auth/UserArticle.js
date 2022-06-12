@@ -17,11 +17,13 @@ const UserArticle = () => {
     const [imageCode, setImageCode] = useState('')
 
     useEffect(() => {
-        getPost(imageUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setImageCode(result)
-        })
+        if(imageUrl !== 'none.png') {
+            getPost(imageUrl).then((data) => {
+                const result = 'data:image/jpeg;base64,' + data
+                console.log(result)
+                setImageCode(result)
+            })
+        }
     }, [imageUrl])
     //Страница поста пользователя
     const auth = useContext(AuthContext)
