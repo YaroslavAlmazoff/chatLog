@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 import '../styles/user-post.css'
 import useFiles from "../../common_hooks/files.hook"
 import { useNavigate, useParams } from "react-router"
@@ -8,6 +8,7 @@ import { AuthContext } from "../../context/AuthContext"
 
 const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, deletePost, divideWord, setUserPosts, userPosts, isOwner, deleteVideo, userVideos, setUserVideos}) => {
     //Пост пользователя
+    let articleRef = useRef(null)
     const auth = useContext(AuthContext)
     //Получение функции навигации
     let navigate = useNavigate()
@@ -16,11 +17,16 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     const [imageCode, setImageCode] = useState('')
 
     useEffect(() => {
-        getPost(imageUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setImageCode(result)
-        })
+        if(imageUrl === 'none.png' && window.innerWidth < 500) {
+            articleRef.current.style.marginTop = '-300px'
+        }
+        if(imageUrl !== 'none.png') {
+            getPost(imageUrl).then((data) => {
+                const result = 'data:image/jpeg;base64,' + data
+                console.log(result)
+                setImageCode(result)
+            })
+        }
     }, [])
     //Создание объекта с информацией поста
     const obj = {title, date, imageUrl, likes, comments, id}
@@ -93,7 +99,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
         setLikersDisplay('block')
     }
     return (
-        <div onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="article"> 
+        <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="article"> 
             {imageUrl !== 'none.png' ? <div className="portrait-crop">
                 <img className="article-image" src={imageCode} alt="article"/>
             </div> : <div className="article-image"><h2 className="title">{divideWord(title, 40)}</h2></div> }
