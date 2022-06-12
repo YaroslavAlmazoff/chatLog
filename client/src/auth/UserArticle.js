@@ -140,7 +140,7 @@ const UserArticle = () => {
                     <p className="adate">{articleDate}</p>
                 </div>{
                     imageUrl !== 'none.png' ? <img className="article-img" src={imageCode} width="300" alt="articleimg" />
-                    : <div class="portrait-crop fakeimg"></div>
+                    : <div class="article-img fakeimg"></div>
                 }
                 
                 <p className="atext">{articleText}</p>
