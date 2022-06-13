@@ -95,47 +95,24 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
         setLikersDisplay('block')
     }
     return (
-        <div className="article">
-            {imageUrl !== 'none.png' ? 
-                <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="user-post"> 
-                    <div className="portrait-crop">
-                        <img className="article-image" src={imageCode} alt="article"/>
-                    </div>
-                    
-                    <div className="info">
-                        {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post" : "delete-user-video"}>&times;</p> : <></>}
-                        <div className="head">
-                            <h2 className="title">{divideWord(title, 40)}</h2>
-                            <p className="date">{date}</p>
-                        </div>
-                        <div className="l_and_c">
-                            <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
-                            <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
-                        </div>
-                        <Likers likers={likers} likersDisplay={likersDisplay} />
-                    </div>
+        <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className={imageUrl !== 'none.png' ? "article" : "article-without-image"}> 
+            {imageUrl !== 'none.png' ? <div className="portrait-crop">
+                <img className="article-image" src={imageCode} alt="article"/>
+            </div> : <div className="article-image"><h2 className="title">{divideWord(title, 40)}</h2></div> }
+             
+            <div className="info">
+            {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post" : "delete-user-video"}>&times;</p> : <></>}
+                <div className="head">
+                    <p></p>
+                    <p className="date">{date}</p>
                 </div>
-            :   <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="user-post-without-image"> 
-                    <div className="portrait-crop">
-                        <img className="article-image" src={imageCode} alt="article"/>
-                    </div>
-                    
-                    <div className="info">
-                        {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post" : "delete-user-video"}>&times;</p> : <></>}
-                        <div className="head">
-                            <h2 className="title">{divideWord(title, 40)}</h2>
-                            <p className="date">{date}</p>
-                        </div>
-                        <div className="l_and_c">
-                            <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
-                            <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
-                        </div>
-                        <Likers likers={likers} likersDisplay={likersDisplay} />
-                    </div>
-                </div>  
-            }
+                <div className="l_and_c">
+                    <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
+                    <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
+                </div>
+                <Likers likers={likers} likersDisplay={likersDisplay} />
+            </div>
         </div>
-        
     )
 }
 
