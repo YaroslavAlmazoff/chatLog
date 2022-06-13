@@ -62,7 +62,7 @@
 }
 .info-without-image {
     width: 100%;
-    margin-left: -10%;
+    margin-left: -8%;
     margin-top: 12%;
 }
 .l_and_c {
@@ -70,6 +70,13 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+}
+.l_and_c-without-image {
+  padding-top: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 .l_and_c_article {
     display: flex;
