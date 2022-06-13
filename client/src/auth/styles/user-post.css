@@ -32,6 +32,7 @@
   margin: 0 auto;
   padding: 3px;
   padding-right: 10px;
+  padding-left: 10px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 15px;
   margin-left: 10px;
@@ -61,7 +62,7 @@
 }
 .info-without-image {
     width: 100%;
-    margin: 5%;
+    margin-left: -10%;
 }
 .l_and_c {
     display: flex;
