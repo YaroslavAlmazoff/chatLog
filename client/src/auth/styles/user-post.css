@@ -20,7 +20,7 @@
     overflow: hidden;
 }
 .article-without-image {
-  width: 90%;
+  width: 100%;
   border-radius: 11px;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 140, 255);
@@ -55,7 +55,11 @@
     object-fit: cover;
 }
 .info {
-    width: 70%;
+  width: 70%;
+  margin: 5%;
+}
+.info-without-image {
+    width: 100%;
     margin: 5%;
 }
 .l_and_c {

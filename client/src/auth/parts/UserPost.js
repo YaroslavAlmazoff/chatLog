@@ -100,7 +100,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
                 <img className="article-image" src={imageCode} alt="article"/>
             </div> : <div className="article-image"><h2 className="title">{divideWord(title, 40)}</h2></div> }
              
-            <div className="info">
+            <div className={imageUrl !== 'none' ? "info": "info-without-image"}>
             {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post" : "delete-user-video"}>&times;</p> : <></>}
                 <div className="head">
                     <p></p>
