@@ -62,8 +62,8 @@
 }
 .info-without-image {
     width: 100%;
-    margin-left: -8%;
-    margin-top: 12%;
+    margin-left: -20%;
+    margin-top: 5%;
 }
 .l_and_c {
     display: flex;
@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 .l_and_c-without-image {
-  padding-top: 4%;
+  padding-top: 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
