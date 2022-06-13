@@ -63,6 +63,7 @@
 .info-without-image {
     width: 100%;
     margin-left: -10%;
+    margin-top: 5%;
 }
 .l_and_c {
     display: flex;
