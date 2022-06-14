@@ -38,7 +38,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(response.data.text)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            setFileText(<img height="200" src={fileCode} alt="" />)
+            setFileText(<img style={{height: '100%'}} src={fileCode} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
             setFileText(<video width="300" height="200" controls src={fileCode}>
