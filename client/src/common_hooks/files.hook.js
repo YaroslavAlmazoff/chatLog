@@ -29,9 +29,13 @@ const useFiles = () => {
         const response = await api.get(`/api/files/file/${file.owner}/${file.name}`)
         return response.data.file
     }
+    const getFileIcon = async (name) => {
+        const response = await api.get(`/api/files/icon/${name}`)
+        return response.data.file
+    }
 
 
-    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getFile}
+    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getFile, getFileIcon}
 }
 
 export default useFiles

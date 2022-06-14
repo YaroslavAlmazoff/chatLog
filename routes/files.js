@@ -44,6 +44,13 @@ router.get('/file/:user/:url', (req, res) => {
         console.log(e)
     }
 })
+router.get('/icon/:name', (req, res) => {
+    try {
+        GetFilesService.getFileIcon(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 //Создание роутера для получения файлов

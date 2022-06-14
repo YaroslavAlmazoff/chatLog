@@ -4,11 +4,11 @@ import useFiles from '../../../common_hooks/files.hook'
 import { useState, useEffect } from 'react'
 
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
-    const {getFile} = useFiles()
+    const {getFileIcon} = useFiles()
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
-        getFile(file).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
+        getFileIcon(file).then((data) => {
+            const result = 'data:image/png;base64,' + data
             setFileCode(result)
         })
     }, [file])

@@ -40,6 +40,12 @@ class GetFilesService {
         const filepath = this.filesDir + folder + `${user}/` + fileUrl
         ReadFileService.readFile(res, filepath)
     }
+    getFileIcon(req, res) {
+        const name = req.params.name
+        const folder = 'filesicons/'
+        const filepath = this.filesDir + folder + name
+        ReadFileService.readFile(res, filepath)
+    }
 }
 
 module.exports = new GetFilesService()
