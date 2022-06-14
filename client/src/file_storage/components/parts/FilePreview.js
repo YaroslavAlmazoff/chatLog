@@ -17,7 +17,7 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                     <a className='button download-link' href={fileCode} download>Скачать</a>
                     </div>:<></>}
                 {file.ext === 'txt' || file.ext === 'doc' || file.ext === 'docx'
-                ?  <p className='file-preview-text'>{fileText}</p>
+                ?  <div><br /><br /><p className='file-preview-text'>{fileText}</p></div>
                 : <></>
                 } 
                 {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp'
