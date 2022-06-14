@@ -55,6 +55,9 @@ const File = () => {
             ? <div className="file-wrapper">
                 {file.public || file.owner === auth.userId
                 ? <div className="file">
+                    {file.ext !== 'png' || file.ext !== 'jpg' || file.ext !== 'gif' || file.ext !== 'bmp' || file.ext !== 'avi' || file.ext !== 'mp4'
+                    ? <br /> : <></>
+                    }
                     <FilePreview file={file} fileText={fileText} fileOpened={true} ready={ready} />
                 </div>
                 : <div>
