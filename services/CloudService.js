@@ -37,6 +37,7 @@ class CloudService {
                 console.log(err)
             }
         })
+        console.log(this.getFilesInner(owner))
         res.json({files: this.getFilesInner(owner)})
     }
     async fileText(req, res) {
