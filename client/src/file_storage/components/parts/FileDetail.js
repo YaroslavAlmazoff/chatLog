@@ -64,7 +64,6 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
         const response = await api.get(`/api/cloud/delete/${file.name}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        setFiles(response.data.files)
         window.location.reload()
     }
     return (
