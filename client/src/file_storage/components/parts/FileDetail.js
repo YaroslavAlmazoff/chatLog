@@ -65,7 +65,7 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
             Authorization: `Bearer ${auth.token}`
         }})
         setFiles(response.data.files)
-        navigate('/cloud')
+        window.location.reload()
     }
     return (
         <div className="file-detail" style={{display: detailDisplay}}>
