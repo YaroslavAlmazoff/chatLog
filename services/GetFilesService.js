@@ -43,7 +43,7 @@ class GetFilesService {
     getFileIcon(req, res) {
         const name = req.params.name
         const folder = 'filesicons/'
-        const filepath = this.filesDir + folder + name
+        const filepath = this.filesDir + folder + name + '.png'
         ReadFileService.readFile(res, filepath)
     }
 }
