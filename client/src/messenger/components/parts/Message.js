@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../../context/AuthContext"
 import useFiles from "../../../common_hooks/files.hook"
 
-const Message = (mess) => {
+const Message = ({mess}) => {
     const {getAvatar} = useFiles()
     const [imageCode, setImageCode] = useState('')
     useEffect(() => {
