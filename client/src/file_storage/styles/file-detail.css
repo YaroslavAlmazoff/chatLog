@@ -100,7 +100,7 @@
     text-align: left;
 }
 .file-img-dark-wrapper {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     width: 100%;
 }
 .file-opened-info {
