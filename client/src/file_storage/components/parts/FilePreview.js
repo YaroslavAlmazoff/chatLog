@@ -24,6 +24,10 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                 ? <div className='file-img-dark-wrapper'>{fileText}</div>
                 : <></>
                 }  
+                {file.ext === 'mp4' ? 
+                <video width="300" height="200" controls src={fileCode}>
+                </video>    : <></>
+            }
             </div>
     )
 }
