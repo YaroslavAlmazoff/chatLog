@@ -15,7 +15,7 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
         const formData = new FormData()
         formData.append('file', file)
         //Загрузка файла в состояние
-        const response = await api.post('/api/cloud/upload', formData, {headers: {
+        await api.post('/api/cloud/upload', formData, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
         const response2 = await api.get('/api/cloud/files', {headers: {

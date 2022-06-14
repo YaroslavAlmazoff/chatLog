@@ -15,8 +15,8 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
     getFile(file).then((data) => {
-    const result = 'data:image/jpeg;base64,' + data
-    setFileCode(result)
+        const result = 'data:image/jpeg;base64,' + data
+        setFileCode(result)
     })
     }, [file])
     const navigate = useNavigate()
@@ -65,6 +65,7 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
             Authorization: `Bearer ${auth.token}`
         }})
         setFiles(response.data.files)
+        navigate('/cloud')
     }
     return (
         <div className="file-detail" style={{display: detailDisplay}}>
