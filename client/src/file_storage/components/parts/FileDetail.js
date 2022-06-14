@@ -50,6 +50,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(<video width="300" height="200" controls src={fileCode}>
         </video>)
         } else {
+            console.log(file.ext)
             console.log('Не ну это капец')
         }
         
