@@ -33,6 +33,13 @@ class GetFilesService {
         const filepath = this.filesDir + folder + imageUrl
         ReadFileService.readFile(res, filepath)
     }
+    getFile(req, res) {
+        const fileUrl = req.params.url
+        const user = req.params.user
+        const folder = 'userfiles/'
+        const filepath = this.filesDir + folder + `${user}/` + fileUrl
+        ReadFileService.readFile(res, filepath)
+    }
 }
 
 module.exports = new GetFilesService()

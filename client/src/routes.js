@@ -40,6 +40,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/fotography/:id" element={<Fotography/>} />
             <Route path="/video/:id" element={<UserVideoPage/>} />
             <Route path="/messages" element={<RoomsList />} />
+            <Route path="/cloud" element={<FileStorage />} />
             <Route exact path="/users" element={<Users />} />
             <Route path="/user/:id" element={<User />} />
             <Route path="/messages/:id" element={<Room />} />

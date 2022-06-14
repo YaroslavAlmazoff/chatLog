@@ -1,7 +1,17 @@
 import '../../styles/file-item.css'
 import useWord from '../../../common_hooks/divideWord.hook'
+import useFiles from '../../../common_hooks/files.hook'
+import { useState, useEffect } from 'react'
 
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
+    const {getFile} = useFiles()
+    const [fileCode, setFileCode] = useState('')
+    useEffect(() => {
+        getFile(file).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setFileCode(result)
+        })
+    }, [file])
     const {divideFilename} = useWord()
     const showDetails = () => {
         setSelectedFile(file)
@@ -11,17 +21,14 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
     return (
         <div onClick={showDetails} className="file-item">
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
-            <img className='file-img' src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} alt="file" />
+            <img className='file-img' src={fileCode} alt="file" />
             :   <div>
             {file.ext === 'mp4' ? 
-            <video  className='file-img' width="300" height="200" controls>
-                <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/ogg; codecs="theora, vorbis"' />
-                <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
-                <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/webm; codecs="vp8, vorbis"'/>
+            <video  className='file-img' width="300" height="200" controls src={fileCode}>
             </video>
             : <div>
                 {file.ext !== 'mp4' || file.ext !== 'jpg' || file.ext !== 'png' || file.ext !== 'bmp' || file.ext !== 'gif' 
-            ? <img className='file-icon' src={require(`../../../static/filesicons/${file.ext}.png`)} alt="img" />
+            ? <img className='file-icon' src={fileCode} alt="img" />
             : <></>
             }</div>}</div>}
             

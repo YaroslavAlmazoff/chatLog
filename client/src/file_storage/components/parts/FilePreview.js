@@ -1,14 +1,20 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import useFiles from "../../../common_hooks/files.hook"
 
 const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) => {
+    const {getFile} = useFiles()
+    const [fileCode, setFileCode] = useState('')
     useEffect(() => {
-        console.log(file)
-    })
+        getFile(file).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setFileCode(result)
+        })
+    }, [file])
     return (
         <div className='file-preview' style={{display: filePreviewDisplay}}>
                 {ready && fileOpened ?<div className="file-opened-info">
                     <h2 className="file-opened-preview-name">{file.name}</h2>
-                    <a className='button download-link' href={require(`../../../static/userfiles/${file.owner}/${file.name}`)} download>Скачать</a>
+                    <a className='button download-link' href={fileCode} download>Скачать</a>
                     </div>:<></>}
                 {file.ext === 'txt' || file.ext === 'doc' || file.ext === 'docx'
                 ?  <p className='file-preview-text'>{fileText}</p>

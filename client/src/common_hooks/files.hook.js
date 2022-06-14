@@ -25,8 +25,8 @@ const useFiles = () => {
         const response = await api.get(`/api/files/messagefoto/${imageUrl}`)
         return response.data.file
     }
-    const getFile = async (filename) => {
-        const response = await api.get(`/api/files/file/${filename}`)
+    const getFile = async (file) => {
+        const response = await api.get(`/api/files/file/${file.owner}/${file.name}`)
         return response.data.file
     }
 

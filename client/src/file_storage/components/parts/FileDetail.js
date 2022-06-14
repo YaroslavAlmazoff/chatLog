@@ -6,9 +6,19 @@ import { AuthContext } from '../../../context/AuthContext'
 import { useContext, useState } from 'react'
 import FilePreview from './FilePreview'
 import { useNavigate } from 'react-router'
+import useFiles from '../../../common_hooks/files.hook'
+import {useEffect} from 'react'
 
 const FileDetail = ({file, setFiles, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
+    const {getFile} = useFiles()
+    const [fileCode, setFileCode] = useState('')
+    useEffect(() => {
+    getFile(file).then((data) => {
+    const result = 'data:image/jpeg;base64,' + data
+    setFileCode(result)
+    })
+    }, [file])
     const navigate = useNavigate()
     const [fileText, setFileText] = useState('')
     const auth = useContext(AuthContext)
@@ -28,13 +38,10 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
             setFileText(response.data.text)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            setFileText(<img height="200" src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} alt="" />)
+            setFileText(<img height="200" src={fileCode} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
-            setFileText(<video width="300" height="200" controls>
-            <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/ogg; codecs="theora, vorbis"' />
-            <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
-            <source src={require(`../../../static/userfiles/${file.owner}/${file.name}`)} type='video/webm; codecs="vp8, vorbis"'/>
+            setFileText(<video width="300" height="200" controls src={fileCode}>
         </video>)
         } else {
             console.log('Не ну это капец')

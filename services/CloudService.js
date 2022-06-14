@@ -13,7 +13,7 @@ class CloudService {
         await File.create({
             name: file.name, ext, type: file.mimetype, size: file.size, owner: userid, public: false
         })
-        const filePath = path.resolve('client', 'src', 'static', 'userfiles', userid, file.name)
+        const filePath = path.resolve('..', 'static', 'userfiles', userid, file.name)
         file.mv(filePath)
         console.log(this.getFilesInner(userid))
         res.json({files: this.getFilesInner(userid)})
@@ -32,7 +32,7 @@ class CloudService {
         const owner = req.user.userId
         const name = req.params.filename
         await File.deleteOne({owner, name}) 
-        fs.unlink(path.resolve('client', 'src', 'static', 'userfiles', owner, name), err => {
+        fs.unlink(path.resolve('..', 'static', 'userfiles', owner, name), err => {
             if(err) {
                 console.log(err)
             }
@@ -42,7 +42,7 @@ class CloudService {
     async fileText(req, res) {
         const owner = req.user.userId
         const name = req.params.filename
-        fs.readFile(path.resolve('client', 'src', 'static', 'userfiles', owner, name), 'utf-8', (err, data) => {
+        fs.readFile(path.resolve('..', 'static', 'userfiles', owner, name), 'utf-8', (err, data) => {
             if(err) {
                 console.log(err)
             } else {
@@ -53,7 +53,7 @@ class CloudService {
     async hardFileText(req, res) {
         const owner = req.user.userId
         const name = req.params.filename
-        textract.fromFileWithPath(path.resolve('client', 'src', 'static', 'userfiles', owner, name), (err, text) => {
+        textract.fromFileWithPath(path.resolve('..', 'static', 'userfiles', owner, name), (err, text) => {
             if(err) {
                 console.log(err)
             } else {
