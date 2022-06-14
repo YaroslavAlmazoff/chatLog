@@ -13,7 +13,7 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
     return (
         <div className='file-preview' style={{display: filePreviewDisplay}}>
                 {ready && fileOpened ?<div className="file-opened-info">
-                    <h2 className="file-opened-preview-name">{file.name}</h2>
+                    <h2 className="file-opened-preview-name" style={file.ext === 'doc' || file.ext === 'docx' || file.ext === 'txt' || file.ext === 'pdf'?{color: 'black'}:{color: 'white'}}>{file.name}</h2>
                     <a className='button download-link' href={fileCode} download>Скачать</a>
                     </div>:<></>}
                 {file.ext === 'txt' || file.ext === 'doc' || file.ext === 'docx'
