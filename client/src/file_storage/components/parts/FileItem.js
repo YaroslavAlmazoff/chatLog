@@ -4,13 +4,37 @@ import useFiles from '../../../common_hooks/files.hook'
 import { useState, useEffect } from 'react'
 
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
-    const {getFileIcon} = useFiles()
+    const {getFileIcon, getFile} = useFiles()
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
-        getFileIcon(file).then((data) => {
-            const result = 'data:image/png;base64,' + data
-            setFileCode(result)
-        })
+        if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
+            getFile(file).then((data) => {
+                const result = 'data:image/jpeg;base64,' + data
+                setFileCode(result)
+            })
+        } else if(file.ext === 'avi' || file.ext === 'mp4') {
+            getFile(file).then((data) => {
+                const result = 'data:video/mp4;base64,' + data
+                setFileCode(result)
+            })
+        } else if(file.ext === 'ai' || file.ext === 'apk' || 
+                  file.ext === 'css' || file.ext === 'doc' || 
+                  file.ext === 'docx' || file.ext === 'html' || 
+                  file.ext === 'js' || file.ext === 'mp3' || 
+                  file.ext === 'pdf' || file.ext === 'ppt' || 
+                  file.ext === 'psd' || file.ext === 'txt' || 
+                  file.ext === 'xls' || file.ext === 'zip') {
+            getFileIcon(file.ext).then((data) => {
+                const result = 'data:image/png;base64,' + data
+                setFileCode(result)
+            })
+        } else {
+            getFileIcon('txt').then((data) => {
+                const result = 'data:image/png;base64,' + data
+                setFileCode(result)
+            })
+        }
+        
     }, [file])
     const {divideFilename} = useWord()
     const showDetails = () => {
