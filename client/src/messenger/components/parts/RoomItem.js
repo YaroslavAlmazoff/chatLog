@@ -3,8 +3,10 @@ import "../styles/room-item.css"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
 import useWord from "../../../common_hooks/divideWord.hook"
+import useFiles from "../../../common_hooks/files.hook"
 
 const RoomItem = ({user1, user2, lastMessage, id}) => {
+    const {getAvatar} = useFiles()
     const [isNotReaded, setIsNotReaded] = useState()
     const {divideWord} = useWord()
     const [user, setUser] = useState({
@@ -12,6 +14,13 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
         name: 'unnamed',
         surname: 'unname'
     })
+    const [imageCode, setImageCode] = useState('')
+    useEffect(() => {
+        getAvatar(user.avatarUrl).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setImageCode(result)
+        })
+    }, [user])
     const [newMessageExists, setNewMessageExists] = useState(false)
     const auth = useContext(AuthContext)
     const gotoRoom = (id) => {
@@ -43,7 +52,7 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
     return (
         <div onClick={() => gotoRoom(id)} className={isNotReaded ? 'room-item-blue' : 'room-item'}>
             <div className="room-item-info-wrapper">
-                <img className="room-img" width="60" src={require(`../../../static/useravatars/${user.avatarUrl}`)} alt="user" />
+                <img className="room-img" width="60" src={imageCode} alt="user" />
                 <div className="room-item-info">
                     <p className="room-title">{user.name} {user.surname}</p>
                     <p className="room-last-message">{divideWord(lastMessage, 40)}</p>

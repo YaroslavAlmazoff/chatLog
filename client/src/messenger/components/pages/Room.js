@@ -7,8 +7,11 @@ import useDate from "../../../common_hooks/date.hook"
 import useRandom from "../../../common_hooks/random.hook"
 import ImagePreview1 from "../../../auth/parts/ImagePreview1"
 import VideoPreview from "../../../auth/parts/VideoPreview"
+import useFiles from "../../../common_hooks/files.hook"
+import Message from "../parts/Message"
 
 export const Room = () => {
+    const {getAvatar} = useFiles()
     const {randomKey} = useRandom()
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
@@ -148,19 +151,7 @@ export const Room = () => {
             <div ref={roomRef} className="room-window">
                 <div className="room-head">{penFriend}</div>
                 <div className="messages">
-                {messages.map(mess => 
-                <div key={randomKey()} className={mess.user === auth.userId ? 'my-message-wrapper': 'message-wrapper'}>
-                    <div className={mess.user === auth.userId ? 'my-message': 'message'} key={Date.now() - Math.random() * 999}>
-                                    <img className="message-avatar" src={require(`../../../static/useravatars/${mess.avatarUrl}`)} alt="avatar" />
-                                    <p>&nbsp;&nbsp;{mess.name}&nbsp;&nbsp;&nbsp;</p> <p className="message-date">{mess.date}</p>
-                            </div>
-                            <div className="message-text">
-                                <p>{mess.message}</p>
-                            </div>   
-                            {mess.imageUrl 
-                            ? <img className="message-image" src={require(`../../../static/messagefotos/${mess.imageUrl}`)} alt="userimage" />
-                            : <></>} 
-                    </div>)}
+                {messages.map(mess => <Message mess={mess} />)}
                 </div>
             </div>
             <div className="message-actions">
