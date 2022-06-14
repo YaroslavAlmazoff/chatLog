@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router'
 import useFiles from '../../../common_hooks/files.hook'
 import {useEffect} from 'react'
 
-const FileDetail = ({file, setFiles, detailDisplay, downloadingFile, 
+const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
     const {getFile} = useFiles()
     const [fileCode, setFileCode] = useState('')
@@ -61,7 +61,7 @@ const FileDetail = ({file, setFiles, detailDisplay, downloadingFile,
         
     }
     const deleteFile = async () => {
-        const response = await api.get(`/api/cloud/delete/${file.name}`, {headers: {
+        await api.get(`/api/cloud/delete/${file.name}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
         window.location.reload()
