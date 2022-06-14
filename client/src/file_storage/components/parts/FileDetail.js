@@ -15,8 +15,14 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
     getFile(file).then((data) => {
-        const result = 'data:image/jpeg;base64,' + data
-        setFileCode(result)
+        if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
+            const result = 'data:image/jpeg;base64,' + data
+            setFileCode(result)
+        }
+        else if(file.ext === 'avi' || file.ext === 'mp4') {
+            const result = 'data:video/mp4;base64,' + data
+            setFileCode(result)
+        }
     })
     }, [file])
     const navigate = useNavigate()
