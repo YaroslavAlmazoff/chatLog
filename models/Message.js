@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const Message = new mongoose.Schema({
-    message: {type: String, required: true},
+    message: {type: String},
     name: {type: String, required: true},
     avatarUrl: {type: String, required: true},
     date: {type: String, required: true},
