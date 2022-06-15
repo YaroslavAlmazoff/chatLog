@@ -136,7 +136,7 @@ export const Room = () => {
         console.log(file)
         formData.append('message', message)
         formData.append('date', date)
-        //formData.append('file', file)
+        formData.append('file', file)
         await api.post(`/api/lastmessage/${params.id}`, {lastMessage: message})
 
         await api.post(`/api/sendmessage/${params.id}`,
@@ -156,7 +156,7 @@ export const Room = () => {
             </div>
             <div className="message-actions">
                 <input type="text" className="message-input" placeholder="Напишите сообщение..." value={message} onChange={(e) => setMessage(e.target.value)} />
-                {/*<img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>*/}
+                <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
                 <button onClick={() => {sendMessage(); setMessage('')}} className="send-message">Отправить</button>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file" />
             </div>

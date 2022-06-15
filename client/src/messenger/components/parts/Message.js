@@ -5,9 +5,18 @@ import useFiles from "../../../common_hooks/files.hook"
 
 const Message = ({mess}) => {
     const {getAvatar} = useFiles()
-    const [imageCode, setImageCode] = useState('')
+    const [avatarCode, setAvatarCode] = useState('')
     useEffect(() => {
         getAvatar(mess.avatarUrl).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setAvatarCode(result)
+        })
+    }, [mess])
+
+    const {getMessageFoto} = useFiles()
+    const [imageCode, setImageCode] = useState('')
+    useEffect(() => {
+        getMessageFoto(mess.imageUrl).then((data) => {
             const result = 'data:image/jpeg;base64,' + data
             setImageCode(result)
         })
@@ -17,14 +26,14 @@ const Message = ({mess}) => {
     return (
         <div key={randomKey()} className={mess.user === auth.userId ? 'my-message-wrapper': 'message-wrapper'}>
                     <div className={mess.user === auth.userId ? 'my-message': 'message'} key={Date.now() - Math.random() * 999}>
-                                    <img className="message-avatar" src={imageCode} alt="avatar" />
+                                    <img className="message-avatar" src={avatarCode} alt="avatar" />
                                     <p>&nbsp;&nbsp;{mess.name}&nbsp;&nbsp;&nbsp;</p> <p className="message-date">{mess.date}</p>
                             </div>
                             <div className="message-text">
                                 <p>{mess.message}</p>
                             </div>   
                             {mess.imageUrl 
-                            ? <img className="message-image" src={require(`../../../static/messagefotos/${mess.imageUrl}`)} alt="userimage" />
+                            ? <img className="message-image" src={imageCode} alt="userimage" />
                             : <></>} 
                     </div>
     )

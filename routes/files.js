@@ -51,6 +51,13 @@ router.get('/icon/:name', (req, res) => {
         console.log(e)
     }
 })
+router.get('/messagefoto/:url', (req, res) => {
+    try {
+        GetFilesService.getMessageFoto(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 //Создание роутера для получения файлов
