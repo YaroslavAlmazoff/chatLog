@@ -5,8 +5,8 @@ import RecipientItem from "./RecipientItem"
 const RecipientsList = ({file, recipientsDisplay}) => {
     const [recipients, setRecipients] = useState([])
     useEffect(() => {
-        const getRecipients = () => {
-            const response = api.get('/api/users')
+        const getRecipients = async () => {
+            const response = await api.get('/api/users')
             setRecipients(response.data.users)
         }
         getRecipients()
