@@ -250,6 +250,7 @@ const User = () => {
         setNoticeDisplay={setNoticeDisplay} 
         setNoticeText={setNoticeText} 
         noticeRef={noticeRef} 
+        setNotificationsDisplay={setNotificationsDisplay}
     />
     {notificationsDisplay ? 
     <Notifications 
