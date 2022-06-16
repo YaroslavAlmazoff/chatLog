@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
-import "../styles/user-item.css"
+import "../../../auth/styles/user-item"
 import { useNavigate } from "react-router"
-import api from '../api/auth'
-import { AuthContext } from "../../context/AuthContext"
-import useFiles from "../../common_hooks/files.hook"
+import api from '../../../auth/api/auth'
+import { AuthContext } from "../../../context/AuthContext"
+import useFiles from "../../../common_hooks/files.hook"
 
 
 const RecipientItem = ({item, file}) => {
