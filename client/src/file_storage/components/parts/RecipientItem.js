@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import "../../../auth/styles/user-item"
+import "../../../auth/styles/user-item.css"
 import { useNavigate } from "react-router"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
