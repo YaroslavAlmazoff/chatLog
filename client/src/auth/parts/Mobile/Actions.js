@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import api from "../../api/auth"
 import '../../styles/user-mobile.css'
 
-const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, setNotificationsDisplay}) => {
+const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, notificationsDisplay, setNotificationsDisplay}) => {
     const [friendsButtonDisplay, setFriendsButtonDisplay] = useState('block')
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
@@ -17,7 +17,12 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, setNotifi
         navigate('/createpost')
     }
     const openNotifications = () => {
-        setNotificationsDisplay(true)
+        if(!notificationsDisplay) {
+            setNotificationsDisplay(true)
+        } else {
+            setNotificationsDisplay(false)
+        }
+
     }
     useEffect(() => {
         //Проверка есть ли пользователь в друзьях у его посетителя
