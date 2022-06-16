@@ -94,7 +94,7 @@ const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id
         setLikersDisplay('block')
     }
     return (
-        <div onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="article-mobile"> 
+        <div onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className={imageUrl !== 'none.png' ? "article-mobile" : "article-without-image-mobile"}> 
             <div className="info-mobile">
             {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post-mobile" : "delete-user-video-mobile"}>&times;</p> : <></>}
                 <div className="head-mobile">
