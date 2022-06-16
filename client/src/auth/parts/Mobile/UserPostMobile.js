@@ -16,11 +16,12 @@ const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id
     const [imageCode, setImageCode] = useState('')
 
     useEffect(() => {
-        getPost(imageUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setImageCode(result)
-        })
+        if(imageUrl !== 'none.png' && imageUrl !== 'user.png') {
+            getPost(imageUrl).then((data) => {
+                const result = 'data:image/jpeg;base64,' + data
+                setImageCode(result)
+            })
+        }
     }, [])
     //Создание объекта с информацией поста
     const obj = {title, date, imageUrl, likes, comments, id}
@@ -101,7 +102,7 @@ const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id
                     <p className="date-mobile">{date}</p>
                 </div>
             </div>
-            <img className="article-image-mobile" src={imageCode} alt="article"/>
+            {imageUrl !== 'none.png' ? <img className="article-image-mobile" src={imageCode} alt="article"/>:<></>}
             <div className="l_and_c-mobile">
                     <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
                     <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
