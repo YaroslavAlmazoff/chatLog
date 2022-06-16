@@ -6,7 +6,7 @@ const RecipientsList = ({file, recipientsDisplay}) => {
     const [recipients, setRecipients] = useState([])
     useEffect(() => {
         const getRecipients = () => {
-            const response = api.get('/users')
+            const response = api.get('/api/users')
             setRecipients(response.data.users)
         }
         getRecipients()
