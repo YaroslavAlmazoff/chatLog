@@ -52,7 +52,11 @@ export const Room = () => {
         //Загрузка файла в состояние
         setFile(file)
     }
-    
+    useEffect(() => {
+        if(params.link) {
+            setMessage(params.link)
+        }
+    }, [params])
     const subscribe = async () => {
         
         roomRef.current.scrollTop = roomRef.current.scrollHeight;

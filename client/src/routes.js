@@ -44,6 +44,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route exact path="/users" element={<Users />} />
             <Route path="/user/:id" element={<User />} />
             <Route path="/messages/:id" element={<Room />} />
+            <Route path="/messages/:id/:link" element={<Room />} />
             <Route path="/blog_about" element={<About />} />
             <Route path="/article/:id" element={<UserArticle />} />
             <Route path="/article/:id/:comment" element={<UserArticle />} />
