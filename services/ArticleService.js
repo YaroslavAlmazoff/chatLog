@@ -69,7 +69,9 @@ class ArticleService {
         const post = await UserPost.findById(id)
         const image = post.imageUrl
         const filepath = path.resolve('..', 'static', 'articles', image)
-        ImageService.deleteFile(filepath)
+        if(post.imageUrl !== 'none.png') {
+            ImageService.deleteFile(filepath)
+        }
         //Удаление поста пользователя
         await UserPost.findByIdAndDelete(id)
         res.json({message: 'Запись удалена.'})
