@@ -98,11 +98,11 @@ const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id
             <div className="info-mobile">
             {isOwner ? <p onClick={imageUrl.split('.')[1] !== 'mp4' ? (e) => deletePost(e, obj.id, setUserPosts, userPosts) : (e) => deleteVideo(e, obj.id, setUserVideos, userVideos)} className={imageUrl.split('.')[1] !== 'mp4' ? "delete-user-post-mobile" : "delete-user-video-mobile"}>&times;</p> : <></>}
                 <div className="head-mobile">
-                    <h2 className="title-mobile">{divideWord(title, 20)}</h2>
+                    <p></p>
                     <p className="date-mobile">{date}</p>
                 </div>
             </div>
-            {imageUrl !== 'none.png' ? <img className="article-image-mobile" src={imageCode} alt="article"/>:<></>}
+            {imageUrl !== 'none.png' ? <img className="article-image-mobile" src={imageCode} alt="article"/>:<h2 className="title-mobile">{divideWord(title, 20)}</h2>}
             <div className="l_and_c-mobile">
                     <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
                     <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
