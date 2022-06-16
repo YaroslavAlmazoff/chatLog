@@ -36,7 +36,7 @@ class AuthService {
             )
             
             
-            fs.mkdir(`client/src/static/userfiles/${created._id}`, err => {
+            fs.mkdir(`../static/userfiles/${created._id}`, err => {
                 console.log(err)
             })
             res.json({user, message: 'Success register!', userId: created._id, token})
