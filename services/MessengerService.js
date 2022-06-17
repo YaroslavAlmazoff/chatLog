@@ -59,7 +59,10 @@ class MessengerService {
         const {message, date, isFile} = req.body
         const room = req.params.room
         const user = req.user.userId
-        const filename = uuid.v4() + '.jpg'
+        let filename
+        if(req.files) {
+            filename = uuid.v4() + '.jpg'
+        }
         const USER = await User.findById(user)
         await Message.create({
             message, name: USER.name, avatarUrl: USER.avatarUrl, date, user, room, isNotReaded: true, isFile, imageUrl: filename
