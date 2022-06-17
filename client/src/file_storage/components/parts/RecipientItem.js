@@ -7,6 +7,9 @@ import useFiles from "../../../common_hooks/files.hook"
 
 
 const RecipientItem = ({item, file}) => {
+    useEffect(() => {
+        console.log(item)
+    }, [])
     const auth = useContext(AuthContext)
     //Предпросмотр пользователя на странице со всеми пользователями
     let navigate = useNavigate()
