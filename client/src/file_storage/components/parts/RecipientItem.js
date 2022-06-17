@@ -24,10 +24,11 @@ const RecipientItem = ({item, file}) => {
         return response.data.room
     }
     const sendLink = () => {
-        const room = createRoom()
-        const link = `/cloud/file/${file._id}`
-        console.log(link, room)
-        navigate(`/messages/${room}`)
+        createRoom().then(data => {
+            const link = `/cloud/file/${file._id}`
+            console.log(link, data)
+            navigate(`/messages/${data}`)
+        })
     }
     const {getAvatar} = useFiles()
 
