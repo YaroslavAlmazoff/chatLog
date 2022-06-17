@@ -22,6 +22,10 @@ const Message = ({mess}) => {
             setImageCode(result)
         })
     }, [mess])
+    const gotoFile = (e, link) => {
+        e.preventDefault()
+        window.location = link
+    }
     const auth = useContext(AuthContext)
     const {randomKey} = useRandom()
     return (
@@ -33,7 +37,7 @@ const Message = ({mess}) => {
                             <div className="message-text">
                                 {
                                 mess.isFile 
-                                ? <a className="message-file-link" href={mess.message.substr(20, mess.message.length - 20)}>Файл {mess.message}</a>
+                                ? <a className="message-file-link" href={mess.message} onClick={(e) => gotoFile(e, mess.message)}>Файл {mess.message}</a>
                                 : 
                                 <p>{mess.message}</p>
                                 }
