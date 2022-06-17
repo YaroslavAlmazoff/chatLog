@@ -99,7 +99,7 @@
 }
 .message-file-link {
     color:rgb(0, 140, 255);
-    margin: 10px;
+    margin: 30px;
     text-decoration: none;
 }
 @media (width > 700px) {

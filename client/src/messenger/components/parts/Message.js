@@ -33,7 +33,7 @@ const Message = ({mess}) => {
                             <div className="message-text">
                                 {
                                 mess.isFile 
-                                ? <a className="message-file-link" href={mess.message}>{mess.message}</a>
+                                ? <a className="message-file-link" href={mess.message}>Файл {mess.message}</a>
                                 : 
                                 <p>{mess.message}</p>
                                 }
