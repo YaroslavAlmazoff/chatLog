@@ -58,7 +58,7 @@ const File = () => {
                     <FilePreview file={file} fileText={fileText} fileOpened={true} ready={ready} />
                 </div>
                 : <div>
-                    <h2>ERROR 404: Page not found</h2>
+                    <h2 style={{color: 'red'}}>ERROR 404: Page not found</h2>
                 </div>
                 }
             </div>
