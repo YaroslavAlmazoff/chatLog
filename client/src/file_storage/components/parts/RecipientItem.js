@@ -15,7 +15,7 @@ const RecipientItem = ({item, file}) => {
     let navigate = useNavigate()
     //Перемещение на страницу пользователя
     const createRoom = async () => {
-        await api.get(`/api/createroom/${item.id}`, {headers: {
+        await api.get(`/api/createroom/${item._id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
         const response = await api.get(`/api/getroom/${item.id}`, {headers: {
