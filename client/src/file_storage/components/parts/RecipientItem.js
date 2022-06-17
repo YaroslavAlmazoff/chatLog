@@ -24,7 +24,10 @@ const RecipientItem = ({item, file}) => {
         return response
     }
     const sendLink = () => {
-        createRoom().then(data => {
+        createRoom().then(async data => {
+            await api.get(`/publicfile/${file.name}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
             const link = `http://chatlog.ru/cloud/file/${file._id}`
             localStorage.setItem('file-link', link)
             navigate(`/messages/${data.data.room._id}`)
