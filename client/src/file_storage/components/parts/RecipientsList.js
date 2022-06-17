@@ -3,6 +3,7 @@ import api from '../../../auth/api/auth'
 import RecipientItem from "./RecipientItem"
 
 const RecipientsList = ({file, recipientsDisplay}) => {
+    const [recDisplay, setRecDisplay] = useState('none')
     const [recipients, setRecipients] = useState([])
     useEffect(() => {
         const getRecipients = async () => {
@@ -12,7 +13,7 @@ const RecipientsList = ({file, recipientsDisplay}) => {
         getRecipients()
     })
     return (
-        <div style={{display: 'none'}}>
+        <div style={{display: recDisplay}}>
             {recipients.map(item => <RecipientItem item={item} file={file} />)}
         </div>
     )
