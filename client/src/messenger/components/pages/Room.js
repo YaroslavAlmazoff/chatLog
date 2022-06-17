@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import "../styles/room.css"
 import api from '../../../auth/api/auth'
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import { AuthContext } from "../../../context/AuthContext"
 import useDate from "../../../common_hooks/date.hook"
 import useRandom from "../../../common_hooks/random.hook"
@@ -55,7 +55,7 @@ export const Room = () => {
     useEffect(() => {
         if(localStorage.getItem('file-link')) {
             console.log(localStorage.getItem('file-link'))
-            setMessage(<a className="message-file-link" href={localStorage.getItem('file-link')}>{localStorage.getItem('file-link')}</a>)
+            setMessage(<Link to={localStorage.getItem('file-link')}>Файл {localStorage.getItem('file-link')}</Link>)
             localStorage.removeItem('file-link')
         }
     }, [])
