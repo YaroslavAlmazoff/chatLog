@@ -67,7 +67,9 @@ class MessengerService {
             //Когда новое сообщение создалось в базе данных, получение ID сообщения и загрузка изображения на диск
             Message.findOne({date}).then((newValue) => {
                 const id = newValue._id
-                FileService.insertMessageFoto(req.files.file, id, filename)
+                if(req.files) {
+                    FileService.insertMessageFoto(req.files.file, id, filename)
+                }
                 res.json({id})
             })
         })
