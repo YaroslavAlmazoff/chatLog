@@ -24,6 +24,7 @@ const Message = ({mess}) => {
     }, [mess])
     const gotoFile = (e, link) => {
         e.preventDefault()
+        console.log(link)
         window.location = link
     }
     const auth = useContext(AuthContext)
