@@ -37,7 +37,7 @@ const Message = ({mess}) => {
                             <div className="message-text">
                                 {
                                 mess.isFile 
-                                ? <a className="message-file-link" href={mess.message} onClick={(e) => gotoFile(e, mess.message)}>Файл {mess.message}</a>
+                                ? <p className="message-file-link" onClick={(e) => gotoFile(e, mess.message)}>Файл {mess.message}</p>
                                 : 
                                 <p>{mess.message}</p>
                                 }
