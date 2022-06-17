@@ -54,7 +54,7 @@ export const Room = () => {
     }
     useEffect(() => {
         if(localStorage.getItem('file-link')) {
-            setMessage(localStorage.getItem('file-link'))
+            setMessage(<a className="message-file-link" href={localStorage.getItem('file-link')}>{localStorage.getItem('file-link')}</a>)
             localStorage.removeItem('file-link')
         }
     }, [])
