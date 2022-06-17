@@ -53,7 +53,6 @@ export const Room = () => {
         setFile(file)
     }
     useEffect(() => {
-        console.log(localStorage.getItem('file-link'))
         if(localStorage.getItem('file-link')) {
             setMessage(localStorage.getItem('file-link'))
             localStorage.removeItem('file-link')
