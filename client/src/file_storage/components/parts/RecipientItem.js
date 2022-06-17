@@ -27,7 +27,7 @@ const RecipientItem = ({item, file}) => {
         const room = createRoom()
         const link = `/cloud/file/${file._id}`
         console.log(link)
-        navigate(`/messages/${room}/${link}`)
+        navigate(`/messages/${room}/`)
     }
     const {getAvatar} = useFiles()
 
