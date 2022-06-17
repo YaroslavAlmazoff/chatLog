@@ -21,13 +21,13 @@ const RecipientItem = ({item, file}) => {
         const response = await api.get(`/api/getroom/${item._id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        return response.data.room
+        return response
     }
     const sendLink = () => {
         createRoom().then(data => {
             const link = `/cloud/file/${file._id}`
-            console.log(link, data)
-            navigate(`/messages/${data}`)
+            console.log(link, data.data.room)
+            navigate(`/messages/${data.data.room}`)
         })
     }
     const {getAvatar} = useFiles()
