@@ -48,7 +48,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/blog_about" element={<About />} />
             <Route path="/article/:id" element={<UserArticle />} />
             <Route path="/article/:id/:comment" element={<UserArticle />} />
-            <Route path="*" element={<Navigate to="/" />} />
+            {/*<Route path="*" element={<Navigate to="/" />} />*/}
         </Routes>
     )
 }
