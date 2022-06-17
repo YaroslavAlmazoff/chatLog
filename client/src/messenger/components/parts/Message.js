@@ -23,7 +23,7 @@ const Message = ({mess}) => {
         })
     }, [mess])
     const gotoFile = (e, link) => {
-        e.preventDefault()
+        link = link.substr(20, link.length - 20)
         console.log(link)
         window.location = link
     }
