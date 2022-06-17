@@ -41,7 +41,6 @@ const FileStorage = () => {
             />
             <div className='file-empty-element'></div>
         </div>
-            <RecipientsList />
         </div>
     )
 }

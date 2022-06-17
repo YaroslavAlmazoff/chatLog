@@ -67,7 +67,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         
     }
     const sendFileLink = () => {
-
+        setRecipientsDisplay('block')
     }
     const deleteFile = async () => {
         await api.get(`/api/cloud/delete/${file.name}`, {headers: {
