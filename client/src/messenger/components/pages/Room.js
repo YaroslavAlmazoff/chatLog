@@ -53,8 +53,9 @@ export const Room = () => {
         setFile(file)
     }
     useEffect(() => {
-        if(params.link) {
-            setMessage(params.link)
+        if(localStorage.getItem('file-link')) {
+            setMessage(localStorage.getItem('file-link'))
+            localStorage.removeItem('file-link')
         }
     }, [params])
     const subscribe = async () => {
