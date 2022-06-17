@@ -20,7 +20,7 @@
     float: right;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 30px;
 }
 .my-message {
@@ -30,7 +30,7 @@
     margin-right: 0px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 50px;
 }
 .message-avatar {
