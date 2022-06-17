@@ -57,7 +57,6 @@ export const Room = () => {
             console.log(localStorage.getItem('file-link'))
             setMessage(<Link to={localStorage.getItem('file-link')}>Файл {localStorage.getItem('file-link')}</Link>)
             localStorage.removeItem('file-link')
-            console.log(message === <Link to={localStorage.getItem('file-link')}>Файл {localStorage.getItem('file-link')}</Link>)
         }
         
     }, [])
