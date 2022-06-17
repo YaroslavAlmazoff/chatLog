@@ -9,6 +9,7 @@ const Message = new mongoose.Schema({
     to: {type: mongoose.Types.ObjectId},
     room: {type: mongoose.Types.ObjectId, required: true},
     isNotReaded: {type: Boolean, required: true, default: true},
+    isFile: {type: Boolean, required: true, default: false},
     id: {type: Number, required: true, default: 0},
     imageUrl: {type: String, default: ''},
 })

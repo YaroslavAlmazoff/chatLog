@@ -56,13 +56,13 @@ class MessengerService {
     }
     
     async sendMessage(req, res) {
-        const {message, date} = req.body
+        const {message, date, isFile} = req.body
         const room = req.params.room
         const user = req.user.userId
         const filename = uuid.v4() + '.jpg'
         const USER = await User.findById(user)
         await Message.create({
-            message, name: USER.name, avatarUrl: USER.avatarUrl, date, user, room, isNotReaded: true, imageUrl: filename
+            message, name: USER.name, avatarUrl: USER.avatarUrl, date, user, room, isNotReaded: true, isFile, imageUrl: filename
         }).then(() => {
             //Когда новое сообщение создалось в базе данных, получение ID сообщения и загрузка изображения на диск
             Message.findOne({date}).then((newValue) => {

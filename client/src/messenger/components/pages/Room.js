@@ -144,6 +144,7 @@ export const Room = () => {
         formData.append('message', message)
         formData.append('date', date)
         formData.append('file', file)
+        formData.append('isFile', !!localStorage.getItem('file-link'))
         await api.post(`/api/lastmessage/${params.id}`, {lastMessage: message})
 
         await api.post(`/api/sendmessage/${params.id}`,
