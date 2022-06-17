@@ -31,8 +31,14 @@ const Message = ({mess}) => {
                                     <p>&nbsp;&nbsp;{mess.name}&nbsp;&nbsp;&nbsp;</p> <p className="message-date">{mess.date}</p>
                             </div>
                             <div className="message-text">
+                                {
+                                mess.isFile 
+                                ? <a className="message-file-link" href={mess.message}>{mess.message}</a>
+                                : 
                                 <p>{mess.message}</p>
-                            </div>   
+                                }
+                            </div>
+                            
                             {mess.imageUrl 
                             ? <img className="message-image" src={imageCode} alt="userimage" />
                             : <></>} 
