@@ -22,8 +22,7 @@ const Message = ({mess}) => {
             setImageCode(result)
         })
     }, [mess])
-    const gotoFile = (e, link) => {
-        link = link.substr(20, link.length - 20)
+    const gotoFile = (link) => {
         console.log(link)
         window.location = link
     }
@@ -38,7 +37,7 @@ const Message = ({mess}) => {
                             <div className="message-text">
                                 {
                                 mess.isFile 
-                                ? <p className="message-file-link" onClick={(e) => gotoFile(e, mess.message)}>Файл {mess.message}</p>
+                                ? <p className="message-file-link" onClick={(e) => gotoFile(mess.message)}>Файл {mess.message}</p>
                                 : 
                                 <p>{mess.message}</p>
                                 }

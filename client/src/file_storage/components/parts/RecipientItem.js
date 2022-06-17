@@ -25,7 +25,7 @@ const RecipientItem = ({item, file}) => {
     }
     const sendLink = () => {
         createRoom().then(data => {
-            const link = `chatlog.ru/cloud/file/${file._id}`
+            const link = `http://chatlog.ru/cloud/file/${file._id}`
             localStorage.setItem('file-link', link)
             navigate(`/messages/${data.data.room._id}`)
         })
