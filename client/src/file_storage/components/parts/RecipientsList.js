@@ -12,7 +12,7 @@ const RecipientsList = ({file, recipientsDisplay}) => {
         getRecipients()
     })
     return (
-        <div style={{display: recipientsDisplay}}>
+        <div style={{display: 'none'}}>
             {recipients.map(item => <RecipientItem item={item} file={file} />)}
         </div>
     )
