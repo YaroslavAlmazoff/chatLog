@@ -18,7 +18,7 @@ const RecipientItem = ({item, file}) => {
         await api.get(`/api/createroom/${item._id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        const response = await api.get(`/api/getroom/${item.id}`, {headers: {
+        const response = await api.get(`/api/getroom/${item._id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
         return response.data.room
