@@ -38,6 +38,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
     }
     const makeFriends = async (e) => {
         e.preventDefault()
+        e.stopPropagation()
         setFriendsButtonText('Вы отправили заявку')
         setIsFriends(true)
         //Получение ID пользователей
