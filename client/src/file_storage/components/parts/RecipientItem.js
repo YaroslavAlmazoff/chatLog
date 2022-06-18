@@ -4,6 +4,7 @@ import { useNavigate } from "react-router"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
 import useFiles from "../../../common_hooks/files.hook"
+import '../../styles/recipients-list.css'
 
 
 const RecipientItem = ({item, file}) => {
@@ -44,7 +45,7 @@ const RecipientItem = ({item, file}) => {
         }) 
     }, [item])
     return (
-        <div onClick={sendLink} className="user-item">
+        <div onClick={sendLink} className="user-item recipient-item">
             <div className="user-item-right-side">
                 <div><img className="user-item-img" src={avatarCode} alt="user" /></div>
                 <div className="user-item-info">
