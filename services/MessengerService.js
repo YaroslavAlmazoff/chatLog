@@ -117,6 +117,8 @@ class MessengerService {
         const room1 = await Room.findOne({user1, user2})
         const room2 = await Room.findOne({user1: user2, user2: user1})
 
+        console.log(room1, room2)
+
         if(room1) {
             res.json({room: room1._id})
         } else if(room2) {
