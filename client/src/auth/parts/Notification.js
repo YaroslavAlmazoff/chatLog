@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import '../styles/notifications.css'
 import api from '../api/auth'
 import Visit from './Notifications/Visit'
-import { useParams } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 import Friends from './Notifications/Friends'
 import Simple from './Notifications/SimpleFriends'
 import SimplePosts from './Notifications/SimplePosts'
@@ -12,6 +12,7 @@ import GettingFile from './Notifications/GettingFile'
 
 const Notification = ({id, title, type, from, to, postType, postID, notifications, setNotifications, setUserFriends, setNoticeText, setNoticeDisplay, noticeRef}) => {
     //Уведомление
+    const navigate = useNavigate()
     const auth = useContext(AuthContext)
     //Получаем параметры из get-запроса
     const params = useParams()
@@ -52,6 +53,7 @@ const Notification = ({id, title, type, from, to, postType, postID, notification
     }
     const gettingFile = async () => {
         await api.get(`/api/getsentfile/${id}`)
+        navigate('/cloud')
     }
     return (
         <div className='notification'>

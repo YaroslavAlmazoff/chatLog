@@ -100,6 +100,8 @@ class CloudService {
             if (err) throw err;
             console.log('copyed.');
         });
+        const file = await File.findOne({name: filename, owner: user1})
+        await File.create({name: filename, ext: file.ext, type: file.type, size: file.size, owner: user2, public: false})
         res.json({msg: 'да.'})
     }
 }
