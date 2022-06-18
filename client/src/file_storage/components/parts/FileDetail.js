@@ -9,11 +9,13 @@ import { useNavigate } from 'react-router'
 import useFiles from '../../../common_hooks/files.hook'
 import {useEffect} from 'react'
 import LinkRecipientsList from './LinkRecipientsList'
+import RecipientsList from './RecipientsList'
 
 const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
     const {getFile} = useFiles()
     const [fileCode, setFileCode] = useState('')
+    const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
     useEffect(() => {
     getFile(file).then((data) => {
@@ -64,10 +66,10 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         setDownloadingFile(require(`../../../static/userfiles/${file.owner}/${file.name}`))
     }
     const sendFile = () => {
-        
+        setRecipientsDisplay('block')
     }
     const sendFileLink = () => {
-        setRecipientsDisplay('block')
+        setLinkRecipientsDisplay('block')
     }
     const deleteFile = async () => {
         await api.get(`/api/cloud/delete/${file.name}`, {headers: {
@@ -100,7 +102,8 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 <button onClick={deleteFile} className='button button-red'>Удалить</button>
             </div>
             <FilePreview file={file} fileText={fileText} filePreviewDisplay={filePreviewDisplay} ready={false} fileOpened={false} />
-            <LinkRecipientsList file={file} recipientsDisplay={recipientsDisplay} />
+            <LinkRecipientsList file={file} linkRecipientsDisplay={linkRecipientsDisplay} />
+            <RecipientsList file={file} recipientsDisplay={recipientsDisplay} />
         </div>
     )
 }

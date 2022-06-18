@@ -3,7 +3,7 @@ import api from '../../../auth/api/auth'
 import RecipientItem from "./RecipientItem"
 import '../../styles/recipients-list.css'
 
-const LinkRecipientsList = ({file, recipientsDisplay}) => {
+const RecipientsList = ({file, recipientsDisplay}) => {
     const [recipients, setRecipients] = useState([])
     useEffect(() => {
         const getRecipients = async () => {
@@ -20,4 +20,4 @@ const LinkRecipientsList = ({file, recipientsDisplay}) => {
     )
 }
 
-export default LinkRecipientsList
+export default RecipientsList

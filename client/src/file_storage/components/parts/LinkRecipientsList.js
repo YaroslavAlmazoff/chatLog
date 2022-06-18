@@ -3,7 +3,7 @@ import api from '../../../auth/api/auth'
 import RecipientItem from "./RecipientItem"
 import '../../styles/recipients-list.css'
 
-const LinkRecipientsList = ({file, recipientsDisplay}) => {
+const LinkRecipientsList = ({file, linkRecipientsDisplay}) => {
     const [recipients, setRecipients] = useState([])
     useEffect(() => {
         const getRecipients = async () => {
@@ -13,7 +13,7 @@ const LinkRecipientsList = ({file, recipientsDisplay}) => {
         getRecipients()
     })
     return (
-        <div className="recipients-list" style={{display: recipientsDisplay}}>
+        <div className="recipients-list" style={{display: linkRecipientsDisplay}}>
             <p style={{color: 'white'}}>Выберите, кому отправить ссылку на файл:</p>
             {recipients.map(item => <RecipientItem item={item} file={file} />)}
         </div>

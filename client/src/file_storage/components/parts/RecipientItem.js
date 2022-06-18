@@ -6,7 +6,7 @@ import useFiles from "../../../common_hooks/files.hook"
 import '../../styles/recipients-list.css'
 
 
-const LinkRecipientItem = ({item, file}) => {
+const RecipientItem = ({item, file}) => {
     const [fileStatusText, setFileStatusText] = useState('')
     useEffect(() => {
         console.log(item)
@@ -51,4 +51,4 @@ const LinkRecipientItem = ({item, file}) => {
     )
 }
 
-export default LinkRecipientItem
+export default RecipientItem
