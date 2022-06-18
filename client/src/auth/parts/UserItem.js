@@ -32,7 +32,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         const response = await api.get(`/checkrooms/${id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        console.log(response)
+        console.log(response.data.room)
         if(response.data.room) {
             navigate(`/messages/${response.data.room}`)
             return
