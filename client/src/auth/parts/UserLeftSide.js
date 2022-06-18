@@ -51,24 +51,6 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
         //Создание записи в локальном хранилище браузера о том что пользователь и посетитель его страницы - друзья
         localStorage.setItem(user2, user1)
     }
-    //Удаление из друзей
-    const deleteFriend = async (id) => {
-        //Изменение списка друзей пользователя
-        setUserFriends([...userFriends].filter(el => el._id !== id))
-        //Всплывающая подсказка
-        setNoticeDisplay('block')
-        setNoticeText('Вы удалили этого пользователя из друзей.')
-        noticeRef.current.classList.add('notice-animation')
-        //Получение ID пользователей
-        const user1 = auth.userId
-        const user2 = id
-        //Удаление из друзей
-        const response = await api.delete(`/api/deletefriend/${user2}`, {headers: 
-            {Authorization: `Bearer ${auth.token}`}
-        })
-        localStorage.removeItem('user2')
-        console.log(response)
-    }
     useEffect(() => {
         //Проверка являются ли друзьями пользователь и посетитель его страницы
         const checkFriends = async () => {
@@ -89,9 +71,6 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
         }
         checkFriends()
     }, [params])
-    const gotoFriend = (id) => {
-        navigate(`/user/${id}`)
-    }
     const createRoom = async () => {
         await api.get(`/api/createroom/${params.id}`, {headers: {
             Authorization: `Bearer ${auth.token}`

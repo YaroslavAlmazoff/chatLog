@@ -7,6 +7,8 @@ import useFiles from "../../common_hooks/files.hook"
 
 
 const UserItem = ({name, surname, age, avatarUrl, id}) => {
+    const [friendsButtonText, setFriendsButtonText] = useState('Добавить в друзья')
+    const [isFriends, setIsFriends] = useState(false)
     const auth = useContext(AuthContext)
     //Предпросмотр пользователя на странице со всеми пользователями
     let navigate = useNavigate()
@@ -34,6 +36,26 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         }})
         navigate(`/messages/${response.data.room._id}`)
     }
+    const makeFriends = async () => {
+        setFriendsButtonText('Вы отправили заявку')
+        setIsFriends(true)
+        //Получение ID пользователей
+        const user1 = auth.userId
+        const user2 = id
+        //Проверка есть ли пользователь в друзьях у его посетителя
+        if(localStorage.getItem(user2) === user1) {
+            console.log(localStorage.getItem(user2) === user1)
+            return false
+        }
+        //Отправка заявки в друзья
+        const response = await api.get(`/api/makefriends/${user2}`, {headers: 
+            {Authorization: `Bearer ${auth.token}`}
+        })
+        console.log(response)
+        //Создание записи в локальном хранилище браузера о том что пользователь и посетитель его страницы - друзья
+        localStorage.setItem(user2, user1)
+    }
+    const noop = () => {console.log('тяжелый случай')}
     return (
         <div onClick={() => gotoUser(id)} className="user-item">
             <div className="user-item-right-side">
@@ -45,6 +67,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
             </div>
             <div className="user-item-actions">
                 <button onClick={(e) => createRoom(e)} className="user-item-write-message">Написать сообщение</button>
+                <button onClick={!isFriends ? makeFriends : noop} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
             </div>
 
         </div>
