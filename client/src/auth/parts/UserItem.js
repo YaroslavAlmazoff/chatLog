@@ -57,7 +57,11 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         //Создание записи в локальном хранилище браузера о том что пользователь и посетитель его страницы - друзья
         localStorage.setItem(user2, user1)
     }
-    const noop = (e) => {console.log('тяжелый случай', e)}
+    const noop = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        console.log('тяжелый случай', e)
+    }
     return (
         <div onClick={() => gotoUser(id)} className="user-item">
             <div className="user-item-right-side">
@@ -70,8 +74,8 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
             <div>
                 {id !== auth.userId 
                 ? <div className="user-item-actions">
-                    <button onClick={(e) => createRoom(e)} className="user-item-write-message">Написать сообщение</button>
-                    <button onClick={!isFriends ? (e) => makeFriends(e) : (e) => noop(e)} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
+                    <button onClick={(e) => createRoom(e)} className="user-item-write-message" style={{marginBottom: '5px'}}>Написать сообщение</button>
+                    <button onClick={!isFriends ? (e) => makeFriends(e) : (e) => noop(e)} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white', border: '1px solid rgb(0, 140, 255)'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
                 </div>
                 : <></>
                 }
