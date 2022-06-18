@@ -35,6 +35,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         console.log(response)
         if(response.data.room) {
             navigate(`/messages/${response.data.room}`)
+            return
         } else {
             await api.get(`/api/createroom/${id}`, {headers: {
                 Authorization: `Bearer ${auth.token}`
