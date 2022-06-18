@@ -14,7 +14,7 @@ const UserCenterSide = ({
     //Центральная часть страницы пользователя - список его постов
     return (
         <div className="user-center-side">
-                    <button className="user-add-foto" onClick={gotoCreatePostPage}>Создать новую запись</button>
+                    {isOwner ? <button className="user-add-foto" onClick={gotoCreatePostPage}>Создать новую запись</button> : <></>}
                     <div className="user-videos" style={{display: !userVideos[0] ? 'none': 'block'}}>
                         {!userVideos[0] ? <p className="nothing">У вас нет видео.</p>
                         : userVideos.map(el => <UserVideo
