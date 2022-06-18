@@ -1,5 +1,6 @@
 .recipients-list {
     margin-left: 20px;
+    width: 100%;
 }
 .recipient-item { 
     width: 50%;
