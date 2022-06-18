@@ -16,13 +16,20 @@ const RecipientItem = ({item, file}) => {
     let navigate = useNavigate()
     //Перемещение на страницу пользователя
     const createRoom = async () => {
-        await api.get(`/api/createroom/${item._id}`, {headers: {
+        const response = await api.get(`/api/checkrooms/${item._id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        const response = await api.get(`/api/getroom/${item._id}`, {headers: {
-            Authorization: `Bearer ${auth.token}`
-        }})
-        return response
+        if(response.data.room) {
+            return response
+        } else {
+            await api.get(`/api/createroom/${item._id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+            const response = await api.get(`/api/getroomid/${item._id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+            return response
+        }
     }
     const sendLink = () => {
         createRoom().then(async data => {
@@ -31,7 +38,7 @@ const RecipientItem = ({item, file}) => {
             }})
             const link = `http://chatlog.ru/cloud/file/${file._id}`
             localStorage.setItem('file-link', link)
-            navigate(`/messages/${data.data.room._id}`)
+            navigate(`/messages/${data.data.room}`)
         })
     }
     const {getAvatar} = useFiles()

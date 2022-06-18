@@ -81,5 +81,13 @@ router.get('/checkrooms/:user', auth, (req, res) => {
         console.log(e)
     } 
 })
+router.get('/getroomid/:user2', auth, (req, res) => {
+    try {
+        MessengerService.getRoomId(req, res)
+    } catch(e) {
+        console.log(e)
+    } 
+})
+
 
 module.exports = router

@@ -33,6 +33,16 @@ class MessengerService {
         }
         res.json({room})
     }
+    async getRoomId(req, res) {
+        const user1 = req.user.userId
+        const user2 = req.params.user2
+
+        let room = await Room.findOne({user1, user2})
+        if(!room) {
+            room = await Room.findOne({user1: user2, user2: user1})
+        }
+        res.json({room: room._id})
+    }
     async getRoomById(req, res) {
         const id = req.params.id
         const room = await Room.findById(id)
