@@ -21,8 +21,6 @@ class MessengerService {
         let rooms1 = await Room.find({user1: user})
         let rooms2 = await Room.find({user2: user})
         const rooms = rooms1.concat(rooms2)
-
-        console.log(rooms)
         res.json({rooms})
     }
     async getRoom(req, res) {
@@ -43,14 +41,12 @@ class MessengerService {
     async getMessageStart(req, res) {
         const room = req.params.room
         const messages = await Message.find({room})
-        console.log(messages)
         res.json({messages})
     }
     async getMessage(req, res) {
         emitter.once('newMessage', async (message) => {
             const room = req.params.room
             const messages = await Message.find({room})
-            console.log(messages)
             res.json({messages})
         })
     }
@@ -94,19 +90,15 @@ class MessengerService {
         if(!messages.length) {
             return 
         }
-        console.log(messages)
         const isNotReaded = messages[messages.length - 1].isNotReaded
-        console.log(isNotReaded)
         res.json({isNotReaded})
     }
     async read(req, res) {
         const room = req.params.id
         const messages = await Message.find({room})
-        console.log(messages)
         if(!messages.length) {
             return
         }
-        console.log(messages[messages.length - 1])
         await Message.findByIdAndUpdate(messages[messages.length - 1], {isNotReaded: false})
         res.json({msg: 'success'})
     }
