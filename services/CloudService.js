@@ -93,8 +93,8 @@ class CloudService {
         const user1 = notification.from
         const user2 = notification.to
         const filename = notification.postID
-        const from = path.resolve('..', 'userfiles', user1, filename)
-        const to = path.resolve('..', 'userfiles', user2, filename)
+        const from = `../userfiles/${user1}/${filename}`
+        const to = `../userfiles/${user2}/${filename}`
         console.log(from, to)
         fs.copyFile(from, to, (err) => {
             if (err) throw err;
