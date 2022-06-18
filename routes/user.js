@@ -151,10 +151,12 @@ router.get('/visitvideo/:postid', auth, (req, res) => {
         console.log(e)
     }
 })
-
-
 router.get('/news', auth, (req, res) => {
-    NewsService.getNews(req, res)
+    try {
+        NewsService.getNews(req, res)
+    } catch(e) {
+        console.log(e)
+    } 
 })
 
 module.exports = router

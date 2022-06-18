@@ -28,13 +28,22 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
     }, [avatarUrl])
     const createRoom = async (e) => {
         e.preventDefault()
-        await api.get(`/api/createroom/${id}`, {headers: {
+        e.stopPropagation()
+        const response = await api.get(`/checkrooms/${id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        const response = await api.get(`/api/getroom/${id}`, {headers: {
-            Authorization: `Bearer ${auth.token}`
-        }})
-        navigate(`/messages/${response.data.room._id}`)
+        console.log(response)
+        if(response.data.room) {
+            navigate(`/messages/${response.data.room}`)
+        } else {
+            await api.get(`/api/createroom/${id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+            const response = await api.get(`/api/getroom/${id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+            navigate(`/messages/${response.data.room._id}`)
+        }
     }
     const makeFriends = async (e) => {
         e.preventDefault()

@@ -110,6 +110,21 @@ class MessengerService {
         await Message.findByIdAndUpdate(messages[messages.length - 1], {isNotReaded: false})
         res.json({msg: 'success'})
     }
+    async checkRooms(req, res) {
+        const user1 = req.user.userId
+        const user2 = req.params.user
+
+        const room1 = await Room.findOne({user1, user2})
+        const room2 = await Room.findOne({user1: user2, user2: user1})
+
+        if(room1) {
+            res.json({room: room1._id})
+        } else if(room2) {
+            res.json({room: room2._id})
+        } else {
+            res.json({room: null})
+        }
+    }
 }
 
 module.exports = new MessengerService()

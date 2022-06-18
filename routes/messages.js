@@ -74,5 +74,12 @@ router.get('/read/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/checkrooms/:user', auth, (req, res) => {
+    try {
+        MessengerService.checkRooms(req, res)
+    } catch(e) {
+        console.log(e)
+    } 
+})
 
 module.exports = router
