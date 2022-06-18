@@ -36,7 +36,8 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         }})
         navigate(`/messages/${response.data.room._id}`)
     }
-    const makeFriends = async () => {
+    const makeFriends = async (e) => {
+        e.preventDefault()
         setFriendsButtonText('Вы отправили заявку')
         setIsFriends(true)
         //Получение ID пользователей
@@ -55,7 +56,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         //Создание записи в локальном хранилище браузера о том что пользователь и посетитель его страницы - друзья
         localStorage.setItem(user2, user1)
     }
-    const noop = () => {console.log('тяжелый случай')}
+    const noop = (e) => {console.log('тяжелый случай', e)}
     return (
         <div onClick={() => gotoUser(id)} className="user-item">
             <div className="user-item-right-side">
@@ -67,7 +68,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
             </div>
             <div className="user-item-actions">
                 <button onClick={(e) => createRoom(e)} className="user-item-write-message">Написать сообщение</button>
-                <button onClick={!isFriends ? makeFriends : noop} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
+                <button onClick={!isFriends ? (e) => makeFriends(e) : (e) => noop(e)} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
             </div>
 
         </div>
