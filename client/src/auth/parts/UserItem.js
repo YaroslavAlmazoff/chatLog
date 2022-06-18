@@ -66,9 +66,14 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
                     <p className="user-item-age">{age}</p>
                 </div>
             </div>
-            <div className="user-item-actions">
-                <button onClick={(e) => createRoom(e)} className="user-item-write-message">Написать сообщение</button>
-                <button onClick={!isFriends ? (e) => makeFriends(e) : (e) => noop(e)} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
+            <div>
+                {id !== auth.userId 
+                ? <div className="user-item-actions">
+                    <button onClick={(e) => createRoom(e)} className="user-item-write-message">Написать сообщение</button>
+                    <button onClick={!isFriends ? (e) => makeFriends(e) : (e) => noop(e)} className="user-item-write-message" style={isFriends ? {color: 'rgb(0, 140, 255)', backgroundColor: 'white'} : {color: 'white', backgroundColor: 'rgb(0, 140, 255)'}}>Добавить в друзья</button>
+                </div>
+                : <></>
+                }
             </div>
 
         </div>
