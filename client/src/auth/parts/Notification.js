@@ -50,8 +50,8 @@ const Notification = ({id, title, type, from, to, postType, postID, notification
         //Изменение списка друзей пользователя
         setUserFriends(friends)
     }
-    const gettingFile = (id) => {
-        await api.get()
+    const gettingFile = async () => {
+        await api.get(`/api/getsentfile/${id}`)
     }
     return (
         <div className='notification'>
