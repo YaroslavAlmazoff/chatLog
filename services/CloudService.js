@@ -2,6 +2,9 @@ const File = require('../models/File')
 const path = require('path')
 const fs = require('fs')
 const textract = require('textract')
+const NotificationService = require('./NotificationService')
+const User = require('../models/User')
+const Notification = require('../models/Notification')
 
 //Сервис облачного хранилища
 class CloudService {
@@ -72,6 +75,28 @@ class CloudService {
         const owner = req.user.userId
         const name = req.params.filename
         await File.findOneAndUpdate({owner, name}, {public: true})
+        res.json({msg: 'да.'})
+    }
+    async sendFile(req, res) {
+        const user1 = req.user.userId
+        const user2 = req.params.user
+        const fullUser1 = await User.findById(user1)
+        const name = fullUser1.name
+        const surname = fullUser1.surname
+        NotificationService.create(user1, user2, `${name} ${surname} хочет отправить вам файл ${req.params.filename} Получить файл?`, 'file', 'cloud', req.params.filename)
+        res.json({msg: 'да.'})
+    }
+    async getSentFile(req, res) {
+        const id = req.params.id
+        const notification = await Notification.findById(id)
+
+        const user1 = notification.from
+        const user2 = notification.to
+        const filename = notification.postID
+        fs.copyFile(path.resolve('..', 'userfiles', user1, filename), path.resolve('..', 'userfiles', user2, filename), (err) => {
+            if (err) throw err;
+            console.log('copyed.');
+        });
         res.json({msg: 'да.'})
     }
 }

@@ -8,7 +8,7 @@ import FilePreview from './FilePreview'
 import { useNavigate } from 'react-router'
 import useFiles from '../../../common_hooks/files.hook'
 import {useEffect} from 'react'
-import RecipientsList from './RecipientsList'
+import LinkRecipientsList from './LinkRecipientsList'
 
 const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
@@ -100,7 +100,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 <button onClick={deleteFile} className='button button-red'>Удалить</button>
             </div>
             <FilePreview file={file} fileText={fileText} filePreviewDisplay={filePreviewDisplay} ready={false} fileOpened={false} />
-            <RecipientsList file={file} recipientsDisplay={recipientsDisplay} />
+            <LinkRecipientsList file={file} recipientsDisplay={recipientsDisplay} />
         </div>
     )
 }

@@ -52,6 +52,20 @@ router.get('/publicfile/:filename', auth, (req, res) => {
         console.log(e)
     }
 })
+router.get('/sendfile/:user/:filename', auth, (req, res) => {
+    try { 
+        CloudService.sendFile(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/getsentfile/:id', (req, res) => {
+    try { 
+        CloudService.getSentFile(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 //Создание роутера для авторизации пользователя

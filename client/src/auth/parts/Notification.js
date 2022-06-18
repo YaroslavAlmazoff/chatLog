@@ -8,8 +8,9 @@ import Simple from './Notifications/SimpleFriends'
 import SimplePosts from './Notifications/SimplePosts'
 import PostVisit from './Notifications/PostVisit'
 import { AuthContext } from '../../context/AuthContext'
+import GettingFile from './Notifications/GettingFile'
 
-const Notification = ({title, type, from, to, postType, postID, notifications, setNotifications, setUserFriends, setNoticeText, setNoticeDisplay, noticeRef}) => {
+const Notification = ({id, title, type, from, to, postType, postID, notifications, setNotifications, setUserFriends, setNoticeText, setNoticeDisplay, noticeRef}) => {
     //Уведомление
     const auth = useContext(AuthContext)
     //Получаем параметры из get-запроса
@@ -49,6 +50,9 @@ const Notification = ({title, type, from, to, postType, postID, notifications, s
         //Изменение списка друзей пользователя
         setUserFriends(friends)
     }
+    const gettingFile = (id) => {
+        await api.get()
+    }
     return (
         <div className='notification'>
             {type === 'friends'
@@ -65,6 +69,9 @@ const Notification = ({title, type, from, to, postType, postID, notifications, s
             : <></>}
             {type === 'visitpost'
             ? <PostVisit title={title} postType={postType} postID={postID}/>
+            : <></>}
+            {type === 'file'
+            ? <GettingFile title={title} gettingFile={gettingFile} id={id} />
             : <></>}
         </div>
     )
