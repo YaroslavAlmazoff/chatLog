@@ -29,7 +29,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
     const createRoom = async (e) => {
         e.preventDefault()
         e.stopPropagation()
-        const response = await api.get(`/checkrooms/${id}`, {headers: {
+        const response = await api.get(`/api/checkrooms/${id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
         console.log(response.data.room)
