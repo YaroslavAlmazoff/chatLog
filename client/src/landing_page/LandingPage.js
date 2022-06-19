@@ -8,6 +8,8 @@ const LandingPage = () => {
 
     return (
         <div className='landing_page'>
+            <img className='landing_page_icon_1' src={require('./img/landing_page_image_3.png')} alt="img" />
+            <img className='landing_page_icon_2' src={require('./img/landing_page_image_4.png')} alt="img" />
             <h1 className='landing_page_title'>Социальная сеть Chatlog.ru</h1>
             <hr style={{width: '25%', borderColor: 'rgb(0, 140, 255)', backgroundColor: 'rgb(0, 140, 255)'}} />
             <ul className='landing_page_list'>

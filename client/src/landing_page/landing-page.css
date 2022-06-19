@@ -5,6 +5,14 @@ body {
     scrollbar-width: 0px;
     color: black;
 }
+.landing_page_icon_1 {
+    margin-left: 20%;
+    width: 150px;
+}
+.landing_page_icon_1 {
+    margin-left: 75%;
+    width: 150px;
+}
 .landing_page_title {
     color: black;
 }
