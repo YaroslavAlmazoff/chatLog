@@ -9,7 +9,7 @@ const LandingPage = () => {
     return (
         <div className='landing_page'>
             <h1 className='landing_page_title'>Социальная сеть Chatlog.ru</h1>
-            <hr />
+            <hr style={{width: '25%', borderColor: 'rgb(0, 140, 255)'}} />
             <ul className='landing_page_list'>
                 <li className='landing_page_list_item'>Новости</li>
                 <li className='landing_page_list_item'>Мессенджер</li>
@@ -17,7 +17,7 @@ const LandingPage = () => {
                 <li className='landing_page_list_item'>Объявления</li>
                 <li className='landing_page_list_item'>Реклама</li>
             </ul>
-            <hr />
+            <hr style={{width: '10%', borderColor: 'rgb(0, 140, 255)'}} />
             <div className='landing_page_actions'>
                 <Link className='landing_page_action' to={<Register />}>Зарегистрироваться</Link>
                 <Link className='landing_page_action' to={<Login />}>Войти</Link>
@@ -27,7 +27,7 @@ const LandingPage = () => {
             социальная сеть. Здесь можно вести свой блог, заводить друзей, 
             переписываться, обмениваться файлами, в удобной форме создавать
              и выкладывать объявления и рекламу.</p>
-            <hr />
+            <hr style={{borderColor: 'rgb(0, 140, 255)'}} />
             <p className='landing_page_support'>Если возникла проблема с 
             работоспособностью соцсети, вы нашли баг или ошибку, пожалуйста,
             сообщите об этом <Link to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
