@@ -12,7 +12,7 @@ const Main = () => {
         console.log(id)
         if(!id) {
             if(!localStorage.getItem('registered')) {
-                navigate('/register')
+                navigate('/greeting')
             } else {
                 navigate('/login')
             }

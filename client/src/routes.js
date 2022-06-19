@@ -26,7 +26,8 @@ export const useRoutes = (isAuthenticated) => {
     //Кастомный хук для маршрутизации
     return (
         <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/greeting" element={<LandingPage />} />
             <Route exact path="/cloud" element={<FileStorage />} />
             <Route exact path="/cloud/file/:id" element={<File />} />
             <Route path="/home" element={<HomePage/>} />
