@@ -19,8 +19,8 @@ const LandingPage = () => {
             </ul>
             <hr />
             <div className='landing_page_actions'>
-                <Link to={<Register />}>Зарегистрироваться</Link>
-                <Link to={<Login />}>Войти</Link>
+                <Link className='landing_page_action' to={<Register />}>Зарегистрироваться</Link>
+                <Link className='landing_page_action' to={<Login />}>Войти</Link>
             </div>
             <img className='landing_page_image' src={require('./img/landing_page_image_1.jpg')} alt='landing page' />
             <p className='landing_page_text'>Chatlog.ru - это уютная и безопасная 
