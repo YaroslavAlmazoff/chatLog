@@ -17,3 +17,27 @@ body::-webkit-scrollbar-thumb {
   border-radius: 11px;       /* закругления плашки */
   border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
 }
+
+body::-moz-scrollbar {
+  width: 20px;               /* ширина scrollbar */
+}
+body::-moz-scrollbar-track {
+  background: transparent;        /* цвет дорожки */
+}
+body::-moz-scrollbar-thumb {
+  background-color: rgb(20, 20, 32);    /* цвет плашки */
+  border-radius: 11px;       /* закругления плашки */
+  border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+body::-o-scrollbar {
+  width: 20px;               /* ширина scrollbar */
+}
+body::-o-scrollbar-track {
+  background: transparent;        /* цвет дорожки */
+}
+body::-o-scrollbar-thumb {
+  background-color: rgb(20, 20, 32);    /* цвет плашки */
+  border-radius: 11px;       /* закругления плашки */
+  border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}

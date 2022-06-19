@@ -63,6 +63,30 @@
     border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
 }
 
+.room-window::-moz-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.room-window::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.room-window::-moz-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.room-window::-o-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.room-window::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.room-window::-o-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
 .messages {
     margin-top: 60px;
     display: flex;

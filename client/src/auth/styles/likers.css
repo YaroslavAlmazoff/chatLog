@@ -17,6 +17,8 @@
     cursor: pointer;
 }
 
-.likers::-webkit-scrollbar { width: 0; }
-.likers::-o-scrollbar { width: 0; }
-.likers::-moz-scrollbar { width: 0; }
+.likers::-webkit-scrollbar-thumb { width: 0; }
+.likers::-o-scrollbar-thumb { width: 0; }
+.likers::-moz-scrollbar-thumb { width: 0; }
+.likers::-ms-scrollbar-thumb {width: 0;}
+
