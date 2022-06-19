@@ -9,6 +9,7 @@ const Main = () => {
     useEffect(() => {
         //Перенаправление пользователя в зависимости от того в аккаунте он или нет
         const id = auth.userId
+        console.log(id)
         if(!id) {
             if(!localStorage.getItem('registered')) {
                 navigate('/register')
