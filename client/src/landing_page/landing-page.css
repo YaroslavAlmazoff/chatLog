@@ -27,3 +27,8 @@ body {
     border-radius: 12px;
     margin: 20px;
 }
+.landing_page_support_link {
+    color:rgb(0, 140, 255);
+    text-decoration: none;
+    font-size: 10pt;
+}

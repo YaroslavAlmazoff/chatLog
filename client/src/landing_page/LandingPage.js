@@ -30,7 +30,7 @@ const LandingPage = () => {
             <hr style={{borderColor: 'rgb(0, 140, 255)'}} />
             <p className='landing_page_support'>Если возникла проблема с 
             работоспособностью соцсети, вы нашли баг или ошибку, пожалуйста,
-            сообщите об этом <Link to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
+            сообщите об этом <Link className='landing_page_support_link' to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
             </p>
         </div>
     )
