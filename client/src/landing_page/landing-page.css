@@ -7,10 +7,12 @@ body {
 }
 .landing_page_icon_1 {
     margin-left: 20%;
+    margin-top: 50px;
     width: 150px;
 }
 .landing_page_icon_2 {
     margin-left: 75%;
+    margin-top: 50px;
     width: 150px;
 }
 .landing_page_title {
