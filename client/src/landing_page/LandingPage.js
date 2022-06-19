@@ -22,7 +22,9 @@ const LandingPage = () => {
                 <Link className='landing_page_action' to={<Register />}>Зарегистрироваться</Link>
                 <Link className='landing_page_action' to={<Login />}>Войти</Link>
             </div>
-            <img className='landing_page_image' src={require('./img/landing_page_image_2.jpg')} alt='landing page' />
+            <div className='landing_page_image_wrapper'>
+                <img className='landing_page_image' src={require('./img/landing_page_image_2.jpg')} alt='landing page' />
+            </div>
             <p className='landing_page_text'>Chatlog.ru - это уютная и безопасная 
             социальная сеть. Здесь можно вести свой блог, заводить друзей, 
             переписываться, обмениваться файлами, в удобной форме создавать
