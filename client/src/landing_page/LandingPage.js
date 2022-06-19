@@ -30,10 +30,12 @@ const LandingPage = () => {
             переписываться, обмениваться файлами, в удобной форме создавать
              и выкладывать объявления и рекламу.</p>
             <hr style={{borderColor: 'rgb(0, 140, 255)', backgroundColor: 'rgb(0, 140, 255)'}} />
-            <p className='landing_page_support'>Если возникла проблема с 
-            работоспособностью соцсети, вы нашли баг или ошибку, пожалуйста,
-            сообщите об этом <Link className='landing_page_support_link' to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
-            </p>
+            <div className='landing_page_support'>
+                <p>Если возникла проблема с 
+                работоспособностью соцсети, вы нашли баг или ошибку, пожалуйста,
+                сообщите об этом <Link className='landing_page_support_link' to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
+                </p>
+            </div>
         </div>
     )
 }
