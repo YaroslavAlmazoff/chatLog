@@ -1,6 +1,12 @@
 .header::-webkit-scrollbar {
     width: 0px;               /* ширина scrollbar */
 }
+.header::-o-scrollbar {
+    width: 0px;               /* ширина scrollbar */
+}
+.header::-moz-scrollbar {
+    width: 0px;               /* ширина scrollbar */
+}
 .links {
     display: flex;
     justify-content: space-between;

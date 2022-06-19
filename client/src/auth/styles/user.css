@@ -255,6 +255,8 @@ input[type=file] {
     margin: 5px;
 }
 .user-videos::-webkit-scrollbar { width: 5px; }
+.user-videos::-o-scrollbar { width: 5px; }
+.user-videos::-moz-scrollbar { width: 5px; }
 
 .user-posts {
     height: 230px;
@@ -276,6 +278,30 @@ input[type=file] {
     border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
 }
 
+.user-posts::-o-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-posts::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-posts::-o-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-posts::-moz-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-posts::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-posts::-moz-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
 .user-videos::-webkit-scrollbar {
     width: 5px;               /* ширина scrollbar */
 }
@@ -283,6 +309,30 @@ input[type=file] {
     background: transparent;        /* цвет дорожки */
 }
 .user-videos::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-videos::-o-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-videos::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-videos::-o-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-videos::-moz-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-videos::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-videos::-moz-scrollbar-thumb {
     background-color: rgb(0, 140, 255);    /* цвет плашки */
     border-radius: 11px;       /* закругления плашки */
     border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
@@ -301,6 +351,30 @@ input[type=file] {
     background: transparent;        /* цвет дорожки */
 }
 .user-fotos::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-fotos::-o-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-fotos::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-fotos::-o-scrollbar-thumb {
+    background-color: rgb(0, 140, 255);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.user-fotos::-moz-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.user-fotos::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.user-fotos::-moz-scrollbar-thumb {
     background-color: rgb(0, 140, 255);    /* цвет плашки */
     border-radius: 11px;       /* закругления плашки */
     border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */

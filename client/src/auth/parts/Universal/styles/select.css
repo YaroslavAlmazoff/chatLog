@@ -35,7 +35,29 @@
 .select-css::-webkit-scrollbar-track {
     background: transparent;        /* цвет дорожки */
 }
-.select-css::-webkit-scrollbar-thumb {
+.select-css::-o-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+.select-css::-o-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.select-css::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.select-css::-o-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+.select-css::-moz-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.select-css::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.select-css::-moz-scrollbar-thumb {
     background-color: rgb(20, 20, 32);    /* цвет плашки */
     border-radius: 11px;       /* закругления плашки */
     border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */

@@ -18,3 +18,5 @@
 }
 
 .likers::-webkit-scrollbar { width: 0; }
+.likers::-o-scrollbar { width: 0; }
+.likers::-moz-scrollbar { width: 0; }
