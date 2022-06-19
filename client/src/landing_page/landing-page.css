@@ -2,7 +2,7 @@ body {
     background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 100;
-    scrollbar-width: 0px;
+    scrollbar-width: none;
     color: black;
 }
 .landing_page_icon_1 {
@@ -42,7 +42,7 @@ body {
     width: 100%;
     height: 400px;
     overflow-y: scroll;
-    scrollbar-width: 0px;
+    scrollbar-width: none;
 }
 .landing_page_image_wrapper::-webkit-scrollbar-thumb {
     width: 0px;
