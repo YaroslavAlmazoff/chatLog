@@ -9,7 +9,7 @@ const LandingPage = () => {
     return (
         <div className='landing_page'>
             <h1 className='landing_page_title'>Социальная сеть Chatlog.ru</h1>
-            <hr style={{width: '25%', borderColor: 'rgb(0, 140, 255)'}} />
+            <hr style={{width: '25%', borderColor: 'rgb(0, 140, 255)', backgroundColor: 'rgb(0, 140, 255)'}} />
             <ul className='landing_page_list'>
                 <li className='landing_page_list_item'>Новости</li>
                 <li className='landing_page_list_item'>Мессенджер</li>
