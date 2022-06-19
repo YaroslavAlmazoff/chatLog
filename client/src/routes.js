@@ -19,13 +19,14 @@ import File from "./file_storage/components/pages/File"
 import CreatePost from "./auth/CreatePost"
 import Notifications from "./auth/parts/Mobile/Notifications"
 import CreateFoto from "./auth/parts/Mobile/CreateFoto"
+import LandingPage from "./landing_page/LandingPage"
 
 
 export const useRoutes = (isAuthenticated) => {
     //Кастомный хук для маршрутизации
     return (
         <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<LandingPage />} />
             <Route exact path="/cloud" element={<FileStorage />} />
             <Route exact path="/cloud/file/:id" element={<File />} />
             <Route path="/home" element={<HomePage/>} />
