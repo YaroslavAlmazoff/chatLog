@@ -5,6 +5,9 @@ body {
     scrollbar-width: 0px;
     color: black;
 }
+.landing_page_title {
+    color: black;
+}
 .landing_page_list {
     list-style: inside;
 }
