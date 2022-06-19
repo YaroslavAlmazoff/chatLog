@@ -4,6 +4,7 @@
     position: absolute;
     -ms-overflow-style: none;
     overflow: scroll;
+    scrollbar-width: none;
     cursor: pointer;
     margin-left: 60px;
     margin-top: 20px;
@@ -16,9 +17,3 @@
     margin-right: 5px;
     cursor: pointer;
 }
-
-.likers::-webkit-scrollbar-thumb { width: 0; }
-.likers::-o-scrollbar-thumb { width: 0; }
-.likers::-moz-scrollbar-thumb { width: 0; }
-.likers::-ms-scrollbar-thumb {width: 0;}
-
