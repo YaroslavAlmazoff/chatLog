@@ -43,3 +43,13 @@ body {
     text-decoration: none;
     font-size: 10pt;
 }
+.landing_page_support {
+    background-color:rgb(0, 140, 255);
+    color: white;
+}
+.landing_page_support_link {
+    color: rgb(0, 140, 255);
+    border-radius: 11px;
+    padding: 5px;
+    background-color: white;
+}
