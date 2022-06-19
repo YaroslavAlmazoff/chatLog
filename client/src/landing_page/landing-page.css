@@ -53,6 +53,16 @@ body {
 .landing_page_image_wrapper::-moz-scrollbar-thumb {
     width: 0px;
 }
+
+.landing_page_image_wrapper::-webkit-scrollbar-track {
+    width: 0px;
+}
+.landing_page_image_wrapper::-o-scrollbar-track {
+    width: 0px;
+}
+.landing_page_image_wrapper::-moz-scrollbar-track {
+    width: 0px;
+}
 .landing_page_image {
     width: 100%;
 }
