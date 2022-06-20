@@ -8,11 +8,11 @@ const Admin = () => {
 
     useEffect(() => {
         const getVisits = async () => {
-            const response = await api.get('/admin/visits')
+            const response = await api.get('/api/admin/visits')
             setVisits(response.data.visits)
         } 
         const getMessages = async () => {
-            const response = await api.get('/admin/messages')
+            const response = await api.get('/api/admin/messages')
             setMessages(response.data.messages)
         }
         getMessages()
