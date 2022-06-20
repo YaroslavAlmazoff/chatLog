@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import './landing-page.css'
 import Register from '../auth/Register'
 import Login from '../auth/Login'
-import SupportPage from './SupportPage'
 
 const LandingPage = () => {
 
@@ -33,7 +32,7 @@ const LandingPage = () => {
             <div className='landing_page_support'>
                 <p>Если возникла проблема с 
                 работоспособностью соцсети, вы нашли баг или ошибку, пожалуйста,
-                сообщите об этом <Link className='landing_page_support_link' to={<SupportPage />}>нам</Link>. Мы быстро исправим проблему.
+                сообщите об этом <Link className='landing_page_support_link' to='/support'>нам</Link>. Мы быстро исправим проблему.
                 </p>
             </div>
         </div>
