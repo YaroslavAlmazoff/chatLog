@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
 .landing_page_list {
     list-style: inside;
     margin: 0 auto;
+    margin-left: 40%;
 }
 .landing_page_list_item {
     display: inline-block;
