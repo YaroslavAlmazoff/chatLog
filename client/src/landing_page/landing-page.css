@@ -36,7 +36,7 @@ body::-webkit-scrollbar {
 }
 .landing_page_list_item {
     display: inline-block;
-    font-size: 16pt;
+    font-size: 15pt;
     margin: 10px;
 }
 .landing_page_actions {
