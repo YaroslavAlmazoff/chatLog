@@ -19,8 +19,8 @@ const LandingPage = () => {
             </ul>
             <hr style={{width: '10%', borderColor: 'rgb(0, 140, 255)'}} />
             <div className='landing_page_actions'>
-                <Link className='landing_page_action' to={<Register />}>Зарегистрироваться</Link>
-                <Link className='landing_page_action' to={<Login />}>Войти</Link>
+                <Link className='landing_page_action' to='/register'>Зарегистрироваться</Link>
+                <Link className='landing_page_action' to='/login'>Войти</Link>
             </div>
             <div className='landing_page_image_wrapper'>
                 <img className='landing_page_image' src={require('./img/landing_page_image_2.jpg')} alt='landing page' />
