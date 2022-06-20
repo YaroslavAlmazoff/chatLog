@@ -5,7 +5,7 @@ import './support-page.css'
 const SupportPage = () => {
     const [message, setMessage] = useState('Ваше сообщение...')
     const sendMessage = async () => {
-        const response = await api.post('/api/support')
+        const response = await api.post('/api/admin/sendmessage', {message})
         console.log(response)
     }
     return (

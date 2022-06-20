@@ -12,6 +12,7 @@ const userRouter = require('./routes/user')
 const messagesRouter = require('./routes/messages')
 const cloudRouter = require('./routes/cloud')
 const filesRouter = require('./routes/files')
+const adminRouter = require('./routes/admin')
 //Создание сервера
 const app = express()
 //Подключение необходимых middlewares 
@@ -26,6 +27,7 @@ app.use('/api', userRouter)
 app.use('/api', messagesRouter)
 app.use('/api/cloud', cloudRouter)
 app.use('/api/files', filesRouter)
+app.use('/api/admin', adminRouter)
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 app.get('*', (req, res) => {
