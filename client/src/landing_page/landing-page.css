@@ -32,6 +32,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .landing_page_list_item {
     display: inline-block;
