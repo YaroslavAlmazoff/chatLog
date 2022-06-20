@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import api from '../auth/api/auth'
 import Message from "./Message"
+import './admin.css'
 
 const Admin = () => {
     const [messages, setMessages] = useState([])
