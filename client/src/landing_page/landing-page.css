@@ -8,17 +8,21 @@
 body::-webkit-scrollbar {
     width: 0px;
 }
-.landing_page_icon_1 {
-    position: absolute;
-    margin-left: 27%;
-    margin-top: 50px;
-    width: 150px;
+@media screen and (width > 500px) {
+    .landing_page_icon_1 {
+        position: absolute;
+        margin-left: 27%;
+        margin-top: 50px;
+        width: 150px;
+    }
 }
-.landing_page_icon_2 {
-    position: absolute;
-    margin-left: 90%;
-    margin-top: 50px;
-    width: 150px;
+@media screen and (width < 500px) {
+    .landing_page_icon_1 {
+        position: absolute;
+        margin-left: 25%;
+        margin-top: 40px;
+        width: 80px;
+    }
 }
 .landing_page_title {
     color: black;
