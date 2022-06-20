@@ -23,7 +23,9 @@ const Admin = () => {
     return (
         <div className="admin">
             <div className="admin-messages">
-                {messages.map(item => <Message item={item} />)}
+                <div>
+                    {messages.map(item => <Message item={item} />)}
+                </div>
             </div>
             <div className="admin-visits">
                 <h1 className="admin-visits-text">{visits} человек послетило ChatLog.ru за все время 
