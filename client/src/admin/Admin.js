@@ -11,6 +11,7 @@ const Admin = () => {
     const [visits, setVisits] = useState(0)
 
     useEffect(() => {
+        console.log(auth.userId === null || auth.userId !== '628e5aab0153706a3e18fe79')
         if(auth.userId === null || auth.userId !== '628e5aab0153706a3e18fe79') {
             navigate('/')
         }
