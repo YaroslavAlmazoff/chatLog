@@ -28,8 +28,8 @@ const Admin = () => {
                 </div>
             </div>
             <div className="admin-visits">
-                <h1 className="admin-visits-text">{visits} человек послетило ChatLog.ru за все время 
-                существования этой чудесной социальной сети.</h1>
+                <h3 className="admin-visits-text">{visits} человек послетило ChatLog.ru за все время 
+                существования этой чудесной социальной сети.</h3>
             </div>
         </div>
     )
