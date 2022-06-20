@@ -17,3 +17,7 @@
     margin-right: 5px;
     cursor: pointer;
 }
+
+.likers::-webkit-scrollbar {
+    width: 0;
+}
