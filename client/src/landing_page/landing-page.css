@@ -5,6 +5,9 @@ body {
     scrollbar-width: none;
     color: black;
 }
+body::-webkit-scrollbar {
+    width: 0px;
+}
 .landing_page_icon_1 {
     position: absolute;
     margin-left: 27%;
