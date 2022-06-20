@@ -18,11 +18,11 @@
 @media screen and (width < 500px) {
     .support_page {
         margin: 0 auto;
-        margin-top: 2vh;
+        margin-top: 15vh;
         width: 100%;
     }
     .support_page_area {
-        width: 98%;
+        width: 95%;
         height: 5vh;
         border: 1px solid rgb(0, 255, 166);
         outline: none;
