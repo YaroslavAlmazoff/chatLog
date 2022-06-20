@@ -1,19 +1,38 @@
-.admin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media screen and (width > 500px) {
+    .admin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .admin-messages {
+        width: 30%;
+        height: 100%;
+        background-color: rgb(64, 64, 64);
+        overflow-y: scroll;
+    }
+    .admin-visits {
+        width: 70%;
+    }
 }
-.admin-messages {
-    width: 30%;
-    height: 100%;
-    background-color: rgb(64, 64, 64);
-    overflow-y: scroll;
+@media screen and (width < 500px) {
+    .admin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .admin-messages {
+        width: 90%;
+        height: 100%;
+        background-color: rgb(64, 64, 64);
+        overflow-y: scroll;
+    }
+    .admin-visits {
+        width: 90%;
+    }
 }
 .admin-messages::-webkit-scrollbar {
     width: 0;
-}
-.admin-visits {
-    width: 70%;
 }
 .admin-message {
     background-color: aquamarine;
