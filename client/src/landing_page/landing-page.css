@@ -15,6 +15,9 @@ body::-webkit-scrollbar {
         margin-top: 50px;
         width: 150px;
     }
+    .landing_page_list {
+        list-style: inside;
+    }
 }
 @media screen and (width < 500px) {
     .landing_page_icon_1 {
@@ -23,18 +26,18 @@ body::-webkit-scrollbar {
         margin-top: 40px;
         width: 80px;
     }
+    .landing_page_list {
+        list-style: inside;
+        margin-left: -10%;
+    }
 }
 .landing_page_title {
     color: black;
 }
-.landing_page_list {
-    list-style: inside;
-    margin-left: 10%;
-}
 .landing_page_list_item {
     display: inline-block;
     font-size: 15pt;
-    margin: -10px;
+    margin: 10px;
 }
 .landing_page_actions {
     margin-top: 20px;
