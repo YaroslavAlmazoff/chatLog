@@ -29,6 +29,9 @@ body::-webkit-scrollbar {
 }
 .landing_page_list {
     list-style: inside;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .landing_page_list_item {
     display: inline-block;
