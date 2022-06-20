@@ -9,7 +9,7 @@ router.post('/sendmessage', (req, res) => {
         console.log(e)
     }
 })
-router.get('/getmessages', (req, res) => {
+router.get('/messages', (req, res) => {
     try {
         AdminService.getMessages(req, res)
     } catch (e) {
@@ -23,7 +23,7 @@ router.get('/setvisit', (req, res) => {
         console.log(e)
     }
 })
-router.get('/getvisits', (req, res) => {
+router.get('/visits', (req, res) => {
     try {
         AdminService.getVisits(req, res)
     } catch (e) {
