@@ -62,7 +62,7 @@
 }
 @media screen and (width < 500px) {
     .logo {
-        color: rgb(0, 140, 255);
+        color: black;
         font-weight: bold;
         font-family: Cosmic;
         margin: 15px;
@@ -70,7 +70,7 @@
     .header {
         display: flex;
         height: 50px;
-        background-color: rgba(0, 140, 255, 0.326);
+        background-color: rgba(0, 140, 255);
         overflow-x: scroll;
         z-index: 1;
     }
