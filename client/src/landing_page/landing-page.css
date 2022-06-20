@@ -44,13 +44,13 @@ body {
     overflow-y: scroll;
     scrollbar-width: none;
 }
-.landing_page_image_wrapper::-webkit-scrollbar-thumb {
+.landing_page_image_wrapper::-webkit-scrollbar {
     width: 0px;
 }
-.landing_page_image_wrapper::-o-scrollbar-thumb {
+.landing_page_image_wrapper::-o-scrollbar {
     width: 0px;
 }
-.landing_page_image_wrapper::-moz-scrollbar-thumb {
+.landing_page_image_wrapper::-moz-scrollbar {
     width: 0px;
 }
 
