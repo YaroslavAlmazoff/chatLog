@@ -22,7 +22,8 @@
         width: 100%;
     }
     .support_page_area {
-        width: 95%;
+        width: 90%;
+        margin: 10px;
         height: 5vh;
         border: 1px solid rgb(0, 255, 166);
         outline: none;
