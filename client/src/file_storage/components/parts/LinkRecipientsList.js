@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import api from '../../../auth/api/auth'
-import RecipientItem from "./RecipientItem"
+import LinkRecipientItem from "./LinkRecipientItem"
 import '../../styles/recipients-list.css'
 
 const LinkRecipientsList = ({file, linkRecipientsDisplay}) => {
@@ -15,7 +15,7 @@ const LinkRecipientsList = ({file, linkRecipientsDisplay}) => {
     return (
         <div className="recipients-list" style={{display: linkRecipientsDisplay}}>
             <p style={{color: 'white'}}>Выберите, кому отправить ссылку на файл:</p>
-            {recipients.map(item => <RecipientItem item={item} file={file} />)}
+            {recipients.map(item => <LinkRecipientItem item={item} file={file} />)}
         </div>
     )
 }
