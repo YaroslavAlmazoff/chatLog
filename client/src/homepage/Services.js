@@ -7,9 +7,9 @@ const Services = () => {
 
     useEffect(() => {
         setServices([
-            {title: 'Messenger', imageUrl: 'messenger.png'},
-            {title: 'Chat Log Ads', imageUrl: 'ads.png'},
-            {title: 'Chat Log Cloud', imageUrl: 'cloud.png'},
+            {title: 'Мессенджер', imageUrl: 'messenger.png'},
+            {title: 'Объявления', imageUrl: 'ads.png'},
+            {title: 'Облако', imageUrl: 'cloud.png'},
         ])
     }, [])
 

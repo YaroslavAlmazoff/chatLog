@@ -1,13 +1,14 @@
 .services-list {
     background-color: rgb(71, 71, 71);
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
     margin-top: 10vh;
     height: 50vh;
+    border-radius: 12px;
 }
 .service {
     width: 50px;
-    margin: 10px;
+    margin: 15px;
     padding: 5px;
     border: 1px solid rgb(0, 140, 255);
     display: inline-flex;
@@ -22,5 +23,5 @@
 .service-title {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10pt;
+    font-size: 8pt;
 }
