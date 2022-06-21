@@ -22,6 +22,7 @@ import CreateFoto from "./auth/parts/Mobile/CreateFoto"
 import LandingPage from "./landing_page/LandingPage"
 import SupportPage from "./landing_page/SupportPage"
 import Admin from "./admin/Admin"
+import Services from "./homepage/Services"
 
 
 export const useRoutes = (isAuthenticated) => {
@@ -31,6 +32,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/" element={<Main />} />
             <Route path="/greeting" element={<LandingPage />} />
             <Route path="/support" element={<SupportPage />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/admin" element={<Admin />} />
             <Route exact path="/cloud" element={<FileStorage />} />
             <Route exact path="/cloud/file/:id" element={<File />} />

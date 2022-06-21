@@ -8,18 +8,25 @@ const Links = () => {
         {name: 'Моя страница', link: `/user/${auth.userId}`},
         {name: 'Сообщения', link: '/messages'},
         {name: 'Люди', link: '/users'},
+        {name: 'Сервисы', link: '/services'},
     ]
     const list2 = [
-        {name: 'Chat Log Cloud', link: '/cloud'},
+        {name: 'Chat Log Cloud', link: `/cloud`}
     ]
 
     return (
         <div className="homelinks">
-            {list1.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
-            <hr style={{width: '100px', marginBottom: '40px'}} />
-            {list2.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
-            {/*<hr style={{width: '100px', marginBottom: '40px'}} />*/}
-            {/*list3.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)*/}
+            {
+                window.innerWidth > 500 
+                ?
+                <>{list1.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
+                <hr style={{width: '100px', marginBottom: '40px'}} />
+                {list2.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
+                </>
+                :
+                <>{list1.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
+                </>
+            }
         </div>
     )
 }
