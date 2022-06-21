@@ -1,0 +1,226 @@
+.message-input {
+    padding: 15px;
+    width: 63%;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+@media screen and (width < 500px) {
+    .header {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+    }   
+}
+.message {
+    background-color: rgb(223, 250, 255);
+    color: black;
+    padding: 8px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+}
+.my-message {
+    background-color: rgb(244, 255, 223);
+    color: black;
+    padding: 8px;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+}
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.send-message {
+    width: 18%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(0, 140, 255);
+    color: white;
+    border: none;
+}
+.message-actions {
+    width: 100%;
+    height: 100px;
+}
+.room-window::-webkit-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.room-window::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.room-window::-webkit-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.room-window::-moz-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.room-window::-moz-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.room-window::-moz-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.room-window::-o-scrollbar {
+    width: 20px;               /* ширина scrollbar */
+}
+.room-window::-o-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.room-window::-o-scrollbar-thumb {
+    background-color: rgb(20, 20, 32);    /* цвет плашки */
+    border-radius: 11px;       /* закругления плашки */
+    border: 1px solid rgb(0, 140, 255);  /* padding вокруг плашки */
+}
+
+.messages {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.message-wrapper {
+    background-color: rgb(223, 250, 255);
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.my-message-wrapper {
+    background-color: rgb(244, 255, 223);
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.message-date {
+    color:rgba(20, 20, 32, 0.692);
+}
+.message-text {
+    margin: 10px;
+    margin-top: -30px;
+    text-align: left;
+}
+.upload-message-image {
+    width: 70px;
+    cursor: pointer;
+}
+.message-image {
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 140, 255);
+}
+.message-file-link {
+    color:rgb(0, 140, 255);
+    margin: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+@media (width > 700px) {
+    .room-wrapper {
+        width: 45%;
+        margin: 0 auto;
+    } 
+    .room-head {
+        position: absolute;
+        width: 47%;
+        height: 40px;
+        background-color: white;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .room-window {
+        width: 95%;
+        height: 72vh;
+        margin: 0 auto;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        border-radius: 11px;
+        margin-top: 5%;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen  and (width > 500px) and (width < 700px) {
+    .room-wrapper {
+        width: 60%;
+        margin: 0 auto;
+    } 
+    .room-head {
+        position: absolute;
+        width: 57%;
+        height: 40px;
+        background-color: white;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .room-window {
+        width: 95%;
+        height: 72vh;
+        margin: 0 auto;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        border-radius: 11px;
+        margin-top: 5%;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+}
+@media screen and (width < 500px) {
+    .room-wrapper {
+        width: 100%;
+        margin: 0 auto;
+    } 
+    .room-head {
+        width: 90%;
+        height: 40px;
+        background-color: white;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .room-window {
+        width: 95%;
+        height: 72vh;
+        margin: 0 auto;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        border-radius: 11px;
+        margin-top: 5px;
+        margin-left: 0px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+}

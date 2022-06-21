@@ -1,0 +1,24 @@
+.rooms-list-wrapper {
+    border-radius: 10px;
+}
+@media screen and (width > 700px) {
+    .room-list {
+        width: 38%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+}
+@media screen and (width < 700px) and (width > 500px) {
+    .room-list {
+        width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+}
+@media screen and (width < 500px) {
+    .room-list {
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+}
