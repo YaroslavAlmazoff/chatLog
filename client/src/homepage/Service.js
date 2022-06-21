@@ -1,3 +1,5 @@
+import './services.css'
+
 const Service = ({item}) => {
     return (
         <div className="service">
