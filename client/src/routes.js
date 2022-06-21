@@ -23,7 +23,6 @@ import LandingPage from "./landing_page/LandingPage"
 import SupportPage from "./landing_page/SupportPage"
 import Admin from "./admin/Admin"
 import Services from "./homepage/Services"
-import ChatRoom from "../../models/ChatRoom"
 
 
 export const useRoutes = (isAuthenticated) => {
@@ -32,7 +31,6 @@ export const useRoutes = (isAuthenticated) => {
         <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/greeting" element={<LandingPage />} />
-            <Route path="/chat" element={<ChatRoom />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/services" element={<Services />} />
             <Route path="/admin/:id" element={<Admin />} />
