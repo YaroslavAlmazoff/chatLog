@@ -25,7 +25,7 @@ const Head = () => {
             setUser(response.data.user)
         }
         getUser()
-    }, [])
+    }, [auth])
 
     return (
         <div className="head">
