@@ -2,11 +2,19 @@ import { useEffect, useState } from "react"
 import api from '../auth/api/auth'
 import Message from "./Message"
 import './admin.css'
+import { useParams, useNavigate } from "react-router"
 
 const Admin = () => {
+    const params = useParams()
+    const navigate = useNavigate()
     const [messages, setMessages] = useState([])
     const [visits, setVisits] = useState(0)
 
+    useEffect(() => {
+        if(params.id !== '628e5aab0153706a3e18fe79') {
+            navigate('/home') 
+        }
+    }, [])
     useEffect(() => {
         const getVisits = async () => {
             const response = await api.get('/api/admin/visits')

@@ -8,10 +8,15 @@ const Links = () => {
         {name: 'Моя страница', link: `/user/${auth.userId}`},
         {name: 'Сообщения', link: '/messages'},
         {name: 'Люди', link: '/users'},
-        {name: 'Сервисы', link: '/services'},
     ]
     const list2 = [
         {name: 'Chat Log Cloud', link: `/cloud`}
+    ]
+    const list3 = [
+        {name: 'Моя страница', link: `/user/${auth.userId}`},
+        {name: 'Сообщения', link: '/messages'},
+        {name: 'Люди', link: '/users'},
+        {name: 'Сервисы', link: '/services'},
     ]
 
     return (
@@ -24,7 +29,7 @@ const Links = () => {
                 {list2.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
                 </>
                 :
-                <>{list1.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
+                <>{list3.map(el => <NavLink key={Date.now() + Math.random() * 100} className="homelink" to={el.link}>{el.name}</NavLink>)}
                 </>
             }
         </div>

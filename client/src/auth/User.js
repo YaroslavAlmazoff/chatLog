@@ -18,7 +18,6 @@ import Friends from "./parts/Mobile/Friends"
 import Actions from "./parts/Mobile/Actions"
 import Fotos from "./parts/Mobile/Fotos"
 import Videos from "./parts/Mobile/Videos"
-import Posts from "./parts/Mobile/Posts"
 
 
 const User = () => {
