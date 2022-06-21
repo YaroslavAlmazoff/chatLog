@@ -2,11 +2,13 @@ import { useNavigate } from "react-router"
 import api from "../api/auth"
 import {AuthContext} from '../../context/AuthContext'
 import { useContext } from "react"
+import useDate from '../../common_hooks/date.hook'
 
 const usePosts = () => {
+    const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
     const navigate = useNavigate()
-    const send = async (getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading) => {
+    const send = async (articleTitle, file, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading) => {
         setUploading(true)
         const currentDate = getCurrentDate()
         let formData = new FormData()
