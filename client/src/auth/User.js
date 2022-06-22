@@ -66,11 +66,13 @@ const User = () => {
     const [file2, setFile2] = useState('')
     //Содание ссылки на всплывающую ссылку
     const noticeRef = useRef()
+    const notificationRef = useRef(null)
     //Показ уведомлений
     const showNotifications = async () => {
         const response = await api.get(`/api/checknotification/${auth.userId}`,{ headers: {
             Authorization: `Bearer ${auth.token}`
         }})
+        notificationRef.current.remove()
         console.log(response)
         if(!notificationsDisplay) {
             setNotificationsDisplay(true)
@@ -230,6 +232,7 @@ const User = () => {
                 setUserFotos={setUserFotos}
                 isOwner={isOwner}
                 showNotifications={showNotifications}
+                notificationRef={notificationRef}
             />}
 
         </div>}

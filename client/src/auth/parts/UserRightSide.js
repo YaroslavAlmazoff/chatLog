@@ -10,7 +10,7 @@ import api from '../api/auth'
 const UserRightSide = ({getFile2, fileRef2, emitOpen2, 
     imagePreviewUrl2, imagePreviewDisplay2, sendFoto, 
     userFotos, file2, setUserFotos, 
-    isOwner, showNotifications}) => {
+    isOwner, showNotifications, notificationRef}) => {
     const [notifications, setNotifications] = useState([{
         checked: false
     }])
@@ -37,7 +37,7 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
 
         <div className="user-left-side">
                     {isOwner ? <div>
-                        <div>
+                        <div ref={notificationRef}>
                             {notifications.length !== 0 ? <div>{!notifications[notifications.length - 1].checked ? <div style={{width: '10px', height: '30px', backgroundColor: 'red', borderRadius: '50%'}}></div> : <></>}</div> : <></>}
                             <img className="notice-img" onClick={showNotifications} width="35" src={require('../img/notice.png')} alt="notice" />
                         </div>
