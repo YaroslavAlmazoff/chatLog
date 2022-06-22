@@ -267,7 +267,7 @@ input[type=file] {
 }
 
 .user-posts::-webkit-scrollbar {
-    width: 5px;               /* ширина scrollbar */
+    width: 5px;              /* ширина scrollbar */
 }
 .user-posts::-webkit-scrollbar-track {
     background: transparent;        /* цвет дорожки */
