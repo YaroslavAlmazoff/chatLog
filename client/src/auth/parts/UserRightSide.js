@@ -11,7 +11,9 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
     imagePreviewUrl2, imagePreviewDisplay2, sendFoto, 
     userFotos, file2, setUserFotos, 
     isOwner, showNotifications}) => {
-    const [notifications, setNotifications] = useState([])
+    const [notifications, setNotifications] = useState([{
+        checked: false
+    }])
     const params = useParams()
     const {getCurrentDate} = useDate()
     //Правая часть страницы пользователя - добавление фотографий и список фотографий
