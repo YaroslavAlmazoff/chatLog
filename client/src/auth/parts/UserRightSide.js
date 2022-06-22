@@ -37,7 +37,7 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
         <div className="user-left-side">
                     {isOwner ? <div>
                         <div>
-                            {!notifications[notifications.length - 1].checked ? <div style={{width: '10px', height: '30px', backgroundColor: 'red', borderRadius: '50%'}}></div> : <></>}
+                            {!notifications[notifications.length - 1].checked && notifications.length !== 0 ? <div style={{width: '10px', height: '30px', backgroundColor: 'red', borderRadius: '50%'}}></div> : <></>}
                             <img className="notice-img" onClick={showNotifications} width="35" src={require('../img/notice.png')} alt="notice" />
                         </div>
                         <input onChange={(e) => getFile2(e)} ref={fileRef2} type="file" />
