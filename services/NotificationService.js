@@ -19,6 +19,7 @@ class NotificationService {
         const notifications = await Notification.find({to: user})
 
         await Notification.findByIdAndUpdate(notifications[notifications.length - 1], {checked: true})
+        res.json({msg: 'success'})
     }
     //Возращение уведомлений пользователя на клиент
     async notify(req, res) {
