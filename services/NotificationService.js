@@ -25,6 +25,7 @@ class NotificationService {
         const userid = req.params.id
         //Поиск уведомлений
         const notifications = await Notification.find({to: userid})
+        console.log(notifications)
         //Возращение уведомлений пользователя на клиент
         res.json({notifications})
     }
