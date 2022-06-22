@@ -23,12 +23,15 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
         navigate(`/fotography/${img}`)
     }
     useEffect(() => {
+        console.log('че за фигня')
         const getNotifications = async () => {
+            console.log('aaaaaaa')
             const response = await api.get(`/api/getnotifications/${params.id}`)
             console.log(response)
             setNotifications(response.data.notifications)
         }
         getNotifications()
+        console.log('так не честно')
     }, [params])
     return (
         <div className="user-left-side">
