@@ -68,7 +68,9 @@ const User = () => {
     const noticeRef = useRef()
     //Показ уведомлений
     const showNotifications = async () => {
-        await api.get(`/api/checknotification/${auth.userId}`)
+        await api.get(`/api/checknotification/${auth.userId}`,{ headers: {
+            Authorization: `Bearer ${auth.token}`
+        }})
         if(!notificationsDisplay) {
             setNotificationsDisplay(true)
         } else {
