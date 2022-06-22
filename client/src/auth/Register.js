@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import "./styles/form.css"
 import api from "./api/auth"
 import { useNavigate } from 'react-router'
@@ -6,6 +6,9 @@ import {AuthContext} from '../context/AuthContext'
 import Notice from './parts/Notice'
 
 const Register = () => {
+    useEffect(() => {
+        localStorage.setItem('adblock', true)
+    }, [])
     let ref1 = useRef(null)
     let ref2 = useRef(null)
     let ref3 = useRef(null)
@@ -68,6 +71,7 @@ const Register = () => {
             <button ref={ref4} onClick={() => theme('city', ref4, 4)} className='theme-button theme-button-bg4'>Космос</button>
             <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Придумайте пароль" type="password" className="form-field" />
             <input value={password2} onChange={(e) => setPassword2(e.target.value)} placeholder="Повторите пароль" type="password" className="form-field" />
+            <p style={{color: 'yellow', fontSize: '16pt'}}>Если у вас стоит блокировщик рекламы, пожалуйста, отключите его на этом сайте. Он мешает корректной работе соцсети.</p>
             <button onClick={registerHandler} className="submit">Регистрация</button>
         </div>
     )

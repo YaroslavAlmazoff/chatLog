@@ -55,6 +55,7 @@ const Login = () => {
             <button ref={ref2} onClick={() => theme('mountain', ref2, 2)} className='theme-button theme-button-bg2'>Горы</button>
             <button ref={ref3} onClick={() => theme('nature', ref3, 3)} className='theme-button theme-button-bg3'>Природа</button>
             <button ref={ref4} onClick={() => theme('space', ref4, 4)} className='theme-button theme-button-bg4'>Космос</button>
+            {localStorage.getItem('adblock') ? <p style={{color: 'yellow', fontSize: '16pt'}}>Если у вас стоит блокировщик рекламы, пожалуйста, отключите его на этом сайте. Он мешает корректной работе соцсети.</p>: <></>}
                 <button onClick={loginHandler} className="submit">Войти</button>
             </div>
         </div>
