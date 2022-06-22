@@ -23,6 +23,7 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
     useEffect(() => {
         const getNotifications = async () => {
             const response = await api.get(`/api/getnotifications/${params.id}`)
+            console.log(response)
             setNotifications(response.data.notifications)
         }
         getNotifications()
