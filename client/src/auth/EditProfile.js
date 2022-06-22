@@ -111,6 +111,7 @@ const EditProfile = () => {
             <ImagePreviewEdit1 imagePreviewUrl1={imagePreviewUrl1} imagePreviewDisplay1={imagePreviewDisplay1} />
             <input onChange={(e) => getFile2(e)} ref={fileRef2} type="file" />
             <button onClick={(e) => emitOpen2(e)} className="submit">Добавить баннер</button>
+            <p style={{color: 'yellow', fontSize: '16pt'}}>Если у вас стоит блокировщик рекламы, пожалуйста, отключите его на этом сайте. Он мешает корректной работе соцсети.</p>
             <ImagePreviewEdit2 imagePreviewUrl2={imagePreviewUrl2} imagePreviewDisplay2={imagePreviewDisplay2} />
             <button onClick={updateHandler} className="submit">Обновить профиль</button>
         </div>
