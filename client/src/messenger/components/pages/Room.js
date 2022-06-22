@@ -137,6 +137,8 @@ export const Room = () => {
     
     
     const sendMessage = async () => {
+        const res = await api.get(`/api/read/${params.id}`)
+        console.log(res)
         const date = getCurrentDate()
         let formData = new FormData()
         console.log(file)
