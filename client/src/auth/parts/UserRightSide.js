@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ImagePreview2 from "./ImagePreview2";
 import useRandom from "../../common_hooks/random.hook";
 import "../styles/user.css"
 import { useNavigate, useParams } from "react-router";
 import FotoItem from "./FotoItem";
 import useDate from "../../common_hooks/date.hook";
+import api from '../api/auth'
 
 const UserRightSide = ({getFile2, fileRef2, emitOpen2, 
     imagePreviewUrl2, imagePreviewDisplay2, sendFoto, 
     userFotos, file2, setUserFotos, 
     isOwner, showNotifications}) => {
+    const [notifications, setNotifications] = useState([])
     const params = useParams()
     const {getCurrentDate} = useDate()
     //Правая часть страницы пользователя - добавление фотографий и список фотографий
@@ -18,10 +20,18 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
     const showFotography = (img) => {
         navigate(`/fotography/${img}`)
     }
+    useEffect(() => {
+        const getNotifications = async () => {
+            const response = await api.get(`/api/getnotifications/${params.id}`)
+            setNotifications(response.data.notifications)
+        }
+        getNotifications()
+    }, [params])
     return (
         <div className="user-left-side">
                     {isOwner ? <div>
                         <div>
+                            {!notifications[notifications.length - 1].checked ? <div style={{width: '10px', height: '30px', backgroundColor: 'red', borderRadius: '50%'}}></div> : <></>}
                             <img className="notice-img" onClick={showNotifications} width="35" src={require('../img/notice.png')} alt="notice" />
                         </div>
                         <input onChange={(e) => getFile2(e)} ref={fileRef2} type="file" />

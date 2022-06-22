@@ -10,8 +10,15 @@ class NotificationService {
             from: user1id,
             to: user2id,
             postType, 
-            postID
+            postID,
+            checked: false
         })
+    }
+    async check(req, res) {
+        const user = req.params.user
+        const notifications = await Notification.find({to: user})
+
+        await Notification.findByIdAndUpdate(notifications[notifications.length - 1], {checked: true})
     }
     //Возращение уведомлений пользователя на клиент
     async notify(req, res) {

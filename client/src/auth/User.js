@@ -67,7 +67,8 @@ const User = () => {
     //Содание ссылки на всплывающую ссылку
     const noticeRef = useRef()
     //Показ уведомлений
-    const showNotifications = () => {
+    const showNotifications = async () => {
+        await api.get(`/api/checknotification/${auth.userId}`)
         if(!notificationsDisplay) {
             setNotificationsDisplay(true)
         } else {

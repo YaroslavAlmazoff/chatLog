@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const Notification = new mongoose.Schema({
+    checked: {type: Boolean, required: true, deafult: false},
     title: {type: String, required: true},
     type: {type: String, required: true},
     from: {type: String},
