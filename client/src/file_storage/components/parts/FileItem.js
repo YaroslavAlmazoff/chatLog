@@ -49,6 +49,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
     }, [file])
     const {divideFilename} = useWord()
     const showDetails = () => {
+        hideContextMenu()
         setSelectedFile(file)
         setDetailDisplay('flex')
         setFilePreviewDisplay('none')
@@ -62,7 +63,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
     const openContextMenu = (e) => {
         e.preventDefault()
         setContextMenu(
-            <div onMouseOver={openContextMenu} style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
+            <div style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
                 <a className='context-menu-upload' href={downloadingFileCode} download={file.name}>Скачать</a>
                 <hr />
                 <p onClick={deleteFile} className='context-menu-delete'>Удалить</p>
@@ -73,7 +74,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
         setContextMenu(null)
     }
     return (
-        <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} onMouseOut={hideContextMenu} className="file-item">
+        <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} className="file-item">
             {contextMenu}
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
             <img className='file-img' src={fileCode} alt="file" />
