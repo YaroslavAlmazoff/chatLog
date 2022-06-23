@@ -10,6 +10,7 @@ import useFiles from '../../../common_hooks/files.hook'
 import {useEffect} from 'react'
 import LinkRecipientsList from './LinkRecipientsList'
 import RecipientsList from './RecipientsList'
+import Loader from '../../../common_components/Loader'
 
 const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
@@ -17,46 +18,57 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
     const [fileCode, setFileCode] = useState('')
     const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
+    const [fileLoading, setFileLoading] = useState(false)
     useEffect(() => {
+        setFileLoading(true)
         console.log(file)
         getFile(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
                 const result = 'data:image/jpeg;base64,' + data
                 setFileCode(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'avi' || file.ext === 'mp4') {
                 const result = 'data:video/mp4;base64,' + data
                 setFileCode(result)
+                setFileLoading(false)
             }
         })
         getFileToDownload(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
                 const result = 'data:image/jpeg;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'avi' || file.ext === 'mp4') {
                 const result = 'data:video/mp4;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'mp3') {
                 const result = 'data:audio/mp3;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'pdf') {
                 const result = 'data:application/pdf;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'doc') {
                 const result = 'data:application/msword;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'docx') {
                 const result = 'data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
             else if(file.ext === 'txt') {
                 const result = 'data:text/plain;base64,' + data
                 setDownloadingFile(result)
+                setFileLoading(false)
             }
         })
         
@@ -122,14 +134,14 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                     </tr>
                 </tbody>
             </table>
-            <div className='file-actions'>
+            {!fileLoading ? <div className='file-actions'>
                 <button onClick={sendFileLink} className='button button-blue'>Отправить ссылку на файл</button>
                 <button onClick={sendFile} className='button button-blue'>Отправить файл</button>
                 <button onClick={filePreview} className='button button-blue'>Предпросмотр файла</button>
                 <button onClick={openFile} className='button button-blue'>Открыть файл</button>
                 <a className='button download-link' href={downloadingFile} download={file.name}>Скачать</a>
                 <button onClick={deleteFile} className='button button-red'>Удалить</button>
-            </div>
+            </div> : <Loader ml={'50%'} />}
             <FilePreview file={file} fileText={fileText} filePreviewDisplay={filePreviewDisplay} ready={false} fileOpened={false} />
             <LinkRecipientsList file={file} linkRecipientsDisplay={linkRecipientsDisplay} />
             <RecipientsList file={file} recipientsDisplay={recipientsDisplay} />
