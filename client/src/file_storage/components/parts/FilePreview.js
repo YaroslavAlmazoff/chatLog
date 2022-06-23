@@ -27,7 +27,10 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                 {file.ext === 'mp4' ? 
                 <video width="300" height="200" controls src={fileCode}>
                 </video>    : <></>
-            }
+                }
+                {file.ext === 'mp3' ? 
+                <audio controls src={fileCode}></audio>   : <></>
+                }
             </div>
     )
 }
