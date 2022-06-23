@@ -62,7 +62,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
     const openContextMenu = (e) => {
         e.preventDefault()
         setContextMenu(
-            <div style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
+            <div onMouseOver={openContextMenu} style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
                 <a className='context-menu-upload' href={downloadingFileCode} download={file.name}>Скачать</a>
                 <hr />
                 <p onClick={deleteFile} className='context-menu-delete'>Удалить</p>
