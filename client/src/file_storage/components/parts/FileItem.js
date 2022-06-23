@@ -5,12 +5,11 @@ import { useState, useEffect, useContext } from 'react'
 import api from '../../../auth/api/auth'
 import { AuthContext } from '../../../context/AuthContext'
 
-const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
+const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay, contextMenu, setContextMenu}) => {
     const {getFileIcon, getFile} = useFiles()
     const auth = useContext(AuthContext)
     const [fileCode, setFileCode] = useState('')
     const [downloadingFileCode, setDownloadingFileCode] = useState('')
-    const [contextMenu, setContextMenu] = useState(null)
     useEffect(() => {
         if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
             getFile(file).then((data) => {

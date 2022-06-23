@@ -8,6 +8,7 @@ import Loader from "../../../common_components/Loader"
 const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
     const auth = useContext(AuthContext)
     const fileRef = useRef()
+    const [contextMenu, setContextMenu] = useState(null)
     const [loadingUploading, setLoadingUploading] = useState(false)
     const emitOpen = () => {
         setLoadingUploading(true)
@@ -27,8 +28,11 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
         setFiles(response2.data.files)
         setLoadingUploading(false)
     }
+    const hideContextMenu = () => {
+        setContextMenu(null)
+    }
     return (
-        <div className="files">
+        <div className="files" onClick={hideContextMenu}>
             <div className="files-head">
                 <h2 className="files-head-title">Файловое хранилище</h2>
                 <input onChange={getFile} ref={fileRef} type='file' accept=".png,.jpg,.jpeg,.mp4,.mp3.,.gif,.doc,.docx,.pdf,.txt" />
@@ -40,6 +44,8 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
                         setSelectedFile={setSelectedFile} 
                         setDetailDisplay={setDetailDisplay} 
                         setFilePreviewDisplay={setFilePreviewDisplay} 
+                        contextMenu={contextMenu}
+                        setContextMenu={setContextMenu}
                         file={el} 
                     />)}
                 </div>
