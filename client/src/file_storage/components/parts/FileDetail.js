@@ -95,10 +95,12 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(<img style={{height: '100%'}} src={fileCode} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
-            setFileText(<video width="300" controls src={fileCode}>
-                
-        </video>)
-        setFilePreviewDisplay('block')
+            setFileText(<video width="300" controls src={fileCode}></video>)
+            setFilePreviewDisplay('block')
+        } else if(file.ext === 'mp3') {
+            setFileText(<audio controls src={fileCode}>
+                Your browser does not support the<code>audio</code> element.
+            </audio>)
         } else {
             console.log(file.ext)
             console.log('Не ну это капец')
