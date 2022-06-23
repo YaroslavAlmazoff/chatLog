@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
     const {getFileIcon, getFile} = useFiles()
     const [fileCode, setFileCode] = useState('')
+    const [contextMenu, setContextMenu] = useState(null)
     useEffect(() => {
         if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
             getFile(file).then((data) => {
@@ -42,8 +43,16 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
         setDetailDisplay('flex')
         setFilePreviewDisplay('none')
     }
+    const openContextMenu = (e) => {
+        e.preventDefault()
+        setContextMenu(
+            <div style={{position: 'absolute', marginLeft: e.pageX + 'px', top: e.pageY + 'px'}}>
+                <p>My context menu</p>
+            </div>
+        )
+    }
     return (
-        <div onClick={showDetails} className="file-item">
+        <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} className="file-item">
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
             <img className='file-img' src={fileCode} alt="file" />
             :   <div>

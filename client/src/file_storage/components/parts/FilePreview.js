@@ -32,7 +32,7 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                 {file.ext === 'mp3' ? 
                 <audio controls src={fileCode}></audio>   : <></>
                 }
-                {file.ext === 'pdf' ? <iframe title={file.name} src={fileCode} style={{width: '100%'}}></iframe> : <></>}
+                {file.ext === 'pdf' ? <iframe title={file.name} src={fileCode} style={{width: '100%', height: '100%'}}></iframe> : <></>}
             </div>
     )
 }
