@@ -28,7 +28,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 setFileCode(result)
             }
         })
-        getFileToDownload().then((data) => {
+        getFileToDownload(file).then((data) => {
             console.log(data)
         })
         
