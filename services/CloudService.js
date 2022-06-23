@@ -104,6 +104,18 @@ class CloudService {
         await File.create({name: filename, ext: file.ext, type: file.type, size: file.size, owner: user2, public: false})
         res.json({msg: 'да.'})
     }
+    getFileToDownload(req, res) {
+        const owner = req.user.userId
+        const name = req.params.filename
+        fs.readFile(path.resolve('..', 'static', 'userfiles', owner, name), (err, data) => {
+            if(err) {
+                console.log(err)
+            } else {
+                const base64Data = data.toString('base64')
+                res.json({data: base64Data})
+            }
+        })
+    }
 }
 
 module.exports = new CloudService()

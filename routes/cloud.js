@@ -66,6 +66,13 @@ router.get('/getsentfile/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/filetodownload/:filename', auth, (req, res) => {
+    try {
+        CloudService.getFileToDownload(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 //Создание роутера для авторизации пользователя

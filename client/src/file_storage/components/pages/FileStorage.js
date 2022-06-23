@@ -1,7 +1,6 @@
 import {useEffect, useState, useContext} from 'react'
 import Files from '../parts/Files'
 import FileDetail from '../parts/FileDetail'
-import RecipientsList from '../parts/RecipientsList'
 import '../../styles/file-storage.css'
 import api from '../../../auth/api/auth'
 import { AuthContext } from '../../../context/AuthContext'

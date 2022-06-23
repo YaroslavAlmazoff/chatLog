@@ -13,21 +13,25 @@ import RecipientsList from './RecipientsList'
 
 const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
-    const {getFile} = useFiles()
+    const {getFile, getFileToDownload} = useFiles()
     const [fileCode, setFileCode] = useState('')
     const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
     useEffect(() => {
-    getFile(file).then((data) => {
-        if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            const result = 'data:image/jpeg;base64,' + data
-            setFileCode(result)
-        }
-        else if(file.ext === 'avi' || file.ext === 'mp4') {
-            const result = 'data:video/mp4;base64,' + data
-            setFileCode(result)
-        }
-    })
+        getFile(file).then((data) => {
+            if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
+                const result = 'data:image/jpeg;base64,' + data
+                setFileCode(result)
+            }
+            else if(file.ext === 'avi' || file.ext === 'mp4') {
+                const result = 'data:video/mp4;base64,' + data
+                setFileCode(result)
+            }
+        })
+        getFileToDownload().then((data) => {
+            console.log(data)
+        })
+        
     }, [file])
     const navigate = useNavigate()
     const [fileText, setFileText] = useState('')
@@ -63,7 +67,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         navigate(`/cloud/file/${file._id}`)
     }
     const downloadFile = () => {
-        setDownloadingFile(require(`../../../static/userfiles/${file.owner}/${file.name}`))
+        setDownloadingFile(fileCode)
     }
     const sendFile = () => {
         setRecipientsDisplay('block')

@@ -1,6 +1,9 @@
 import api from '../auth/api/auth'
+import { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 
 const useFiles = () => {
+    const auth = useContext(AuthContext)
     const getFoto = async (imageUrl) => {
         const response = await api.get(`/api/files/foto/${imageUrl}`)
         return response.data.file
@@ -33,9 +36,15 @@ const useFiles = () => {
         const response = await api.get(`/api/files/icon/${name}`)
         return response.data.file
     }
+    const getFileToDownload = async (name) => {
+        const response = await api.get(`/api/filetodownload/${name}`, {headers : {
+            Authorization: `Bearer ${auth.token}`
+        }})
+        return response.data.file
+    }
 
 
-    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getFile, getFileIcon}
+    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getFile, getFileIcon, getFileToDownload}
 }
 
 export default useFiles
