@@ -101,6 +101,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(<audio controls src={fileCode}>
                 Your browser does not support the<code>audio</code> element.
             </audio>)
+            setFilePreviewDisplay('block')
         } else {
             console.log(file.ext)
             console.log('Не ну это капец')
