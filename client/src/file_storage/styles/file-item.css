@@ -33,6 +33,7 @@
     padding: 10px;
 }
 .context-menu-upload {
+    text-decoration: none;
     color: rgb(0, 240, 0);
     margin: 10px;
 }
