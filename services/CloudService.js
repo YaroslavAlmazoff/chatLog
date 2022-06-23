@@ -12,7 +12,8 @@ class CloudService {
         const userid = req.user.userId
         const file = req.files.file
         console.log(file)
-        const ext = file.name.split('.')[file.name.length - 1]
+        let ext = file.name.split('.')
+        ext = ext[ext.length - 1]
         await File.create({
             name: file.name, ext, type: file.mimetype, size: file.size, owner: userid, public: false
         })
