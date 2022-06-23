@@ -95,7 +95,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(<img style={{height: '100%'}} src={fileCode} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
-            setFileText(<video width="300" height="200" controls src={fileCode}>
+            setFileText(<video width="300" controls src={fileCode}>
                 
         </video>)
         setFilePreviewDisplay('block')

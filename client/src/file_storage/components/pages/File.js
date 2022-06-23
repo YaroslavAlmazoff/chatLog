@@ -14,10 +14,10 @@ const File = () => {
     const {getFile} = useFiles()
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
-    getFile(file).then((data) => {
-        const result = 'data:image/jpeg;base64,' + data
-        setFileCode(result)
-    })
+        getFile(file).then((data) => {
+            const result = 'data:image/jpeg;base64,' + data
+            setFileCode(result)
+        })
     }, [file])
     useEffect(() => {
         const filePreview = async () => {
