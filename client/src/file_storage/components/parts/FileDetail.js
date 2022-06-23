@@ -96,7 +96,9 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
             setFileText(<video width="300" height="200" controls src={fileCode}>
+                
         </video>)
+        setFilePreviewDisplay('block')
         } else {
             console.log(file.ext)
             console.log('Не ну это капец')
