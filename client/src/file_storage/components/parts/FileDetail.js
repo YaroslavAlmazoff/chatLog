@@ -41,41 +41,9 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             }
         })
         getFileToDownload(file).then((data) => {
-            if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-                const result = 'data:image/jpeg;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'avi' || file.ext === 'mp4') {
-                const result = 'data:video/mp4;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'mp3') {
-                const result = 'data:audio/mp3;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'pdf') {
-                const result = 'data:application/pdf;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'doc') {
-                const result = 'data:application/msword;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'docx') {
-                const result = 'data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'txt') {
-                const result = 'data:text/plain;base64,' + data
-                setDownloadingFile(result)
-                setFileLoading(false)
-            }
+            const result = `data:${file.type};base64,`+ data
+            setDownloadingFile(result)
+            setFileLoading(false)
         })
         
     }, [file])

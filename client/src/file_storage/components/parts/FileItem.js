@@ -1,11 +1,15 @@
 import '../../styles/file-item.css'
 import useWord from '../../../common_hooks/divideWord.hook'
 import useFiles from '../../../common_hooks/files.hook'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import api from '../../../auth/api/auth'
+import { AuthContext } from '../../../context/AuthContext'
 
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
     const {getFileIcon, getFile} = useFiles()
+    const auth = useContext(AuthContext)
     const [fileCode, setFileCode] = useState('')
+    const [downloadingFileCode, setDownloadingFileCode] = useState('')
     const [contextMenu, setContextMenu] = useState(null)
     useEffect(() => {
         if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
@@ -35,7 +39,13 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
                 setFileCode(result)
             })
         }
-        
+    }, [file])
+    useEffect(() => {
+        getFile(file).then((data) => {
+            const result = `data:${file.type};base64,` + data
+            console.log(result)
+            setDownloadingFileCode(result)
+        })
     }, [file])
     const {divideFilename} = useWord()
     const showDetails = () => {
@@ -43,11 +53,19 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
         setDetailDisplay('flex')
         setFilePreviewDisplay('none')
     }
+    const deleteFile = async () => {
+        await api.get(`/api/cloud/delete/${file.name}`, {headers: {
+            Authorization: `Bearer ${auth.token}`
+        }})
+        window.location.reload()
+    }
     const openContextMenu = (e) => {
         e.preventDefault()
         setContextMenu(
-            <div style={{position: 'absolute', marginLeft: e.pageX + 'px', top: e.pageY + 'px'}}>
-                <p>My context menu</p>
+            <div style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
+                <a className='context-menu-upload' href={downloadingFileCode} download={file.name}>Скачать</a>
+                <hr />
+                <p onClick={deleteFile} className='context-menu-delete'>Удалить</p>
             </div>
         )
     }
