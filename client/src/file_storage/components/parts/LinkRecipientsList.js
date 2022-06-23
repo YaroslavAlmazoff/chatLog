@@ -11,7 +11,7 @@ const LinkRecipientsList = ({file, linkRecipientsDisplay}) => {
             setRecipients(response.data.users)
         }
         getRecipients()
-    })
+    }, [])
     return (
         <div className="recipients-list" style={{display: linkRecipientsDisplay}}>
             <p style={{color: 'white'}}>Выберите, кому отправить ссылку на файл:</p>
