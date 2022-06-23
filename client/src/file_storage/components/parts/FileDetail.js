@@ -18,6 +18,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
     const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
     useEffect(() => {
+        console.log(file)
         getFile(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
                 const result = 'data:image/jpeg;base64,' + data
