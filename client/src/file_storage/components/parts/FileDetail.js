@@ -19,6 +19,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
     const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
     const [fileLoading, setFileLoading] = useState(false)
+    const [fileText, setFileText] = useState('')
     useEffect(() => {
         setFileLoading(true)
         console.log(file)
@@ -33,7 +34,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 setFileCode(result)
                 setFileLoading(false)
             }
-        })
+        }, [])
         getFileToDownload(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
                 const result = 'data:image/jpeg;base64,' + data
@@ -74,7 +75,6 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         
     }, [file])
     const navigate = useNavigate()
-    const [fileText, setFileText] = useState('')
     const auth = useContext(AuthContext)
     const {divideFilename} = useWord()
     const {fileSize} = useFileSize()
