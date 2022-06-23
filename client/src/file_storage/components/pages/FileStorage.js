@@ -24,7 +24,7 @@ const FileStorage = () => {
             setFilesLoading(false)
         }
         getFiles()
-    }, [])
+    }, [auth])
     return (
         <div className='file-storage'>
             {!filesLoading ? <Files
