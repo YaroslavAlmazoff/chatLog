@@ -34,7 +34,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 setFileCode(result)
                 setFileLoading(false)
             }
-        }, [])
+        })
         getFileToDownload(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
                 const result = 'data:image/jpeg;base64,' + data
