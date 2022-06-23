@@ -27,9 +27,7 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
         setFiles(response2.data.files)
         setLoadingUploading(false)
     }
-    /*const hideContextMenu = () => {
-        setContextMenu(null)
-    }*/
+
     return (
         <div className="files">
             <div className="files-head">
