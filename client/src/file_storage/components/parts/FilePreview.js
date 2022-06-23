@@ -32,6 +32,7 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                 {file.ext === 'mp3' ? 
                 <audio controls src={fileCode}></audio>   : <></>
                 }
+                {file.ext === 'pdf' ? <p>{fileCode}</p> : <></>}
             </div>
     )
 }
