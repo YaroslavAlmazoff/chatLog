@@ -69,8 +69,11 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
             </div>
         )
     }
+    const hideContextMenu = () => {
+        setContextMenu(null)
+    }
     return (
-        <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} className="file-item">
+        <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} onMouseOut={hideContextMenu} className="file-item">
             {contextMenu}
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
             <img className='file-img' src={fileCode} alt="file" />
