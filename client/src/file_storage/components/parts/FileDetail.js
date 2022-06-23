@@ -73,7 +73,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             }
         })
         
-    }, [file])
+    }, [file, setDownloadingFile, getFile, getFileToDownload])
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const {divideFilename} = useWord()
