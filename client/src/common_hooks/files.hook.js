@@ -37,6 +37,7 @@ const useFiles = () => {
         return response.data.file
     }
     const getFileToDownload = async (file) => {
+        console.log(file)
         const response = await api.get(`/api/cloud/filetodownload/${file.name}`, {headers : {
             Authorization: `Bearer ${auth.token}`
         }})
