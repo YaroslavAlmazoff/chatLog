@@ -53,6 +53,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
     }
     return (
         <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} className="file-item">
+            {contextMenu}
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
             <img className='file-img' src={fileCode} alt="file" />
             :   <div>
