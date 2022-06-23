@@ -112,7 +112,7 @@ class CloudService {
                 console.log(err)
             } else {
                 const base64Data = data.toString('base64')
-                res.json({data: base64Data})
+                res.json({file: base64Data})
             }
         })
     }
