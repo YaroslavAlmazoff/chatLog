@@ -34,6 +34,11 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 setFileCode(result)
                 setFileLoading(false)
             }
+            else if(file.ext === 'pdf') {
+                const result = 'data:application/pdf;base64,' + data
+                setFileCode(result)
+                setFileLoading(false)
+            }
         })
         getFileToDownload(file).then((data) => {
             if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
@@ -85,7 +90,11 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             }})
             setFileText(response.data.data)
             setFilePreviewDisplay('block')
-        } else if(file.ext === 'doc' || file.ext === 'docx' || file.ext === 'pdf') {
+        } 
+        else if(file.ext === 'pdf') {
+            setFileText(fileCode)
+            setFilePreviewDisplay('block')
+        } else if(file.ext === 'doc' || file.ext === 'docx') {
             const response = await api.get(`/api/cloud/hardfiletext/${file.name}`, {headers: {
                 Authorization: `Bearer ${auth.token}`
             }})
