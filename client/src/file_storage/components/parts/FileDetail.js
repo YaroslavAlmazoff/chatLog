@@ -94,9 +94,6 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
     const openFile = async () => {
         navigate(`/cloud/file/${file._id}`)
     }
-    const downloadFile = () => {
-        setDownloadingFile(fileCode)
-    }
     const sendFile = () => {
         setRecipientsDisplay('block')
     }
@@ -130,7 +127,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
                 <button onClick={sendFile} className='button button-blue'>Отправить файл</button>
                 <button onClick={filePreview} className='button button-blue'>Предпросмотр файла</button>
                 <button onClick={openFile} className='button button-blue'>Открыть файл</button>
-                <a onClick={downloadFile} className='button download-link' href={downloadingFile} download>Скачать</a>
+                <a className='button download-link' href={downloadingFile} download>Скачать</a>
                 <button onClick={deleteFile} className='button button-red'>Удалить</button>
             </div>
             <FilePreview file={file} fileText={fileText} filePreviewDisplay={filePreviewDisplay} ready={false} fileOpened={false} />
