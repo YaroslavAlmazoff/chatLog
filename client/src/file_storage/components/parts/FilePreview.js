@@ -6,7 +6,7 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
     const [fileCode, setFileCode] = useState('')
     useEffect(() => {
         getFile(file).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
+            const result = `data:${file.type};base64,` + data
             setFileCode(result)
         })
     }, [file])
