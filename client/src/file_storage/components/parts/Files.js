@@ -34,8 +34,8 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
                 <input onChange={getFile} ref={fileRef} type='file' accept=".png,.jpg,.jpeg,.mp4,.mp3.,.gif,.doc,.docx,.pdf,.txt" />
                 <button onClick={emitOpen} className="upload-new-file">Загрузить новый файл</button>
             </div>
-            {loadingUploading ? <div className="files-body">
-                <div className="files-list">
+            <div className="files-body">
+            {!loadingUploading ? <div className="files-list">
                     {files.map(el => <FileItem key={Math.random()} 
                         setSelectedFile={setSelectedFile} 
                         setDetailDisplay={setDetailDisplay} 
@@ -43,7 +43,8 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
                         file={el} 
                     />)}
                 </div>
-            </div> : <Loader ml={'50%'} />}
+                 : <Loader ml={'50%'} />}
+            </div>
         </div>
     )
 }
