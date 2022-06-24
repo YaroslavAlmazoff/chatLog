@@ -118,6 +118,7 @@
 .file-preview-text {
     color: black;
     margin: 5px;
+    margin-top: 10vh;
     text-align: left;
 }
 .file-img-dark-wrapper {
