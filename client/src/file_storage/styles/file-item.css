@@ -26,6 +26,7 @@
 .file-title {
     color: white;
     margin-top: -8px;
+    font-size: 11pt;
 }
 .context-menu {
     position: absolute;
