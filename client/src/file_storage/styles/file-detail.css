@@ -13,9 +13,6 @@
     height: 100vh;
     width: 70%;
 }
-.file-table {
-    width: 100%;
-}
 .file-table-head {
     border-bottom: 2px solid rgb(0, 140, 255);
     background-color: rgba(255, 255, 255, 0.283);
@@ -55,6 +52,9 @@
         background-color: rgba(9, 255, 0, 0.864);
         width: 140px;
     }
+    .file-table {
+        width: 100%;
+    }
 }
 @media screen and (width < 500px) {
     .open-download-link {
@@ -66,6 +66,9 @@
         position: fixed;
         top: 92%;
         left: 0%;
+    }
+    .file-table {
+        width: 98%;
     }
 }
 .download-link:hover {
