@@ -1,6 +1,6 @@
 const AdsPage = () => {
     return (
-        <div>Страница еще не создана!</div>
+        <div style={{color: 'white'}}>Страница еще не создана!</div>
     )
 }
 
