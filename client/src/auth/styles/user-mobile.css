@@ -49,7 +49,7 @@
     color: white;
     margin-top: 10px;
     overflow-x: scroll;
-    height: 17vh;
+    height: 20vh;
     width: 100%;
 }
 .user-friends-mobile::-webkit-scrollbar {
