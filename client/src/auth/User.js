@@ -82,11 +82,11 @@ const User = () => {
     }
     //Начальное состояние пользователя
     const [user, setUser] = useState({
-        name: 'unnamed',
-        surname: 'unname', 
+        name: '',
+        surname: '', 
         age: 0,
         avatarUrl: 'user.png',
-        bannerUrl: 'banner.jpg',
+        bannerUrl: '',
         friends: [],
         subscribes: [],
         articles: [],

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router"
 import Likers from "./Likers"
 import api from "../api/auth"
 import { AuthContext } from "../../context/AuthContext"
+import Loader from "../../common_components/Loader"
 
 const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, deletePost, divideWord, setUserPosts, userPosts, isOwner, deleteVideo, userVideos, setUserVideos}) => {
     //Пост пользователя
@@ -15,12 +16,15 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     //Получение функции для увеличивания числа лайков и комментариев поста пользователя
     const {getPost} = useFiles()
     const [imageCode, setImageCode] = useState('')
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         if(imageUrl !== 'none.png' && imageUrl !== 'user.png') {
             getPost(imageUrl).then((data) => {
                 const result = 'data:image/jpeg;base64,' + data
                 setImageCode(result)
+                setLoading(false)
             })
         }
     }, [])
@@ -97,7 +101,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     return (
         <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className={imageUrl !== 'none.png' ? "article" : "article-without-image"}> 
             {imageUrl !== 'none.png' ? <div className="portrait-crop">
-                <img className="article-image" src={imageCode} alt="article"/>
+                {!loading ? <img className="article-image" src={imageCode} alt="article"/> : <Loader ml={'50%'} />}
             </div> : <h2 className="title">{divideWord(title, 200)}</h2> }
              
             <div className={imageUrl !== 'none.png' ? "info": "info-without-image"}>
