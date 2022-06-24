@@ -47,6 +47,27 @@
     background-color: rgba(9, 255, 0, 0.864);
     width: 140px;
 }
+@media screen and (width > 500px) {
+    .open-download-link {
+        text-decoration: none;
+        padding-top: 10px;
+        font-size: 11pt;
+        background-color: rgba(9, 255, 0, 0.864);
+        width: 140px;
+    }
+}
+@media screen and (width < 500px) {
+    .open-download-link {
+        text-decoration: none;
+        padding-top: 10px;
+        font-size: 11pt;
+        background-color: rgba(9, 255, 0, 0.864);
+        width: 100%;
+        position: fixed;
+        top: 92%;
+        left: 0%;
+    }
+}
 .download-link:hover {
     border: 1px solid rgba(9, 255, 0, 0.864);
     color: rgba(9, 255, 0, 0.864);;
