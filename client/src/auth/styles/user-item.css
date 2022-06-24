@@ -54,7 +54,7 @@
         border: none;
     }
 }
-@media screen and (width > 500px) {
+@media screen and (width < 500px) {
     .user-item-write-message {
         border-radius: 15px;
         padding: 2px;
