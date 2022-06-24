@@ -33,12 +33,12 @@ const RecipientItem = ({item, file}) => {
     return (
         <div>
             {item._id !== auth.userId ? 
-                <div onClick={sendFile} className="user-item recipient-item">
-                    <div className="user-item-right-side">
-                        <div><img className="user-item-img" src={avatarCode} alt="user" /></div>
-                        <div className="user-item-info">
-                            <h3 className="user-item-name">{item.name} {item.surname}</h3>
-                            <p className="user-item-age">{item.age}</p>
+                <div onClick={sendFile} className="recipient-item">
+                    <div className="recipient-item-right-side">
+                        <div><img className="recipient-item-img" src={avatarCode} alt="user" /></div>
+                        <div className="recipient-item-info">
+                            <h3 className="recipient-item-name">{item.name} {item.surname}</h3>
+                            <p className="recipient-item-age">{item.age}</p>
                         </div>
                     </div>
                     <div>
