@@ -48,13 +48,16 @@
     border-radius: 0px 15px 15px 0px;
     color: white;
     margin-top: 10px;
-    overflow: hidden;
+    overflow-x: scroll;
     height: 13vh;
     width: 100%;
 }
+.user-friends-mobile::-webkit-scrollbar {
+    width: 0px;
+}
 .user-friend-mobile {
     width: 30px;
-    display: inline-block;
+    display: inline;
     margin-left: 20px;
     cursor: pointer;
 }
