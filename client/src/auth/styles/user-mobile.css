@@ -57,7 +57,7 @@
 }
 .user-friend-mobile {
     width: 30px;
-    display: inline;
+    display: inline-block;
     margin-left: 20px;
     cursor: pointer;
 }
