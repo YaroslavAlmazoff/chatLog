@@ -88,6 +88,13 @@ router.get('/getroomid/:user2', auth, (req, res) => {
         console.log(e)
     } 
 })
+router.get('/getfulllastmessage/:id', (req, res) => {
+    try {
+        MessengerService.getFullLastMessage(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 module.exports = router

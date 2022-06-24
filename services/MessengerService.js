@@ -129,6 +129,15 @@ class MessengerService {
             res.json({room: null})
         }
     }
+    async getFullLastMessage(req, res) {
+        const id = req.params.id
+        const messages = await Message.find({room: id})
+        if(!messages.length) {
+            return
+        }
+        const lastMessage = messages[messages.length - 1]
+        res.json({fullLastMessage: lastMessage})
+    }
 }
 
 module.exports = new MessengerService()

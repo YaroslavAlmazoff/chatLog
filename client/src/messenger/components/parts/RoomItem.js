@@ -14,6 +14,17 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
         name: 'unnamed',
         surname: 'unname'
     })
+    const [fullLastMessage, setFullLastMessage] = useState({
+        user1: ''
+    })
+    useEffect(() => {
+        const getFullLastMessage = async () => {
+            const response = await api.get(`/api/getfulllastmessage/${id}`)
+            console.log(response)
+            setFullLastMessage(response.data.fullLastMessage)
+        }
+        getFullLastMessage()
+    }, [id])
     const [imageCode, setImageCode] = useState('')
     useEffect(() => {
         getAvatar(user.avatarUrl).then((data) => {
@@ -21,11 +32,11 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
             setImageCode(result)
         })
     }, [user])
-    const [newMessageExists, setNewMessageExists] = useState(false)
     const auth = useContext(AuthContext)
     const gotoRoom = (id) => {
         window.location = `/messages/${id}`
     }
+    
     useEffect(() => {
         const checkUsers = async () => {
             const response = await api.get(`/api/user/${user1}`)
@@ -50,7 +61,7 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
         isNotReadedFunction()
     }, [id])
     return (
-        <div onClick={() => gotoRoom(id)} className={isNotReaded ? 'room-item-blue' : 'room-item'}>
+        <div onClick={() => gotoRoom(id)} className={isNotReaded && auth.userId !== fullLastMessage.user1  ? 'room-item-blue' : 'room-item'}>
             <div className="room-item-info-wrapper">
                 <img className="room-img" width="60" src={imageCode} alt="user" />
                 <div className="room-item-info">
