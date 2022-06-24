@@ -48,7 +48,7 @@
         color: white;
         margin: 10px;
         font-weight: 100;
-        font-size: 12pt;
+        font-size: 13pt;
     }
     .upload-new-file {
         background-color: rgb(0, 140, 255);
@@ -58,7 +58,7 @@
         border: none;
         cursor: pointer;
         position: fixed;
-        top: 90%;
+        top: 92%;
         left: 0%;
         width: 100%;
     }
