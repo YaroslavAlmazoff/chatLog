@@ -14,7 +14,7 @@ const RecipientsList = ({file, recipientsDisplay}) => {
     }, [])
     return (
         <div className="recipients-list" style={{display: recipientsDisplay}}>
-            <p style={{color: 'white'}}>Выберите, кому отправить ссылку на файл:</p>
+            <p style={{color: 'white'}}>Выберите, кому отправить файл/ссылку на файл:</p>
             {recipients.map(item => <RecipientItem item={item} file={file} />)}
         </div>
     )
