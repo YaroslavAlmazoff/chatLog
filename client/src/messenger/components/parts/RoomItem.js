@@ -15,7 +15,7 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
         surname: 'unname'
     })
     const [fullLastMessage, setFullLastMessage] = useState({
-        user1: ''
+        user: ''
     })
     useEffect(() => {
         const getFullLastMessage = async () => {
@@ -61,7 +61,7 @@ const RoomItem = ({user1, user2, lastMessage, id}) => {
         isNotReadedFunction()
     }, [id])
     return (
-        <div onClick={() => gotoRoom(id)} className={isNotReaded && auth.userId !== fullLastMessage.user1  ? 'room-item-blue' : 'room-item'}>
+        <div onClick={() => gotoRoom(id)} className={isNotReaded && auth.userId !== fullLastMessage.user  ? 'room-item-blue' : 'room-item'}>
             <div className="room-item-info-wrapper">
                 <img className="room-img" width="60" src={imageCode} alt="user" />
                 <div className="room-item-info">
