@@ -12,7 +12,6 @@ router.get('/verify', auth, (req, res) => {
     try {
         const verified = !!req.user
         res.json({verified})
-        console.log(token)
     } catch(e) {
         console.log(e)
     }
