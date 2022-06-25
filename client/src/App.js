@@ -26,7 +26,8 @@ function App() {
         isAuthenticated, 
         localStorage.getItem('user'), 
         JSON.parse(localStorage.getItem('user')),
-        JSON.parse(localStorage.getItem('user')).token
+        JSON.parse(localStorage.getItem('user')).token,
+        response
         )
     }
     verify()
