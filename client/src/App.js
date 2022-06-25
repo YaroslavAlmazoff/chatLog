@@ -1,7 +1,7 @@
 import './App.css';
 import {useRoutes} from './routes'
 import Header from './common_components/Header'
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import {useAuth} from './common_hooks/auth.hook' 
 import {AuthContext} from './context/AuthContext'
 import api from './auth/api/auth'
@@ -10,13 +10,22 @@ function App() {
   const {token, login, logout, userId} = useAuth()
   const isAuthenticated = !!token
   const routes = useRoutes(isAuthenticated)
-
+  const auth = useContext(AuthContext)
+  const [isVerified, setIsVerified] = useState(false)
   useEffect(() => {
     const setVisit = async () => {
       await api.get('/api/admin/setvisit')
     }
     setVisit()
-  }, [])
+    const verify = async () => {
+      const response = await api.get('/verify', {headers:{
+        Authorization: `Bearer ${auth.token}`
+      }})
+      setIsVerified(response.data.verified)
+      console.log(isVerified)
+    }
+    verify()
+  }, [auth])
 
   return (
     <AuthContext.Provider value={{

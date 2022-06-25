@@ -8,6 +8,15 @@ const router = Router()
 const auth = require('../middleware/auth.middleware')
 
 //Создание роутера для авторизации пользователя
+router.get('/verify', auth, (req, res) => {
+    try {
+        const verified = !!req.user
+        res.json({verified})
+        console.log(token)
+    } catch(e) {
+        console.log(e)
+    }
+})
 router.post('/auth/register', [
     check('name', 'Имя пользователя не может быть пустым').notEmpty(),
     check('surname', 'Фамилия пользователя не может быть пустой').notEmpty(),
