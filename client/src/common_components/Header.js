@@ -4,7 +4,7 @@ import './styles/header.css'
 import {useRef} from 'react'
 import { AuthContext } from "../context/AuthContext"
 
-const Header = () => {
+const Header = ({isVerified}) => {
     const auth = useContext(AuthContext)
     //Компонент верхней части приложения
     //Создание ссылок на ссылки:)
@@ -26,7 +26,7 @@ const Header = () => {
         <div className="header">
             <h2 className="logo">CHATLOG.RU</h2>
             <div className="links">
-                {auth.isAuthenticated 
+                {auth.isAuthenticated && isVerified 
                 ?   <div className="links">
                         <NavLink ref={linkRef1} onClick={() => visit(linkRef1)} className="link" to="/">Главная</NavLink>
                         <NavLink ref={linkRef8} onClick={() => visit(linkRef8)} className="link" to={`/user/${auth.userId}`}>Мой профиль</NavLink>

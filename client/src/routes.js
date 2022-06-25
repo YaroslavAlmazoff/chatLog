@@ -1,6 +1,5 @@
 import React from "react"
 import {Route, Routes, Navigate} from 'react-router-dom'
-import {About} from "./common_components/About"
 import {RoomsList} from './messenger/components/pages/RoomsList'
 import {Room} from './messenger/components/pages/Room'
 import Register from "./auth/Register"
@@ -26,39 +25,48 @@ import Services from "./homepage/Services"
 import AdsPage from "./ads/AdsPage"
 
 
-export const useRoutes = (isAuthenticated) => {
+export const useRoutes = (isAuthenticated, isVerified) => {
     //Кастомный хук для маршрутизации
     return (
         <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/greeting" element={<LandingPage />} />
-            <Route path="/support" element={<SupportPage />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/admin/:id" element={<Admin />} />
-            <Route path="/ads" element={<AdsPage />} />
-            <Route exact path="/cloud" element={<FileStorage />} />
-            <Route exact path="/cloud/file/:id" element={<File />} />
-            <Route path="/home" element={<HomePage/>} />
-            <Route path="/my/:id" element={<User />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/editprofile" element={<EditProfile />} />
-            <Route path="/createpost" element={<CreatePost />} />
-            <Route path="/createfoto" element={<CreateFoto />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/fotography/:id" element={<Fotography/>} />
-            <Route path="/video/:id" element={<UserVideoPage/>} />
-            <Route path="/messages" element={<RoomsList />} />
-            <Route path="/cloud" element={<FileStorage />} />
-            <Route exact path="/users" element={<Users />} />
-            <Route path="/user/:id" element={<User />} />
-            <Route path="/messages/:id" element={<Room />} />
-            <Route path="/messages/:id/:link" element={<Room />} />
-            <Route path="/blog_about" element={<About />} />
-            <Route path="/article/:id" element={<UserArticle />} />
-            <Route path="/article/:id/:comment" element={<UserArticle />} />
             <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/" element={<Main />} />
+            {
+                isAuthenticated && isVerified ?
+                <>
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/admin/:id" element={<Admin />} />
+                    <Route path="/ads" element={<AdsPage />} />
+                    <Route exact path="/cloud" element={<FileStorage />} />
+                    <Route exact path="/cloud/file/:id" element={<File />} />
+                    <Route path="/home" element={<HomePage/>} />
+                    <Route path="/my/:id" element={<User />} />
+                    <Route path="/news" element={<News />} />
+                    <Route path="/editprofile" element={<EditProfile />} />
+                    <Route path="/createpost" element={<CreatePost />} />
+                    <Route path="/createfoto" element={<CreateFoto />} />
+                    <Route path="/notifications" element={<Notifications />} />
+                    <Route path="/fotography/:id" element={<Fotography/>} />
+                    <Route path="/video/:id" element={<UserVideoPage/>} />
+                    <Route path="/messages" element={<RoomsList />} />
+                    <Route path="/cloud" element={<FileStorage />} />
+                    <Route exact path="/users" element={<Users />} />
+                    <Route path="/user/:id" element={<User />} />
+                    <Route path="/messages/:id" element={<Room />} />
+                    <Route path="/messages/:id/:link" element={<Room />} />
+                    <Route path="/article/:id" element={<UserArticle />} />
+                    <Route path="/article/:id/:comment" element={<UserArticle />} />
+                </>
+                :
+                <>
+                    <Route path="/greeting" element={<LandingPage />} />
+                    <Route path="/support" element={<SupportPage />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
+                </>
+            }
+
+            
         </Routes>
     )
 }

@@ -9,9 +9,9 @@ import api from './auth/api/auth'
 function App() {
   const {token, login, logout, userId} = useAuth()
   const isAuthenticated = !!token
-  const routes = useRoutes(isAuthenticated)
   const auth = useContext(AuthContext)
   const [isVerified, setIsVerified] = useState(false)
+  const routes = useRoutes(isAuthenticated, isVerified)
   useEffect(() => {
     const setVisit = async () => {
       await api.get('/api/admin/setvisit')
@@ -37,8 +37,9 @@ function App() {
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthenticated
     }}>
+
       <div className="App">
-        <Header/>
+        <Header isVerified={isVerified}/>
           {routes}
       </div>
     </AuthContext.Provider>
