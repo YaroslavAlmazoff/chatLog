@@ -11,6 +11,7 @@ const auth = require('../middleware/auth.middleware')
 router.get('/verify', auth, (req, res) => {
     try {
         const verified = !!req.user
+        console.log(verified, req.user, !!req.user)
         res.json({verified})
     } catch(e) {
         console.log(e)
