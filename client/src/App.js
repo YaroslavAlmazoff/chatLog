@@ -22,7 +22,7 @@ function App() {
         Authorization: `Bearer ${auth.token}`
       }})
       setIsVerified(response.data.verified)
-      console.log(isVerified)
+      console.log(isVerified, isAuthenticated)
     }
     verify()
   }, [auth])
