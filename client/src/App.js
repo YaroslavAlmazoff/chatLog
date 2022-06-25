@@ -22,7 +22,12 @@ function App() {
         Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
       }})
       setIsVerified(response.data.verified)
-      console.log(isVerified, isAuthenticated)
+      console.log(isVerified, 
+        isAuthenticated, 
+        localStorage.getItem('user'), 
+        JSON.parse(localStorage.getItem('user')),
+        JSON.parse(localStorage.getItem('user')).token
+        )
     }
     verify()
   }, [auth])
