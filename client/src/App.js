@@ -19,7 +19,7 @@ function App() {
     setVisit()
     const verify = async () => {
       const response = await api.get('/verify', {headers:{
-        Authorization: `Bearer ${auth.token}`
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('user').token)}`
       }})
       setIsVerified(response.data.verified)
       console.log(isVerified, isAuthenticated)
