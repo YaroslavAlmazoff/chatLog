@@ -10,15 +10,23 @@ class ImageService {
     //Сохранение файла на диск
     saveFile(file, filename, folder) {
         //Построение пути, по которому будет перемещён файл
-        const filePath = path.resolve('..', 'static', folder, filename)
-        file.mv(filePath)
-        return filename
+        try {
+            const filePath = path.resolve('..', 'static', folder, filename)
+            file.mv(filePath)
+            return filename
+        } catch(e) {
+            console.log(e)
+        }
     }
     async deleteFile(filepath) {
-        fs.unlink(filepath, err => {
-            if(err) throw err
-            console.log('Файл удалён')
-        })
+        try {
+            fs.unlink(filepath, err => {
+                if(err) throw err
+                console.log('Файл удалён')
+            })
+        } catch(e) {
+            console.log(e)
+        }
     }
 }
 
