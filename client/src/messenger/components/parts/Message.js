@@ -24,7 +24,7 @@ const Message = ({mess}) => {
     }, [mess])
     useEffect(() => {
         console.log(mess.videoUrl)
-        getMessageFoto(mess.videoUrl).then((data) => {
+        getMessageVideo(mess.videoUrl).then((data) => {
             const result = 'data:video/mp4;base64,' + data
             setVideoCode(result)
         })
@@ -54,7 +54,7 @@ const Message = ({mess}) => {
                             ? <img className="message-image" src={imageCode} alt="userimage" />
                             : <></>} 
                             {mess.videoUrl 
-                            ? <video width="300"controls src={videoCode}>
+                            ? <video width="300" controls src={videoCode}>
                             </video> 
                             : <></>} 
                     </div>
