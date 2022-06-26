@@ -77,7 +77,7 @@ class MessengerService {
         }
         const USER = await User.findById(user)
         await Message.create({
-            message, name: USER.name, avatarUrl: USER.avatarUrl, date, user, room, isNotReaded: true, isFile, imageUrl: filename
+            message, name: USER.name, avatarUrl: USER.avatarUrl, date, user, room, isNotReaded: true, isFile, imageUrl: filename, videoUrl: videofilename
         }).then(() => {
             //Когда новое сообщение создалось в базе данных, получение ID сообщения и загрузка изображения на диск
             Message.findOne({date}).then((newValue) => {
