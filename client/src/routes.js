@@ -32,7 +32,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<Main isAuthenticated={isAuthenticated} isVerified={isVerified} />} />
             {
-                isAuthenticated && isVerified ?
+                isAuthenticated || isVerified ?
                 <>
                     <Route path="/services" element={<Services />} />
                     <Route path="/admin/:id" element={<Admin />} />
