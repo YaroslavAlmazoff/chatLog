@@ -31,40 +31,31 @@ export const useRoutes = (isAuthenticated, isVerified) => {
         <Routes>
             <Route path="*" element={<Navigate to="/" />} />
             <Route exact path="/" element={<Main isAuthenticated={isAuthenticated} isVerified={isVerified} />} />
-            {
-                isAuthenticated || isVerified ?
-                <>
-                    <Route exact path="/services" element={<Services />} />
-                    <Route exact path="/admin/:id" element={<Admin />} />
-                    <Route exact path="/ads" element={<AdsPage />} />
-                    <Route exact path="/cloud" element={<FileStorage />} />
-                    <Route exact path="/cloud/file/:id" element={<File />} />
-                    <Route exact path="/home" element={<HomePage/>} />
-                    <Route exact path="/my/:id" element={<User />} />
-                    <Route exact path="/news" element={<News />} />
-                    <Route exact path="/editprofile" element={<EditProfile />} />
-                    <Route exact path="/createpost" element={<CreatePost />} />
-                    <Route exact path="/createfoto" element={<CreateFoto />} />
-                    <Route exact path="/notifications" element={<Notifications />} />
-                    <Route exact path="/fotography/:id" element={<Fotography/>} />
-                    <Route exact path="/video/:id" element={<UserVideoPage/>} />
-                    <Route exact path="/messages" element={<RoomsList />} />
-                    <Route exact path="/cloud" element={<FileStorage />} />
-                    <Route exact path="/users" element={<Users />} />
-                    <Route exact path="/user/:id" element={<User />} />
-                    <Route exact path="/messages/:id" element={<Room />} />
-                    <Route exact path="/messages/:id/:link" element={<Room />} />
-                    <Route exact path="/article/:id" element={<UserArticle />} />
-                    <Route exact path="/article/:id/:comment" element={<UserArticle />} />
-                </>
-                :
-                <>
-                    <Route path="/greeting" element={<LandingPage />} />
-                    <Route path="/support" element={<SupportPage />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/login" element={<Login />} />
-                </>
-            }
+            <Route exact path="/services" element={<Services />} />
+            <Route exact path="/admin/:id" element={<Admin />} />
+            <Route exact path="/ads" element={<AdsPage />} />
+            <Route exact path="/cloud" element={<FileStorage />} />
+            <Route exact path="/cloud/file/:id" element={<File />} />
+            <Route exact path="/home" element={<HomePage/>} />
+            <Route exact path="/my/:id" element={<User />} />
+            <Route exact path="/news" element={<News />} />
+            <Route exact path="/editprofile" element={<EditProfile />} />
+            <Route exact path="/createpost" element={<CreatePost />} />
+            <Route exact path="/createfoto" element={<CreateFoto />} />
+            <Route exact path="/notifications" element={<Notifications />} />
+            <Route exact path="/fotography/:id" element={<Fotography/>} />
+            <Route exact path="/video/:id" element={<UserVideoPage/>} />
+            <Route exact path="/messages" element={<RoomsList />} />
+            <Route exact path="/cloud" element={<FileStorage />} />
+            <Route exact path="/users" element={<Users />} />
+            <Route exact path="/user/:id" element={<User />} />
+            <Route exact path="/messages/:id" element={<Room />} />
+            <Route exact path="/messages/:id/:link" element={<Room />} />
+            <Route exact path="/article/:id" element={<UserArticle />} />
+            <Route path="/greeting" element={<LandingPage />} />
+            <Route path="/support" element={<SupportPage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
 
             
         </Routes>
