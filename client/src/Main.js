@@ -8,6 +8,7 @@ const Main = ({isAuthenticated, isVerified}) => {
         //Перенаправление пользователя в зависимости от того в аккаунте он или нет
         console.log(isAuthenticated, isVerified)
         if(isAuthenticated && isVerified) {
+            window.location.reload()
             navigate('/home')
         } else {
             if(localStorage.getItem('registered')) {
