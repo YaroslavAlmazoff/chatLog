@@ -12,7 +12,7 @@ const HomePage = () => {
     const [theme, setTheme] = useState('')
     useEffect(() => {
         const verify = async () => {
-            const response = await api.get('api/verify', {headers:{
+            const response = await api.get('/api/verify', {headers:{
                 Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
             }})
             if(!response.data.verified) {
