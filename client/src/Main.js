@@ -1,25 +1,22 @@
-import React, { useContext, useEffect } from "react"
+import React, { useEffect } from "react"
 import { useNavigate } from "react-router"
-import { AuthContext } from "./context/AuthContext"
 
-const Main = () => {
-    const auth = useContext(AuthContext)
+const Main = ({isAuthenticated, isVerified}) => {
     //получение функии навигации
     let navigate = useNavigate()
     useEffect(() => {
         //Перенаправление пользователя в зависимости от того в аккаунте он или нет
-        const id = auth.userId
-        console.log(id)
-        if(!id) {
-            if(!localStorage.getItem('registered')) {
-                navigate('/greeting')
-            } else {
-                navigate('/login')
-            }
+        console.log(isAuthenticated, isVerified)
+        if(isAuthenticated && isVerified) {
+            navigate('/home')
         } else {
-            navigate(`/home`)
+            if(localStorage.getItem('registered')) {
+                navigate('/login')
+            } else {
+                navigate('/greeting')
+            }
         }
-    }, [auth])
+    }, [isAuthenticated, isVerified])
     return (
         <div>
         </div>
