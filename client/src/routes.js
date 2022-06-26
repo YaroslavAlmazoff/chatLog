@@ -30,7 +30,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/" />} />
-            <Route path="/" element={<Main isAuthenticated={isAuthenticated} isVerified={isVerified} />} />
+            <Route exact path="/" element={<Main isAuthenticated={isAuthenticated} isVerified={isVerified} />} />
             {
                 isAuthenticated || isVerified ?
                 <>
