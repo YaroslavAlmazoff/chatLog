@@ -11,15 +11,6 @@ const HomePage = () => {
     const homeRef = useRef(null)
     const [theme, setTheme] = useState('')
     useEffect(() => {
-        const verify = async () => {
-            const response = await api.get('/api/verify', {headers:{
-                Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
-            }})
-            if(!response.data.verified) {
-                window.location = '/login'
-            }
-        }
-        verify()
         setTheme(require(`./img/backgrounds/${localStorage.getItem('theme')}/${Math.floor(Math.random() * 5) + 1}.jpg`))
         homeRef.current.scrollTop = 50;
     },[])
