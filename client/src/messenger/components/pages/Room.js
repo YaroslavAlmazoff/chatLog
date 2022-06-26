@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef, useMemo } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 import "../styles/room.css"
 import api from '../../../auth/api/auth'
 import {useParams} from 'react-router-dom'
@@ -142,10 +142,6 @@ export const Room = () => {
         
     }, [params, auth])
 
-    const myMessages = useMemo(async () => {
-            return await api.get(`/api/getmessages/${params.id}`)
-    },[params, messages])
-
     useEffect(() => {
         const readMessage = async () => {
             const res = await api.get(`/api/read/${params.id}`)
@@ -191,7 +187,7 @@ export const Room = () => {
             <div ref={roomRef} className="room-window">
                 <div className="room-head">{penFriend}</div>
                 <div className="messages">
-                {myMessages.map(mess => <Message mess={mess} />)}
+                {messages.map(mess => <Message mess={mess} />)}
                 </div>
             </div>
             <div className="message-actions">
