@@ -71,7 +71,7 @@ class MessengerService {
             if(req.files.file) {
                 filename = uuid.v4() + '.jpg'
             }
-            if(req.file.videofile) {
+            if(req.files.videofile) {
                 videofilename = uuid.v4() + '.mp4'
             }
         }
