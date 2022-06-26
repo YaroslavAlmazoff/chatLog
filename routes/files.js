@@ -58,6 +58,13 @@ router.get('/messagefoto/:url', (req, res) => {
         console.log(e)
     }
 })
+router.get('/messagevideo/:url', (req, res) => {
+    try {
+        GetFilesService.getMessageVideo(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 //Создание роутера для получения файлов

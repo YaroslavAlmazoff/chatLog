@@ -12,6 +12,7 @@ const Message = new mongoose.Schema({
     isFile: {type: Boolean, required: true, default: false},
     id: {type: Number, required: true, default: 0},
     imageUrl: {type: String, default: ''},
+    videoUrl: {type: String, default: ''}
 })
 
 module.exports = mongoose.model('Message', Message)

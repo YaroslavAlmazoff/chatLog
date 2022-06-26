@@ -52,6 +52,12 @@ class GetFilesService {
         const filepath = this.filesDir + folder + imageUrl
         ReadFileService.readFile(res, filepath)
     }
+    getMessageVideo(req, res) {
+        const imageUrl = req.params.url
+        const folder = 'messagevideos/'
+        const filepath = this.filesDir + folder + imageUrl
+        ReadFileService.readFile(res, filepath)
+    }
 }
 
 module.exports = new GetFilesService()

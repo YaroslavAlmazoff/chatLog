@@ -4,7 +4,7 @@ import { AuthContext } from "../../../context/AuthContext"
 import useFiles from "../../../common_hooks/files.hook"
 
 const Message = ({mess}) => {
-    const {getAvatar} = useFiles()
+    const {getAvatar, getMessageVideo, getMessageFoto} = useFiles()
     const [avatarCode, setAvatarCode] = useState('')
     useEffect(() => {
         getAvatar(mess.avatarUrl).then((data) => {
@@ -13,13 +13,20 @@ const Message = ({mess}) => {
         })
     }, [mess])
 
-    const {getMessageFoto} = useFiles()
     const [imageCode, setImageCode] = useState('')
+    const [videoCode, setVideoCode] = useState('')
     useEffect(() => {
         console.log(mess.imageUrl)
         getMessageFoto(mess.imageUrl).then((data) => {
             const result = 'data:image/jpeg;base64,' + data
             setImageCode(result)
+        })
+    }, [mess])
+    useEffect(() => {
+        console.log(mess.videoUrl)
+        getMessageFoto(mess.videoUrl).then((data) => {
+            const result = 'data:video/mp4;base64,' + data
+            setVideoCode(result)
         })
     }, [mess])
     const gotoFile = (link) => {
@@ -45,6 +52,10 @@ const Message = ({mess}) => {
                             
                             {mess.imageUrl 
                             ? <img className="message-image" src={imageCode} alt="userimage" />
+                            : <></>} 
+                            {mess.videoUrl 
+                            ? <video width="300"controls src={videoCode}>
+                            </video> 
                             : <></>} 
                     </div>
     )

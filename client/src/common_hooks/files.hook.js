@@ -28,6 +28,10 @@ const useFiles = () => {
         const response = await api.get(`/api/files/messagefoto/${imageUrl}`)
         return response.data.file
     }
+    const getMessageVideo = async (imageUrl) => {
+        const response = await api.get(`/api/files/messagevideo/${imageUrl}`)
+        return response.data.file
+    }
     const getFile = async (file) => {
         const response = await api.get(`/api/files/file/${file.owner}/${file.name}`)
         return response.data.file
@@ -45,7 +49,7 @@ const useFiles = () => {
     }
 
 
-    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getFile, getFileIcon, getFileToDownload}
+    return {getFoto, getPost, getVideo, getAvatar, getBanner, getMessageFoto, getMessageVideo, getFile, getFileIcon, getFileToDownload}
 }
 
 export default useFiles
