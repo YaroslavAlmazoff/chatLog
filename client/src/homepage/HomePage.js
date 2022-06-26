@@ -6,10 +6,8 @@ import News from './components/News'
 import './homepage.css'
 import { useEffect, useState, useRef } from 'react'
 import api from '../auth/api/auth'
-import { useNavigate } from 'react-router'
 
 const HomePage = () => {
-    const navigate = useNavigate()
     const homeRef = useRef(null)
     const [theme, setTheme] = useState('')
     useEffect(() => {

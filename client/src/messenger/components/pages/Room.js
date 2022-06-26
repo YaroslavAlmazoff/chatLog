@@ -1,18 +1,14 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import "../styles/room.css"
 import api from '../../../auth/api/auth'
-import {Link, useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import { AuthContext } from "../../../context/AuthContext"
 import useDate from "../../../common_hooks/date.hook"
-import useRandom from "../../../common_hooks/random.hook"
 import ImagePreview1 from "../../../auth/parts/ImagePreview1"
 import VideoPreview from "../../../auth/parts/VideoPreview"
-import useFiles from "../../../common_hooks/files.hook"
 import Message from "../parts/Message"
 
 export const Room = () => {
-    const {getAvatar} = useFiles()
-    const {randomKey} = useRandom()
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
     const [messages, setMessages] = useState([])
@@ -22,12 +18,14 @@ export const Room = () => {
     const params = useParams()
     const roomRef = useRef()
     const fileRef = useRef()
+    const fileRefVideo = useRef()
 
     const [imagePreviewDisplay1, setImagePreviewDisplay1] = useState('none')
     const [imagePreviewUrl1, setImagePreviewUrl1] = useState('')
     const [videoPreviewUrl, setVideoPreviewUrl] = useState('')
     const [videoPreviewDisplay, setVideoPreviewDisplay] = useState('none')
     const [file, setFile] = useState('')
+    const [videoFile, setVideoFile] = useState('')
 
     //Эмитирование открытия загрузки файла изображения для поста
     const emitOpen = () => {
@@ -51,6 +49,29 @@ export const Room = () => {
         reader.readAsDataURL(file)
         //Загрузка файла в состояние
         setFile(file)
+    }
+    //Эмитирование открытия загрузки файла изображения для поста
+    const emitOpenVideo = () => {
+        fileRefVideo.current.click()
+    }
+    //Получение файла изображения поста пользователя
+    const getFileVideo = async (e) => {
+        let file = e.target.files[0]
+        console.log(file)
+        const reader = new FileReader()
+        reader.onload = ev => {    
+            if(file.type === 'image/jpeg' || file.type === 'image/png') {
+                setImagePreviewDisplay1('block')  
+                setImagePreviewUrl1(ev.target.result)
+            } else {
+                setVideoPreviewDisplay('block')  
+                setVideoPreviewUrl(ev.target.result)
+            }
+            
+        }
+        reader.readAsDataURL(file)
+        //Загрузка файла в состояние
+        setVideoFile(file)
     }
     useEffect(() => {
         if(localStorage.getItem('file-link')) {
@@ -145,6 +166,7 @@ export const Room = () => {
         formData.append('message', message)
         formData.append('date', date)
         formData.append('file', file)
+        formData.append('videofile', videoFile)
         formData.append('isFile', !!localStorage.getItem('file-link'))
         if(localStorage.getItem('file-link')) {
             localStorage.removeItem('file-link')
@@ -169,8 +191,10 @@ export const Room = () => {
             <div className="message-actions">
                 <input type="text" className="message-input" placeholder="Напишите сообщение..." value={message} onChange={(e) => setMessage(e.target.value)} />
                 <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
+                <img onClick={(e) => emitOpenVideo(e)} className="upload-message-image" src={require(`../../img/upload-video.png`)} alt='img'/>
                 <button onClick={() => {sendMessage(); setMessage('')}} className="send-message">Отправить</button>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file" />
+                <input onChange={(e) => getFileVideo(e)} ref={fileRefVideo} type="file" />
             </div>
             {file.type === 'image/jpeg' || file.type === 'image/png'
                 ? <ImagePreview1 imagePreviewUrl1={imagePreviewUrl1} imagePreviewDisplay1={imagePreviewDisplay1} />

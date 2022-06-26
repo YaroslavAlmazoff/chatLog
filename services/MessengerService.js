@@ -66,8 +66,14 @@ class MessengerService {
         const room = req.params.room
         const user = req.user.userId
         let filename
+        let videofilename
         if(req.files) {
-            filename = uuid.v4() + '.jpg'
+            if(req.files.file) {
+                filename = uuid.v4() + '.jpg'
+            }
+            if(req.file.videofile) {
+                videofilename = uuid.v4() + '.mp4'
+            }
         }
         const USER = await User.findById(user)
         await Message.create({
@@ -77,7 +83,13 @@ class MessengerService {
             Message.findOne({date}).then((newValue) => {
                 const id = newValue._id
                 if(req.files) {
-                    FileService.insertMessageFoto(req.files.file, id, filename)
+                    if(req.files.file) {
+                        FileService.insertMessageFoto(req.files.file, id, filename)
+                    }
+                    if(req.files.videofile) {
+                        FileService.insertMessageVideo(req.files.videofile, id, videofilename)
+                    }
+                    
                 }
                 res.json({id})
             })
