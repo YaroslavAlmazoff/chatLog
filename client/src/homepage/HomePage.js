@@ -16,7 +16,7 @@ const HomePage = () => {
                 Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
             }})
             if(!response.data.verified) {
-                window.location = '/'
+                window.location = '/login'
             }
         }
         verify()
