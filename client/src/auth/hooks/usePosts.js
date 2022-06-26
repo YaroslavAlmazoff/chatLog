@@ -46,20 +46,24 @@ const usePosts = () => {
         }
         
     }
-    const sendFoto = async (file2, getCurrentDate, params, userFotos, setUserFotos) => {
-        const currentDate = getCurrentDate()
-        let formData2 = new FormData()
-        formData2.append('file', file2)
-        formData2.append('date', currentDate)
-        formData2.append('likes', 0)
-        formData2.append('comments', 0)
-        const response = await api.post(`/api/createuserfoto`, formData2, {headers: 
-            {'Content-Type': 'multipart/form-data',
-            Authorization: `Bearer ${auth.token}`
+    const sendFoto = async (file2, getCurrentDate, userFotos, setUserFotos) => {
+        if(file2) {
+            const currentDate = getCurrentDate()
+            let formData2 = new FormData()
+            formData2.append('file', file2)
+            formData2.append('date', currentDate)
+            formData2.append('likes', 0)
+            formData2.append('comments', 0)
+            const response = await api.post(`/api/createuserfoto`, formData2, {headers: 
+                {'Content-Type': 'multipart/form-data',
+                Authorization: `Bearer ${auth.token}`
+            }
+            })
+            setUserFotos([...userFotos, {imageUrl: response.data.filename}])
+            window.location.reload()
+        } else {
+            console.log('не выбрана фотография')
         }
-        })
-        setUserFotos([...userFotos, {imageUrl: response.data.filename}])
-        window.location.reload()
     }
     const deleteFoto = async (url) => {
         await api.delete(`/api/deleteuserfoto/${url}`)
