@@ -16,7 +16,6 @@ const Message = ({mess}) => {
     const [imageCode, setImageCode] = useState('')
     const [videoCode, setVideoCode] = useState('')
     useEffect(() => {
-        console.log(mess.imageUrl)
         getMessageFoto(mess.imageUrl).then((data) => {
             const result = 'data:image/jpeg;base64,' + data
             setImageCode(result)

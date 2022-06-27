@@ -9,6 +9,7 @@ import VideoPreview from "../../../auth/parts/VideoPreview"
 import Message from "../parts/Message"
 
 export const Room = () => {
+    const messageRef = useRef(null)
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
     const [messages, setMessages] = useState([])
@@ -165,7 +166,7 @@ export const Room = () => {
         const date = getCurrentDate()
         let formData = new FormData()
         console.log(file)
-        formData.append('message', message)
+        formData.append('message', messageRef.current.value)
         formData.append('date', date)
         formData.append('file', file)
         formData.append('videofile', videoFile)
@@ -191,7 +192,7 @@ export const Room = () => {
                 </div>
             </div>
             <div className="message-actions">
-                <input type="text" className="message-input" placeholder="Напишите сообщение..." value={message} onChange={(e) => setMessage(e.target.value)} />
+                <input ref={messageRef} type="text" className="message-input" placeholder="Напишите сообщение..." />
                 <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
                 <img onClick={(e) => emitOpenVideo(e)} className="upload-message-image" src={require(`../../img/upload-video.png`)} alt='img'/>
                 <button onClick={() => {sendMessage(); setMessage('')}} className="send-message">Отправить</button>
