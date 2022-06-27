@@ -26,7 +26,7 @@ const Header = ({isVerified}) => {
         <div className="header">
             <h2 className="logo">CHATLOG.RU</h2>
             <div className="links">
-                {auth.isAuthenticated && isVerified 
+                {auth.isAuthenticated || isVerified 
                 ?   <div className="links">
                         <NavLink ref={linkRef1} onClick={() => visit(linkRef1)} className="link" to="/">Главная</NavLink>
                         <NavLink ref={linkRef8} onClick={() => visit(linkRef8)} className="link" to={`/user/${auth.userId}`}>Мой профиль</NavLink>
