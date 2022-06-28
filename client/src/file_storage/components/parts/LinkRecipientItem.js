@@ -37,6 +37,7 @@ const LinkRecipientItem = ({item, file}) => {
                 Authorization: `Bearer ${auth.token}`
             }})
             const link = `http://chatlog.ru/cloud/file/${file._id}`
+            console.log(link)
             localStorage.setItem('file-link', link)
             navigate(`/messages/${data.data.room}`)
         })
