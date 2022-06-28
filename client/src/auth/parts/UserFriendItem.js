@@ -1,7 +1,6 @@
 import useRandom from "../../common_hooks/random.hook"
 import useWord from "../../common_hooks/divideWord.hook"
 import useFiles from "../../common_hooks/files.hook"
-import { useNavigate } from "react-router"
 import api from "../api/auth"
 import { AuthContext } from "../../context/AuthContext"
 import { useContext, useEffect, useState } from "react"
@@ -16,12 +15,11 @@ const UserFriendItem = ({el, isOwner, setUserFriends, userFriends, setNoticeDisp
         }) 
     }, [el])
     const auth = useContext(AuthContext)
-    const navigate = useNavigate()
     const {divideWord} = useWord()
     const {randomKey} = useRandom()
 
     const gotoFriend = (id) => {
-        navigate(`/user/${id}`)
+        window.location = `/user/${id}`
     }
     //Удаление из друзей
     const deleteFriend = async (id) => {

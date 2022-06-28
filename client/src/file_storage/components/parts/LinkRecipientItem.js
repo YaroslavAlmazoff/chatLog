@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
 import "../../../auth/styles/user-item.css"
-import { useNavigate } from "react-router"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
 import useFiles from "../../../common_hooks/files.hook"
@@ -13,7 +12,6 @@ const LinkRecipientItem = ({item, file}) => {
     }, [])
     const auth = useContext(AuthContext)
     //Предпросмотр пользователя на странице со всеми пользователями
-    let navigate = useNavigate()
     //Перемещение на страницу пользователя
     const createRoom = async () => {
         const response = await api.get(`/api/checkrooms/${item._id}`, {headers: {
@@ -39,7 +37,7 @@ const LinkRecipientItem = ({item, file}) => {
             const link = `http://chatlog.ru/cloud/file/${file._id}`
             console.log(link)
             localStorage.setItem('file-link', link)
-            navigate(`/messages/${data.data.room}`)
+            window.location = `/messages/${data.data.room}`
         })
     }
     const {getAvatar} = useFiles()

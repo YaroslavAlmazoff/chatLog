@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import useRandom from "../../../common_hooks/random.hook";
 import "../../styles/user.css"
 import {useParams} from "react-router"
 import api from "../../api/auth"
-import { useNavigate } from "react-router";
 import { AuthContext } from "../../../context/AuthContext";
 import FriendItem from "./FriendItem";
 

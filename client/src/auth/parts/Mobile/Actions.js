@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { useParams } from "react-router";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext, useEffect, useState, useRef } from "react";
@@ -11,14 +10,13 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, notificat
         checked: false
     }])
     const notificationRef = useRef(null)
-    const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const params = useParams()
     const gotoEdit = () => {
-        navigate(`/editprofile`)
+        window.location = `/editprofile`
     }
     const gotoCreatePostPage = () => {
-        navigate('/createpost')
+        window.location = '/createpost'
     }
     useEffect(() => {
         const getNotifications = async () => {
@@ -53,7 +51,7 @@ const Actions = ({isOwner, setNoticeDisplay, setNoticeText, noticeRef, notificat
         const response = await api.get(`/api/getroom/${params.id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        navigate(`/messages/${response.data.room._id}`)
+        window.location = `/messages/${response.data.room._id}`
     }
     //Отправка заявки в друзья
     const makeFriends = async () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import useRandom from "../../../common_hooks/random.hook";
 import "../../styles/user.css"
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import FotoItemMobile from "./FotoItemMobile";
 import ImagePreview2 from "../ImagePreview2";
 import useDate from "../../../common_hooks/date.hook";
@@ -13,9 +13,8 @@ const Fotos = ({userFotos, isOwner, showNotifications, getFile2, emitOpen2, file
     const {sendFoto} = usePosts()
     //Правая часть страницы пользователя - добавление фотографий и список фотографий
     const {randomKey} = useRandom()
-    const navigate = useNavigate()
     const showFotography = (img) => {
-        navigate(`/fotography/${img}`)
+        window.location = `/fotography/${img}`
     }  
     return (
         <div className="user-fotos-mobile">

@@ -5,7 +5,6 @@ import api from '../../../auth/api/auth'
 import { AuthContext } from '../../../context/AuthContext'
 import { useContext, useState } from 'react'
 import FilePreview from './FilePreview'
-import { useNavigate } from 'react-router'
 import useFiles from '../../../common_hooks/files.hook'
 import {useEffect} from 'react'
 import LinkRecipientsList from './LinkRecipientsList'
@@ -47,7 +46,6 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         })
         
     }, [file])
-    const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const {divideFilename} = useWord()
     const {fileSize} = useFileSize()
@@ -86,7 +84,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
         
     }
     const openFile = async () => {
-        navigate(`/cloud/file/${file._id}`)
+       window.location = `/cloud/file/${file._id}`
     }
     const sendFile = () => {
         setRecipientsDisplay('block')

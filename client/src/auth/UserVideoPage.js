@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react"
-import { useNavigate, useParams } from "react-router"
+import { useParams } from "react-router"
 import useDate from "../common_hooks/date.hook"
 import api from "./api/auth"
 import "./styles/article.css"
@@ -19,7 +19,6 @@ const UserVideoPage = () => {
     const commentIcon = require('./img/comment_white.png') 
     //Получение функции для увеличивания количества лайков и комментариев и получения даты из кастомных хуков
     const {getCurrentDate} = useDate()
-    const navigate = useNavigate()
     //Инициализация состояний для названия поста, его текста, даты, url изображения, поля комментирования, комментария, и всех комментариев
     const [articleTitle, setArticleTitle] = useState('')
     const [articleText, setArticleText] = useState('')
@@ -53,7 +52,7 @@ const UserVideoPage = () => {
     const comm = (e, obj) => {
         e.stopPropagation()
         setArticleComments(articleComments + 1)
-        navigate(`/video/${obj.id}/comment`)
+        window.location = `/video/${obj.id}/comment`
     }
     const showLikers = async () => {
         const response = await api.get(`/api/video/${params.id}`)
@@ -77,7 +76,7 @@ const UserVideoPage = () => {
         }, {headers: 
             {Authorization: `Bearer ${auth.token}`}
         })
-        navigate(`/video/${params.id}`)
+        window.location = `/video/${params.id}`
     }
     const mark = async (e) => {
         e.stopPropagation()

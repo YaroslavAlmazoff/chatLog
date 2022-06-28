@@ -1,14 +1,13 @@
 import React, {useState, useEffect, useContext} from "react";
 import "../styles/comment.css"
 import api from "../api/auth"
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import useFiles from "../../common_hooks/files.hook";
 
 const UserVideoComment = ({comment, date, user, id, articleComments, setArticleComments, comments, setComments}) => {
     const params = useParams()
     const auth = useContext(AuthContext)
-    const navigate = useNavigate()
     //Комментарий к посту пользователя
     useEffect(() => {
         console.log(user)
@@ -44,7 +43,7 @@ const UserVideoComment = ({comment, date, user, id, articleComments, setArticleC
         getCommenter()
     }, [user])
     const gotoCommenter = () => {
-        navigate(`/user/${user}`)
+        window.location = `/user/${user}`
     }
     return (
         <div className="comment-foto">

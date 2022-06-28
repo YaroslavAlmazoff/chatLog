@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../styles/user.css"
-import { useNavigate } from "react-router";
 import Notice from "./Notice";
 import useFiles from "../../common_hooks/files.hook";
 import $, {css} from 'jquery'
@@ -29,15 +28,13 @@ const UserNav = ({user, isOwner, noticeDisplay, setNoticeDisplay, noticeText, no
             $(".user-nav").css("background-image", "url('data:image/png;base64," + data + "')")
         }) 
     }, [user])
-    //Получение функции навигации
-    let navigate = useNavigate()
     //Создании ссылки на DOM-элемент стрелочки показать подробную информацию для анимации
     const arrow = useRef(null)
     //Инициализация состояния дисплея текста о пользователе в подробной информации
     const [aboutMeDisplay, setAboutMeDisplay] = useState('none')
     //Перемещение на страницу редактирования страницы пользователя
     const gotoEdit = () => {
-        navigate(`/editprofile`)
+        window.location = `/editprofile`
     }
     //Открытие подробной информации - текста о пользователе
     const openAboutMe = () => {

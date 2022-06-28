@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react"
-import { useNavigate, useParams } from "react-router"
+import { useParams } from "react-router"
 import useReactions from "../common_hooks/reactions.hook"
 import useDate from "../common_hooks/date.hook"
 import api from "./api/auth"
@@ -34,7 +34,6 @@ const UserArticle = () => {
     //Получение функции для увеличивания количества лайков и комментариев и получения даты из кастомных хуков
     const reaction = useReactions()
     const {getCurrentDate} = useDate()
-    const navigate = useNavigate()
     //Инициализация состояний для названия поста, его текста, даты, url изображения, поля комментирования, комментария, и всех комментариев
     const [articleTitle, setArticleTitle] = useState('')
     const [articleText, setArticleText] = useState('')
@@ -50,7 +49,7 @@ const UserArticle = () => {
     const comm = (e, obj) => {
         e.stopPropagation()
         setArticleComments(articleComments + 1)
-        navigate(`/article/${obj.id}/comment`)
+        window.location = `/article/${obj.id}/comment`
     }
     useEffect(() => {
         likers.forEach(el => {
@@ -69,7 +68,7 @@ const UserArticle = () => {
         }, {headers: 
             {Authorization: `Bearer ${auth.token}`}
         })
-        navigate(`/article/${params.id}`)
+        window.location = `/article/${params.id}`
     }
     const mark = async (e) => {
         e.stopPropagation()

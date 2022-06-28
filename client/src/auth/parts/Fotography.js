@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router"
 import "../styles/fotography.css"
 import api from "../api/auth"
-import { useNavigate } from "react-router"
 import useDate from "../../common_hooks/date.hook"
 import Likers from "./Likers"
 import UserFotoComment from "./UserFotoComment"
@@ -25,7 +24,6 @@ const Fotography = () => {
     }, [])
     const auth = useContext(AuthContext)
     const {deleteFoto} = usePosts()
-    const navigate = useNavigate()
     const params = useParams()
     const [foto, setFoto] = useState({likes: 0, comments: 0, imageUrl: 'user.png'})
     const [fotoComments, setFotoComments] = useState([])
@@ -74,7 +72,7 @@ const Fotography = () => {
                 Authorization: `Bearer ${auth.token}`
             }})
         }
-        navigate(`/fotography/${params.id}`)
+        window.location = `/fotography/${params.id}`
     }
     const showLikers = async () => {
         const response = await api.get(`/api/fotobyurl/${params.id}`)
@@ -97,7 +95,7 @@ const Fotography = () => {
         }, {headers: 
             {Authorization: `Bearer ${auth.token}`}
         })    
-        navigate(`/fotography/${params.id}`)
+        window.location = `/fotography/${params.id}`
     }
     useEffect(() => {
         const getFoto = async () => {

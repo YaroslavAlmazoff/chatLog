@@ -1,14 +1,13 @@
 import React, {useState, useEffect, useContext} from "react";
 import "../styles/comment.css"
 import api from "../api/auth"
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import useFiles from '../../common_hooks/files.hook'
 
 const UserArticleComment = ({comment, date, user, id, articleComments, setArticleComments, comments, setComments}) => {
     const auth = useContext(AuthContext)
     const params = useParams()
-    const navigate = useNavigate()
     //Комментарий к посту пользователя
     //Инициализация состояния комментирующего пользователя
     const [commenter, setCommenter] = useState({
@@ -43,7 +42,7 @@ const UserArticleComment = ({comment, date, user, id, articleComments, setArticl
         getCommenter()
     }, [auth])
     const gotoCommenter = () => {
-        navigate(`/user/${user}`)
+        window.location = `/user/${user}`
     }
     return (
         <div className="comment-foto">

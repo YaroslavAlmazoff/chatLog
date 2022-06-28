@@ -1,7 +1,6 @@
 import React, { useContext, useState, useRef } from 'react'
 import "./styles/form.css"
 import api from "./api/auth"
-import { useNavigate } from 'react-router'
 import {AuthContext} from '../context/AuthContext'
 import Notice from './parts/Notice'
 
@@ -16,7 +15,6 @@ const Login = () => {
     //Страница логина
     const auth = useContext(AuthContext)
     //Получение функции навигации
-    let navigate = useNavigate()
     //Инициализация состояний электронной почты и пароля пользователя
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -31,7 +29,7 @@ const Login = () => {
         auth.login(response.data.token, response.data.userId)
         //Запись в локальном хранилище браузера ID пользователя
         if(response.data.token && response.data.userId) {
-            navigate(`/home`)
+            window.location = `/home`
         } else {
             setNoticeText('Введены некорректные данные')
             setNoticeDisplay('block')

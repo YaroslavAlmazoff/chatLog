@@ -1,14 +1,12 @@
-import { useNavigate } from 'react-router'
 import useRandom from "../../common_hooks/random.hook"
 import useFiles from '../../common_hooks/files.hook'
 import { useState, useEffect } from 'react'
 
 const LikerItem = ({el}) => {
     const {randomKey} = useRandom()
-    const navigate = useNavigate()
     const gotoLiker = (e, id) => {
         e.stopPropagation()
-        navigate(`/user/${id}`)
+        window.location = `/user/${id}`
     }
     const {getAvatar} = useFiles()
 

@@ -1,7 +1,6 @@
 import UserPost from "./UserPost"
 import "../styles/user.css"
 import UserVideo from "./UserVideo"
-import { useNavigate } from "react-router"
 import { useParams } from "react-router"
 
 const UserCenterSide = ({
@@ -11,12 +10,11 @@ const UserCenterSide = ({
     }) => {
         const params = useParams()
         const isAdmin = params.id === '628e5aab0153706a3e18fe79'
-        const navigate = useNavigate()
         const gotoCreatePostPage = () => {
-            navigate('/createpost')
+            window.location = '/createpost'
         }
         const gotoAdmin = () => {
-            navigate(`/admin/${params.id}`)
+            window.location = `/admin/${params.id}`
         }
     //Центральная часть страницы пользователя - список его постов
     return (

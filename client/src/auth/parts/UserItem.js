@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
 import "../styles/user-item.css"
-import { useNavigate } from "react-router"
 import api from '../api/auth'
 import { AuthContext } from "../../context/AuthContext"
 import useFiles from "../../common_hooks/files.hook"
@@ -11,10 +10,9 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
     const [isFriends, setIsFriends] = useState(false)
     const auth = useContext(AuthContext)
     //Предпросмотр пользователя на странице со всеми пользователями
-    let navigate = useNavigate()
     //Перемещение на страницу пользователя
     const gotoUser = (id) => {
-        navigate(`/user/${id}`)
+        window.location = `/user/${id}`
     }
     const {getAvatar} = useFiles()
 
@@ -34,7 +32,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
         }})
         console.log(response.data.room)
         if(response.data.room) {
-            navigate(`/messages/${response.data.room}`)
+            window.location = `/messages/${response.data.room}`
         } else {
             await api.get(`/api/createroom/${id}`, {headers: {
                 Authorization: `Bearer ${auth.token}`
@@ -42,7 +40,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
             const response = await api.get(`/api/getroom/${id}`, {headers: {
                 Authorization: `Bearer ${auth.token}`
             }})
-            navigate(`/messages/${response.data.room._id}`)
+            window.location = `/messages/${response.data.room._id}`
         }
     }
     const makeFriends = async (e) => {

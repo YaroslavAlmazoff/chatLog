@@ -4,14 +4,12 @@ import "./styles/user.css"
 import api from "./api/auth"
 import ImagePreviewEdit1 from './parts/ImagePreviewEdit1'
 import ImagePreviewEdit2 from './parts/ImagePreviewEdit2'
-import { useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 
 const EditProfile = () => {
     //Страница редактирования профиля
     const auth = useContext(AuthContext)
     //Функция для навигации
-    let navigate = useNavigate()
     //Получение ссылок на файловые поля ввода
     const fileRef = useRef()
     const fileRef2 = useRef()
@@ -95,7 +93,7 @@ const EditProfile = () => {
             Authorization: `Bearer ${auth.token}`}
         })
         //Перемещение на профиль пользователя
-        navigate(`/user/${auth.userId}`)
+        window.location = `/user/${auth.userId}`
     }
     return (
         <div className="form">

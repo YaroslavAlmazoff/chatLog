@@ -1,9 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
 import "./styles/form.css"
 import api from "./api/auth"
-import { useNavigate } from 'react-router'
 import {AuthContext} from '../context/AuthContext'
-import Notice from './parts/Notice'
 
 const Register = () => {
     useEffect(() => {
@@ -19,7 +17,7 @@ const Register = () => {
     //Страница регистрации пользователя
     const auth = useContext(AuthContext)
     //Получение функции навигации
-    let navigate = useNavigate()
+
     //Инициализация состояний информации о пользователе
     const [name, setName] = useState('')
     const [surname, setSurName] = useState('')
@@ -47,7 +45,7 @@ const Register = () => {
         //Запись в локальное хранилище браузера ID пользователя
          //Перемещение на профиль пользователя
         localStorage.setItem('registered', true)
-        navigate(`/home`)
+        window.location = `/home`
     }
     const theme = (theme, ref, num) => {
         localStorage.setItem('theme', theme)

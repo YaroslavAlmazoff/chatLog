@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
 import '../styles/user-post.css'
-import { useNavigate } from "react-router"
 import Likers from "./Likers"
 import api from "../api/auth"
 import { AuthContext } from "../../context/AuthContext"
@@ -10,7 +9,6 @@ const UserVideo = ({title, date, imageUrl = 'user.png', likes, comments, id, del
     //Пост пользователя
     const auth = useContext(AuthContext)
     //Получение функции навигации
-    let navigate = useNavigate()
 
     const {getVideo} = useFiles()
     const [videoCode, setVideoCode] = useState('')
@@ -43,10 +41,10 @@ const UserVideo = ({title, date, imageUrl = 'user.png', likes, comments, id, del
     const comm = (e, obj) => {
         e.stopPropagation()
         setCommCount(commCount + 1)
-        navigate(`/video/${obj.id}/comment`)
+        window.location = `/video/${obj.id}/comment`
     }
     const openPost = (obj) => {
-        navigate(`/video/${obj.id}`)
+        window.location = `/video/${obj.id}`
     }
     const showLikers = async () => {
         console.log(id)
@@ -81,7 +79,7 @@ const UserVideo = ({title, date, imageUrl = 'user.png', likes, comments, id, del
                 {Authorization: `Bearer ${auth.token}`}
             })
         }   
-        navigate(`/video/${id}`)
+        window.location = `/video/${id}`
     } 
     const updateLikers = () => {
         showLikers()

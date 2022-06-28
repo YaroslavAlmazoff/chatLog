@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router"
 import api from "../api/auth"
 import {AuthContext} from '../../context/AuthContext'
 import { useContext } from "react"
@@ -7,7 +6,6 @@ import useDate from '../../common_hooks/date.hook'
 const usePosts = () => {
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
-    const navigate = useNavigate()
     const send = async (articleTitle, file, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading) => {
         setUploading(true)
         const currentDate = getCurrentDate()
@@ -25,14 +23,14 @@ const usePosts = () => {
             })
             setArticleTitle('Введите название статьи')
             setUserPosts([...userPosts, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
-            navigate(`/user/${auth.userId}`)
+            window.location = `/user/${auth.userId}`
         }
         else if(file.type !== 'image/jpeg') {
             const response = await api.post(`/api/uploaduservideo`, formData, {headers: 
                 {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
             })
             setUserVideos([...userVideos, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
-            navigate(`/user/${auth.userId}`)
+            window.location = `/user/${auth.userId}`
         } else {
             const response = await api.post(`/api/createuserpost`, formData, {headers: 
                 {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
@@ -42,7 +40,7 @@ const usePosts = () => {
             })
             setArticleTitle('Введите название статьи')
             setUserPosts([...userPosts, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
-            navigate(`/user/${auth.userId}`)
+            window.location = `/user/${auth.userId}`
         }
         
     }
@@ -67,7 +65,7 @@ const usePosts = () => {
     }
     const deleteFoto = async (url) => {
         await api.delete(`/api/deleteuserfoto/${url}`)
-        navigate(`/user/${auth.userId}`)
+        window.location = `/user/${auth.userId}`
     }
     const deletePost = async (e, post, setUserPosts, userPosts) => {
         e.stopPropagation()

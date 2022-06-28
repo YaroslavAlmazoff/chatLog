@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import useRandom from "../../common_hooks/random.hook";
 import "../styles/user.css"
 import {useParams} from "react-router"
 import api from "../api/auth"
-import { useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import UserFriendItem from "./UserFriendItem";
 
@@ -12,8 +10,6 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
     const auth = useContext(AuthContext)
     //Получение параметров get-запроса, рандомного ключа и функции навигации
     const params = useParams()
-    const {randomKey} = useRandom()
-    const navigate = useNavigate()
 
     //Инициализация состояний дисплея кнопки, и флага друзья ли пользователь и посетитель его страницы
     const [friendsButtonDisplay, setFriendsButtonDisplay] = useState('block')
@@ -78,7 +74,7 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
         const response = await api.get(`/api/getroom/${params.id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
         }})
-        navigate(`/messages/${response.data.room._id}`)
+        window.location = `/messages/${response.data.room._id}`
     }
 
     return (

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ImagePreview2 from "./ImagePreview2";
 import useRandom from "../../common_hooks/random.hook";
 import "../styles/user.css"
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import FotoItem from "./FotoItem";
 import useDate from "../../common_hooks/date.hook";
 import api from '../api/auth'
@@ -18,9 +18,8 @@ const UserRightSide = ({getFile2, fileRef2, emitOpen2,
     const {getCurrentDate} = useDate()
     //Правая часть страницы пользователя - добавление фотографий и список фотографий
     const {randomKey} = useRandom()
-    const navigate = useNavigate()
     const showFotography = (img) => {
-        navigate(`/fotography/${img}`)
+        window.location = `/fotography/${img}`
     }
     useEffect(() => {
         const getNotifications = async () => {

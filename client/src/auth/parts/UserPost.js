@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import '../styles/user-post.css'
 import useFiles from "../../common_hooks/files.hook"
-import { useNavigate, useParams } from "react-router"
 import Likers from "./Likers"
 import api from "../api/auth"
 import { AuthContext } from "../../context/AuthContext"
@@ -11,8 +10,6 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     //Пост пользователя
     let articleRef = useRef(null)
     const auth = useContext(AuthContext)
-    //Получение функции навигации
-    let navigate = useNavigate()
     //Получение функции для увеличивания числа лайков и комментариев поста пользователя
     const {getPost} = useFiles()
     const [imageCode, setImageCode] = useState('')
@@ -49,10 +46,10 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     const comm = (e, obj) => {
         e.stopPropagation()
         setCommCount(commCount + 1)
-        navigate(`/article/${obj.id}/comment`)
+        window.location = `/article/${obj.id}/comment`
     }
     const openPost = (obj) => {
-        navigate(`/article/${obj.id}`)
+        window.location = `/article/${obj.id}`
     }
     const showLikers = async () => {
         console.log(id)
