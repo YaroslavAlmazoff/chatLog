@@ -15,6 +15,7 @@ const Files = ({files, setFiles, setSelectedFile, setDetailDisplay, setFilePrevi
     }
     const getFile = async (e) => {
         let file = e.target.files[0]
+        if(!file) return
         const formData = new FormData()
         formData.append('file', file)
         //Загрузка файла в состояние
