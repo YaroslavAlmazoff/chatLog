@@ -77,7 +77,7 @@ export const Room = () => {
     useEffect(() => {
         if(localStorage.getItem('file-link')) {
             console.log(localStorage.getItem('file-link'))
-            setMessage(localStorage.getItem('file-link'))
+            messageRef.current.value = localStorage.getItem('file-link')
         }
         
     }, [])
