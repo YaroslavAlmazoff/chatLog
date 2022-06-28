@@ -171,9 +171,7 @@ export const Room = () => {
         formData.append('file', file)
         formData.append('videofile', videoFile)
         formData.append('isFile', !!localStorage.getItem('file-link'))
-        if(localStorage.getItem('file-link')) {
-            localStorage.removeItem('file-link')
-        }
+        
         await api.post(`/api/lastmessage/${params.id}`, {lastMessage: message})
 
         await api.post(`/api/sendmessage/${params.id}`,
