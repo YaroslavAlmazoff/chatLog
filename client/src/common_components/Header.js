@@ -28,7 +28,7 @@ const Header = ({isVerified}) => {
             <div className="links">
                 {auth.isAuthenticated || isVerified 
                 ?   <div className="links">
-                        <NavLink ref={linkRef1} onClick={() => visit(linkRef1)} className="link" to="/">Главная</NavLink>
+                        <NavLink ref={linkRef1} onClick={() => visit(linkRef1)} className="link" to="/home">Главная</NavLink>
                         <NavLink ref={linkRef8} onClick={() => visit(linkRef8)} className="link" to={`/user/${auth.userId}`}>Мой профиль</NavLink>
                         <NavLink ref={linkRef4} onClick={() => visit(linkRef4)} className="link" to="/messages">Сообщения</NavLink>
                         <NavLink ref={linkRef7} onClick={() => visit(linkRef7)} className="link" exact="true" to="/users">Люди</NavLink>
