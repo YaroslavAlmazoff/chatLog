@@ -38,7 +38,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(response.data.text)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            setFileText(<img style={{height: '100%'}} src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} alt="" />)
+            setFileText(<img style={{height: '300px'}} src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
             setFileText(<video width="300" controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}></video>)
