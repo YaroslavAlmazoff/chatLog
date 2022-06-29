@@ -30,6 +30,7 @@ app.use('/api/files', filesRouter)
 app.use('/api/admin', adminRouter)
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
+app.use(express.static(path.join(__dirname, '..', 'static')))
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
