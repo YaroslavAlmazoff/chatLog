@@ -90,6 +90,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     } 
     useEffect(() => {
         showLikers()
+        console.log(process.env.REACT_APP_API_URL)
     }, [id])
     const updateLikers = () => {
         showLikers()
@@ -98,7 +99,7 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     return (
         <div ref={articleRef} onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className={imageUrl !== 'none.png' ? "article" : "article-without-image"}> 
             {imageUrl !== 'none.png' ? <div className="portrait-crop">
-                {!loading ? <img className="article-image" src={imageCode} alt="article"/> : <Loader ml={'50%'} />}
+                {!loading ? <img className="article-image" src={process.env.REACT_APP_API_URL + imageUrl} alt="article"/> : <Loader ml={'50%'} />}
             </div> : <h2 className="title">{divideWord(title, 200)}</h2> }
              
             <div className={imageUrl !== 'none.png' ? "info": "info-without-image"}>
