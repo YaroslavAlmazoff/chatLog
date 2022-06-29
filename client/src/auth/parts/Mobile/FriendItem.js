@@ -6,14 +6,6 @@ import { AuthContext } from "../../../context/AuthContext"
 import { useContext, useEffect, useState } from "react"
 
 const FriendItem = ({el, isOwner, setUserFriends, userFriends, setNoticeDisplay, setNoticeText, noticeRef}) => {
-    const {getAvatar} = useFiles()
-    const [avatarCode, setAvatarCode] = useState('')
-    useEffect(() => {
-        getAvatar(el.avatarUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setAvatarCode(result)
-        }) 
-    }, [el])
     const auth = useContext(AuthContext)
     const {divideWord} = useWord()
     const {randomKey} = useRandom()
@@ -42,7 +34,7 @@ const FriendItem = ({el, isOwner, setUserFriends, userFriends, setNoticeDisplay,
         <div key={randomKey()} onClick={() => gotoFriend(el._id)} className="user-friend-mobile">
             {isOwner ? 
                 <p title="Удалить из друзей?" className="delete-friend-mobile" onClick={() => deleteFriend(el._id)}>&times;</p> : <></>}
-                    <img className="user-friend-avatar-mobile" src={avatarCode} alt="friend" />
+                    <img className="user-friend-avatar-mobile" src={process.env.REACT_APP_API_URL + `/useravatars/` + el.avatarUrl} alt="friend" />
                 <p className="user-friend-name-mobile">{divideWord(el.name, 25)}</p>
         </div>
     )

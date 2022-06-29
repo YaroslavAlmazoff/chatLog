@@ -73,6 +73,7 @@ const User = () => {
             Authorization: `Bearer ${auth.token}`
         }})
         notificationRef.current.remove()
+        console.log(notificationRef)
         console.log(response)
         if(!notificationsDisplay) {
             setNotificationsDisplay(true)

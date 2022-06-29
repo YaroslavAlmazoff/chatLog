@@ -3,23 +3,11 @@ import '../../styles/user-post-mobile.css'
 import Likers from "../Likers"
 import api from "../../api/auth"
 import { AuthContext } from "../../../context/AuthContext"
-import useFiles from "../../../common_hooks/files.hook"
 
 const UserVideoMobile = ({title, date, imageUrl = 'user.png', likes, comments, id, deletePost, divideWord, setUserPosts, userPosts, isOwner, deleteVideo, userVideos, setUserVideos}) => {
     //Пост пользователя
     const auth = useContext(AuthContext)
     //Получение функции навигации
-
-    const {getVideo} = useFiles()
-    const [videoCode, setVideoCode] = useState('')
-
-    useEffect(() => {
-        getVideo(imageUrl).then((data) => {
-            const result = 'data:video/mp4;base64,' + data
-            console.log(result)
-            setVideoCode(result)
-        })
-    }, [imageUrl])
     //Получение функции для увеличивания числа лайков и комментариев поста пользователя
     //Создание объекта с информацией поста
     const obj = {title, date, imageUrl, likes, comments, id}
@@ -93,7 +81,7 @@ const UserVideoMobile = ({title, date, imageUrl = 'user.png', likes, comments, i
                     <h2 className="title-mobile">{divideWord(title, 20)}</h2>
                     <p className="date-mobile">{date}</p>
                 </div>
-                <video width="342" controls style={{borderRadius: '11px'}} src={videoCode}>
+                <video width="342" controls style={{borderRadius: '11px'}} src={process.env.REACT_APP_API_URL + `/uservideos/` + imageUrl}>
             </video>
                 <div className="l_and_c-mobile">
                     <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>

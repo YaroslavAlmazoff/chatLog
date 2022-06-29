@@ -1,30 +1,14 @@
 import React, { useContext, useEffect, useState } from "react"
 import '../../styles/user-post-mobile.css'
-import useFiles from "../../../common_hooks/files.hook"
 import Likers from "../Likers"
 import api from "../../api/auth"
 import { AuthContext } from "../../../context/AuthContext"
-import Loader from "../../../common_components/Loader"
 
 const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id, deletePost, divideWord, setUserPosts, userPosts, isOwner, deleteVideo, userVideos, setUserVideos}) => {
     //Пост пользователя
     const auth = useContext(AuthContext)
     //Получение функции навигации
     //Получение функции для увеличивания числа лайков и комментариев поста пользователя
-    const {getPost} = useFiles()
-    const [imageCode, setImageCode] = useState('')
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        if(imageUrl !== 'none.png' && imageUrl !== 'user.png') {
-            getPost(imageUrl).then((data) => {
-                const result = 'data:image/jpeg;base64,' + data
-                setImageCode(result)
-                setLoading(false)
-            })
-        }
-    }, [])
     //Создание объекта с информацией поста
     const obj = {title, date, imageUrl, likes, comments, id}
     //Инициализация состояний иконки лайка, количества лайков и количества комментариев
@@ -104,7 +88,7 @@ const UserPostMobile = ({title, date, imageUrl = 'user.png', likes, comments, id
                     <p className="date-mobile">{date}</p>
                 </div>
             </div>
-            {imageUrl !== 'none.png' ? <div>{!loading ? <img className="article-image-mobile" src={imageCode} alt="article"/> : <Loader ml={'50%'} />}</div>:<h2 className="title-mobile">{divideWord(title, 20)}</h2>}
+            {imageUrl !== 'none.png' ? <div><img className="article-image-mobile" src={process.env.REACT_APP_API_URL + `/articles/` + imageUrl} alt="article"/></div>:<h2 className="title-mobile">{divideWord(title, 20)}</h2>}
             <div className="l_and_c-mobile">
                     <p><img onClick={(e) => mark(e)} width="30" src={like} alt="like"/>{likesCount}</p>
                     <p><img onClick={(e) => comm(e, obj)} width="26" src={commentIcon} alt="comment"/>{commCount}</p>
