@@ -4,30 +4,6 @@ import { AuthContext } from "../../../context/AuthContext"
 import useFiles from "../../../common_hooks/files.hook"
 
 const Message = ({mess}) => {
-    const {getAvatar, getMessageVideo, getMessageFoto} = useFiles()
-    const [avatarCode, setAvatarCode] = useState('')
-    useEffect(() => {
-        getAvatar(mess.avatarUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setAvatarCode(result)
-        })
-    }, [mess])
-
-    const [imageCode, setImageCode] = useState('')
-    const [videoCode, setVideoCode] = useState('')
-    useEffect(() => {
-        getMessageFoto(mess.imageUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setImageCode(result)
-        })
-    }, [mess])
-    useEffect(() => {
-        console.log(mess.videoUrl)
-        getMessageVideo(mess.videoUrl).then((data) => {
-            const result = 'data:video/mp4;base64,' + data
-            setVideoCode(result)
-        })
-    }, [mess])
     const gotoFile = (link) => {
         console.log(link)
         window.location = link
@@ -37,7 +13,7 @@ const Message = ({mess}) => {
     return (
         <div key={randomKey()} className={mess.user === auth.userId ? 'my-message-wrapper': 'message-wrapper'}>
                     <div className={mess.user === auth.userId ? 'my-message': 'message'} key={Date.now() - Math.random() * 999}>
-                                    <img className="message-avatar" src={avatarCode} alt="avatar" />
+                                    <img className="message-avatar" src={process.env.REACT_APP_API_URL + `/useravatars/` + mess.avatarUrl} alt="avatar" />
                                     <p>&nbsp;&nbsp;{mess.name}&nbsp;&nbsp;&nbsp;</p> <p className="message-date">{mess.date}</p>
                             </div>
                             <div className="message-text">
@@ -50,10 +26,10 @@ const Message = ({mess}) => {
                             </div>
                             
                             {mess.imageUrl 
-                            ? <img className="message-image" src={imageCode} alt="userimage" />
+                            ? <img className="message-image" src={process.env.REACT_APP_API_URL + `/messagefotos/` + mess.imageUrl} alt="userimage" />
                             : <></>} 
                             {mess.videoUrl 
-                            ? <video width="300" controls src={videoCode}>
+                            ? <video width="300" controls src={process.env.REACT_APP_API_URL + `/messagevideos/` + mess.videoUrl}>
                             </video> 
                             : <></>} 
                     </div>

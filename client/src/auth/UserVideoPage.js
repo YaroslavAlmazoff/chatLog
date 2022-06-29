@@ -32,16 +32,7 @@ const UserVideoPage = () => {
     const [like, setLike] = useState(require('./img/like_hollow_white.png'))
     const [likers, setLikers] = useState([])
     const [likersDisplay, setLikersDisplay] = useState('block')
-    const {getVideo} = useFiles()
-    const [videoCode, setVideoCode] = useState('')
 
-    useEffect(() => {
-        getVideo(imageUrl).then((data) => {
-            const result = 'data:video/mp4;base64,' + data
-            console.log(result)
-            setVideoCode(result)
-        })
-    }, [imageUrl])
     useEffect(() => {
         likers.forEach(el => {
             if(el._id === auth.userId) {
@@ -139,7 +130,7 @@ const UserVideoPage = () => {
                     <h1 className="atitle">{articleTitle}</h1>
                     <p className="adate">{articleDate}</p>
                 </div>
-                {imageUrl !== 'none.png' ? <video width="480" height="360" controls style={{borderRadius: '11px'}} src={videoCode}>
+                {imageUrl !== 'none.png' ? <video width="480" height="360" controls style={{borderRadius: '11px'}} src={process.env.REACT_APP_API_URL + '/uservideos/' + imageUrl}>
                 </video> : <></>}
                 
                 <p className="atext">{articleText}</p>

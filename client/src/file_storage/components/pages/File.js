@@ -11,14 +11,6 @@ const File = () => {
     const [file, setFile] = useState({})
     const [ready, setReady] = useState(false)
     const [fileText, setFileText] = useState('')
-    const {getFile} = useFiles()
-    const [fileCode, setFileCode] = useState('')
-    useEffect(() => {
-        getFile(file).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setFileCode(result)
-        })
-    }, [file])
     useEffect(() => {
         const filePreview = async () => {
             if(file.ext === 'txt') {
@@ -32,9 +24,9 @@ const File = () => {
                 }})
                 setFileText(response.data.text)
             } else if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-                setFileText(<img height="400" src={fileCode} alt="" />)
+                setFileText(<img height="400" src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} alt="" />)
             } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
-                setFileText(<video width="600" height="400" controls src={fileCode}></video>)
+                setFileText(<video width="600" height="400" controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}></video>)
             } else {
                 console.log('Не ну это капец')
             }

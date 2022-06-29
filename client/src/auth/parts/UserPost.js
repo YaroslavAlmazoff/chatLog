@@ -11,20 +11,8 @@ const UserPost = ({title, date, imageUrl = 'user.png', likes, comments, id, dele
     let articleRef = useRef(null)
     const auth = useContext(AuthContext)
     //Получение функции для увеличивания числа лайков и комментариев поста пользователя
-    const {getPost} = useFiles()
-    const [imageCode, setImageCode] = useState('')
     const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        setLoading(true)
-        if(imageUrl !== 'none.png' && imageUrl !== 'user.png') {
-            getPost(imageUrl).then((data) => {
-                const result = 'data:image/jpeg;base64,' + data
-                setImageCode(result)
-                setLoading(false)
-            })
-        }
-    }, [])
     //Создание объекта с информацией поста
     const obj = {title, date, imageUrl, likes, comments, id}
     //Инициализация состояний иконки лайка, количества лайков и количества комментариев

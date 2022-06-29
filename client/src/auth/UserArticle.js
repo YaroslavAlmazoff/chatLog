@@ -13,18 +13,7 @@ import useFiles from "../common_hooks/files.hook"
 
 const UserArticle = () => {
     const [imageUrl, setImageUrl] = useState('user.png')
-    const {getPost} = useFiles()
-    const [imageCode, setImageCode] = useState('')
 
-    useEffect(() => {
-        if(imageUrl !== 'none.png') {
-            getPost(imageUrl).then((data) => {
-                const result = 'data:image/jpeg;base64,' + data
-                console.log(imageUrl)
-                setImageCode(result)
-            })
-        }
-    }, [imageUrl])
     //Страница поста пользователя
     const auth = useContext(AuthContext)
     //Получение параметров
@@ -138,7 +127,7 @@ const UserArticle = () => {
                     <h1 className="atitle">{articleTitle}</h1>
                     <p className="adate">{articleDate}</p>
                 </div>{
-                    imageUrl !== 'none.png' ? <img className="article-img" src={imageCode} width="300" alt="articleimg" />
+                    imageUrl !== 'none.png' ? <img className="article-img" src={process.env.REACT_APP_API_URL + '/articles/' + imageUrl} width="300" alt="articleimg" />
                     : <div class="article-img fakeimg"></div>
                 }
                 

@@ -18,14 +18,6 @@ const UserFotoComment = ({comment, date, user, id, setFotoComments, fotoComments
         surname: 'User',
         avatarUrl: 'user.png'
     })
-    const {getAvatar} = useFiles()
-    const [avatarCode, setAvatarCode] = useState('')
-    useEffect(() => {
-        getAvatar(commenter.avatarUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setAvatarCode(result)
-        }) 
-    }, [commenter])
     const deleteComment = async (id) => {
         let comments = foto.comments
         comments = comments - 1
@@ -51,7 +43,7 @@ const UserFotoComment = ({comment, date, user, id, setFotoComments, fotoComments
             : <></>}
             <div className="comment-head">
                 <div className="user-info">
-                    <img className="comment-user-img" src={avatarCode} alt="user"/>
+                    <img className="comment-user-img" src={process.env.REACT_APP_API_URL + '/useravatars/' + commenter.avatarUrl} alt="user"/>
                     <p className="comment-user-name">{commenter.name} {commenter.surname}</p>
                 </div>
                 <p className="comment-date">{date}</p>

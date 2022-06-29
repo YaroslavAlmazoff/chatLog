@@ -13,39 +13,10 @@ import Loader from '../../../common_components/Loader'
 
 const FileDetail = ({file, detailDisplay, downloadingFile, 
                     setDownloadingFile, filePreviewDisplay, setFilePreviewDisplay}) => {
-    const {getFile, getFileToDownload} = useFiles()
-    const [fileCode, setFileCode] = useState('')
     const [linkRecipientsDisplay, setLinkRecipientsDisplay] = useState('none')
     const [recipientsDisplay, setRecipientsDisplay] = useState('none')
     const [fileLoading, setFileLoading] = useState(false)
     const [fileText, setFileText] = useState('')
-    useEffect(() => {
-        setFileLoading(true)
-        console.log(file)
-        getFile(file).then((data) => {
-            if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-                const result = 'data:image/jpeg;base64,' + data
-                setFileCode(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'avi' || file.ext === 'mp4') {
-                const result = 'data:video/mp4;base64,' + data
-                setFileCode(result)
-                setFileLoading(false)
-            }
-            else if(file.ext === 'pdf') {
-                const result = 'data:application/pdf;base64,' + data
-                setFileCode(result)
-                setFileLoading(false)
-            }
-        })
-        getFileToDownload(file).then((data) => {
-            const result = `data:${file.type};base64,`+ data
-            setDownloadingFile(result)
-            setFileLoading(false)
-        })
-        
-    }, [file])
     const auth = useContext(AuthContext)
     const {divideFilename} = useWord()
     const {fileSize} = useFileSize()
@@ -58,7 +29,7 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFilePreviewDisplay('block')
         } 
         else if(file.ext === 'pdf') {
-            setFileText(fileCode)
+            setFileText(process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'doc' || file.ext === 'docx') {
             const response = await api.get(`/api/cloud/hardfiletext/${file.name}`, {headers: {
@@ -67,14 +38,13 @@ const FileDetail = ({file, detailDisplay, downloadingFile,
             setFileText(response.data.text)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            setFileText(<img style={{height: '100%'}} src={fileCode} alt="" />)
+            setFileText(<img style={{height: '100%'}} src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} alt="" />)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp4' || file.ext === 'avi' || file.ext === 'mkv' || file.ext === 'dat' || file.ext === 'webm') {
-            setFileText(<video width="300" controls src={fileCode}></video>)
+            setFileText(<video width="300" controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}></video>)
             setFilePreviewDisplay('block')
         } else if(file.ext === 'mp3') {
-            setFileText(<audio controls src={fileCode}>
-                Your browser does not support the<code>audio</code> element.
+            setFileText(<audio controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}>
             </audio>)
             setFilePreviewDisplay('block')
         } else {

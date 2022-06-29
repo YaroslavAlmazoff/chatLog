@@ -7,46 +7,7 @@ import { AuthContext } from '../../../context/AuthContext'
 
 const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDisplay}) => {
     const [contextMenu, setContextMenu] = useState(null)
-    const {getFileIcon, getFile} = useFiles()
     const auth = useContext(AuthContext)
-    const [fileCode, setFileCode] = useState('')
-    const [downloadingFileCode, setDownloadingFileCode] = useState('')
-    useEffect(() => {
-        if(file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp') {
-            getFile(file).then((data) => {
-                const result = 'data:image/jpeg;base64,' + data
-                setFileCode(result)
-            })
-        } else if(file.ext === 'avi' || file.ext === 'mp4') {
-            getFile(file).then((data) => {
-                const result = 'data:video/mp4;base64,' + data
-                setFileCode(result)
-            })
-        } else if(file.ext === 'ai' || file.ext === 'apk' || 
-                  file.ext === 'css' || file.ext === 'doc' || 
-                  file.ext === 'docx' || file.ext === 'html' || 
-                  file.ext === 'js' || file.ext === 'mp3' || 
-                  file.ext === 'pdf' || file.ext === 'ppt' || 
-                  file.ext === 'psd' || file.ext === 'txt' || 
-                  file.ext === 'xls' || file.ext === 'zip') {
-            getFileIcon(file.ext).then((data) => {
-                const result = 'data:image/png;base64,' + data
-                setFileCode(result)
-            })
-        } else {
-            getFileIcon('txt').then((data) => {
-                const result = 'data:image/png;base64,' + data
-                setFileCode(result)
-            })
-        }
-    }, [file])
-    useEffect(() => {
-        getFile(file).then((data) => {
-            const result = `data:${file.type};base64,` + data
-            console.log(result)
-            setDownloadingFileCode(result)
-        })
-    }, [file])
     const {divideFilename} = useWord()
     const showDetails = () => {
         hideContextMenu()
@@ -64,7 +25,7 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
         e.preventDefault()
         setContextMenu(
             <div style={{marginLeft: e.pageX + 'px', top: e.pageY + 'px'}} className='context-menu'>
-                <a className='context-menu-upload' href={downloadingFileCode} download={file.name}>Скачать</a>
+                <a className='context-menu-upload' href={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} download={file.name}>Скачать</a>
                 <hr />
                 <p onClick={deleteFile} className='context-menu-delete'>Удалить</p>
             </div>
@@ -77,14 +38,14 @@ const FileItem = ({file, setSelectedFile, setDetailDisplay, setFilePreviewDispla
         <div onClick={showDetails} onContextMenu={(e) => openContextMenu(e)} className="file-item">
             {contextMenu}
             {file.ext === 'jpg' || file.ext === 'png' || file.ext === 'gif' || file.ext === 'bmp' ? 
-            <img className='file-img' src={fileCode} alt="file" />
+            <img className='file-img' src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} alt="file" />
             :   <div>
             {file.ext === 'mp4' ? 
-            <video  className='file-img' width="300" height="200" controls src={fileCode}>
+            <video  className='file-img' width="300" height="200" controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}>
             </video>
             : <div>
                 {file.ext !== 'mp4' || file.ext !== 'jpg' || file.ext !== 'png' || file.ext !== 'bmp' || file.ext !== 'gif' 
-            ? <img className='file-icon' src={fileCode} alt="img" />
+            ? <img className='file-icon' src={process.env.REACT_APP_API_URL + `/filesicons/` + file.ext + '.png'} alt="img" />
             : <></>
             }</div>}</div>}
             

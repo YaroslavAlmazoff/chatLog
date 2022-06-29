@@ -76,7 +76,7 @@ const UserVideo = ({title, date, imageUrl = 'user.png', likes, comments, id, del
     }
     return (
         <div onMouseOver={() => updateLikers()}  onMouseLeave={() => setLikersDisplay('none')} onClick={() => openPost(obj)} className="article">
-            <video width="260" height="180" controls style={{borderRadius: '11px'}} src={process.env.REACT_APP_API_URL + imageUrl}>
+            <video width="260" height="180" controls style={{borderRadius: '11px'}} src={process.env.REACT_APP_API_URL + '/uservideos/' + imageUrl}>
             </video>
              
             <div className="info">

@@ -72,7 +72,7 @@ const UserItem = ({name, surname, age, avatarUrl, id}) => {
     return (
         <div onClick={() => gotoUser(id)} className="user-item">
             <div className="user-item-right-side">
-                <div><img className="user-item-img" src={avatarCode} alt="user" /></div>
+                <div><img className="user-item-img" src={process.env.REACT_APP_API_URL + '/useravatars/' + avatarUrl} alt="user" /></div>
                 <div className="user-item-info">
                     <h3 className="user-item-name">{name} {surname}</h3>
                     <p className="user-item-age">{age}</p>

@@ -8,26 +8,6 @@ import useDate from "../../common_hooks/date.hook";
 const UserNav = ({user, isOwner, noticeDisplay, setNoticeDisplay, noticeText, noticeRef}) => {
     const {normalizeBirthDate} = useDate()
     //Верхняя часть страницы пользователя - информация, редактирование профиля
-    const {getAvatar} = useFiles()
-    const {getBanner} = useFiles()
-
-    const [avatarCode, setAvatarCode] = useState('')
-    const [bannerCode, setBannerCode] = useState('')
-    useEffect(() => {
-        getAvatar(user.avatarUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setAvatarCode(result)
-        }) 
-    }, [user])
-    useEffect(() => {
-        getBanner(user.bannerUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setBannerCode(result)
-            $(".user-nav").css("background-image", "url('data:image/png;base64," + data + "')")
-        }) 
-    }, [user])
     //Создании ссылки на DOM-элемент стрелочки показать подробную информацию для анимации
     const arrow = useRef(null)
     //Инициализация состояния дисплея текста о пользователе в подробной информации
@@ -58,9 +38,9 @@ const UserNav = ({user, isOwner, noticeDisplay, setNoticeDisplay, noticeText, no
         
     }
     return (
-        <div className="user-nav">
+        <div className="user-nav" style={{backgroundImage: `url(${process.env.REACT_APP_API_URL + '/userbanners/' + user.avatarUrl})`}}>
             <Notice noticeDisplay={noticeDisplay} setNoticeDisplay={setNoticeDisplay} noticeText={noticeText} noticeRef={noticeRef} />
-            <img className="user-avatar" src={avatarCode} alt="useravatar" />
+            <img className="user-avatar" src={process.env.REACT_APP_API_URL + '/useravatars/' + user.avatarUrl} alt="useravatar" />
             <div className="banner">
                 <div className="user-nav-info">
                     <h2 className="user-name">{user.name} {user.surname}</h2>

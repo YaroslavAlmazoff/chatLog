@@ -8,19 +8,10 @@ const LikerItem = ({el}) => {
         e.stopPropagation()
         window.location = `/user/${id}`
     }
-    const {getAvatar} = useFiles()
 
-    const [avatarCode, setAvatarCode] = useState('')
-
-    useEffect(() => {
-        getAvatar(el.avatarUrl).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            setAvatarCode(result)
-        }) 
-    }, [])
     return (
         <div>
-            <img key={randomKey()} onClick={(e) => gotoLiker(e, el._id)} title={`${el.name} ${el.surname}`} className='liker' src={avatarCode} alt="avatar" />
+            <img key={randomKey()} onClick={(e) => gotoLiker(e, el._id)} title={`${el.name} ${el.surname}`} className='liker' src={process.env.REACT_APP_API_URL + '/useravatars/' + el.avatarUrl} alt="avatar" />
         </div>
     )
 }

@@ -1,20 +1,9 @@
-import { useEffect, useState } from "react"
-import useFiles from "../../../common_hooks/files.hook"
-
 const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) => {
-    const {getFile} = useFiles()
-    const [fileCode, setFileCode] = useState('')
-    useEffect(() => {
-        getFile(file).then((data) => {
-            const result = `data:${file.type};base64,` + data
-            setFileCode(result)
-        })
-    }, [file])
     return (
         <div className='file-preview' style={{display: filePreviewDisplay}}>
                 {ready && fileOpened ?<div className="file-opened-info">
                     <h2 className="file-opened-preview-name" style={file.ext === 'doc' || file.ext === 'docx' || file.ext === 'txt' || file.ext === 'pdf'?{color: 'black'}:{color: 'white'}}>{file.name}</h2>
-                    <a className='button open-download-link' href={fileCode} download={file.name}>Скачать</a>
+                    <a className='button open-download-link' href={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} download={file.name}>Скачать</a>
                     </div>:<></>}
                 {file.ext === 'txt' || file.ext === 'doc' || file.ext === 'docx'
                 ?  <div><br /><br /><p className='file-preview-text'>{fileText}</p></div>
@@ -25,13 +14,13 @@ const FilePreview = ({file, filePreviewDisplay, fileText, fileOpened, ready}) =>
                 : <></>
                 }  
                 {file.ext === 'mp4' ? 
-                <video width="300" height="200" controls src={fileCode}>
+                <video width="300" height="200" controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}>
                 </video>    : <></>
                 }
                 {file.ext === 'mp3' ? 
-                <audio controls src={fileCode}></audio>   : <></>
+                <audio controls src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name}></audio>   : <></>
                 }
-                {file.ext === 'pdf' ? <iframe title={file.name} src={fileCode} style={{width: '100%', height: '100%'}}></iframe> : <></>}
+                {file.ext === 'pdf' ? <iframe title={file.name} src={process.env.REACT_APP_API_URL + `/userfiles/${file.owner}/` + file.name} style={{width: '100%', height: '100%'}}></iframe> : <></>}
             </div>
     )
 }

@@ -9,19 +9,8 @@ import useRandom from "../../common_hooks/random.hook"
 import Loader from "../../common_components/Loader"
 import usePosts from "../hooks/usePosts"
 import { AuthContext } from "../../context/AuthContext"
-import useFiles from "../../common_hooks/files.hook"
 
 const Fotography = () => {
-    const {getFoto} = useFiles()
-    const [imageCode, setImageCode] = useState('')
-
-    useEffect(() => {
-        getFoto(params.id).then((data) => {
-            const result = 'data:image/jpeg;base64,' + data
-            console.log(result)
-            setImageCode(result)
-        })
-    }, [])
     const auth = useContext(AuthContext)
     const {deleteFoto} = usePosts()
     const params = useParams()
@@ -124,7 +113,7 @@ const Fotography = () => {
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
             :
             <div className="window" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
-                <img className="fotography" src={imageCode} alt="foto" />
+                <img className="fotography" src={process.env.REACT_APP_API_URL + '/userfotos/' + foto.imageUrl} alt="foto" />
                 {foto.user === auth.userId ? <p onClick={() => deleteFoto(params.id)} className="delete-user-foto">Удалить фотографию</p>: <></>}
                 <div className="like-div">
                     <div className="l_and_c_foto">
