@@ -159,6 +159,7 @@ export const Room = () => {
     
     
     const sendMessage = async () => {
+        console.log('aaaaaaaaaaaaaaaaa')
         setVideoFile('')
         setFile('')
         const res = await api.get(`/api/read/${params.id}`)
