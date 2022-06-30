@@ -22,6 +22,7 @@ class FriendsService {
         //Создание уведомления о том что пользователь 1 хочет добавить пользователя 2 в друзья
         const text = `${user1.name} ${user1.surname} хочет добавить вас в друзья.`
         NotificationService.create(user1id, user2id, text, 'friends', 'user')
+        res.json({msg:'success'})
     }
     async deleteFriend(req, res) {
         //Извлечение ID пользователей
