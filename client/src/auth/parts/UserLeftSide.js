@@ -51,7 +51,6 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
         //Проверка являются ли друзьями пользователь и посетитель его страницы
         const checkFriends = async () => {
             //Получение ID пользователей
-            const user1 = auth.userId
             const user2 = params.id
             //Проверка друзей в базе данных
             const response2 = await api.get(`/api/checknotifications/${user2}`, {headers: 
@@ -66,7 +65,7 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
             console.log(isFriends, response2.data.message, response2.data)
         }
         checkFriends()
-    }, [params])
+    }, [params, auth])
     const createRoom = async () => {
         await api.get(`/api/createroom/${params.id}`, {headers: {
             Authorization: `Bearer ${auth.token}`
