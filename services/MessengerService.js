@@ -62,6 +62,7 @@ class MessengerService {
     }
     
     async sendMessage(req, res) {
+        console.log('message')
         const {message, date, isFile} = req.body
         const room = req.params.room
         const user = req.user.userId
