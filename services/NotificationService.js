@@ -17,7 +17,6 @@ class NotificationService {
     async check(req, res) {
         const user = req.params.id
         const notifications = await Notification.find({to: user})
-        console.log(notifications[notifications.length - 1], notifications)
         await Notification.findByIdAndUpdate(notifications[notifications.length - 1]._id, {checked: true})
         console.log('checked')
         res.json({msg: 'success'})
@@ -27,7 +26,6 @@ class NotificationService {
         const userid = req.params.id
         //Поиск уведомлений
         const notifications = await Notification.find({to: userid})
-        console.log(notifications)
         //Возращение уведомлений пользователя на клиент
         res.json({notifications})
     }
