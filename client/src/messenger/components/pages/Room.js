@@ -180,6 +180,7 @@ export const Room = () => {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer ${auth.token}`,   
         }})
+        console.log('end')
     
     }
     return (
