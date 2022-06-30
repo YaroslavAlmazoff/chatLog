@@ -18,6 +18,7 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
     useEffect(() => {
         //Проверка есть ли пользователь в друзьях у его посетителя
         const user2 = params.id
+        console.log(user2, auth.userId, localStorage.getItem(user2), auth.userId)
         if(!auth.userId) return
         if(localStorage.getItem(user2) === auth.userId) {
             setFriendsButtonDisplay('none')
