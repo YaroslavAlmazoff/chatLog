@@ -62,7 +62,7 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
             //Изменение флага являются ли друзьями пользователь и посетитель его страницы
             setIsFriends(response2.data.message)
             setIsFriends(response3.data.message)
-            console.log(isFriends, response2.data.message, response2.data)
+            console.log(isFriends, response2, response3)
         }
         checkFriends()
     }, [params, auth])

@@ -105,18 +105,19 @@ class FriendsService {
         const user1 = await User.findById(user1id)
         const user2 = await User.findById(user2id)
         //Проверка, есть ли у пользователя 2 в друзьях пользователь 1
-        let isFriends = false
         for(let i = 0; i < user2.friends.length; i++) {
             if(user2.friends[i] == user1id) {
                 //Если да, возвращение на клиент true
-                isFriends = true
+                res.json({message: true})
+                return
             } else {
                 //Если нет, возвращение на клиент false
-                isFriends = false
+                res.json({message: false})
+                return
             }
         }
         console.log(isFriends)
-        res.json({message: isFriends})
+        
     }
     async checkNotifications(req, res) {
         //Извлечение ID пользователей
