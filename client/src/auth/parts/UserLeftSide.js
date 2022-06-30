@@ -50,20 +50,24 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
     useEffect(() => {
         //Проверка являются ли друзьями пользователь и посетитель его страницы
         const checkFriends = async () => {
-            //Получение ID пользователей
-            const user2 = params.id
-            console.log(auth)
-            //Проверка друзей в базе данных
-            const response2 = await api.get(`/api/checknotifications/${user2}`, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })
-            const response3 = await api.get(`/api/checkfriends/${user2}`, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })
-            //Изменение флага являются ли друзьями пользователь и посетитель его страницы
-            setIsFriends(response2.data.message)
-            setIsFriends(response3.data.message)
-            console.log(isFriends, response2, response3)
+            try {
+                //Получение ID пользователей
+                const user2 = params.id
+                console.log(auth)
+                //Проверка друзей в базе данных
+                const response2 = await api.get(`/api/checknotifications/${user2}`, {headers: 
+                    {Authorization: `Bearer ${auth.token}`}
+                })
+                const response3 = await api.get(`/api/checkfriends/${user2}`, {headers: 
+                    {Authorization: `Bearer ${auth.token}`}
+                })
+                //Изменение флага являются ли друзьями пользователь и посетитель его страницы
+                setIsFriends(response2.data.message)
+                setIsFriends(response3.data.message)
+                console.log(isFriends, response2, response3)
+            } catch(e) {
+                console.log(e)
+            }
         }
         checkFriends()
     }, [params, auth])
