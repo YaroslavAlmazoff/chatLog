@@ -52,6 +52,7 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
         const checkFriends = async () => {
             //Получение ID пользователей
             const user2 = params.id
+            console.log(auth)
             //Проверка друзей в базе данных
             const response2 = await api.get(`/api/checknotifications/${user2}`, {headers: 
                 {Authorization: `Bearer ${auth.token}`}
