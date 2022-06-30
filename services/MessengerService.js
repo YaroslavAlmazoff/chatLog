@@ -111,7 +111,8 @@ class MessengerService {
 
         const messages = await Message.find({room})
         if(!messages.length) {
-            return 
+            res.json({msg: 'err'})
+            return
         }
         const isNotReaded = messages[messages.length - 1].isNotReaded
         res.json({isNotReaded})
@@ -120,6 +121,7 @@ class MessengerService {
         const room = req.params.id
         const messages = await Message.find({room})
         if(!messages.length) {
+            res.json({msg: 'err'})
             return
         }
         await Message.findByIdAndUpdate(messages[messages.length - 1], {isNotReaded: false})
@@ -146,6 +148,7 @@ class MessengerService {
         const id = req.params.id
         const messages = await Message.find({room: id})
         if(!messages.length) {
+            res.json({msg: 'err'})
             return
         }
         const lastMessage = messages[messages.length - 1]
