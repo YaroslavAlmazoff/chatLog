@@ -108,15 +108,17 @@ class FriendsService {
         for(let i = 0; i < user2.friends.length; i++) {
             if(user2.friends[i] == user1id) {
                 //Если да, возвращение на клиент true
+                console.log(true)
                 res.json({message: true})
                 return
             } else {
                 //Если нет, возвращение на клиент false
+                console.log(false)
                 res.json({message: false})
                 return
             }
         }
-        console.log(isFriends)
+
         
     }
     async checkNotifications(req, res) {
