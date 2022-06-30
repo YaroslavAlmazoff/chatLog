@@ -15,6 +15,15 @@ const UserLeftSide = ({userFriends, isOwner, setUserFriends, setNoticeDisplay, s
     const [friendsButtonDisplay, setFriendsButtonDisplay] = useState('block')
     const [isFriends, setIsFriends] = useState(false)
 
+    useEffect(() => {
+        //Проверка есть ли пользователь в друзьях у его посетителя
+        const user2 = params.id
+        if(!auth.userId) return
+        if(localStorage.getItem(user2) === auth.userId) {
+            setFriendsButtonDisplay('none')
+        }
+    }, [params, auth])
+
     //Отправка заявки в друзья
     const makeFriends = async () => {
         //Всплывающая подсказка об отправлении заявки в друзья
