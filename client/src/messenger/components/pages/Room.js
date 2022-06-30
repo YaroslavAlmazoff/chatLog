@@ -172,7 +172,7 @@ export const Room = () => {
         formData.append('videofile', videoFile)
         formData.append('isFile', !!localStorage.getItem('file-link'))
         
-        await api.post(`/api/lastmessage/${params.id}`, {lastMessage: message})
+        await api.post(`/api/lastmessage/${params.id}`, {lastMessage: messageRef.current.value})
 
         await api.post(`/api/sendmessage/${params.id}`,
             formData, {headers: {
@@ -193,7 +193,7 @@ export const Room = () => {
                 <input ref={messageRef} type="text" className="message-input" placeholder="Напишите сообщение..." />
                 <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
                 <img onClick={(e) => emitOpenVideo(e)} className="upload-message-image" src={require(`../../img/upload-video.png`)} alt='img'/>
-                <button onClick={() => {sendMessage(); setMessage('')}} className="send-message">Отправить</button>
+                <button onClick={sendMessage} className="send-message">Отправить</button>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file" />
                 <input onChange={(e) => getFileVideo(e)} ref={fileRefVideo} type="file" />
             </div>
