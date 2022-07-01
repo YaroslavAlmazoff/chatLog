@@ -9,7 +9,8 @@ import UserArticleComment from "./parts/UserArticleComment"
 import Likers from "./parts/Likers"
 import Loader from "../common_components/Loader"
 import {AuthContext} from '../context/AuthContext'
-import useFiles from "../common_hooks/files.hook"
+import Smile from "../messenger/components/parts/Smile"
+import { smiles } from "../messenger/components/pages/smiles"
 
 const UserArticle = () => {
     const [imageUrl, setImageUrl] = useState('user.png')
@@ -35,6 +36,7 @@ const UserArticle = () => {
     const [like, setLike] = useState(require('./img/like_hollow_white.png'))
     const [likers, setLikers] = useState([])
     const [likersDisplay, setLikersDisplay] = useState('block')
+    const [smilesDisplay, setSmilesDisplay] = useState('none')
     const comm = (e, obj) => {
         e.stopPropagation()
         setArticleComments(articleComments + 1)
@@ -88,6 +90,20 @@ const UserArticle = () => {
         //Помещение друзей пользователя в состояние
         setLikers([...likersArr].reverse())
     }
+    const addSmile = (code) => {
+        setCommentValue((prev => prev + code))
+    }
+    const showSmiles = () => {
+        if(smilesDisplay === 'none') {
+            setSmilesDisplay('block')
+            setTimeout(() => {
+                setSmilesDisplay('none')
+            }, 10000)
+        } else {
+            setSmilesDisplay('none')
+        }
+        console.log('sesh')
+    }   
     useEffect(() => {
         const getArticle = async () => {
             const response1 = await api.get(`/api/post/${params.id}`)
@@ -104,8 +120,12 @@ const UserArticle = () => {
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
+                <div className="room-smiles" style={{display: smilesDisplay}}>
+                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
+                </div>
                 <h2 className="comment-title">Ваш комментарий...</h2>
                 <textarea className="comment-area" onChange={(e) => setCommentValue(e.target.value)} value={commentValue}></textarea>
+                <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }

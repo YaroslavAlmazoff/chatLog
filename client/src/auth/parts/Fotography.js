@@ -9,6 +9,8 @@ import useRandom from "../../common_hooks/random.hook"
 import Loader from "../../common_components/Loader"
 import usePosts from "../hooks/usePosts"
 import { AuthContext } from "../../context/AuthContext"
+import Smile from "../../messenger/components/parts/Smile"
+import { smiles } from "../../messenger/components/pages/smiles"
 
 const Fotography = () => {
     const auth = useContext(AuthContext)
@@ -27,6 +29,7 @@ const Fotography = () => {
     const [like, setLike] = useState(require('../img/like_hollow_white.png'))
     const [likers, setLikers] = useState([])
     const [likersDisplay, setLikersDisplay] = useState('block')
+    const [smilesDisplay, setSmilesDisplay] = useState('none')
     useEffect(() => {
         likers.forEach(el => {
             if(el._id === auth.userId) {
@@ -86,6 +89,20 @@ const Fotography = () => {
         })    
         window.location = `/fotography/${params.id}`
     }
+    const addSmile = (code) => {
+        setCommentValue((prev => prev + code))
+    }
+    const showSmiles = () => {
+        if(smilesDisplay === 'none') {
+            setSmilesDisplay('block')
+            setTimeout(() => {
+                setSmilesDisplay('none')
+            }, 10000)
+        } else {
+            setSmilesDisplay('none')
+        }
+        console.log('sesh')
+    }  
     useEffect(() => {
         const getFoto = async () => {
             const response = await api.get(`/api/fotobyurl/${params.id}`)
@@ -97,8 +114,12 @@ const Fotography = () => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
+                <div className="room-smiles" style={{display: smilesDisplay}}>
+                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
+                </div>
                 <h2 className="comment-title">Напишите комментарий</h2>
                 <textarea className="comment-area" value={commentValue} onChange={(e) => setCommentValue(e.target.value)}></textarea>
+                <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }

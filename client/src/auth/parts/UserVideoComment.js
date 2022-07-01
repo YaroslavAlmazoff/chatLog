@@ -3,7 +3,6 @@ import "../styles/comment.css"
 import api from "../api/auth"
 import { useParams } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import useFiles from "../../common_hooks/files.hook";
 
 const UserVideoComment = ({comment, date, user, id, articleComments, setArticleComments, comments, setComments}) => {
     const params = useParams()
