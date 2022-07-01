@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import '../styles/user-post.css'
-import useFiles from "../../common_hooks/files.hook"
 import Likers from "./Likers"
 import api from "../api/auth"
 import { AuthContext } from "../../context/AuthContext"
