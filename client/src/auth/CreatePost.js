@@ -47,7 +47,7 @@ const CreatePost = () => {
         fileRef.current.click()
     }
     const addSmile = (code) => {
-        setArticleTitle(articleTitle + code)
+        setArticleTitle((prev) => prev + code)
     }
     const showSmiles = () => {
         if(smilesDisplay === 'none') {
