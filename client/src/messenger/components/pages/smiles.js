@@ -1,5 +1,5 @@
 export const smiles = [
-    {code: '&#128512;'},
+    {code: 'U+1F600'},
     {code: '&#128515;'},
     {code: '&#128516;'},
     {code: '&#128513;'},
