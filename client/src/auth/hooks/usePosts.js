@@ -7,6 +7,7 @@ const usePosts = () => {
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
     const send = async (articleTitle, file, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos) => {
+        console.log(file)
         const currentDate = getCurrentDate()
         let formData = new FormData()
         formData.append('title', articleTitle)
