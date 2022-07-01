@@ -5,6 +5,7 @@
     outline: none;
     border-radius: 15px;
     border: 1px solid black;
+    position: absolute;
 }
 @media screen and (width < 500px) {
     .header {
