@@ -194,7 +194,7 @@ export const Room = () => {
             setSmilesDisplay('block')
             setTimeout(() => {
                 setSmilesDisplay('none')
-            }, 5000)
+            }, 10000)
         } else {
             setSmilesDisplay('none')
         }
