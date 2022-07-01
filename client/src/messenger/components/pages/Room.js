@@ -192,6 +192,9 @@ export const Room = () => {
     const showSmiles = () => {
         if(smilesDisplay === 'none') {
             setSmilesDisplay('block')
+            setTimeout(() => {
+                setSmilesDisplay('none')
+            }, 5000)
         } else {
             setSmilesDisplay('none')
         }
