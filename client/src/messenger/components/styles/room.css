@@ -114,6 +114,7 @@
     text-align: left;
 }
 .upload-message-image {
+    margin-top: 10px;
     height: 50px;
     cursor: pointer;
 }
