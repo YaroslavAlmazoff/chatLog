@@ -1,16 +1,19 @@
 .room-smiles {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 100px;
     overflow-y: scroll;
     background-color: rgb(20, 20, 32);
     border-radius: 11px;
+    align-items: center;
+    justify-content: center;
 }
 .smiles::-webkit-scrollbar {
     width: none;
 }
 .smile-wrapper {
     display: inline-block;
+    margin: 3px;
 }
 .smile {
     width: 20px;
