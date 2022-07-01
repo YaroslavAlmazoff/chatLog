@@ -119,7 +119,7 @@ const Fotography = () => {
                 </div>
                 <h2 className="comment-title">Напишите комментарий</h2>
                 <textarea className="comment-area" value={commentValue} onChange={(e) => setCommentValue(e.target.value)}></textarea>
-                <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
+                <img onClick={showSmiles} className="upload-image" src={require(`../../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
