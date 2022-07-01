@@ -62,7 +62,7 @@ const CreatePost = () => {
             <div className="room-smiles" style={{display: smilesDisplay}}>
                 {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
             </div>
-            <input onChange={(e) => getFile(e)} ref={fileRef} type="file" accept=".jpg, .png, .gif .mp4" />
+            <input onChange={(e) => getFile(e)} ref={fileRef} type="file" accept=".jpg, .png, .gif, .mp4" />
             <input className="post-field" type="text" value={articleTitle} onChange={(e) => setArticleTitle(e.target.value)} />
             <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
             <button onClick={(e) => emitOpen(e)} className="user-add-foto">Выбрать фото</button>
