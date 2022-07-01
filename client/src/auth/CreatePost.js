@@ -20,7 +20,6 @@ const CreatePost = () => {
     const [userPosts, setUserPosts] = useState([])
     const [userVideos, setUserVideos] = useState([])
     const [file, setFile] = useState('')
-    const [uploading, setUploading] = useState(false)
     const [smilesDisplay, setSmilesDisplay] = useState('none')
     //Создание ссылок на файловые поля ввода
     const fileRef = useRef()
@@ -70,13 +69,11 @@ const CreatePost = () => {
             <input className="post-field" type="text" value={articleTitle} onChange={(e) => setArticleTitle(e.target.value)} />
             <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
             <button onClick={(e) => emitOpen(e)} className="user-add-foto">Выбрать фото</button>
-            <button onClick={() => send(getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading)} className="user-add-post">Добавить запись</button>
+            <button onClick={() => send(getCurrentDate, articleTitle, file, params, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos)} className="user-add-post">Добавить запись</button>
             {file.type === 'image/jpeg' || file.type === 'image/png'
             ? <ImagePreview1 imagePreviewUrl1={imagePreviewUrl1} imagePreviewDisplay1={imagePreviewDisplay1} />
             : <VideoPreview videoPreviewDisplay={videoPreviewDisplay} videoPreviewUrl={videoPreviewUrl} />
-            } 
-            {uploading ? <p style={{color: 'white'}}>Подождите немного...</p>
-            : <></>}         
+    }         
         </div>
     )
 }

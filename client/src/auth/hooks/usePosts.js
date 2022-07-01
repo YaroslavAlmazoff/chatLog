@@ -6,8 +6,7 @@ import useDate from '../../common_hooks/date.hook'
 const usePosts = () => {
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
-    const send = async (articleTitle, file, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos, setUploading) => {
-        setUploading(true)
+    const send = async (articleTitle, file, setArticleTitle, setUserPosts, userPosts, userVideos, setUserVideos) => {
         const currentDate = getCurrentDate()
         let formData = new FormData()
         formData.append('title', articleTitle)
