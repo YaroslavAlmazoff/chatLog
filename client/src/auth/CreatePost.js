@@ -55,7 +55,7 @@ const CreatePost = () => {
         } else {
             setSmilesDisplay('none')
         }
-        console.log('sesh')
+        console.log('sesh', smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }
 
     return (
