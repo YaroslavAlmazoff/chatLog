@@ -1,6 +1,6 @@
 .message-input {
     padding: 15px;
-    width: 10%;
+    width: 60%;
     outline: none;
     border-radius: 15px;
     border: 1px solid black;
@@ -53,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
 }
 .room-window::-webkit-scrollbar {
     width: 20px;               /* ширина scrollbar */
