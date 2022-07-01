@@ -183,6 +183,9 @@ export const Room = () => {
         console.log('end')
     
     }
+    const showSmiles = () => {
+        console.log('sesh')
+    }
     return (
             <div className="room-wrapper">
             <div ref={roomRef} className="room-window">
@@ -195,6 +198,7 @@ export const Room = () => {
                 <input ref={messageRef} type="text" className="message-input" placeholder="Напишите сообщение..." />
                 <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
                 <img onClick={(e) => emitOpenVideo(e)} className="upload-message-image" src={require(`../../img/upload-video.png`)} alt='img'/>
+                <img onClick={showSmiles} className="upload-message-image" src={require(`../../img/smile.png`)} alt='img'/>
                 <button onClick={sendMessage} className="send-message">Отправить</button>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file" />
                 <input onChange={(e) => getFileVideo(e)} ref={fileRefVideo} type="file" />
