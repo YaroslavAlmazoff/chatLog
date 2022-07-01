@@ -198,14 +198,14 @@ export const Room = () => {
             <div className="room-wrapper">
             <div ref={roomRef} className="room-window">
                 <div className="room-head">{penFriend}</div>
-                <div className="room-smiles" style={{display: smilesDisplay}}>
-                    {smiles.map(el => <Smile el={el} />)}
+                    <div className="room-smiles" style={{display: smilesDisplay}}>
+                        {smiles.map(el => <Smile el={el} />)}
+                    </div>
+                    <div className="messages">
+                    
+                    {messages.map(mess => <Message mess={mess} />)}
+                    </div>
                 </div>
-                <div className="messages">
-                
-                {messages.map(mess => <Message mess={mess} />)}
-                </div>
-            </div>
             <div className="message-actions">
                 <input ref={messageRef} type="text" className="message-input" placeholder="Напишите сообщение..." />
                 <img onClick={showSmiles} className="upload-message-image" src={require(`../../img/smile.png`)} alt='img'/>
