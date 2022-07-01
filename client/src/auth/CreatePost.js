@@ -46,6 +46,7 @@ const CreatePost = () => {
         setArticleTitle((prev) => prev + code)
     }
     const showSmiles = () => {
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
         if(smilesDisplay === 'none') {
             setSmilesDisplay('block')
             setTimeout(() => {
