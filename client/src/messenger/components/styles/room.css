@@ -50,7 +50,7 @@
 }
 .message-actions {
     width: 100%;
-    height: 100px;
+    height: 80px;
 }
 .room-window::-webkit-scrollbar {
     width: 20px;               /* ширина scrollbar */
