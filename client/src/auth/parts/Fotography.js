@@ -103,6 +103,7 @@ const Fotography = () => {
             setSmilesDisplay('none')
         }
         console.log('sesh')
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }  
     useEffect(() => {
         const getFoto = async () => {
