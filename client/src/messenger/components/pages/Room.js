@@ -7,15 +7,18 @@ import useDate from "../../../common_hooks/date.hook"
 import ImagePreview1 from "../../../auth/parts/ImagePreview1"
 import VideoPreview from "../../../auth/parts/VideoPreview"
 import Message from "../parts/Message"
+import {smiles} from './smiles'
+import Smile from "../parts/Smile"
+import '../styles/smiles.css'
 
 export const Room = () => {
     const messageRef = useRef(null)
     const {getCurrentDate} = useDate()
     const auth = useContext(AuthContext)
     const [messages, setMessages] = useState([])
-    const [message, setMessage] = useState('')
     const [penFriend, setPenFriend] = useState('')
     const [fullPenFriend, setFullPenFriend] = useState({})
+    const [smilesDisplay, setSmilesDisplay] = useState('none')
     const params = useParams()
     const roomRef = useRef()
     const fileRef = useRef()
@@ -184,6 +187,11 @@ export const Room = () => {
     
     }
     const showSmiles = () => {
+        if(smilesDisplay === 'none') {
+            setSmilesDisplay('block')
+        } else {
+            setSmilesDisplay('none')
+        }
         console.log('sesh')
     }
     return (
@@ -191,14 +199,17 @@ export const Room = () => {
             <div ref={roomRef} className="room-window">
                 <div className="room-head">{penFriend}</div>
                 <div className="messages">
+                <div className="room-smiles" style={{display: smilesDisplay}}>
+                    {smiles.map(el => <Smile el={el} />)}
+                </div>
                 {messages.map(mess => <Message mess={mess} />)}
                 </div>
             </div>
             <div className="message-actions">
                 <input ref={messageRef} type="text" className="message-input" placeholder="Напишите сообщение..." />
+                <img onClick={showSmiles} className="upload-message-image" src={require(`../../img/smile.png`)} alt='img'/>
                 <img onClick={(e) => emitOpen(e)} className="upload-message-image" src={require(`../../img/upload-image.png`)} alt='img'/>
                 <img onClick={(e) => emitOpenVideo(e)} className="upload-message-image" src={require(`../../img/upload-video.png`)} alt='img'/>
-                <img onClick={showSmiles} className="upload-message-image" src={require(`../../img/smile.png`)} alt='img'/>
                 <button onClick={sendMessage} className="send-message">Отправить</button>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file" />
                 <input onChange={(e) => getFileVideo(e)} ref={fileRefVideo} type="file" />
