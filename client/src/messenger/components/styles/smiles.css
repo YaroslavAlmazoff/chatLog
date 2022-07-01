@@ -1,14 +1,28 @@
-.room-smiles {
-    position: absolute;
-    width: 50%;
-    height: 100px;
-    overflow-y: scroll;
-    background-color: rgb(20, 20, 32);
-    border-radius: 11px;
-    align-items: center;
-    justify-content: center;
+@media screen and (width > 500px) {
+    .room-smiles {
+        position: absolute;
+        width: 45%;
+        height: 100px;
+        overflow-y: scroll;
+        background-color: rgb(20, 20, 32);
+        border-radius: 11px;
+        align-items: center;
+        justify-content: center;
+    }
 }
-.smiles::-webkit-scrollbar {
+@media screen and (width < 500px) {
+    .room-smiles {
+        position: absolute;
+        width: 90%;
+        height: 100px;
+        overflow-y: scroll;
+        background-color: rgb(20, 20, 32);
+        border-radius: 11px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.room-smiles::-webkit-scrollbar {
     width: none;
 }
 .smile-wrapper {
