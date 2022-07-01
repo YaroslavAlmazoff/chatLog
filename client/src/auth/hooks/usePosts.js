@@ -24,13 +24,13 @@ const usePosts = () => {
             setUserPosts([...userPosts, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
             window.location = `/user/${auth.userId}`
         }
-        else if(file.type !== 'image/jpeg') {
+        else if(file.type === 'video/mp4') {
             const response = await api.post(`/api/uploaduservideo`, formData, {headers: 
                 {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
             })
             setUserVideos([...userVideos, {title: articleTitle, date: currentDate, likes: 0, comments: 0, imageUrl: response.data.filename}])
             window.location = `/user/${auth.userId}`
-        } else if(file.type === 'video/mp4') {
+        } else {
             const response = await api.post(`/api/createuserpost`, formData, {headers: 
                 {'Content-Type': 'multipart/form-data', Authorization: `Bearer ${auth.token}`}
             })
