@@ -1,9 +1,9 @@
 import '../styles/smiles.css'
 
-const Smile = ({el}) => {
+const Smile = ({el, addSmile}) => {
     return (
-        <div className="smile-wrapper">
-            <img className="smile" src={require(`../../img/smiles/${el.id}.png`)} alt="smile" />
+        <div className="smile-wrapper" onClick={() => addSmile(el.code)}>
+            {el.code}
         </div>
     )
 }

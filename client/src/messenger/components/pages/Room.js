@@ -186,6 +186,9 @@ export const Room = () => {
         console.log('end')
     
     }
+    const addSmile = (code) => {
+        messageRef.current.value = messageRef.current.value + code
+    }
     const showSmiles = () => {
         if(smilesDisplay === 'none') {
             setSmilesDisplay('block')
@@ -199,7 +202,7 @@ export const Room = () => {
             <div ref={roomRef} className="room-window">
                 <div className="room-head">{penFriend}</div>
                     <div className="room-smiles" style={{display: smilesDisplay}}>
-                        {smiles.map(el => <Smile el={el} />)}
+                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                     </div>
                     <div className="messages">
                     
