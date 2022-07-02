@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext, useRef} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import { useParams } from "react-router"
 import useReactions from "../common_hooks/reactions.hook"
 import useDate from "../common_hooks/date.hook"
@@ -37,7 +37,6 @@ const UserArticle = () => {
     const [likers, setLikers] = useState([])
     const [likersDisplay, setLikersDisplay] = useState('block')
     const [smilesDisplay, setSmilesDisplay] = useState('none')
-    const commentRef = useRef('')
     const comm = (e, obj) => {
         e.stopPropagation()
         setArticleComments(articleComments + 1)
@@ -51,7 +50,17 @@ const UserArticle = () => {
         })
     }, [likers, auth])
     const obj = {articleTitle, articleDate, imageUrl, articleLikes, articleComments, comments, id: params.id}
-    
+    const sendComment = async () => {
+        const currentDate = getCurrentDate()
+        await api.post(`/api/sendcomment/${params.id}`, {
+            comment: commentValue, 
+            date: currentDate, 
+            articleID: params.id, 
+        }, {headers: 
+            {Authorization: `Bearer ${auth.token}`}
+        })
+        window.location = `/article/${params.id}`
+    }
     const mark = async (e) => {
         e.stopPropagation()
         likers.forEach(el => {
@@ -106,27 +115,16 @@ const UserArticle = () => {
     }, [params])
 
     useEffect(() => {
-        const sendComment = async () => {
-            const currentDate = getCurrentDate()
-            await api.post(`/api/sendcomment/${params.id}`, {
-                comment: commentRef.current.value, 
-                date: currentDate, 
-                articleID: params.id, 
-            }, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })
-            window.location = `/article/${params.id}`
-        }
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
                 <h2 className="comment-title">Ваш комментарий...</h2>
-                <textarea className="comment-area" ref={commentRef}></textarea>
+                <textarea className="comment-area" onChange={(e) => setCommentValue(e.target.value)} value={commentValue}></textarea>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
         articleComment()
-    }, [auth, params, getCurrentDate])
+    }, [commentValue])
 
     return (
         <div className="article-post" style={imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
