@@ -83,7 +83,7 @@ const Fotography = () => {
     const sendComment = async () => {
         const currentDate = getCurrentDate()
         await api.post(`/api/commentfoto/${params.id}`, {
-            comment: commentValue, 
+            comment: commentRef.current.value, 
             date: currentDate, 
             articleID: params.id, 
         }, {headers: 
