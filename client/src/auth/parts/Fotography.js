@@ -72,6 +72,7 @@ const Fotography = () => {
         const response = await api.get(`/api/fotobyurl/${params.id}`)
         let likersID = []
         likersID = response.data.foto.likers
+        console.log(likersID)
         let likersArr = []
         for(let i = 0; i < likersID.length; i++) {
             const data = await api.get(`/api/user/${likersID[i]}`)
