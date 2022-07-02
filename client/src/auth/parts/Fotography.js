@@ -115,10 +115,10 @@ const Fotography = () => {
         getFoto()
         showLikers()
         
-        const visitFoto = async () => {
+        /*const visitFoto = async () => {
             await api.get(`/api/visitfoto/${params.id}`, )
         }
-        visitFoto()
+        visitFoto()*/
         
     }, [])
 
