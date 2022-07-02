@@ -80,17 +80,7 @@ const Fotography = () => {
         //Помещение друзей пользователя в состояние
         setLikers([...likersArr].reverse())
     }
-    const sendComment = async () => {
-        const currentDate = getCurrentDate()
-        await api.post(`/api/commentfoto/${params.id}`, {
-            comment: commentRef.current.value, 
-            date: currentDate, 
-            articleID: params.id, 
-        }, {headers: 
-            {Authorization: `Bearer ${auth.token}`}
-        })    
-        window.location = `/fotography/${params.id}`
-    }
+    
     const addSmile = (code) => {
         commentRef.current.value = commentRef.current.value + code
     }
@@ -107,6 +97,17 @@ const Fotography = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }  
     useEffect(() => {
+        const sendComment = async () => {
+            const currentDate = getCurrentDate()
+            await api.post(`/api/commentfoto/${params.id}`, {
+                comment: commentRef.current.value, 
+                date: currentDate, 
+                articleID: params.id, 
+            }, {headers: 
+                {Authorization: `Bearer ${auth.token}`}
+            })    
+            window.location = `/fotography/${params.id}`
+        }
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -120,7 +121,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [smilesDisplay, showSmiles, sendComment])
+    }, [smilesDisplay, showSmiles, auth])
     useEffect(() => {
         const getFoto = async () => {
             const response = await api.get(`/api/fotobyurl/${params.id}`)
