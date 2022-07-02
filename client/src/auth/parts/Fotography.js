@@ -68,6 +68,19 @@ const Fotography = () => {
         }
         window.location = `/fotography/${params.id}`
     }
+    const showLikers = async () => {
+        const response = await api.get(`/api/fotobyurl/${params.id}`)
+        let likersID = []
+        likersID = response.data.foto.likers
+        console.log(likersID)
+        let likersArr = []
+        for(let i = 0; i < likersID.length; i++) {
+            const data = await api.get(`/api/user/${likersID[i]}`)
+            likersArr.push(data.data.user)
+        }
+        //Помещение друзей пользователя в состояние
+        setLikers([...likersArr].reverse())
+    }
     
     const addSmile = (code) => {
         commentRef.current.value = commentRef.current.value + code
@@ -117,6 +130,7 @@ const Fotography = () => {
         }
         getFotoComments()
         getFoto()
+        showLikers()
     }, [params, auth])
 
     return (

@@ -31,7 +31,7 @@ const UserFotoComment = ({comment, date, user, id, setFotoComments, fotoComments
             setCommenter(response.data.user)
         }
         getCommenter()
-    }, [user])
+    }, [])
     return (
         <div className="comment-foto">
             {user === auth.userId 
