@@ -3,15 +3,11 @@ import "../styles/comment.css"
 import api from "../api/auth"
 import { useParams } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import useFiles from "../../common_hooks/files.hook";
 
 const UserFotoComment = ({comment, date, user, id, setFotoComments, fotoComments, foto, setFoto}) => {
     const auth = useContext(AuthContext)
     const params = useParams()
     //Комментарий к посту пользователя
-    useEffect(() => {
-        console.log(user)
-    }, [user])
     //Инициализация состояния комментирующего пользователя
     const [commenter, setCommenter] = useState({
         name: 'User',

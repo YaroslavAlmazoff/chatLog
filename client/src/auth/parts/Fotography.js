@@ -120,7 +120,7 @@ const Fotography = () => {
         }
         visitFoto()*/
         
-    }, [])
+    }, [getFotoComments, params, showLikers])
 
     useEffect(() => {
         const fotoComment = () => {
