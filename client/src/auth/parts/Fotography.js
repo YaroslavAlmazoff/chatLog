@@ -120,7 +120,7 @@ const Fotography = () => {
         }
         visitFoto()
         
-    }, [params, commentValue])
+    }, [])
 
     useEffect(() => {
         const fotoComment = () => {
@@ -136,7 +136,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [showSmiles, smilesDisplay])
+    }, [showSmiles, smilesDisplay, commentValue])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
