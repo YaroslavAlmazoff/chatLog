@@ -124,7 +124,7 @@ const Fotography = () => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
-                <div className="room-smiles" style={{display: smilesDisplay}}>
+                <div className="room-smiles" style={{display: smilesDisplay, marginTop: '-50px'}}>
                         {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                 </div>
                 <h2 className="comment-title">Напишите комментарий</h2>

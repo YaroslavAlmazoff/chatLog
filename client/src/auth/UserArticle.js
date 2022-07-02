@@ -117,6 +117,18 @@ const UserArticle = () => {
             setComments([...response2.data.comments].reverse())
         }
         getArticle()
+        
+        const visitArticle = async () => {
+            await api.get(`/api/visitpost/${params.id}`, {headers: 
+                {Authorization: `Bearer ${auth.token}`}
+            })
+        }
+        visitArticle()
+
+        showLikers()
+    }, [params, commentValue])
+
+    useEffect(() => {
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -129,15 +141,8 @@ const UserArticle = () => {
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
-        const visitArticle = async () => {
-            await api.get(`/api/visitpost/${params.id}`, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })
-        }
-        visitArticle()
         articleComment()
-        showLikers()
-    }, [params, commentValue])
+    }, [showSmiles, smilesDisplay, commentValue, sendComment])
 
     return (
         <div className="article-post" style={imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
