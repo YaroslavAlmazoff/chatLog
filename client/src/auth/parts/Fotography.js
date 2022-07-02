@@ -119,7 +119,9 @@ const Fotography = () => {
             await api.get(`/api/visitfoto/${params.id}`, )
         }
         visitFoto()
-    }, [params])
+        
+    }, [params, commentValue])
+
     useEffect(() => {
         const fotoComment = () => {
             setCommentField(
@@ -134,7 +136,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [showSmiles, smilesDisplay, commentValue])
+    }, [showSmiles, smilesDisplay])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
