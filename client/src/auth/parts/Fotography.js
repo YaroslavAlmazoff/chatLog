@@ -124,7 +124,7 @@ const Fotography = () => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
-                <div className="room-smiles" style={{display: smilesDisplay, marginTop: '-50px'}}>
+                <div className="room-smiles" style={{display: smilesDisplay}}>
                         {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                 </div>
                 <h2 className="comment-title">Напишите комментарий</h2>
@@ -134,7 +134,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [showSmiles, smilesDisplay, commentValue, sendComment])
+    }, [showSmiles, smiles, smilesDisplay])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
