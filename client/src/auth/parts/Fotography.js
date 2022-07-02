@@ -97,9 +97,9 @@ const Fotography = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
         if(smilesDisplay === 'none') {
             setSmilesDisplay('block')
-            setTimeout(() => {
+            /*setTimeout(() => {
                 setSmilesDisplay('none')
-            }, 10000)
+            }, 10000)*/
         } else {
             setSmilesDisplay('none')
         }
