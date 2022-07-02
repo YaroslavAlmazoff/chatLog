@@ -26,7 +26,6 @@ const Fotography = () => {
     const {randomKey} = useRandom()
     //Инициализация состояний для названия поста, его текста, даты, url изображения, поля комментирования, комментария, и всех комментариев
     const [commentField, setCommentField] = useState(null)
-    const [commentValue, setCommentValue] = useState('Ваш комментарий')
     const [articleLikes, setArticleLikes] = useState('')
     const [like, setLike] = useState(require('../img/like_hollow_white.png'))
     const [likers, setLikers] = useState([])
@@ -39,10 +38,6 @@ const Fotography = () => {
             }
         })
     }, [likers, auth])
-    const getFotoComments = async () => {
-        const response = await api.get(`/api/fotocomments/${params.id}`)
-        setFotoComments([...response.data.comments].reverse())
-    }
     const comm = (e) => {
 
     }
@@ -68,18 +63,7 @@ const Fotography = () => {
         }
         window.location = `/fotography/${params.id}`
     }
-    const showLikers = async () => {
-        const response = await api.get(`/api/fotobyurl/${params.id}`)
-        let likersID = []
-        likersID = response.data.foto.likers
-        let likersArr = []
-        for(let i = 0; i < likersID.length; i++) {
-            const data = await api.get(`/api/user/${likersID[i]}`)
-            likersArr.push(data.data.user)
-        }
-        //Помещение друзей пользователя в состояние
-        setLikers([...likersArr].reverse())
-    }
+    
     const sendComment = async () => {
         const currentDate = getCurrentDate()
         await api.post(`/api/commentfoto/${params.id}`, {
@@ -122,6 +106,22 @@ const Fotography = () => {
         fotoComment()
     }, [smilesDisplay, showSmiles])
     useEffect(() => {
+        const showLikers = async () => {
+            const response = await api.get(`/api/fotobyurl/${params.id}`)
+            let likersID = []
+            likersID = response.data.foto.likers
+            let likersArr = []
+            for(let i = 0; i < likersID.length; i++) {
+                const data = await api.get(`/api/user/${likersID[i]}`)
+                likersArr.push(data.data.user)
+            }
+            //Помещение друзей пользователя в состояние
+            setLikers([...likersArr].reverse())
+        }
+        const getFotoComments = async () => {
+            const response = await api.get(`/api/fotocomments/${params.id}`)
+            setFotoComments([...response.data.comments].reverse())
+        }
         const getFoto = async () => {
             const response = await api.get(`/api/fotobyurl/${params.id}`)
             setFoto(response.data.foto)
