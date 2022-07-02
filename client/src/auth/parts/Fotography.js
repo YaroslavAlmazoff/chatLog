@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { useParams } from "react-router"
 import "../styles/fotography.css"
 import api from "../api/auth"
@@ -14,6 +14,7 @@ import { smiles } from "../../messenger/components/pages/smiles"
 import '../../messenger/components/styles/smiles.css'
 
 const Fotography = () => {
+    const commentRef = useRef('')
     const auth = useContext(AuthContext)
     const {deleteFoto} = usePosts()
     const params = useParams()
@@ -120,13 +121,13 @@ const Fotography = () => {
                         {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                 </div>
                 <h2 className="comment-title">Напишите комментарий</h2>
-                <textarea className="comment-area" value={commentValue} onChange={(e) => setCommentValue(e.target.value)}></textarea>
+                <textarea className="comment-area" ref={commentRef}></textarea>
                 <img onClick={showSmiles} className="upload-image" src={require(`../../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
         fotoComment()
-    }, [params, commentValue, auth])
+    }, [params, auth, smilesDisplay, showSmiles])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
