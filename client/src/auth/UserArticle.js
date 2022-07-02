@@ -112,7 +112,7 @@ const UserArticle = () => {
         visitArticle()
 
         showLikers()
-    }, [params, commentValue])
+    }, [params])
 
     useEffect(() => {
         const articleComment = () => {
