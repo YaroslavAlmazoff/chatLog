@@ -113,8 +113,6 @@ const Fotography = () => {
         getFotoComments()
         getFoto()
         showLikers()
-    }, [params, auth])
-    useEffect(() => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -128,7 +126,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [showSmiles, smilesDisplay, commentValue, setCommentValue])
+    }, [params, commentValue, auth])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
