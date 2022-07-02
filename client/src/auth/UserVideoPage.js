@@ -93,7 +93,7 @@ const UserVideoPage = () => {
         }   
     } 
     const addSmile = (code) => {
-        setCommentValue((prev => prev + code))
+        setCommentValue(prev => prev + code)
     }
     const showSmiles = () => {
         if(smilesDisplay === 'none') {

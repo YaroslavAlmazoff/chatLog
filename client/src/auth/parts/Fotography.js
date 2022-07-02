@@ -90,7 +90,7 @@ const Fotography = () => {
         window.location = `/fotography/${params.id}`
     }
     const addSmile = (code) => {
-        setCommentValue((prev => prev + code))
+        setCommentValue(prev => prev + code)
     }
     const showSmiles = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
