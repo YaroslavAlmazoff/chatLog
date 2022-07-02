@@ -107,13 +107,6 @@ const Fotography = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }  
     useEffect(() => {
-        const getFoto = async () => {
-            const response = await api.get(`/api/fotobyurl/${params.id}`)
-            setFoto(response.data.foto)
-        }
-        getFotoComments()
-        getFoto()
-        showLikers()
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -127,7 +120,17 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
+    }, [smilesDisplay, showSmiles])
+    useEffect(() => {
+        const getFoto = async () => {
+            const response = await api.get(`/api/fotobyurl/${params.id}`)
+            setFoto(response.data.foto)
+        }
+        getFotoComments()
+        getFoto()
+        showLikers()
     }, [params, auth])
+
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
