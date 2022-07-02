@@ -51,17 +51,7 @@ const UserArticle = () => {
         })
     }, [likers, auth])
     const obj = {articleTitle, articleDate, imageUrl, articleLikes, articleComments, comments, id: params.id}
-    const sendComment = async () => {
-        const currentDate = getCurrentDate()
-        await api.post(`/api/sendcomment/${params.id}`, {
-            comment: commentRef.current.value, 
-            date: currentDate, 
-            articleID: params.id, 
-        }, {headers: 
-            {Authorization: `Bearer ${auth.token}`}
-        })
-        window.location = `/article/${params.id}`
-    }
+    
     const mark = async (e) => {
         e.stopPropagation()
         likers.forEach(el => {
@@ -116,6 +106,17 @@ const UserArticle = () => {
     }, [params])
 
     useEffect(() => {
+        const sendComment = async () => {
+            const currentDate = getCurrentDate()
+            await api.post(`/api/sendcomment/${params.id}`, {
+                comment: commentRef.current.value, 
+                date: currentDate, 
+                articleID: params.id, 
+            }, {headers: 
+                {Authorization: `Bearer ${auth.token}`}
+            })
+            window.location = `/article/${params.id}`
+        }
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -125,7 +126,7 @@ const UserArticle = () => {
             </div>)
         }
         articleComment()
-    }, [])
+    }, [auth, params, getCurrentDate])
 
     return (
         <div className="article-post" style={imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
