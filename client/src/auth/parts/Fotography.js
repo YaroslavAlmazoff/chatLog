@@ -113,6 +113,17 @@ const Fotography = () => {
         getFotoComments()
         getFoto()
         showLikers()
+        
+        const visitFoto = async () => {
+            await api.get(`/api/visitfoto/${params.id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+        }
+        visitFoto()
+        
+    }, [params, auth])
+
+    useEffect(() => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -125,14 +136,8 @@ const Fotography = () => {
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
-        const visitFoto = async () => {
-            await api.get(`/api/visitfoto/${params.id}`, {headers: {
-                Authorization: `Bearer ${auth.token}`
-            }})
-        }
-        visitFoto()
         fotoComment()
-    }, [params, commentValue, auth])
+    }, [commentValue, showSmiles, smilesDisplay, sendComment])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
