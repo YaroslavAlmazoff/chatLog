@@ -97,13 +97,12 @@ const Fotography = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
         if(smilesDisplay === 'none') {
             setSmilesDisplay('block')
-            /*setTimeout(() => {
+            setTimeout(() => {
                 setSmilesDisplay('none')
-            }, 10000)*/
+            }, 10000)
         } else {
             setSmilesDisplay('none')
         }
-        console.log('sesh')
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }  
     useEffect(() => {
@@ -131,7 +130,9 @@ const Fotography = () => {
         }
         visitFoto()
         fotoComment()
-    }, [params, commentValue, showSmiles, smilesDisplay])
+    }, [params, commentValue,] 
+        //showSmiles, smilesDisplay]
+        )
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
