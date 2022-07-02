@@ -125,18 +125,8 @@ const Fotography = () => {
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
-        const visitFoto = async () => {
-            await api.get(`/api/visitfoto/${params.id}`, {headers: {
-                Authorization: `Bearer ${auth.token}`
-            }})
-        }
-        visitFoto()
         fotoComment()
     }, [params, commentValue, auth])
-
-    useEffect(() => {
-        
-    }, [commentValue])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
