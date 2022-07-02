@@ -79,10 +79,32 @@ const Fotography = () => {
         //Помещение друзей пользователя в состояние
         setLikers([...likersArr].reverse())
     }
+    const sendComment = async () => {
+        const currentDate = getCurrentDate()
+        await api.post(`/api/commentfoto/${params.id}`, {
+            comment: commentValue, 
+            date: currentDate, 
+            articleID: params.id, 
+        }, {headers: 
+            {Authorization: `Bearer ${auth.token}`}
+        })    
+        window.location = `/fotography/${params.id}`
+    }
     const addSmile = (code) => {
         setCommentValue(prev => prev + code)
     }
-     
+    const showSmiles = () => {
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
+        if(smilesDisplay === 'none') {
+            setSmilesDisplay('block')
+            setTimeout(() => {
+                setSmilesDisplay('none')
+            }, 10000)
+        } else {
+            setSmilesDisplay('none')
+        }
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
+    }  
     useEffect(() => {
         const getFoto = async () => {
             const response = await api.get(`/api/fotobyurl/${params.id}`)
@@ -91,40 +113,6 @@ const Fotography = () => {
         getFotoComments()
         getFoto()
         showLikers()
-        
-        const visitFoto = async () => {
-            await api.get(`/api/visitfoto/${params.id}`, {headers: {
-                Authorization: `Bearer ${auth.token}`
-            }})
-        }
-        visitFoto()
-        
-    }, [params, auth])
-
-    useEffect(() => {
-        const sendComment = async () => {
-            const currentDate = getCurrentDate()
-            await api.post(`/api/commentfoto/${params.id}`, {
-                comment: commentValue, 
-                date: currentDate, 
-                articleID: params.id, 
-            }, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })    
-            window.location = `/fotography/${params.id}`
-        }
-        const showSmiles = () => {
-            console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
-            if(smilesDisplay === 'none') {
-                setSmilesDisplay('block')
-                setTimeout(() => {
-                    setSmilesDisplay('none')
-                }, 10000)
-            } else {
-                setSmilesDisplay('none')
-            }
-            console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
-        } 
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -137,8 +125,18 @@ const Fotography = () => {
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
+        const visitFoto = async () => {
+            await api.get(`/api/visitfoto/${params.id}`, {headers: {
+                Authorization: `Bearer ${auth.token}`
+            }})
+        }
+        visitFoto()
         fotoComment()
-    }, [commentValue, smilesDisplay, auth, params])
+    }, [params, commentValue, auth])
+
+    useEffect(() => {
+        
+    }, [commentValue])
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
             {foto.imageUrl === 'user.png' ? <Loader ml={'0%'} />
