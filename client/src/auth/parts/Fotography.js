@@ -11,6 +11,7 @@ import usePosts from "../hooks/usePosts"
 import { AuthContext } from "../../context/AuthContext"
 import Smile from "../../messenger/components/parts/Smile"
 import { smiles } from "../../messenger/components/pages/smiles"
+import '../../messenger/components/styles/smiles.css'
 
 const Fotography = () => {
     const auth = useContext(AuthContext)
