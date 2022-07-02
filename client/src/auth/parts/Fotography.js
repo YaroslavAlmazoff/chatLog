@@ -120,7 +120,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [smilesDisplay, showSmiles])
+    }, [smilesDisplay, showSmiles, sendComment])
     useEffect(() => {
         const getFoto = async () => {
             const response = await api.get(`/api/fotobyurl/${params.id}`)
