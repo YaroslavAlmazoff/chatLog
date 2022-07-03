@@ -119,9 +119,7 @@ const Fotography = () => {
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
-                <div className="room-smiles" style={{display: smilesDisplay}}>
-                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
-                </div>
+                
                 <h2 className="comment-title">Напишите комментарий</h2>
                 <textarea className="comment-area" ref={commentRef}></textarea>
                 <img onClick={showSmiles} className="upload-image" src={require(`../../messenger/img/smile.png`)} alt='img'/>
@@ -129,7 +127,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [params, auth, smilesDisplay])
+    }, [params, auth])
 
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
@@ -147,6 +145,9 @@ const Fotography = () => {
                 </div>
                 
                 <div style={{marginLeft: 0}}>
+                <div className="room-smiles" style={{display: smilesDisplay}}>
+                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
+                </div>
                 {commentField}
                 {fotoComments.map((el) => <UserFotoComment key={randomKey()} comment={el.comment} date={el.date} user={el.user} id={el._id} setFotoComments={setFotoComments} fotoComments={fotoComments} foto={foto} setFoto={setFoto}/>)}
                 </div>
