@@ -91,7 +91,7 @@ const UserArticle = () => {
         setLikers([...likersArr].reverse())
     }
     const addSmile = (code) => {
-        
+        commentRef.current.value = commentRef.current.value + code
     }
     const showSmiles = () => {
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')

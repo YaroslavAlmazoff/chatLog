@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react"
+import React, {useState, useEffect, useContext, useRef} from "react"
 import { useParams } from "react-router"
 import useDate from "../common_hooks/date.hook"
 import api from "./api/auth"
@@ -26,7 +26,7 @@ const UserVideoPage = () => {
     const [articleDate, setArticleDate] = useState('')
     const [imageUrl, setImageUrl] = useState('user.png')
     const [commentField, setCommentField] = useState(null)
-    const [commentValue, setCommentValue] = useState('Ваш комментарий')
+    const commentRef = useRef('')
     const [comments, setComments] = useState([])
     const [articleLikes, setArticleLikes] = useState('')
     const [articleComments, setArticleComments] = useState('')
@@ -63,7 +63,7 @@ const UserVideoPage = () => {
     const sendComment = async () => {
         const currentDate = getCurrentDate()
         await api.post(`/api/commentvideo/${params.id}`, {
-            comment: commentValue, 
+            comment: commentRef.current.value, 
             date: currentDate, 
             articleID: params.id, 
         }, {headers: 
@@ -93,7 +93,7 @@ const UserVideoPage = () => {
         }   
     } 
     const addSmile = (code) => {
-        setCommentValue(prev => prev + code)
+        commentRef.current.value = commentRef.current.value + code
     }
     const showSmiles = () => {
         if(smilesDisplay === 'none') {
@@ -128,10 +128,6 @@ const UserVideoPage = () => {
         visitVideo()
 
         showLikers()
-
-    }, [params, commentValue])
-
-    useEffect(() => {
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -139,13 +135,13 @@ const UserVideoPage = () => {
                         {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                 </div>
                 <h2 className="comment-title">Ваш комментарий...</h2>
-                <textarea className="comment-area" onChange={(e) => setCommentValue(e.target.value)} value={commentValue}></textarea>
+                <textarea className="comment-area" ref={commentRef}></textarea>
                 <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
         articleComment()
-    }, [showSmiles, smilesDisplay, commentValue, sendComment])
+    }, [params, auth])
 
     return (
         <div className="article-post" style={imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
