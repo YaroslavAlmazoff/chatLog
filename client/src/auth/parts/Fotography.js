@@ -129,7 +129,7 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [params, auth])
+    }, [params, auth, smilesDisplay])
 
     return (
         <div className="dark-wrapper" style={foto.imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
