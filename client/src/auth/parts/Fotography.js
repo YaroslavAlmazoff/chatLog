@@ -145,7 +145,7 @@ const Fotography = () => {
                 </div>
                 
                 <div style={{marginLeft: 0}}>
-                <div className="room-smiles" style={{display: smilesDisplay}}>
+                <div className="room-smiles" style={{display: smilesDisplay, marginTop: '-100px'}}>
                         {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
                 </div>
                 {commentField}

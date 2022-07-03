@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react"
+import React, {useState, useEffect, useContext, useRef} from "react"
 import { useParams } from "react-router"
 import useReactions from "../common_hooks/reactions.hook"
 import useDate from "../common_hooks/date.hook"
@@ -29,7 +29,7 @@ const UserArticle = () => {
     const [articleText, setArticleText] = useState('')
     const [articleDate, setArticleDate] = useState('')
     const [commentField, setCommentField] = useState(null)
-    const [commentValue, setCommentValue] = useState('Ваш комментарий')
+    const commentRef = useRef()
     const [comments, setComments] = useState([])
     const [articleLikes, setArticleLikes] = useState('')
     const [articleComments, setArticleComments] = useState('')
@@ -53,7 +53,7 @@ const UserArticle = () => {
     const sendComment = async () => {
         const currentDate = getCurrentDate()
         await api.post(`/api/sendcomment/${params.id}`, {
-            comment: commentValue, 
+            comment: commentRef.current.value, 
             date: currentDate, 
             articleID: params.id, 
         }, {headers: 
@@ -90,6 +90,21 @@ const UserArticle = () => {
         //Помещение друзей пользователя в состояние
         setLikers([...likersArr].reverse())
     }
+    const addSmile = (code) => {
+        
+    }
+    const showSmiles = () => {
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
+        if(smilesDisplay === 'none') {
+            setSmilesDisplay('block')
+            setTimeout(() => {
+                setSmilesDisplay('none')
+            }, 10000)
+        } else {
+            setSmilesDisplay('none')
+        }
+        console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
+    }  
     useEffect(() => {
         const getArticle = async () => {
             const response1 = await api.get(`/api/post/${params.id}`)
@@ -112,19 +127,17 @@ const UserArticle = () => {
         visitArticle()
 
         showLikers()
-    }, [params])
-
-    useEffect(() => {
         const articleComment = () => {
             setCommentField(
             <div className="comment-field">
                 <h2 className="comment-title">Ваш комментарий...</h2>
-                <textarea className="comment-area" onChange={(e) => setCommentValue(e.target.value)} value={commentValue}></textarea>
+                <textarea className="comment-area" ref={commentRef}></textarea>
+                <img onClick={showSmiles} className="upload-image" src={require(`../../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
         articleComment()
-    }, [commentValue])
+    }, [params, auth])
 
     return (
         <div className="article-post" style={imageUrl === 'user.png' ? {backgroundColor: 'rgb(20, 20, 32)'} : {backgroundColor: 'white'}}>
@@ -146,7 +159,9 @@ const UserArticle = () => {
                     </div>
                     <Likers likers={likers} likersDisplay={likersDisplay} />
                 </div>
-                
+                <div className="room-smiles" style={{display: smilesDisplay, marginTop: '-100px'}}>
+                        {smiles.map(el => <Smile key={el.code} el={el} addSmile={addSmile} />)}
+                </div>
                 {commentField}
                 {comments.map((el) => <UserArticleComment key={Date.now().toString() - Math.random()} comment={el.comment} date={el.date} user={el.user} id={el._id} articleComments={articleComments} setArticleComments={setArticleComments} comments={comments} setComments={setComments} />)}
             </div> }
