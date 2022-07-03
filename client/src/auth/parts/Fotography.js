@@ -97,18 +97,25 @@ const Fotography = () => {
         }
         console.log(smilesDisplay, smilesDisplay === 'none', smilesDisplay === 'block')
     }  
+    const sendComment = async () => {
+        const currentDate = getCurrentDate()
+        await api.post(`/api/commentfoto/${params.id}`, {
+            comment: commentRef.current.value, 
+            date: currentDate, 
+            articleID: params.id, 
+        }, {headers: 
+            {Authorization: `Bearer ${auth.token}`}
+        })    
+        window.location = `/fotography/${params.id}`
+    }
     useEffect(() => {
-        const sendComment = async () => {
-            const currentDate = getCurrentDate()
-            await api.post(`/api/commentfoto/${params.id}`, {
-                comment: commentRef.current.value, 
-                date: currentDate, 
-                articleID: params.id, 
-            }, {headers: 
-                {Authorization: `Bearer ${auth.token}`}
-            })    
-            window.location = `/fotography/${params.id}`
+        const getFoto = async () => {
+            const response = await api.get(`/api/fotobyurl/${params.id}`)
+            setFoto(response.data.foto)
         }
+        getFotoComments()
+        getFoto()
+        showLikers()
         const fotoComment = () => {
             setCommentField(
             <div className="comment-field">
@@ -122,15 +129,6 @@ const Fotography = () => {
             </div>)
         }
         fotoComment()
-    }, [smilesDisplay, showSmiles, auth])
-    useEffect(() => {
-        const getFoto = async () => {
-            const response = await api.get(`/api/fotobyurl/${params.id}`)
-            setFoto(response.data.foto)
-        }
-        getFotoComments()
-        getFoto()
-        showLikers()
     }, [params, auth])
 
     return (
