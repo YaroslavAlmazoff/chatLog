@@ -132,7 +132,7 @@ const UserArticle = () => {
             <div className="comment-field">
                 <h2 className="comment-title">Ваш комментарий...</h2>
                 <textarea className="comment-area" ref={commentRef}></textarea>
-                <img onClick={showSmiles} className="upload-image" src={require(`../../messenger/img/smile.png`)} alt='img'/>
+                <img onClick={showSmiles} className="upload-image" src={require(`../messenger/img/smile.png`)} alt='img'/>
                 <button onClick={sendComment} className="send-comment">Отправить</button>
             </div>)
         }
