@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import api from '../../../auth/api/auth'
 import Public from "../components/components/Public"
+import '../../styles/publics.css'
 
 const PublicsPage = () => {
     const [publics, setPublics] = useState([])
@@ -13,9 +14,14 @@ const PublicsPage = () => {
         getPublics()
     }, [])
 
+    const createPublic = () => {
+        window.location = '/createpublic'
+    }
+
 
     return (
-        <div className="publics-page">
+        <div className="publics">
+            <button onClick={createPublic} className="publics-create-public">Создать группу</button>
             {publics.map(item => <Public item={item} />)}
         </div>
     )

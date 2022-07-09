@@ -1,0 +1,13 @@
+.publics {
+    width: 75%;
+    margin-top: 5%;
+}
+.publics-create-public {
+    border: none;
+    outline: none;
+    background-color: rgb(0, 140, 255);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px;
+    border-radius: 12px;
+}
