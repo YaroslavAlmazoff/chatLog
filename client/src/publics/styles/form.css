@@ -17,6 +17,7 @@
     border: none;
     border-bottom: 2px solid rgb(0, 140, 255);
     width: 95%;
+    margin-bottom: 10px;
 }
 .create-public-area {
     padding: 10px;
@@ -26,6 +27,7 @@
     border-radius: 12px;
     width: 95%;
     height: 60px;
+    margin-bottom: 10px;
 }
 .create-public-upload-field {
     display: inline-flex;
@@ -35,8 +37,9 @@
     height: 200px;
     width: 45%;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
-.create-public-upload-img {
+.create-public-button {
     width: 100%;
     border: none;
     outline: none;
