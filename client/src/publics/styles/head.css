@@ -7,7 +7,7 @@
 }
 .public-info {
     margin: 15px;
-    width: 80%;
+    width: 94%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -54,7 +54,7 @@
     padding: 15px;
 }
 .public-actions {
-    width: 20%;
+    width: 6%;
 }
 .public-action {
     width: 100%;
