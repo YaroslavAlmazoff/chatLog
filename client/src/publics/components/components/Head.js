@@ -1,3 +1,5 @@
+import '../../styles/head.css'
+
 const Head = ({pub, isAdmin}) => {
     return (
         <div className="public-head">

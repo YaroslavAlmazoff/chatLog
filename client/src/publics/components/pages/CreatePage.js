@@ -1,6 +1,7 @@
 import {useState, useRef, useContext} from 'react'
 import { AuthContext } from '../../../context/AuthContext'
 import api from '../../../auth/api/auth'
+import '../../styles/form.css'
 
 const CreatePage = () => {
     const auth = useContext(AuthContext)
@@ -78,12 +79,12 @@ const CreatePage = () => {
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file"  />
                 <input onChange={(e) => getFile2(e)} ref={fileRef2} type="file"  />
                 <div className='create-public-upload-field'>
-                    <button onClick={(e) => emitOpen(e)} className='public-upload-img'>Выберите аватарку</button>
-                    Preview
+                    <button onClick={(e) => emitOpen(e)} className='create-public-upload-img'>Выберите аватарку</button>
+                    <p>Preview</p>
                 </div>
                 <div className='create-public-upload-field'>
-                    <button onClick={(e) => emitOpen2(e)} className='public-upload-img'>Выберите баннер</button>
-                    Preview
+                    <button onClick={(e) => emitOpen2(e)} className='create-public-upload-img'>Выберите баннер</button>
+                    <p>Preview</p>
                 </div>
                 <button className='public-create' onClick={createPublic}>Создать группу</button>
             </div>
