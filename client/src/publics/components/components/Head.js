@@ -1,4 +1,4 @@
-import '../../styles/head.css'
+import '../../../styles/head.css'
 
 const Head = ({pub, isAdmin}) => {
     return (

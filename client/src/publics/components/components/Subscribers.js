@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import Subscriber from './components/Subscriber'
 import api from '../../../auth/api/auth'
-import '../../styles/subscribers.css'
+import '../../../styles/subscribers.css'
 
 const Subscribers = ({pub}) => {
     const [subscribers, setSubscribers] = useState([])

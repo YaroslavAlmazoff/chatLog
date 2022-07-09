@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import api from '../../../auth/api/auth'
 import Foto from "./components/Foto"
-import '../../styles/fotos.css'
+import '../../../styles/fotos.css'
 
 const Fotos = ({pub}) => {
     const [fotos, setFotos] = useState([])
