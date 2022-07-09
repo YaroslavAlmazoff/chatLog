@@ -27,12 +27,12 @@
     height: 60px;
 }
 .create-public-upload-field {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 200px;
-    width: 48%;
+    width: 45%;
     margin-left: 10px;
 }
 .create-public-upload-img {
