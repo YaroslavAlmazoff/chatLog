@@ -15,7 +15,7 @@ const Public = () => {
     useEffect(() => {
         const getPublic = async () => {
             const response = await api.get(`/api/public/public/${params.id}`)
-            setPub(response.data.public)
+            setPub(response.data.pub)
         }
         getPublic()
     }, [params])
