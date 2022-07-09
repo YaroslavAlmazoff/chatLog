@@ -11,7 +11,7 @@ const Fotos = ({pub}) => {
     useEffect(() => {
         const getFotos = async () => {
             const response = await api.get(`/api/public/posts/${params.id}`)
-            setPosts(response.data.fotos)
+            setPosts(response.data.posts)
         }
         getFotos()
     }, [pub])

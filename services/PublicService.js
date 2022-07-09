@@ -102,6 +102,10 @@ class PublicService {
         const post = await PublicPost.findById(id)
         res.json({post})
     }
+    async posts(req, res) {
+        const posts = await PublicPost.find({public: req.params.id})
+        res.json({posts})
+    }
     async firstSubscribers(req, res) {
         const pub = await Public.findById(req.params.id)
         const subscribers = pub.subscribers.slice(pub.subscribers.length - 6)

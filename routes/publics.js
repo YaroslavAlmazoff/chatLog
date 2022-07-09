@@ -79,6 +79,13 @@ router.get('/allfotos/:id', (req, res) => {
 })
 
 
+router.get('/posts/:id', (req, res) => {
+    try {
+        PublicService.posts(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 router.get('/post/:id', (req, res) => {
     try {
         PublicService.post(req, res)
