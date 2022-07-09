@@ -12,9 +12,12 @@ const Public = ({item}) => {
         }})
         console.log(response)
     }
+    const gotoPublic = () => {
+        window.location = `/public/${item._id}`
+    }
 
     return (
-        <div className="public-item">
+        <div className="public-item" onClick={gotoPublic}>
             <div className="public-item-info">
                 {item.avatarUrl 
                 ? <img className="public-item-avatar" src={process.env.REACT_APP_API_URL + `/publicavatars/` + item.avatarUrl} alt="public avatar" />
