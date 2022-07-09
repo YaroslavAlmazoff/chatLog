@@ -8,7 +8,7 @@ const Public = new mongoose.Schema({
     subscribers: [{type: mongoose.Types.ObjectId, default: []}],
     posts: [{type: mongoose.Types.ObjectId, default: []}],
     fotos: [{type: String, default: []}],
-    admin: {typr: mongoose.Types.ObjectId, required: true},
+    admin: {type: mongoose.Types.ObjectId, required: true},
 })
 
 module.exports = mongoose.model('Public', Public)

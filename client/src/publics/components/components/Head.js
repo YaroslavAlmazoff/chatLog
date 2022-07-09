@@ -17,11 +17,11 @@ const Head = ({pub, isAdmin}) => {
                     <p className="public-action-name">Новая статья</p>
                 </div>
                 <div className="public-action">
-                    <img className="public-action-img" src={require('../../img/pencil')} alt="edit" />
+                    <img className="public-action-img" src={require('../../img/pencil.png')} alt="edit" />
                     <p className="public-action-name">Редактировать</p>
                 </div>
                 <div className="public-action">
-                    <img className="public-action-img" src={require('../../img/notifications')} alt="notifications" />
+                    <img className="public-action-img" src={require('../../img/notifications.png')} alt="notifications" />
                     <p className="public-action-name">Уведомления</p>
                 </div>
             </div>:<div></div>}

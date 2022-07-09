@@ -12,7 +12,7 @@ router.get('/all', (req, res) => {
     }
 })
 
-router.post('/create', (req, res) => {
+router.post('/create', auth, (req, res) => {
     try {
         PublicService.create(req, res)
     } catch(e) {

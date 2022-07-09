@@ -61,7 +61,8 @@ const CreatePage = () => {
         formData.append('file2', file2)
         //Отправка запроса на обновление профиля
         await api.post(`/api/public/create`, formData, {headers: 
-            {'Content-Type': 'multipart/form-data'}
+            {'Content-Type': 'multipart/form-data', 
+            Authorization: `Bearer ${auth.token}`}
         })
         
         //Перемещение на профиль пользователя
