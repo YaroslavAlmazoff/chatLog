@@ -54,6 +54,7 @@ router.post('/createpost/:id', (req, res) => {
 
 router.get('/public/:id', (req, res) => {
     try {
+        console.log('че за фигня')
         PublicService.public(req, res)
     } catch(e) {
         console.log(e)
