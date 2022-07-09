@@ -90,7 +90,7 @@ class PublicService {
     }
     async firstFotos(req, res) {
         const pub = await Public.findById(req.params.id)
-        const fotos = pub.fotos.slice(public.fotos.length - 6)
+        const fotos = pub.fotos.slice(pub.fotos.length - 6)
         res.json({fotos})
     }
     async allFotos(req, res) {

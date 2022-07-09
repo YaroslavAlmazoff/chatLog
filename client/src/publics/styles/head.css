@@ -53,3 +53,13 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 15px;
 }
+.public-actions {
+    width: 20%;
+}
+.public-action {
+    width: 100%;
+}
+.public-action-img {
+    width: 98%;
+    border-bottom: 1px solid rgb(0, 140, 255)
+}
