@@ -73,15 +73,15 @@ const CreatePage = () => {
         <div className="create-public">
             <div className="create-public-form">
                 <p className="create-public-title">Создать группу</p>
-                <input type="text" value={pubName} onChange={(e) => setPubName(e.target.value)} placeholder="Введите название группы" />
-                <textarea value={pubDescription} onChange={(e) => setPubDescription(e.target.value)} placeholder='Введите описание'></textarea>
+                <input className='create-public-input' type="text" value={pubName} onChange={(e) => setPubName(e.target.value)} placeholder="Введите название группы" />
+                <textarea className='create-public-area' value={pubDescription} onChange={(e) => setPubDescription(e.target.value)} placeholder='Введите описание'></textarea>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file"  />
                 <input onChange={(e) => getFile2(e)} ref={fileRef2} type="file"  />
-                <div className='public-upload-field'>
+                <div className='create-public-upload-field'>
                     <button onClick={(e) => emitOpen(e)} className='public-upload-img'>Выберите аватарку</button>
                     Preview
                 </div>
-                <div className='public-upload-field'>
+                <div className='create-public-upload-field'>
                     <button onClick={(e) => emitOpen2(e)} className='public-upload-img'>Выберите баннер</button>
                     Preview
                 </div>
