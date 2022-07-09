@@ -85,6 +85,7 @@ class PublicService {
         res.json({msg: '-_-'})
     }
     async public(req, res) {
+        console.log(req.params.id)
         const pub = await Public.findById(req.params.id)
         res.json({pub})
     }

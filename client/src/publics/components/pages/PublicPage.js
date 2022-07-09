@@ -14,11 +14,12 @@ const PublicPage = () => {
 
     useEffect(() => {
         const getPublic = async () => {
+            console.log(params.id)
             const response = await api.get(`/api/public/public/${params.id}`)
             setPub(response.data.pub)
         }
         getPublic()
-    }, [])
+    }, [params])
 
     return (
         <div>
