@@ -10,7 +10,7 @@
     width: 94%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
 }
@@ -37,6 +37,7 @@
     background-color: rgba(20, 20, 32, 0.628);
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 15px;
+    margin-left: 30px;
 }
 .public-name {
     font-size: 20pt;
