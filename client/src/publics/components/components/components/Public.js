@@ -1,6 +1,7 @@
 import api from '../../../../auth/api/auth'
 import { useContext } from 'react'
 import { AuthContext } from '../../../../context/AuthContext'
+import '../../../styles/public-item.css'
 
 const Public = ({item}) => {
     const auth = useContext(AuthContext)
