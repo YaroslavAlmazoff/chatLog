@@ -1,4 +1,6 @@
 .create-public-form { 
+    margin: 0 auto;
+    width: 30%;
     margin-top: 5%;
     border: 1px solid rgb(0, 140, 255);
     border-radius: 11px;
