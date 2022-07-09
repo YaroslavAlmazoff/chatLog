@@ -24,8 +24,8 @@ import Admin from "./admin/Admin"
 import Services from "./homepage/Services"
 import AdsPage from "./ads/AdsPage"
 import PublicsPage from './publics/components/pages/PublicsPage'
-import Public from "./publics/components/pages/PublicPage"
 import CreatePage from "./publics/components/pages/CreatePage"
+import PublicPage from './publics/components/pages/PublicPage'
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -61,7 +61,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route path="/login" element={<Login />} />
 
             <Route exact path="/publics" element={<PublicsPage />} />
-            <Route exact path="/public/:id" element={<Public />} />
+            <Route exact path="/public/:id" element={<PublicPage />} />
             <Route exact path="/createpublic" element={<CreatePage />} />
             
         </Routes>

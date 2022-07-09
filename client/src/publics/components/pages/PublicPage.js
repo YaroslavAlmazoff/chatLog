@@ -6,7 +6,7 @@ import Subscribers from '../components/Subscribers'
 import Fotos from '../components/Fotos'
 import Posts from '../components/Posts'
 
-const Public = () => {
+const PublicPage = () => {
     const params = useParams()
     const [pub, setPub] = useState({})
 
@@ -18,7 +18,7 @@ const Public = () => {
             setPub(response.data.pub)
         }
         getPublic()
-    }, [params])
+    }, [])
 
     return (
         <div>
@@ -30,4 +30,4 @@ const Public = () => {
     )
 }
 
-export default Public
+export default PublicPage
