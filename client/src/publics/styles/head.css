@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-image: url('../img/bg.png');
 }
 .public-info {
     margin: 15px;
@@ -17,7 +18,7 @@
 .public-top-info {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: 60%;
 }
 .public-bottom-info {
@@ -55,7 +56,7 @@
     padding: 15px;
 }
 .public-actions {
-    width: 6%;
+    width: 2%;
 }
 .public-action {
     width: 100%;

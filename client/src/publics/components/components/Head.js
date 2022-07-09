@@ -2,7 +2,7 @@ import '../../styles/head.css'
 
 const Head = ({pub, isAdmin}) => {
     return (
-        <div className="public-head">
+        <div className="public-head" style={{backgroundImage: `url(${process.env.REACT_APP_API_URL + `/publicbanners/` + pub.avatarUrl})`}}>
             <div className="public-info">
                 <div className="public-top-info">
                     {pub.avatarUrl ? <img className="public-avatar" src={process.env.REACT_APP_API_URL + `/publicavatars/` + pub.avatarUrl} alt="avatar" /> : <img className='public-avatar' src={require('../../img/group.png')} alt="нету аватарки" />}
