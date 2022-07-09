@@ -16,7 +16,11 @@ const Public = ({item}) => {
     return (
         <div className="public-item">
             <div className="public-item-info">
-                <img className="public-item-avatar" src={process.env.REACT_APP_API_URL + `/publicavatars/` + item.avatarUrl} alt="public avatar" />
+                {item.avatarUrl 
+                ? <img className="public-item-avatar" src={process.env.REACT_APP_API_URL + `/publicavatars/` + item.avatarUrl} alt="public avatar" />
+                : <img className="public-item-avatar" src={require('../../../img/group.png')} alt="group" />
+                }
+                
                 <p className="public-item-name">{item.name}</p>
             </div>
             <button onClick={subscribe} className="public-item-subscribe">Подписаться</button>

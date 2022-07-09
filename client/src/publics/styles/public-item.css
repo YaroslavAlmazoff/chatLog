@@ -1,5 +1,5 @@
 .public-item {
-    height: 50px;
+    height: 60px;
     width: 100%;
     background-color: white;
     border-radius: 11px;
@@ -13,6 +13,9 @@
     align-items: center;
     justify-content: flex-start;
     width: 80%;
+}
+.public-item-name {
+    margin-left: 10px;
 }
 .public-item-avatar {
     width: 40px;
