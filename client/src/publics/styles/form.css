@@ -16,14 +16,15 @@
     outline: none;
     border: none;
     border-bottom: 2px solid rgb(0, 140, 255);
-    width: 100%;
+    width: 95%;
 }
 .create-public-area {
     padding: 10px;
     background-color: transparent;
     outline: none;
     border: 1px solid rgb(0, 140, 255);
-    width: 100%;
+    border-radius: 12px;
+    width: 95%;
     height: 60px;
 }
 .create-public-upload-field {

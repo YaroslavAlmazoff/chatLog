@@ -73,7 +73,7 @@ const CreatePage = () => {
     return (
         <div className="create-public">
             <div className="create-public-form">
-                <p className="create-public-title">Создать группу</p>
+                <p style={{color: 'white'}}>Создать группу</p>
                 <input className='create-public-input' type="text" value={pubName} onChange={(e) => setPubName(e.target.value)} placeholder="Введите название группы" />
                 <textarea className='create-public-area' value={pubDescription} onChange={(e) => setPubDescription(e.target.value)} placeholder='Введите описание'></textarea>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file"  />
