@@ -1,0 +1,22 @@
+.public-item {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    border-radius: 11px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.public-item-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+}
+.public-item-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

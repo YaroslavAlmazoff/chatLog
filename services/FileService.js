@@ -40,6 +40,27 @@ class FileService {
         ImageService.saveFile(file, filename, 'messagevideos')
         return filename
     }
+    async insertPublicAvatar(file, filename) {
+        ImageService.saveFile(file, filename, 'publicavatars')
+        return filename
+    }
+    async insertPublicBanner(file, filename) {
+        ImageService.saveFile(file, filename, 'publicbanners')
+        return filename
+    }
+    async insertPublicFoto(file, filename) {
+        ImageService.saveFile(file, filename, 'publicfotos')
+        return filename
+    }
+    async insertPublicPost(file, filename) {
+        ImageService.saveFile(file, filename, 'publicposts')
+        return filename
+    }
+    async insertPublicVideo(file, filename) {
+        ImageService.saveFile(file, filename, 'publicvideos')
+        return filename
+    }
+
 }
 
 module.exports = new FileService()

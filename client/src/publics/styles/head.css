@@ -1,0 +1,55 @@
+.public-head {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.public-info {
+    margin: 15px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.public-top-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60%;
+}
+.public-bottom-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.public-avatar {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.public-description {
+    font-size: 14pt;
+    color: white;
+    background-color: rgba(20, 20, 32, 0.628);
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+}
+.public-name {
+    font-size: 20pt;
+    color: white;
+    background-color: rgba(20, 20, 32, 0.628);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.public-subscribe {
+    outline: none;
+    border: none;
+    background-color: rgb(0, 140, 255);
+    border-radius: 12px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+}
