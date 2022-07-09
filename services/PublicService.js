@@ -17,17 +17,17 @@ class PublicService {
         
         if(req.files) {
             if(req.files.avatar) {
-                await UserPost.create({
+                await Public.create({
                     name, description, admin, avatarUrl
                 })
             }
             if(req.files.banner) {
-                await UserPost.create({
+                await Public.create({
                     name, description, admin, bannerUrl
                 })
             }
         } else {
-            await UserPost.create({
+            await Public.create({
                 name, description, admin
             })
         }
