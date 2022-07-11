@@ -13,10 +13,10 @@ const Create = () => {
     const [title, setTitle] = useState('')
     const [file, setFile] = useState('')
 
-    const [description, setDescription] = useState('Описание')
-    const [place, setPlace] = useState('Место съёмки')
-    const [time, setTime] = useState('Время съёмки')
-    const [params, setParams] = useState('Параметры съёмки')
+    const [description, setDescription] = useState('')
+    const [place, setPlace] = useState('')
+    const [time, setTime] = useState('')
+    const [params, setParams] = useState('')
 
     const [imageDisplay, setImageDisplay] = useState('none')
     const [imageUrl, setImageUrl] = useState('')
@@ -56,8 +56,8 @@ const Create = () => {
         <div className="photo-create-page">
             <p className="photo-page-title">ChatLog <span style={{color: 'rgb(0, 140, 255)'}}>Photographer</span> / Загрузить фотографию</p>
             <div className="photo-create-form">
-                <input className="photo-important-input" type="text" placeholder="Введите название фотографии" value={title} onChange={e => setTitle(e.target.value)} />
-                <textarea className="photo-area" placeholder="Введите название фотографии" value={description} onChange={e => setDescription(e.target.value)}></textarea>
+                <input className="photo-important-input" type="text" placeholder="Название фотографии" value={title} onChange={e => setTitle(e.target.value)} />
+                <textarea className="photo-area" placeholder="Описание фотографии" value={description} onChange={e => setDescription(e.target.value)}></textarea>
                 <input onChange={(e) => getFile(e)} ref={fileRef} type="file"  />
                 <button onClick={(e) => emitOpen(e)} className="photo-button">Загрузить фотографию</button>
                 <div style={{marginTop: '10px', marginBottom: '10px'}}>
