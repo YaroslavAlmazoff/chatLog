@@ -2,7 +2,7 @@
     margin: 0 auto;
     margin-top: -10px;
     width: 40%;
-    background-image: linear-gradient(to bottom, rgba(150, 211, 218, 0.485), rgba(102, 102, 159, 0.492));
+    background-color: rgba(102, 102, 159, 0.492);
     border-radius: 12px;
 }
 .photo-page-title {
@@ -54,6 +54,11 @@
     width: 94%;
     height: 100px;
 }
+
+.photo-area::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
+.photo-area::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
+.photo-area:-moz-placeholder           {color:rgb(0, 140, 255); opacity:1;}/* Firefox 18- */
+
 .photo-button {
     border: 1px solid rgb(0, 140, 255);
     background-color: white;
