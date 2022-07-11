@@ -12,4 +12,7 @@
     padding: 12px;
     margin-bottom: 12px;
     width: 100%;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
 }
