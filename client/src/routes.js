@@ -28,7 +28,7 @@ import CreatePage from "./publics/components/pages/CreatePage"
 import PublicPage from './publics/components/pages/PublicPage'
 import Popular from "./photographer/components/pages/Popular"
 import New from "./photographer/components/pages/New"
-import Photo from "../../models/Photo"
+import Photo from "./photographer/components/pages/Photo"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
