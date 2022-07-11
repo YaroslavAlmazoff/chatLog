@@ -26,6 +26,7 @@ const Create = () => {
     }
     const getFile = async (e) => {
         let file = e.target.files[0]
+        console.log(file)
         const reader = new FileReader()
         reader.onload = ev => {
             setImageDisplay('block')
