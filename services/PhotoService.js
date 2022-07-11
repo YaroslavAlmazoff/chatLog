@@ -4,7 +4,7 @@ const uuid = require('uuid')
 const FileService = require("./FileService")
 
 class PhotoService {
-    async create(res, res) {
+    async create(req, res) {
         const authorId = req.params.id
         const author = await User.findById(authorId)
         const {title, description, place, time, params, date} = req.body

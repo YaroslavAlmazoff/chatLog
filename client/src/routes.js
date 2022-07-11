@@ -26,6 +26,9 @@ import AdsPage from "./ads/AdsPage"
 import PublicsPage from './publics/components/pages/PublicsPage'
 import CreatePage from "./publics/components/pages/CreatePage"
 import PublicPage from './publics/components/pages/PublicPage'
+import Popular from "./photographer/components/pages/Popular"
+import New from "./photographer/components/pages/New"
+import Photo from "../../models/Photo"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -63,6 +66,10 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/publics" element={<PublicsPage />} />
             <Route exact path="/public/:id" element={<PublicPage />} />
             <Route exact path="/createpublic" element={<CreatePage />} />
+
+            <Route exact path="/photos/popular" element={<Popular />} />
+            <Route exact path="/photos/new" element={<New />} />
+            <Route exact path="/photo/:id" element={<Photo />} />
             
         </Routes>
     )
