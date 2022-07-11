@@ -54,7 +54,7 @@ const Create = () => {
 
     return (
         <div className="photo-create-page">
-            <p className="photo-page-title">ChatLog Photographer / Загрузить фотографию</p>
+            <p className="photo-page-title">ChatLog <span style={{color: 'rgb(0, 140, 255)'}}>Photographer</span> / Загрузить фотографию</p>
             <div className="photo-create-form">
                 <input className="photo-important-input" type="text" placeholder="Введите название фотографии" value={title} onChange={e => setTitle(e.target.value)} />
                 <textarea className="photo-area" placeholder="Введите название фотографии" value={description} onChange={e => setDescription(e.target.value)}></textarea>
