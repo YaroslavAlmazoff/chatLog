@@ -2,7 +2,8 @@
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20pt;
-    margin-bottom: 12px
+    margin-bottom: 12px;
+    text-align: left;
 }
 .photos-link {
     border: none;
