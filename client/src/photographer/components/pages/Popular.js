@@ -17,7 +17,7 @@ const Popular = () => {
 
     return (
         <div className="photo-page-wrapper">
-            <p className="photo-page-title">ChatLog <span style={{color: 'rgb(0, 140, 255)'}}>Photographer</span><Link className="photos-link" to="/photo/create">Опубликовать фотографию</Link> / Популярные фотографии <Link className="photos-link" to="/photos/new">Новые фотографии</Link></p>
+            <p className="photo-page-title">ChatLog <span style={{color: 'rgb(0, 140, 255)'}}>Photographer</span> <Link className="photos-link" to="/photo/create">Опубликовать фотографию</Link> / Популярные фотографии <Link className="photos-link" to="/photos/new">Новые фотографии</Link></p>
             <div className="photos">
                 {photos.map(item => <PhotoCard item={item} />)}
             </div>

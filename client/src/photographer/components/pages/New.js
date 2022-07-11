@@ -20,7 +20,7 @@ const New = () => {
 
     return (
         <div className="photo-page-wrapper">
-            <p className="photo-page-title">ChatLog Photographer / Новые фотографии <Link className="photos-link" to="/photos/popular">Популярные фотографиии</Link></p>
+            <p className="photo-page-title">ChatLog <span style={{color: 'rgb(0, 140, 255)'}}>Photographer</span> <Link className="photos-link" to="/photo/create">Опубликовать фотографию</Link> / Новые фотографии <Link className="photos-link" to="/photos/popular">Популярные фотографиии</Link></p>
             <div className="photos">
                 {photos.map(item => <PhotoCard item={item} />)}
             </div>
