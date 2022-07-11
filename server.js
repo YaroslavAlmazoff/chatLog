@@ -14,6 +14,7 @@ const cloudRouter = require('./routes/cloud')
 const filesRouter = require('./routes/files')
 const adminRouter = require('./routes/admin')
 const publicRouter = require('./routes/publics')
+const photoRouter = require('./routes/photos')
 //Создание сервера
 const app = express()
 //Подключение необходимых middlewares 
@@ -30,6 +31,7 @@ app.use('/api/cloud', cloudRouter)
 app.use('/api/files', filesRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/public', publicRouter)
+app.use('/api/photo', photoRouter)
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 app.use(express.static(path.join(__dirname, '..', 'static')))

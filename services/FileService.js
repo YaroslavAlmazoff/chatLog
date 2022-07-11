@@ -60,6 +60,10 @@ class FileService {
         ImageService.saveFile(file, filename, 'publicvideos')
         return filename
     }
+    async insertPhoto(file, filename) {
+        ImageService.saveFile(file, filename, 'photos')
+        return filename
+    }
 
 }
 
