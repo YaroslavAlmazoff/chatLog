@@ -31,6 +31,7 @@ const Photo = () => {
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
             <div onClick={like} className='photo-like-wrap'>
                     <img className='photo-like-img' src={likeImg} alt="like" />
+                    <span style={{position: 'absolute'}}>{likes}</span>
                 </div>
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
