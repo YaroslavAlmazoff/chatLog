@@ -27,6 +27,9 @@ const Photo = () => {
     return (
         <div className="photo">
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
+            <div onClick={like} className='photo-like-wrap'>
+                    <img className='photo-like-img' src={require('../../img/like.png')} alt="like" />
+                </div>
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
                 <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
@@ -35,9 +38,6 @@ const Photo = () => {
                     {photo.place ? <p className='photo-parameter'>Место съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.place}</span></p> : <></>}
                     {photo.time ? <p className='photo-parameter'>Дата и время съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.time}</span></p> : <></>}
                     {photo.params ? <p className='photo-parameter'>Параметры съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.params}</span></p> : <></>}
-                </div>
-                <div onClick={like} className='photo-like-wrap'>
-                    <img className='photo-like-img' src={require('../../img/like.png')} alt="like" />
                 </div>
             </div>
         </div>
