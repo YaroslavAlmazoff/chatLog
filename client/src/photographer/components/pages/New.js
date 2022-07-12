@@ -12,6 +12,7 @@ const New = () => {
     useEffect(() => {
         const getPhotos = async () => {
             const date = getCurrentDate()
+            console.log(date)
             const response = await api.post('/api/photo/new', {date})
             setPhotos(response.data.photos)
         }
