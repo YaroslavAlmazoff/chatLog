@@ -16,7 +16,7 @@ const PhotoCard = ({item}) => {
     }, [item])
 
     const like = async () => {
-        setLikeImg(require('../../img/res.png'))
+        setLikeImg(require('../../img/red.png'))
         const lks = likes + 1
         await api.post(`/api/photo/setlikes/${item._id}`, {likes: lks})
         setLikes(lks)
