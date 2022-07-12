@@ -20,9 +20,11 @@
 }
 .photo-name {
     color: black;
+    margin: 0;
 }
 .photo-author {
     color: rgba(0, 0, 0, 0.743);
+    margin: 0;
 }
 .photo-author-link {
     color: rgb(0, 140, 255);
