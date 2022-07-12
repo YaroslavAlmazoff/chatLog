@@ -23,6 +23,7 @@ class PhotoService {
     }
     async new(req, res) {
         const all = await Photo.find({})
+        console.log(req.body.date)
         if(!all.length) {
             res.json('печально') 
             return
