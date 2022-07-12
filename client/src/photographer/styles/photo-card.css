@@ -42,7 +42,7 @@
 }
 .photo-like-wrap:hover {
     border: 5px solid rgb(253, 52, 52);
-    padding: 1px;
+    padding: 8px;
 }
 .photo-like-img {
     width: 100%;
