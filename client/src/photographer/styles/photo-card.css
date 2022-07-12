@@ -34,7 +34,8 @@
     border: 1px solid rgb(253, 52, 52);
     padding: 3px;
     border-radius: 50%;
-    width: 50px;
+    width: 25px;
+    margin-top: 10px;
 }
 .photo-like-wrap:hover {
     border: 3px solid rgb(253, 52, 52);
