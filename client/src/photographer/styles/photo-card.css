@@ -32,8 +32,8 @@
     text-decoration: none;
 }
 .photo-like-wrap {
-    border: 1px solid rgb(253, 52, 52);
-    padding: 3px;
+    border: 3px solid rgb(253, 52, 52);
+    padding: 10px;
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 .photo-like-wrap:hover {
-    border: 3px solid rgb(253, 52, 52);
+    border: 5px solid rgb(253, 52, 52);
     padding: 1px;
 }
 .photo-like-img {
