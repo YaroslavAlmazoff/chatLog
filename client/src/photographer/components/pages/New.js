@@ -16,7 +16,7 @@ const New = () => {
             setPhotos(response.data.photos)
         }
         getPhotos()
-    }, [])
+    }, [getCurrentDate])
 
     return (
         <div className="photo-page-wrapper">

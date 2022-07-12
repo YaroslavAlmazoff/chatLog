@@ -27,7 +27,15 @@ class PhotoService {
             res.json('печально') 
             return
         }
-        const need = all.filter(photo => photo.date.split('.')[0] === req.body.date)
+        const need = all.filter(photo => {
+            console.log(photo, 
+                photo.date, 
+                photo.date.split('.'),
+                photo.date.split('.')[0]),
+                photo.date.split('.')[0] === req.body.date,
+                req.body.date
+            return photo.date.split('.')[0] === req.body.date
+        })
         res.json({photos: need})
     }
     async popular(req, res) {
@@ -38,6 +46,10 @@ class PhotoService {
         }
         const need = all.filter(photo => photo.likes >= 5)
         res.json({photos: need})
+    }
+    async all(req, res) {
+        const photos = await Photo.find({})
+        res.json({photos})
     }
     async getLikes(req, res) {
         const photo = await Photo.findById(req.params.id)

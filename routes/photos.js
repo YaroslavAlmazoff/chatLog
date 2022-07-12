@@ -30,6 +30,13 @@ router.get('/popular', (req, res) => {
         console.log(e)
     }
 })
+router.get('/all', (req, res) => {
+    try {
+        PhotoService.all(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 router.post('/setlikes/:id', (req, res) => {
     try {
         PhotoService.setLikes(req, res)
