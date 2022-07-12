@@ -23,11 +23,19 @@ class PhotoService {
     }
     async new(req, res) {
         const all = await Photo.find({})
+        if(!all.length) {
+            res.json('печально') 
+            return
+        }
         const need = all.filter(photo => photo.split('.')[0] === req.body.date)
         res.json({photos: need})
     }
     async popular(req, res) {
         const all = await Photo.find({})
+        if(!all.length) {
+            res.json('печально') 
+            return
+        }
         const need = all.filter(photo => photo.likes >= 5)
         res.json({photos: need})
     }
