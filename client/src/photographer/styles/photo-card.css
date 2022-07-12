@@ -38,9 +38,11 @@
     width: 25px;
     height: 25px;
     margin-top: 10px;
+    cursor: pointer;
 }
 .photo-like-wrap:hover {
     border: 3px solid rgb(253, 52, 52);
+    padding: 1px;
 }
 .photo-like-img {
     width: 100%;
