@@ -5,6 +5,7 @@ import '../../styles/photo-card.css'
 
 const PhotoCard = ({item}) => {
     const [likes, setLikes] = useState(0)
+    const [likeImg, setLikeImg] = useState(require('../../img/blue.png'))
 
     useEffect(() => {
         const getLikes = async () => {
@@ -15,6 +16,7 @@ const PhotoCard = ({item}) => {
     }, [item])
 
     const like = async () => {
+        setLikeImg(require('../../img/res.png'))
         const lks = likes + 1
         await api.post(`/api/photo/setlikes/${item._id}`, {likes: lks})
         setLikes(lks)
@@ -30,7 +32,7 @@ const PhotoCard = ({item}) => {
                 <p className="photo-name">{item.title}</p>
                 <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${item.authorId}`}>{item.authorName} {item.authorSurname}</Link></p>
                 <div onClick={like} className='photo-like-wrap'>
-                    <img className='photo-like-img' src={require('../../img/like.png')} alt="like" />
+                    <img className='photo-like-img' src={likeImg} alt="like" />
                 </div>
             </div>
         </div>
