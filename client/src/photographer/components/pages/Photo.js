@@ -21,8 +21,8 @@ const Photo = () => {
 
     const like = async () => {
         setLikeImg(require('../../img/red.png'))
-        const response = await api.post(`/api/photo/setlikes/${parameters.id}`, {likes})
-        setLikes(response.data.likes)
+        await api.post(`/api/photo/setlikes/${parameters.id}`, {likes: likes + 1})
+        setLikes(prev => prev + 1)
     }
 
 
@@ -31,7 +31,7 @@ const Photo = () => {
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
             <div onClick={like} className='photo-like-wrap'>
                     <img className='photo-like-img' src={likeImg} alt="like" />
-                    <span style={{position: 'absolute', color: 'white', marginTop: '3px', marginLeft: '-10px'}}>{likes}</span>
+                    <span style={{position: 'absolute', color: 'white', marginTop: '3px', marginLeft: '-15px'}}>{likes}</span>
                 </div>
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
