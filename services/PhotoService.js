@@ -27,7 +27,7 @@ class PhotoService {
             res.json('печально') 
             return
         }
-        const need = all.filter(photo => photo.split('.')[0] === req.body.date)
+        const need = all.filter(photo => photo.date.split('.')[0] === req.body.date)
         res.json({photos: need})
     }
     async popular(req, res) {
