@@ -11,6 +11,7 @@
 }
 .photo-img {
     width: 99%;
+    border-radius: 11px;
 }
 .photo-info {
     display: flex;
