@@ -29,7 +29,7 @@ const Photo = () => {
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
-                <p className="photo-author">Автор: <Link to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
+                <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
                 <div className='photo-not-important'>
                     {photo.description ? <p className='photo-parameter'>{photo.description}</p> : <></>}
                     {photo.place ? <p className='photo-parameter'>Место съёмки: {photo.place}</p> : <></>}
