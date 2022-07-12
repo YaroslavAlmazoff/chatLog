@@ -1,3 +1,10 @@
+.photo {
+    width: 35%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 10px;
+}
 .photo-img-big {
-    width: 80%;
+    width: 98%;
+    border-radius: 12px;
 }

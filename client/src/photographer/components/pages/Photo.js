@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import api from '../../../auth/api/auth'
 import { Link } from 'react-router-dom'
 import '../../styles/photo.css'
+import '../../styles/photo-card.css'
 
 const Photo = () => {
     const parameters = useParams()
