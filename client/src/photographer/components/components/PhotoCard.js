@@ -19,9 +19,12 @@ const PhotoCard = ({item}) => {
         await api.post(`/api/photo/setlikes/${item._id}`, {likes: lks})
         setLikes(lks)
     }
+    const gotoPhoto = () => {
+        window.location = `/photo/${item._id}`
+    }
 
     return (
-        <div className="photo-card">
+        <div className="photo-card" onClick={gotoPhoto}>
             <img className='photo-img' src={process.env.REACT_APP_API_URL + `/photos/${item.name}`} alt="ph" />
             <div className="photo-info">
                 <p className="photo-name">{item.title}</p>
