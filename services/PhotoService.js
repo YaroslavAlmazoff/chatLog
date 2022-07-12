@@ -32,9 +32,9 @@ class PhotoService {
             console.log(photo, 
                 photo.date, 
                 photo.date.split('.'),
-                photo.date.split('.')[0]),
+                photo.date.split('.')[0],
                 photo.date.split('.')[0] === req.body.date,
-                req.body.date
+                req.body.date)
             return photo.date.split('.')[0] === req.body.date
         })
         res.json({photos: need})
