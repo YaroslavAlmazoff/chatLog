@@ -32,9 +32,9 @@ const Photo = () => {
                 <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
                 <div className='photo-not-important'>
                     {photo.description ? <p className='photo-parameter'>{photo.description}</p> : <></>}
-                    {photo.place ? <p className='photo-parameter'>Место съёмки: {photo.place}</p> : <></>}
-                    {photo.time ? <p className='photo-parameter'>Дата и время съёмки: {photo.time}</p> : <></>}
-                    {photo.params ? <p className='photo-parameter'>Параметры съёмки: {photo.params}</p> : <></>}
+                    {photo.place ? <p className='photo-parameter'>Место съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.place}</span></p> : <></>}
+                    {photo.time ? <p className='photo-parameter'>Дата и время съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.time}</span></p> : <></>}
+                    {photo.params ? <p className='photo-parameter'>Параметры съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.params}</span></p> : <></>}
                 </div>
                 <div onClick={like} className='photo-like-wrap'>
                     <img className='photo-like-img' src={require('../../img/like.png')} alt="like" />
