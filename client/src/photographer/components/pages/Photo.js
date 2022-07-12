@@ -12,6 +12,9 @@ const Photo = () => {
     const [likeImg, setLikeImg] = useState(require('../../img/blue.png'))
 
     useEffect(() => {
+        if(localStorage.getItem(parameters.id) === 'liked') {
+            setLikeImg(require('../../img/red.png'))
+        } 
         const getPhoto = async () => {
             const response = await api.get(`/api/photo/photo/${parameters.id}`)
             setPhoto(response.data.photo)
@@ -25,6 +28,10 @@ const Photo = () => {
     }, [parameters])
 
     const like = async () => {
+        if(localStorage.getItem(parameters.id) === 'liked') {
+            return
+        }
+        localStorage.setItem(parameters.id, 'liked')
         setLikeImg(require('../../img/red.png'))
         await api.post(`/api/photo/setlikes/${parameters.id}`, {likes: likes + 1})
         setLikes(prev => prev + 1)
@@ -36,7 +43,7 @@ const Photo = () => {
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
             <div onClick={like} className='photo-like-wrap'>
                     <img className='photo-like-img' src={likeImg} alt="like" />
-                    <span style={{position: 'absolute', color: 'white', marginTop: '3px', marginLeft: '-20px'}}>{likes}</span>
+                    <span style={{position: 'absolute', color: 'white', marginTop: '3px', marginLeft: '-15px'}}>{likes}</span>
                 </div>
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
