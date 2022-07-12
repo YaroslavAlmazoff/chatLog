@@ -29,6 +29,7 @@
 }
 .photo-author-link {
     color: rgb(0, 140, 255);
+    text-decoration: none;
 }
 .photo-like-wrap {
     border: 1px solid rgb(253, 52, 52);
@@ -42,4 +43,5 @@
 }
 .photo-like-img {
     width: 100%;
+    object-fit: cover;
 }
