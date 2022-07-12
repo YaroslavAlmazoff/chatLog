@@ -10,7 +10,8 @@ const Links = () => {
         {name: 'Люди', link: '/users'},
     ]
     const list2 = [
-        {name: 'Chat Log Cloud', link: `/cloud`}
+        {name: 'Chat Log Cloud', link: `/cloud`},
+        {name: 'Chat Log Photographer', link: `/photos/new`}
     ]
     const list3 = [
         {name: 'Моя страница', link: `/user/${auth.userId}`},
