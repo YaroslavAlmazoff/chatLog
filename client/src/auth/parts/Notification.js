@@ -9,6 +9,7 @@ import SimplePosts from './Notifications/SimplePosts'
 import PostVisit from './Notifications/PostVisit'
 import { AuthContext } from '../../context/AuthContext'
 import GettingFile from './Notifications/GettingFile'
+import PhotoLike from './Notifications/PhotoLike'
 
 const Notification = ({id, title, type, from, to, postType, postID, notifications, setNotifications, setUserFriends, setNoticeText, setNoticeDisplay, noticeRef}) => {
     //Уведомление
@@ -73,6 +74,9 @@ const Notification = ({id, title, type, from, to, postType, postID, notification
             : <></>}
             {type === 'file'
             ? <GettingFile title={title} gettingFile={gettingFile} id={id} />
+            : <></>}
+            {type === 'photolike'
+            ? <PhotoLike title={title} />
             : <></>}
         </div>
     )

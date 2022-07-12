@@ -37,7 +37,7 @@ router.get('/all', (req, res) => {
         console.log(e)
     }
 })
-router.post('/setlikes/:id', (req, res) => {
+router.post('/setlikes/:id/:user', (req, res) => {
     try {
         PhotoService.setLikes(req, res)
     } catch(e) {

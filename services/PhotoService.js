@@ -2,6 +2,7 @@ const Photo = require("../models/Photo")
 const User = require("../models/User")
 const uuid = require('uuid')
 const FileService = require("./FileService")
+const NotificationService = require("./NotificationService")
 
 class PhotoService {
     async create(req, res) {
@@ -50,6 +51,8 @@ class PhotoService {
     }
     async setLikes(req, res) {
         await Photo.findByIdAndUpdate(req.params.id, {likes: req.body.likes})
+        const user = await User.findById(req.params.user)
+        await NotificationService.create(req.params.user, Photo.authorId, `Ваша фотография понравилась пользователю ${user.name} ${user.surname}`, 'photolike')
         res.json({msg: 'success'})
     }
 }

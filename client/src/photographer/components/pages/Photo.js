@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router'
 import api from '../../../auth/api/auth'
 import { Link } from 'react-router-dom'
+import AuthContext from '../../../auth/api/auth'
 import '../../styles/photo.css'
 import '../../styles/photo-card.css'
 
 const Photo = () => {
+    const auth = useContext(AuthContext)
     const parameters = useParams()
     const [photo, setPhoto] = useState({})
     const [likes, setLikes] = useState(0)
@@ -33,7 +35,7 @@ const Photo = () => {
         }
         localStorage.setItem(parameters.id, 'liked')
         setLikeImg(require('../../img/red.png'))
-        await api.post(`/api/photo/setlikes/${parameters.id}`, {likes: likes + 1})
+        await api.post(`/api/photo/setlikes/${parameters.id}/${auth.userId}`, {likes: likes + 1})
         setLikes(prev => prev + 1)
     }
 
