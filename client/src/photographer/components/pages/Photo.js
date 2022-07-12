@@ -21,7 +21,7 @@ const Photo = () => {
 
     const like = async () => {
         setLikeImg(require('../../img/red.png'))
-        const response = await api.post('/api/photo/setlikes', {likes})
+        const response = await api.post(`/api/photo/setlikes/${parameters.id}`, {likes})
         setLikes(response.data.likes)
     }
 
