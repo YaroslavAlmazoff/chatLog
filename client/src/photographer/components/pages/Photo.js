@@ -9,6 +9,7 @@ const Photo = () => {
     const parameters = useParams()
     const [photo, setPhoto] = useState({})
     const [likes, setLikes] = useState(0)
+    const [likeImg, setLikeImg] = useState(require('../../img/blue.png'))
 
     useEffect(() => {
         const getPhoto = async () => {
@@ -19,6 +20,7 @@ const Photo = () => {
     }, [parameters])
 
     const like = async () => {
+        setLikeImg(require('../../img/red.png'))
         const response = await api.post('/api/photo/setlikes', {likes})
         setLikes(response.data.likes)
     }
@@ -28,7 +30,7 @@ const Photo = () => {
         <div className="photo">
             <img className='photo-img-big' src={process.env.REACT_APP_API_URL + `/photos/${photo.name}`} alt="ph" />
             <div onClick={like} className='photo-like-wrap'>
-                    <img className='photo-like-img' src={require('../../img/like.png')} alt="like" />
+                    <img className='photo-like-img' src={likeImg} alt="like" />
                 </div>
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
