@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import api from '../../../auth/api/auth'
-import AuthContext from '../../../context/AuthContext'
+import { AuthContext } from '../../../context/AuthContext'
 import '../../styles/photo-card.css'
 
 const PhotoCard = ({item}) => {
