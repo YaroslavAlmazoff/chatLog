@@ -10,9 +10,10 @@
     margin-top: 0;
     padding: 5px;
     vertical-align: top;
+    transition: transform .5s ease-in-out;
 }
 .photo-card:hover {
-    transform: translate3d(0, 0, 3deg)
+    transform: translate3d(0, 0, 30deg)
 }
 .photo-img {
     width: 99%;
