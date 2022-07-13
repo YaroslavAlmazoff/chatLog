@@ -38,7 +38,7 @@ const PhotoCard = ({item}) => {
             <img className='photo-img' src={process.env.REACT_APP_API_URL + `/photos/${item.name}`} alt="ph" />
             <div onClick={like} className='photo-card-like-wrap' style={{border: 'none'}}>
                 <img className='photo-like-img' src={likeImg} alt="like" />
-                <span style={{position: 'absolute', color: 'white', marginTop: '10px', marginLeft: '-17px'}}>{likes}</span>
+                <span style={{position: 'absolute', color: 'white', marginTop: '0px', marginLeft: '-17px'}}>{likes}</span>
             </div>
             <div className="photo-info">
                 <p className="photo-name">{item.title}</p>
