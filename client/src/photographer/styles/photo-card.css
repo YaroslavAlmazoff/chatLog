@@ -15,7 +15,7 @@
     transform: translate3d(0, 0, 30deg)
 }
 .photo-img {
-    width: 99%;
+    height: 80%;
     border-radius: 11px;
 }
 .photo-info {
