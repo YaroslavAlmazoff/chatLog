@@ -1,3 +1,7 @@
+.photo-page-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
 .photo-page-title {
     color: white;
     font-family: 'Courier New', Courier, monospace;
