@@ -51,8 +51,9 @@ class PhotoService {
     }
     async setLikes(req, res) {
         await Photo.findByIdAndUpdate(req.params.id, {likes: req.body.likes})
+        const photo = await Photo.findById(req.params.id)
         const user = await User.findById(req.params.user)
-        await NotificationService.create(req.params.user, Photo.authorId, `Ваша фотография понравилась пользователю ${user.name} ${user.surname}`, 'photolike')
+        await NotificationService.create(req.params.user, photo.authorId, `Ваша фотография понравилась пользователю ${user.name} ${user.surname}`, 'photolike')
         res.json({msg: 'success'})
     }
 }
