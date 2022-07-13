@@ -51,6 +51,7 @@ const Create = () => {
         await api.post(`/api/photo/create/${auth.userId}`, formData, {headers: 
             {'Content-Type': 'multipart/form-data'}
         })
+        window.location = '/photos/new'
     }
 
     return (

@@ -21,7 +21,7 @@
 }
 .photo-name {
     color: black;
-    margin: 0;
+    margin-top: 20px;
 }
 .photo-author {
     color: rgba(0, 0, 0, 0.743);
