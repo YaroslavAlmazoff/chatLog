@@ -20,7 +20,8 @@ const PhotoCard = ({item}) => {
         getLikes()
     }, [item])
 
-    const like = async () => {
+    const like = async (e) => {
+        e.stopPropagation()
         if(localStorage.getItem(item._id) === 'liked') {
             return
         }
@@ -36,7 +37,7 @@ const PhotoCard = ({item}) => {
     return (
         <div className="photo-card" onClick={gotoPhoto}>
             <img className='photo-img' src={process.env.REACT_APP_API_URL + `/photos/${item.name}`} alt="ph" />
-            <div onClick={like} className='photo-card-like-wrap' style={{border: 'none'}}>
+            <div onClick={(e) => like(e)} className='photo-card-like-wrap' style={{border: 'none'}}>
                 <img className='photo-like-img' src={likeImg} alt="like" />
                 <span style={{position: 'absolute', color: 'white', marginTop: '0px', marginLeft: '-17px'}}>{likes}</span>
             </div>
