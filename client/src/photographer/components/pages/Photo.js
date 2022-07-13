@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router'
 import api from '../../../auth/api/auth'
 import { Link } from 'react-router-dom'
-import AuthContext from '../../../auth/api/auth'
+import { AuthContext } from '../../../context/AuthContext'
 import '../../styles/photo.css'
 import '../../styles/photo-card.css'
 
