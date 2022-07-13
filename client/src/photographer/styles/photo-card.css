@@ -41,6 +41,16 @@
     margin-left: 0px;
     cursor: pointer;
 }
+.photo-card-like-wrap {
+    border: 3px solid rgb(253, 52, 52);
+    padding: 10px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-top: -45px;
+    margin-left: -50px;
+    cursor: pointer;
+}
 .photo-like-wrap:hover {
     border: 5px solid rgb(253, 52, 52);
     padding: 8px;
