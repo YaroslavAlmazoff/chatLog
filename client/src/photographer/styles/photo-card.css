@@ -15,6 +15,7 @@
     transform: translate3d(0, 0, 30deg)
 }
 .photo-img {
+    margin-top: 10px;
     height: 80%;
     border-radius: 11px;
 }
