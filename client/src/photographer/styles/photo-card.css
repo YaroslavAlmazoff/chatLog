@@ -15,7 +15,7 @@
     transform: translate3d(0, 0, 30deg)
 }
 .photo-img {
-    margin-top: 20px;
+    margin-top: 15px;
     height: 80%;
     border-radius: 11px;
 }
@@ -27,11 +27,11 @@
 }
 .photo-name {
     color: black;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 .photo-author {
     color: rgba(0, 0, 0, 0.743);
-    margin: 0;
+    margin: -10px;
 }
 .photo-author-link {
     color: rgb(0, 140, 255);
