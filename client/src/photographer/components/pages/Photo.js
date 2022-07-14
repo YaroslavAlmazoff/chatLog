@@ -50,7 +50,7 @@ const Photo = () => {
             <div className="photo-info">
                 <p className="photo-name">{photo.title}</p>
                 <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
-                <div className='photo-not-important'>
+                <div className='photo-page-not-important'>
                     {photo.description ? <p className='photo-parameter'>{photo.description}</p> : <></>}
                     {photo.place ? <p className='photo-parameter'>Место съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.place}</span></p> : <></>}
                     {photo.time ? <p className='photo-parameter'>Дата и время съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.time}</span></p> : <></>}
