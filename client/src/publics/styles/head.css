@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-between;
     background-image: url('../img/bg.png');
-    background-color: rgb(83, 83, 83);
-    border: 1px solid rgb(206, 206, 206);
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(83, 83, 83);
     box-shadow: 5px;
 }
 .public-info {
