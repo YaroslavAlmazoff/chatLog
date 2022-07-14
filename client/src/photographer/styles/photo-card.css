@@ -19,7 +19,7 @@
 }
 .photo-img:hover {
     border-radius: 0px;
-    transform: rotate(20deg)
+    transform: rotate(20deg, 20deg)
 }
 .photo-info {
     display: flex;
