@@ -5,6 +5,7 @@ import Head from '../components/Head'
 import Subscribers from '../components/Subscribers'
 import Fotos from '../components/Fotos'
 import Posts from '../components/Posts'
+import '../../styles/public.css'
 
 const PublicPage = () => {
     const params = useParams()
@@ -22,7 +23,7 @@ const PublicPage = () => {
     }, [params])
 
     return (
-        <div>
+        <div className="public">
             <Head pub={pub} isAdmin={isAdmin} />
             <Subscribers pub={pub} />
             <Fotos pub={pub} />
