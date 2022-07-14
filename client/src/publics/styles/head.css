@@ -61,12 +61,18 @@
     padding: 15px;
 }
 .public-actions {
-    width: 2%;
+    width: 5%;
 }
 .public-action {
     width: 100%;
+    border-bottom: 1px solid rgb(0, 140, 255)
 }
 .public-action-img {
     width: 98%;
-    border-bottom: 1px solid rgb(0, 140, 255)
+}
+.public-action-name {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin-top: -5px;
 }
