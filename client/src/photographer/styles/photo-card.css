@@ -18,7 +18,6 @@
     transition: transform .5s ease-in-out;
 }
 .photo-img:hover {
-    border-radius: 0px;
     transform: rotateX(20deg) rotateY(20deg);
 }
 .photo-info {
