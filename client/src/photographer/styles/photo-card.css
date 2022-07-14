@@ -13,7 +13,7 @@
 }
 .photo-card:hover {
     border-radius: 0px;
-    transform: rotate3d(0, 0, 30deg)
+    transform: rotate(30deg)
 }
 .photo-img {
     margin-top: -15px;
