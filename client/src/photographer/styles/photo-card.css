@@ -12,6 +12,7 @@
     transition: transform .5s ease-in-out;
 }
 .photo-card:hover {
+    border-radius: 0px;
     transform: rotate3d(0, 0, 30deg)
 }
 .photo-img {
