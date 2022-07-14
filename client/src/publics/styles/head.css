@@ -61,7 +61,8 @@
     padding: 15px;
 }
 .public-actions {
-    width: 5%;
+    width: 4.9%;
+    margin-right: 5px;
 }
 .public-action {
     width: 100%;
