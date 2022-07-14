@@ -38,6 +38,9 @@ const Photo = () => {
         await api.post(`/api/photo/setlikes/${parameters.id}/${auth.userId}`, {likes: likes + 1})
         setLikes(prev => prev + 1)
     }
+    const back = () => {
+        window.history.back()
+    }
 
 
     return (
@@ -56,6 +59,7 @@ const Photo = () => {
                     {photo.time ? <p className='photo-parameter'>Дата и время съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.time}</span></p> : <></>}
                     {photo.params ? <p className='photo-parameter'>Параметры съёмки: <span style={{color: 'rgb(0, 140, 255'}}>{photo.params}</span></p> : <></>}
                 </div>
+                <button onClick={back} className='photo-back'>Вернуться к фотографиям</button>
             </div>
         </div>
     )
