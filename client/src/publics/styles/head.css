@@ -48,6 +48,7 @@
     font-size: 20pt;
     color: white;
     background-color: rgba(20, 20, 32, 0.628);
+    border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .public-subscribe {
