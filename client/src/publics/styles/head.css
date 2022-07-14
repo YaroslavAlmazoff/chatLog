@@ -62,7 +62,7 @@
 }
 .public-actions {
     width: 4.9%;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 .public-action {
     width: 100%;
@@ -74,5 +74,5 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 9pt;
-    margin-top: -5px;
+    margin-top: -4px;
 }
