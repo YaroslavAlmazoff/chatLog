@@ -48,7 +48,7 @@ const Photo = () => {
                 <span style={{position: 'absolute', color: 'white', marginTop: '2px', marginLeft: '-17px'}}>{likes}</span>
             </div>
             <div className="photo-info">
-                <p className="photo-name">{photo.title}</p>
+                <p className="photo-name" style={{marginTop: '5px'}}>{photo.title}</p>
                 <p className="photo-author">Автор: <Link className='photo-author-link' to={`/user/${photo.authorId}`}>{photo.authorName} {photo.authorSurname}</Link></p>
                 <div className='photo-page-not-important'>
                     {photo.description ? <p className='photo-parameter'>{photo.description}</p> : <></>}
