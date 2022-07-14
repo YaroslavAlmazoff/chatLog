@@ -8,6 +8,7 @@
     background-color: rgb(41, 41, 41);
     border: 1px solid rgb(83, 83, 83);
     box-shadow: 5px;
+    border-radius: 10px;
 }
 .public-info {
     margin: 15px;
