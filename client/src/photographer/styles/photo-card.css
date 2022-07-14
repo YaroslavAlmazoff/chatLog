@@ -9,16 +9,17 @@
     margin: 7px;
     margin-top: 0;
     padding: 5px;
-    transition: transform .5s ease-in-out;
 }
-.photo-card:hover {
-    border-radius: 0px;
-    transform: rotate(30deg)
-}
+
 .photo-img {
     margin-top: -15px;
     height: 80%;
     border-radius: 11px;
+    transition: transform .5s ease-in-out;
+}
+.photo-img:hover {
+    border-radius: 0px;
+    transform: rotate(20deg)
 }
 .photo-info {
     display: flex;
