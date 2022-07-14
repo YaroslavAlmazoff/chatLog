@@ -3,7 +3,8 @@
     width: 60%;
     outline: none;
     border-radius: 15px;
-    border: 1px solid black;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(83, 83, 83);
     margin-left: 6px;
 }
 @media screen and (width < 500px) {
