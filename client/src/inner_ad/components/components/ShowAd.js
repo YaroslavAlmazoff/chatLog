@@ -7,11 +7,11 @@ const ShowAd = () => {
 
     useEffect(() => {
         const getAds = async () => {
-            const response = await api.get('api/innerad/all')
+            const response = await api.get('/api/innerad/all')
             setAds(response.data.ads)
         }
         getAds()
-    })
+    }, [])
 
     return (
         <div style={{width: '30%'}}>
