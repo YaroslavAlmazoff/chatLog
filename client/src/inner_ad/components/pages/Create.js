@@ -2,7 +2,7 @@ import {useRef, useState} from 'react'
 import useDate from '../../../common_hooks/date.hook'
 import api from '../../../auth/api/auth'
 import ImagePreview from '../components/ImagePreview'
-import '../../styles.form.css'
+import '../../styles/form.css'
 
 const Create = () => {
     const {getCurrentDate} = useDate()
