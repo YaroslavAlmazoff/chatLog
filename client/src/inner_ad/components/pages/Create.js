@@ -48,8 +48,8 @@ const Create = () => {
     return (
         <div className="create-ad-page">
             <p className="create-ad-page-title">Создание рекламной карточки</p>
-            <input value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Название статьи" className='create-ad-page-input' />
-            <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Ваша статья" className="create-ad-page-area"></textarea>
+            <input value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Название..." className='create-ad-page-input' />
+            <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Подробнее..." className="create-ad-page-area"></textarea>
             <input onChange={e => getFile(e)} type="file" ref={fileRef} />
             <button onClick={e => emitOpen(e)} className="create-ad-page-button">Загрузить изображение</button>
             <input value={link} onChange={e => setLink(e.target.value)} type="text" placeholder="Ссылка на сайт" className='create-ad-page-input' />
