@@ -4,6 +4,7 @@ import RoomItem from "../parts/RoomItem"
 import "../styles/room-list.css"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
+import ShowAd from "../../../inner_ad/components/components/ShowAd"
 
 export const RoomsList = () => {
     const auth = useContext(AuthContext)
@@ -22,17 +23,22 @@ export const RoomsList = () => {
     }, [auth])
 
     return (
-        <div className="room-list">
-            <h1>Сообщения</h1>
-            <div className="rooms-list-wrapper">
-                {rooms.map(el => <RoomItem 
-                    key={randomKey()}
-                    lastMessage={el.lastMessage}
-                    user1={el.user1}
-                    user2={el.user2}
-                    id={el._id}
-                />)}
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+            <ShowAd />
+            <div className="room-list">
+                <h1>Сообщения</h1>
+                <div className="rooms-list-wrapper">
+                    {rooms.map(el => <RoomItem 
+                        key={randomKey()}
+                        lastMessage={el.lastMessage}
+                        user1={el.user1}
+                        user2={el.user2}
+                        id={el._id}
+                    />)}
+                </div>
             </div>
-    </div>
+            <ShowAd />
+        </div>
+        
     )
 }

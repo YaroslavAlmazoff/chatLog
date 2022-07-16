@@ -1,0 +1,16 @@
+.inner-ad-item {
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+    padding: 5px;
+}
+.inner-ad-item-img {
+    width: 100%;
+}
+.inner-ad-item-title {
+    color: white;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}

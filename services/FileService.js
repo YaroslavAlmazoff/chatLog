@@ -64,6 +64,10 @@ class FileService {
         ImageService.saveFile(file, filename, 'photos')
         return filename
     }
+    async insertInnerAdImage(file, filename) {
+        ImageService.saveFile(file, filename, 'inneradimages')
+        return filename
+    }
 
 }
 

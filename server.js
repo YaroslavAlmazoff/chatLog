@@ -15,6 +15,7 @@ const filesRouter = require('./routes/files')
 const adminRouter = require('./routes/admin')
 const publicRouter = require('./routes/publics')
 const photoRouter = require('./routes/photos')
+const innerAdRouter = require('./routes/innerAds')
 //Создание сервера
 const app = express()
 //Подключение необходимых middlewares 
@@ -32,6 +33,7 @@ app.use('/api/files', filesRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/public', publicRouter)
 app.use('/api/photo', photoRouter)
+app.use('/api/innerad', innerAdRouter)
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 app.use(express.static(path.join(__dirname, '..', 'static')))

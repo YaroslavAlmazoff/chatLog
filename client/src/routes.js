@@ -29,7 +29,7 @@ import PublicPage from './publics/components/pages/PublicPage'
 import Popular from "./photographer/components/pages/Popular"
 import New from "./photographer/components/pages/New"
 import Photo from "./photographer/components/pages/Photo"
-import Create from "./photographer/components/pages/Create"
+import Create from "./inner_ad/components/pages/Create"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -72,6 +72,8 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/photos/new" element={<New />} />
             <Route exact path="/photo/:id" element={<Photo />} />
             <Route exact path="/photo/create" element={<Create />} />
+
+            <Route exact path="/innerad/create" element={<Create />} />
             
         </Routes>
     )
