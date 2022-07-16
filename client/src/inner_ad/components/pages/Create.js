@@ -2,8 +2,9 @@ import {useRef, useState} from 'react'
 import useDate from '../../../common_hooks/date.hook'
 import api from '../../../auth/api/auth'
 import ImagePreview from '../components/ImagePreview'
+import '../../styles.form.css'
 
-const CreatePostPage = () => {
+const Create = () => {
     const {getCurrentDate} = useDate()
     const fileRef = useRef()
     const [imageDisplay, setImageDisplay] = useState('none')
@@ -61,4 +62,4 @@ const CreatePostPage = () => {
     )
 }
 
-export default CreatePostPage
+export default Create
