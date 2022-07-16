@@ -15,16 +15,27 @@
     border: none;
     color: white;
     border-bottom: 2px solid rgb(0, 140, 255);
+    background-color: transparent;
     padding: 12px;
     margin: 10px;
 }
+.create-ad-page-input::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
+.create-ad-page-input::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
+.create-ad-page-input:-moz-placeholder           {color:rgb(0, 140, 255); opacity:1;}/* Firefox 18- */
+
 .create-ad-page-area {
     outline: none;
     border: 1px solid rgb(0, 140, 255);
+    border-radius: 11px;
+    background-color: transparent;
     color: white;
     padding: 12px;
     margin: 10px;
 }
+.create-ad-page-area::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
+.create-ad-page-area::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
+.create-ad-page-area:-moz-placeholder           {color:rgb(0, 140, 255); opacity:1;}/* Firefox 18- */
+
 .create-ad-page-button {
     color: white;
     background-color: rgb(0, 140, 255);
