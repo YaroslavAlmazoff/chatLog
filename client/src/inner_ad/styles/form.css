@@ -23,6 +23,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
+    width: 40%;
 }
 .create-ad-page-input::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-input::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
@@ -39,6 +40,7 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
+    width: 40%;
 }
 .create-ad-page-area::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-area::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */

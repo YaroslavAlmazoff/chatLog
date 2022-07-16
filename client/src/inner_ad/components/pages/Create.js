@@ -57,7 +57,7 @@ const Create = () => {
             <div style={{marginTop: '10px', marginBottom: '10px'}}>
                 <ImagePreview imageDisplay={imageDisplay} imageUrl={imageUrl} />
             </div>
-            <button onClick={send} className="create-ad-page-button" >Разместить</button>
+            <button onClick={send} className="create-ad-page-button" >Разместить рекламу</button>
         </div>
     )
 }
