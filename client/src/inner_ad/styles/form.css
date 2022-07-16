@@ -19,6 +19,7 @@
     background-color: transparent;
     padding: 12px;
     margin: 10px;
+    display: block;
 }
 .create-ad-page-input::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-input::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
@@ -32,6 +33,7 @@
     color: white;
     padding: 12px;
     margin: 10px;
+    display: block;
 }
 .create-ad-page-area::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-area::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
@@ -44,4 +46,5 @@
     margin: 10px;
     border: none;
     border-radius: 12px;
+    display: block;
 }
