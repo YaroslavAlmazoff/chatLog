@@ -22,6 +22,7 @@
     margin: 10px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
 .create-ad-page-input::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-input::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
@@ -37,6 +38,7 @@
     margin: 10px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
 .create-ad-page-area::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .create-ad-page-area::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
@@ -51,4 +53,5 @@
     border-radius: 12px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
