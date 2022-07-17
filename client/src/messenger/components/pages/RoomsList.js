@@ -23,7 +23,7 @@ export const RoomsList = () => {
     }, [auth])
 
     return (
-        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+        <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
             <ShowAd />
             <div className="room-list">
                 <h1>Сообщения</h1>
