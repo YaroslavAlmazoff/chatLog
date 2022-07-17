@@ -22,12 +22,12 @@ const PublicsPage = () => {
 
     return (
         <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
-            <ShowAd />
+            <ShowAd width={'28%'} />
             <div className="publics">
                 <button onClick={createPublic} className="publics-create-public">Создать группу</button>
                 {publics.map(item => <Public item={item} />)}
             </div>
-            <ShowAd />
+            <ShowAd width={'28%'} />
         </div>    
     )
 }

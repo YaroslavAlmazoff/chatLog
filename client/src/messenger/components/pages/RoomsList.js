@@ -24,7 +24,7 @@ export const RoomsList = () => {
 
     return (
         <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
-            <ShowAd />
+            <ShowAd width={'28%'} />
             <div className="room-list">
                 <h1>Сообщения</h1>
                 <div className="rooms-list-wrapper">
@@ -37,7 +37,7 @@ export const RoomsList = () => {
                     />)}
                 </div>
             </div>
-            <ShowAd />
+            <ShowAd width={'28%'} />
         </div>
         
     )

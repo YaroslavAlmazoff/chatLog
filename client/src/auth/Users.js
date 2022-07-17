@@ -55,14 +55,14 @@ const Users = () => {
         <div className="users">
                 <div className="users-ads">
                     <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
-                    <ShowAd />
+                    <ShowAd width={'100%'} />
                 </div>
                 {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
                     {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
                 </div>}
                 <div className="users-ads">
                     <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />  
-                    <ShowAd />
+                    <ShowAd width={'100%'} />
                 </div>
                 
         </div>    

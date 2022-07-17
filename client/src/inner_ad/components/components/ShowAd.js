@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import api from '../../../auth/api/auth'
 import Card from "./Card"
 
-const ShowAd = () => {
+const ShowAd = ({width}) => {
     const [ads, setAds] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const ShowAd = () => {
     }, [])
 
     return (
-        <div style={{width: '28%'}}>
+        <div style={{width}}>
             {ads.map(item => <Card item={item} />)}
         </div>
     )
