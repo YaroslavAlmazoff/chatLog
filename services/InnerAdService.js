@@ -5,6 +5,7 @@ const FileService = require('./FileService')
 class InnerAdService {
     async create(req, res) {
         const {title, text, link, date} = req.body
+        console.log(link)
         const imageUrl = uuid.v4() + '.jpg'
         await InnerAd.create({
             title, text, imageUrl, link, date, active: true

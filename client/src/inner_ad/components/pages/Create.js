@@ -38,6 +38,7 @@ const Create = () => {
         formData.append('file', file)
         formData.append('date', date)
         formData.append('link', link)
+        console.log(link)
 
         await api.post('/api/innerad/create/', formData, {headers: 
             {'Content-Type': 'multipart/form-data'}
