@@ -4,7 +4,7 @@ const InnerAd = new mongoose.Schema({
     title: {type: String, required: true},
     text: {type: String},
     imageUrl: {type: String},
-    link: {type: String, required: true},
+    link: {type: String},
     date: {type: String, required: true},
     active: {type: Boolean, required: true}
 })

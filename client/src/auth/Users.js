@@ -53,11 +53,18 @@ const Users = () => {
 
     return (
         <div className="users">
-                <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
+                <div className="users-ads">
+                    <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
+                    <ShowAd />
+                </div>
                 {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
                     {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
                 </div>}
-            <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />  
+                <div className="users-ads">
+                    <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />  
+                    <ShowAd />
+                </div>
+                
         </div>    
     )
 }
