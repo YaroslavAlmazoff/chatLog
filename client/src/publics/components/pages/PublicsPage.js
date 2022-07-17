@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import api from '../../../auth/api/auth'
 import Public from "../components/components/Public"
 import '../../styles/publics.css'
+import ShowAd from "../../../inner_ad/components/components/ShowAd"
 
 const PublicsPage = () => {
     const [publics, setPublics] = useState([])
@@ -20,10 +21,14 @@ const PublicsPage = () => {
 
 
     return (
-        <div className="publics">
-            <button onClick={createPublic} className="publics-create-public">Создать группу</button>
-            {publics.map(item => <Public item={item} />)}
-        </div>
+        <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
+            <ShowAd />
+            <div className="publics">
+                <button onClick={createPublic} className="publics-create-public">Создать группу</button>
+                {publics.map(item => <Public item={item} />)}
+            </div>
+            <ShowAd />
+        </div>    
     )
 }
 

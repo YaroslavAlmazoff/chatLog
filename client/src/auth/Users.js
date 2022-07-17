@@ -6,6 +6,7 @@ import api from "./api/auth"
 import UsersFilterSide from "./parts/UsersFilterSide"
 import UsersSearchSide from "./parts/UsersSearchSide"
 import Loader from "../common_components/Loader"
+import ShowAd from "../inner_ad/components/components/ShowAd"
 
 const Users = () => {
     //Страница всех пользователей и их поиска
@@ -51,14 +52,18 @@ const Users = () => {
     }, [sortedUsersByCountry, searchValue])
 
     return (
-        <div className="users">
-                <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
-                {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
-                    {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
-                </div>}
-                <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />
-            
-        </div>    
+        <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
+            <ShowAd />
+            <div className="users">
+                    <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
+                    {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
+                        {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
+                    </div>}
+                    <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />
+                
+            </div>    
+            <ShowAd />
+        </div>
     )
 }
 
