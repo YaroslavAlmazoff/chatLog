@@ -52,18 +52,13 @@ const Users = () => {
     }, [sortedUsersByCountry, searchValue])
 
     return (
-        <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
-            <ShowAd />
-            <div className="users">
-                    <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
-                    {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
-                        {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
-                    </div>}
-                    <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />
-                
-            </div>    
-            <ShowAd />
-        </div>
+        <div className="users">
+                <UsersFilterSide users={users} setUsers={setUsers} usersReserve={usersReserve} setSelectAge={setSelectAge} setSelectCountry={setSelectCountry} />
+                {!users[0] ? <Loader ml={'0%'} /> : <div className="users-list">
+                    {searchedUsers.map(el => <UserItem key={randomKey()} name={el.name} surname={el.surname} age={el.age} avatarUrl={el.avatarUrl} id={el._id} />)}
+                </div>}
+            <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />  
+        </div>    
     )
 }
 
