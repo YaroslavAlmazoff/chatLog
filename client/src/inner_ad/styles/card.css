@@ -1,4 +1,5 @@
 .inner-ad-item {
+    margin-top: 5px;
     width: 98%;
     background-color: rgb(41, 41, 41);
     border: 1px solid rgb(83, 83, 83);
@@ -9,6 +10,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 12px;
 }
 .inner-ad-item-title {
     color: white;

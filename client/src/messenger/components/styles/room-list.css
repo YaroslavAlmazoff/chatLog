@@ -6,7 +6,7 @@
         width: 40%;
         margin: 0 auto;
         border-radius: 10px;
-        margin-left: 20px;
+        margin-left: 15px;
     }
 }
 @media screen and (width < 700px) and (width > 500px) {
