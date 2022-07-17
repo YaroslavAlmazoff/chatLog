@@ -8,6 +8,7 @@ const ShowAd = () => {
     useEffect(() => {
         const getAds = async () => {
             const response = await api.get('/api/innerad/all')
+            console.log(response)
             setAds(response.data.ads)
         }
         getAds()
