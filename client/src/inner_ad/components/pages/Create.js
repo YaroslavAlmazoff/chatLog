@@ -13,6 +13,7 @@ const Create = () => {
     const [link, setLink] = useState('')
     const [text, setText] = useState('')
     const [file, setFile] = useState('')
+    const [errorText, setErrorText] = useState('')
 
     const emitOpen = () => {
         fileRef.current.click()
@@ -31,6 +32,10 @@ const Create = () => {
 
     const send = async () => {
         if(!file) return
+        if(!link.includes('http')) {
+            setErrorText('Неверный формат. Пример правильной ссылки: http://chatlog.ru')
+            return
+        }
         const date = getCurrentDate()
         const formData = new FormData()
         formData.append('title', title)
@@ -53,6 +58,7 @@ const Create = () => {
             <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Подробнее..." className="create-ad-page-area"></textarea>
             <input onChange={e => getFile(e)} type="file" ref={fileRef} />
             <button onClick={e => emitOpen(e)} className="create-ad-page-button">Загрузить изображение</button>
+            <p style={{color: 'red'}}>{errorText}</p>
             <input value={link} onChange={e => setLink(e.target.value)} type="text" placeholder="Ссылка на сайт" className='create-ad-page-input' />
             <p className='create-ad-page-title' style={{fontSize: '11pt', color:'lightgreen'}}>Если ссылка на сайт не указана, для Вашей рекламы будет создана отдельная страница в ChatLog.ru </p>
             <div style={{marginTop: '10px', marginBottom: '10px'}}>
