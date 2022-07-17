@@ -15,7 +15,7 @@ const ShowAd = () => {
     }, [])
 
     return (
-        <div style={{width: '30%'}}>
+        <div style={{width: '28%'}}>
             {ads.map(item => <Card item={item} />)}
         </div>
     )
