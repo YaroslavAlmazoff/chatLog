@@ -20,8 +20,7 @@ const ShowAd = ({width}) => {
                     }
                     return 0;
                 }
-                const newads = ads.sort(compare)
-                setAds(newads)
+                setAds(prev => prev.sort(compare))
             },10000)
         }
         getAds()
