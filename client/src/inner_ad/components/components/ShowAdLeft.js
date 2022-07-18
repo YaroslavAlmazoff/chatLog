@@ -11,17 +11,8 @@ const ShowAd = ({width}) => {
             console.log(response)
             setAds(response.data.ads)
             setInterval(() => {
-                function compare( a, b ) {
-                    if ( a.title.length < b.title.length ){
-                      return -1;
-                    }
-                    if ( a.title.length > b.title.length ){
-                      return 1;
-                    }
-                    return 0;
-                }
-                setAds(prev => prev.sort(compare))
-            },10000)
+                setAds(ads.reverse())
+            },3000)
         }
         getAds()
     }, [])
