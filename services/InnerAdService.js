@@ -25,7 +25,7 @@ class InnerAdService {
         console.log(link)
         const imageUrl = uuid.v4() + '.jpg'
         await InnerAd.create({
-            title, text, imageUrl, link, date, active: true
+            title, text, imageUrl, link, date, active: true, user: req.params.id
         })
         FileService.insertInnerAdImage(req.files.file, imageUrl)
         res.json({msg: 'success'})

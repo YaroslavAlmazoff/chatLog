@@ -1,10 +1,12 @@
-import {useRef, useState} from 'react'
+import {useRef, useState, useContext} from 'react'
 import useDate from '../../../common_hooks/date.hook'
 import api from '../../../auth/api/auth'
 import ImagePreview from '../components/ImagePreview'
+import { AuthContext } from '../../../context/AuthContext'
 import '../../styles/form.css'
 
 const Create = () => {
+    const auth = useContext(AuthContext)
     const {getCurrentDate} = useDate()
     const fileRef = useRef()
     const [imageDisplay, setImageDisplay] = useState('none')
@@ -45,7 +47,7 @@ const Create = () => {
         formData.append('link', link)
         console.log(link)
 
-        await api.post('/api/innerad/create/', formData, {headers: 
+        await api.post(`/api/innerad/create/${auth.userId}`, formData, {headers: 
             {'Content-Type': 'multipart/form-data'}
         })
         window.location = `/home`

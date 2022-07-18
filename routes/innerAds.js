@@ -3,7 +3,7 @@ const InnerAdService = require("../services/InnerAdService")
 
 const router = Router()
 
-router.post('/create', (req, res) => {
+router.post('/create/:id', (req, res) => {
     try {
         InnerAdService.create(req, res)
     } catch(e) {
