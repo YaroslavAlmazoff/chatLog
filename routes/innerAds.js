@@ -32,5 +32,20 @@ router.get('/random', (req, res) => {
     }
 })
 
+router.get('/view/:id', (req, res) => {
+    try {
+        InnerAdService.view(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/click/:id', (req, res) => {
+    try {
+        InnerAdService.click(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+
 
 module.exports = router

@@ -42,6 +42,16 @@ class InnerAdService {
         const ads = await InnerAd.find({})
         res.json({ads: this.shuffle(ads)})
     }
+    async view(req, res) {
+        const ad = await InnerAd.findById(req.params.id)
+        const views = ad.views + 1
+        await InnerAd.findByIdAndUpdate(req.params.id, {views})
+    }
+    async click(req, res) {
+        const ad = await InnerAd.findById(req.params.id)
+        const clicks = ad.clicks + 1
+        await InnerAd.findByIdAndUpdate(req.params.id, {clicks})
+    }
 }
 
 module.exports = new InnerAdService()
