@@ -31,6 +31,7 @@ import New from "./photographer/components/pages/New"
 import Photo from "./photographer/components/pages/Photo"
 import Create from "./inner_ad/components/pages/Create"
 import InnerAd from "./inner_ad/components/pages/InnerAd"
+import Cabinet from "./inner_ad/components/pages/Cabinet"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -75,6 +76,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/photo/create" element={<Create />} />
 
             <Route exact path="/innerad/create" element={<Create />} />
+            <Route exact path="/innerad/cabinet" element={<Cabinet />} />
             <Route exact path="/innerad/:id" element={<InnerAd />} />
             
         </Routes>
