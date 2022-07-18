@@ -4,7 +4,8 @@ import RoomItem from "../parts/RoomItem"
 import "../styles/room-list.css"
 import api from '../../../auth/api/auth'
 import { AuthContext } from "../../../context/AuthContext"
-import ShowAd from "../../../inner_ad/components/components/ShowAd"
+import ShowAdLeft from "../../../inner_ad/components/components/ShowAdLeft"
+import ShowAdRight from "../../../inner_ad/components/components/ShowAdRight"
 
 export const RoomsList = () => {
     const auth = useContext(AuthContext)
@@ -24,7 +25,7 @@ export const RoomsList = () => {
 
     return (
         <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
-            <ShowAd width={'28%'} />
+            <ShowAdLeft width={'28%'} />
             <div className="room-list">
                 <h1>Сообщения</h1>
                 <div className="rooms-list-wrapper">
@@ -37,7 +38,7 @@ export const RoomsList = () => {
                     />)}
                 </div>
             </div>
-            <ShowAd width={'28%'} />
+            <ShowAdRight width={'28%'} />
         </div>
         
     )
