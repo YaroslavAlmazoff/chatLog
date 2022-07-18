@@ -24,6 +24,13 @@ router.post('/ad/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/random', (req, res) => {
+    try {
+        InnerAdService.randomAds(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 module.exports = router

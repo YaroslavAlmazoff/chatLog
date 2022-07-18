@@ -7,12 +7,9 @@ const ShowAd = ({width}) => {
 
     useEffect(() => {
         const getAds = async () => {
-            const response = await api.get('/api/innerad/all')
+            const response = await api.get('/api/innerad/random')
             console.log(response)
             setAds(response.data.ads)
-            setInterval(() => {
-                setAds(response.data.ads.reverse())
-            },10000)
         }
         getAds()
     }, [])
