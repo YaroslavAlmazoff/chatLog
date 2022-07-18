@@ -15,7 +15,7 @@ const ShowAd = ({width}) => {
             },3000)
         }
         getAds()
-    }, [])
+    }, [ads])
 
     return (
         <div style={{width}}>
