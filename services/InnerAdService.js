@@ -52,6 +52,10 @@ class InnerAdService {
         const clicks = ad.clicks + 1
         await InnerAd.findByIdAndUpdate(req.params.id, {clicks})
     }
+    async userads(req, res) {
+        const ads = await InnerAd.find({user: req.params.id})
+        res.json({ads})
+    }
 }
 
 module.exports = new InnerAdService()

@@ -46,6 +46,13 @@ router.get('/click/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/userads/:id', (req, res) => {
+    try {
+        InnerAdService.userads(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 module.exports = router
