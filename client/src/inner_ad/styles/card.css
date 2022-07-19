@@ -8,16 +8,31 @@
     text-decoration: none;
     cursor: pointer;
 }
-.inner-ad-item-inline {
-    margin-top: 5px;
-    width: 20%;
-    background-color: rgb(41, 41, 41);
-    border: 1px solid rgb(83, 83, 83);
-    border-radius: 12px;
-    padding: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
+@media screen and (width > 500px) {
+    .inner-ad-item-inline {
+        margin-top: 5px;
+        width: 20%;
+        background-color: rgb(34, 34, 34);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        padding: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+    }
+}
+@media screen and (width < 500px) {
+    .inner-ad-item-inline {
+        margin-top: 5px;
+        width: 98%;
+        background-color: rgb(34, 34, 34);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        padding: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+    }
 }
 .inner-ad-item-img {
     width: 100%;
