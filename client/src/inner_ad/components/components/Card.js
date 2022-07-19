@@ -14,6 +14,7 @@ const Card = ({item}) => {
 
     const gotoAd = async (e) => {
         e.preventDefault()
+        e.stopPropagation()
         const response = await api.get(`/api/innerad/click/${item._id}`)
         console.log(response)
         linkRef.current.click()
