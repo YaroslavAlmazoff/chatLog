@@ -13,7 +13,8 @@ const Card = ({item}) => {
 
     const gotoAd = async (e) => {
         e.preventDefault()
-        await api.get(`/api/innerad/click/${item._id}`)
+        const response = await api.get(`/api/innerad/click/${item._id}`)
+        console.log(response)
         linkRef.current.click()
     }
 

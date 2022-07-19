@@ -46,11 +46,13 @@ class InnerAdService {
         const ad = await InnerAd.findById(req.params.id)
         const views = ad.views + 1
         await InnerAd.findByIdAndUpdate(req.params.id, {views})
+        res.json({msg: 'view'})
     }
     async click(req, res) {
         const ad = await InnerAd.findById(req.params.id)
         const clicks = ad.clicks + 1
         await InnerAd.findByIdAndUpdate(req.params.id, {clicks})
+        res.json({msg: 'click'})
     }
     async userads(req, res) {
         const ads = await InnerAd.find({user: req.params.id})
