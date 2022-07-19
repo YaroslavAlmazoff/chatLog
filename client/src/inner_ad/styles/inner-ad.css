@@ -1,16 +1,35 @@
-.inner-ad {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 5%;
-    border-radius: 12px;
-    background-color: rgb(41, 41, 41);
-    border: 1px solid rgb(83, 83, 83);
+@media screeb and (width > 500px) {
+    .inner-ad {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 5%;
+        border-radius: 12px;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
+    }
+    .inner-ad-img {
+        margin-top: 5px;
+        width: 98%;
+        border-radius: 12px;
+    }
 }
-.inner-ad-img {
-    margin-top: 5px;
-    width: 98%;
-    border-radius: 12px;
+@media screeb and (width < 500px) {
+    .inner-ad {
+        width: 98%;
+        margin: 0 auto;
+        margin-top: 5%;
+        border-radius: 12px;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
+    }
+    .inner-ad-img {
+        margin-top: 5px;
+        width: 98%;
+        border-radius: 12px;
+    }
 }
+
+
 .inner-ad-title {
     color: white;
     font-size: 18pt;
