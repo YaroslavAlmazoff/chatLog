@@ -12,6 +12,7 @@ const Cabinet = () => {
 
     useEffect(() => {
         const getAds = async () => {
+            if(!auth.userId) return
             const response = await api.get(`/api/innerad/userads/${auth.userId}`)
             setAds(response.data.ads)
         }
