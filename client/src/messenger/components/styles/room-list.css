@@ -18,7 +18,7 @@
 }
 @media screen and (width < 500px) {
     .room-list {
-        width: 80%;
+        width: 98%;
         margin: 0 auto;
         border-radius: 10px;
     }
