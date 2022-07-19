@@ -20,12 +20,12 @@ const Card = ({item}) => {
     }
 
     return (
-        <div className="inner-ad-item">
-            {item.link ? <a onClick={e => gotoAd(e)} ref={linkRef} className='sd-none' href={item.link}>
+        <div className="inner-ad-item" onClick={e => gotoAd(e)}>
+            {item.link ? <a ref={linkRef} className='sd-none' href={item.link}>
                 <img src={process.env.REACT_APP_API_URL + `/inneradimages/${item.imageUrl}`} alt="inner-ad-item-img" className='inner-ad-item-img' />
                 <p className='inner-ad-item-title'>{item.title}</p>
             </a> :
-            <a onClick={e => gotoAd(e)} ref={linkRef} className='sd-none' href={`/innerad/${item.id}`}>
+            <a ref={linkRef} className='sd-none' href={`/innerad/${item.id}`}>
                 <img src={process.env.REACT_APP_API_URL + `/inneradimages/${item.imageUrl}`} alt="inner-ad-item-img" className='inner-ad-item-img' />
                 <p className='inner-ad-item-title'>{item.title}</p>
             </a>
