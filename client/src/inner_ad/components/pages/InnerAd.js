@@ -5,7 +5,7 @@ import '../../styles/inner-ad.css'
 
 const InnerAd = () => {
     const params = useParams()
-    const [ad, setAd] = useState({})
+    const [ad, setAd] = useState({imageUrl: '', title: '', text: 'text'})
 
     useEffect(() => {
         const getAd = async () => {
