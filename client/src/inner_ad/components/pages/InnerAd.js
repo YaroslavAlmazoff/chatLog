@@ -9,7 +9,8 @@ const InnerAd = () => {
 
     useEffect(() => {
         const getAd = async () => {
-            const response = await api.get(`/api/innerad/ad/${params.id}`)  
+            const response = await api.get(`/api/innerad/ad/${params.id}`)
+            console.log(response)  
             setAd(response.data.ad)
         }
         getAd()
