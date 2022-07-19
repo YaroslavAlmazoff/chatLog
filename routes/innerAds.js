@@ -17,7 +17,7 @@ router.get('/all', (req, res) => {
         console.log(e)
     }
 })
-router.post('/ad/:id', (req, res) => {
+router.get('/ad/:id', (req, res) => {
     try {
         InnerAdService.ad(req, res)
     } catch(e) {
