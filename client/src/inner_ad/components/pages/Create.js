@@ -34,10 +34,10 @@ const Create = () => {
 
     const send = async () => {
         if(!file) return
-        if(!link.includes('http')) {
+        if(link){if(!link.includes('http')) {
             setErrorText('Неверный формат. Пример правильной ссылки: http://chatlog.ru')
             return
-        }
+        }}
         const date = getCurrentDate()
         const formData = new FormData()
         formData.append('title', title)
