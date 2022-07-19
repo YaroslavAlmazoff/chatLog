@@ -16,7 +16,7 @@ const Cabinet = () => {
             setAds(response.data.ads)
         }
         getAds()
-    })
+    }, [auth])
 
     const createAd = () => {
         window.location = '/innerad/create'
