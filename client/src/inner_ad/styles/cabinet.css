@@ -6,7 +6,7 @@
         border-radius: 12px;
         padding: 10px;
         margin: 0 auto;
-        margin-top: 10%;
+        margin-top: 5%;
     }
 }
 @media screen and (width < 500px) {
@@ -38,6 +38,7 @@
 }
 .innerad-cabinet-title {
     color: white;
+    font-size: 16pt;
 }
 .innerad-cabinet-stats {
     height: 50px;

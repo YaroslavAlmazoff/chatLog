@@ -6,7 +6,8 @@ const Card = ({item}) => {
     const linkRef = useRef(null)
     useEffect(() => {
         const view = async () => {
-            await api.get(`/api/innerad/view/${item._id}`)
+            const response = await api.get(`/api/innerad/view/${item._id}`)
+            console.log(response)
         }
         view()
     }, [item])
