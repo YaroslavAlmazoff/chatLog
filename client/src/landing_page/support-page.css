@@ -3,6 +3,8 @@
         margin: 0 auto;
         margin-top: 15vh;
         width: 27%;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
     }
     .support_page_area {
         width: 98%;
@@ -20,6 +22,8 @@
         margin: 0 auto;
         margin-top: 15vh;
         width: 100%;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
     }
     .support_page_area {
         width: 85%;

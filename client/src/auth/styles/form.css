@@ -3,6 +3,8 @@
         width: 30%;
         padding: 12px;
         margin: 0 auto;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
     }
 }
 @media screen and (width < 500px) {
@@ -10,6 +12,8 @@
         width: 90%;
         padding: 12px;
         margin: 0 auto;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
     }
 }
 .form-field {

@@ -5,6 +5,8 @@
     border: 1px solid rgb(0, 140, 255);
     border-radius: 11px;
     padding: 10px;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(83, 83, 83);
 }
 .create-public-title {
     font-size: 14pt;

@@ -2,7 +2,8 @@
     margin: 0 auto;
     margin-top: -10px;
     width: 40%;
-    background-color: rgba(102, 102, 159, 0.492);
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(83, 83, 83);
     border-radius: 12px;
 }
 .photo-page-title {
