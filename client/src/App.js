@@ -11,6 +11,7 @@ function App() {
   const isAuthenticated = !!token
   const auth = useContext(AuthContext)
   const [isVerified, setIsVerified] = useState(false)
+  const [theme, setTheme] = useState('')
   const routes = useRoutes(isAuthenticated, isVerified)
   useEffect(() => {
     const setVisit = async () => {
@@ -25,13 +26,16 @@ function App() {
     }
     verify()
   }, [auth])
+  useEffect(() => {
+    setTheme(require(`./homepage/img/backgrounds/${localStorage.getItem('theme')}/${Math.floor(Math.random() * 5) + 1}.jpg`))
+  }, [])
 
   return (
     <AuthContext.Provider value={{
       token, login, logout, userId, isAuthenticated
     }}>
 
-      <div className="App">
+      <div className="App" style={{backgroundImage: `url(${theme})`}}>
         <Header isVerified={isVerified}/>
           {routes}
       </div>
