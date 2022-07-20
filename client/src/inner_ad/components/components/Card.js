@@ -11,7 +11,10 @@ const Card = ({item}) => {
             console.log(response)
         }
         view()
-        itemRef.current.classList.add('inner-ad-item')
+        setInterval(() => {
+            itemRef.current.classList.add('inner-ad-item')
+        }, 6000)
+        
     }, [item])
 
     const gotoAd = async (e) => {
