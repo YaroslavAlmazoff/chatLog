@@ -20,11 +20,11 @@ const ShowAd = ({width}) => {
         getAds()
     }, [])
 
-    for(let i = 0; i < 10; i++) {
-        setTimeout(() => {
-            getAds()
-        }, 3000)
-    }
+
+    setTimeout(() => {
+        getAds()
+    }, 3000)
+
 
     return (
         <div style={{width}}>
