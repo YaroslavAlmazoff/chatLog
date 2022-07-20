@@ -5,12 +5,6 @@ import Card from "./Card"
 const ShowAd = ({width}) => {
     const [ads, setAds] = useState([])
 
-    const getAds = async () => {
-        const response = await api.get('/api/innerad/random')
-        console.log(response)
-        setAds(response.data.ads)
-    }
-
     useEffect(() => {
         const getAds = async () => {
             const response = await api.get('/api/innerad/random')
@@ -20,7 +14,7 @@ const ShowAd = ({width}) => {
         getAds()
         setInterval(() => {
             getAds()
-        }, 3000)
+        }, 6000)
     }, [])
 
 
