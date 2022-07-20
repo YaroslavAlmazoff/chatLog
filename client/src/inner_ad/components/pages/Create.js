@@ -52,7 +52,7 @@ const Create = () => {
         formData.append('file', file)
         formData.append('date', date)
         formData.append('link', link)
-        formData.append('diedate', dieDate)
+        formData.append('dieDate', dieDate)
         console.log(link)
 
         await api.post(`/api/innerad/create/${auth.userId}`, formData, {headers: 
