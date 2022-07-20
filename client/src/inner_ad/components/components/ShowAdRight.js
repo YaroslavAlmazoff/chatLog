@@ -21,7 +21,9 @@ const ShowAd = ({width}) => {
     }, [])
 
     for(let i = 0; i < 10; i++) {
-        getAds()
+        setTimeout(() => {
+            getAds()
+        }, 3000);
     }
 
     return (
