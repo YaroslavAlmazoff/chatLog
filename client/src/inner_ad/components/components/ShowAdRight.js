@@ -8,7 +8,7 @@ const ShowAd = ({width}) => {
     const getAds = async () => {
         const response = await api.get('/api/innerad/random')
         console.log(response)
-        setAds(response.data.ads.reverse())
+        setAds(response.data.ads)
     }
 
     useEffect(() => {
