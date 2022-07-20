@@ -41,7 +41,7 @@ const Create = () => {
         }}
         const date = getCurrentDate()
 
-        let dieDate = toString(Number(date.split('.')[0]) + Number(live)) + '.' + date.split('.')[1] + '.' + date.split('.')[2]
+        let dieDate = Number(date.split('.')[0]) + Number(live) + '.' + date.split('.')[1] + '.' + date.split('.')[2]
         if(dieDate.split('.')[0] > 28) {
             dieDate = dieDate.split('.')[0] - 28 + '.' + Number(date.split('.')[1]) + 1 + '.' + date.split('.')[2]
         }
