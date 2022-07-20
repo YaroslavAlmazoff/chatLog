@@ -18,7 +18,7 @@ const ShowAd = ({width}) => {
             setAds(response.data.ads.reverse())
         }
         getAds()
-        setTimeout(() => {
+        setInterval(() => {
             getAds()
         }, 3000)
     
