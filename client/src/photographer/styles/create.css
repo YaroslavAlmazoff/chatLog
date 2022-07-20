@@ -1,41 +1,83 @@
-.photo-create-page {
-    margin: 0 auto;
-    margin-top: -10px;
-    width: 40%;
-    background-color: rgb(41, 41, 41);
-    border: 1px solid rgb(83, 83, 83);
-    border-radius: 12px;
+@media screen and (width > 500px) {
+    .photo-create-page {
+        margin: 0 auto;
+        margin-top: -10px;
+        width: 40%;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+    }
+    .photo-create-form {
+        margin: 20px;
+        padding: 20px;
+    }
+    .photo-important-input {
+        color: rgb(0, 140, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 15px;
+        margin-bottom: 12px;
+        border: 1px solid rgb(0, 140, 255);
+        outline: none;
+        background-color: transparent;
+        border-radius: 12px;
+        color: white;
+    }
+    .photo-input {
+        border: none;
+        border-bottom: 2px solid rgb(0, 140, 255);
+        background-color: transparent;
+        outline: none;
+        color: white;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 12px;
+        display: block;
+    }
 }
+@media screen and (width < 500px) {
+    .photo-create-page {
+        margin: 0 auto;
+        margin-top: -10px;
+        width: 98%;
+        background-color: rgb(41, 41, 41);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+    }
+    .photo-create-form {
+        margin: 10px;
+        padding: 10px;
+    }
+    .photo-important-input {
+        color: rgb(0, 140, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 15px;
+        margin-bottom: 12px;
+        border: 1px solid rgb(0, 140, 255);
+        outline: none;
+        background-color: transparent;
+        border-radius: 12px;
+        color: white;
+        width: 98%;
+    }
+    .photo-input {
+        border: none;
+        border-bottom: 2px solid rgb(0, 140, 255);
+        background-color: transparent;
+        outline: none;
+        color: white;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 12px;
+        display: block;
+        width: 98%;
+    }
+}
+
 .photo-page-title {
     font-size: 14pt;
     text-align: center;
 }
-.photo-create-form {
-    margin: 20px;
-    padding: 20px;
-}
-.photo-important-input {
-    color: rgb(0, 140, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 15px;
-    margin-bottom: 12px;
-    border: 1px solid rgb(0, 140, 255);
-    outline: none;
-    background-color: transparent;
-    border-radius: 12px;
-    color: white;
-}
-.photo-input {
-    border: none;
-    border-bottom: 2px solid rgb(0, 140, 255);
-    background-color: transparent;
-    outline: none;
-    color: white;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 12px;
-    display: block;
-}
+
 .photo-input::-webkit-input-placeholder {color:rgb(0, 140, 255); opacity:1;}/* webkit */
 .photo-input::-moz-placeholder          {color:rgb(0, 140, 255); opacity:1;}/* Firefox 19+ */
 .photo-input:-moz-placeholder           {color:rgb(0, 140, 255); opacity:1;}/* Firefox 18- */

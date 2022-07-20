@@ -1,11 +1,24 @@
-.photo {
-    width: 35%;
-    background-color: white;
-    border-radius: 12px;
-    padding: 10px;
-    margin: 0 auto;
-    margin-top: 10px;
+@media screen and (width > 500px) {
+    .photo {
+        width: 35%;
+        background-color: white;
+        border-radius: 12px;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
 }
+@media screen and (width < 500px) {
+    .photo {
+        width: 98%;
+        background-color: white;
+        border-radius: 12px;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
 .photo-img-big {
     width: 100%;
     border-radius: 12px;

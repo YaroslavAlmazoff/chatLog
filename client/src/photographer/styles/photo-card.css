@@ -1,21 +1,41 @@
-.photo-card {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 300px;
-    border-radius: 11px;
-    background-color: white;
-    margin: 7px;
-    margin-top: 0;
-    padding: 5px;
+@media screen and (width > 500px) {
+    .photo-card {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 300px;
+        border-radius: 11px;
+        background-color: white;
+        margin: 7px;
+        margin-top: 0;
+        padding: 5px;
+    }
+    .photo-img {
+        margin-top: -15px;
+        height: 80%;
+        border-radius: 11px;
+        transition: transform .5s ease-in-out;
+    }
 }
-
-.photo-img {
-    margin-top: -15px;
-    height: 80%;
-    border-radius: 11px;
-    transition: transform .5s ease-in-out;
+@media screen and (width < 500px) {
+    .photo-card {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 11px;
+        background-color: white;
+        margin: 7px;
+        margin-top: 0;
+        padding: 5px;
+        width: 98%;
+    }
+    .photo-img {
+        width: 98%;
+        border-radius: 11px;
+        transition: transform .5s ease-in-out;
+    }
 }
 .photo-img:hover {
     transform: rotateX(-20deg) rotateY(-20deg);

@@ -1,6 +1,14 @@
-.photo-page-wrapper {
-    width: 80%;
-    margin: 0 auto;
+@media screen and (width > 500px) {
+    .photo-page-wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+@media screen and (width < 500px) {
+    .photo-page-wrapper {
+        width: 98%;
+        margin: 0 auto;
+    }
 }
 .photo-page-title {
     color: white;
