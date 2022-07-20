@@ -32,7 +32,7 @@ router.get('/random', (req, res) => {
     }
 })
 
-router.get('/view/:id', (req, res) => {
+router.get('/view/:id/:date', (req, res) => {
     try {
         InnerAdService.view(req, res)
     } catch(e) {

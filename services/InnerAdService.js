@@ -1,31 +1,24 @@
 const InnerAd = require("../models/InnerAd")
 const uuid = require("uuid")
 const FileService = require('./FileService')
+const { findByIdAndDelete } = require("../models/InnerAd")
 
 class InnerAdService {
     shuffle(array) {
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle.
+        let currentIndex = array.length,  randomIndex
         while (currentIndex != 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
+          randomIndex = Math.floor(Math.random() * currentIndex)
+          currentIndex--
           [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+            array[randomIndex], array[currentIndex]]
         }
-      
-        return array;
+        return array
     }
     async create(req, res) {
-        const {title, text, link, date} = req.body
-        console.log(link)
+        const {title, text, link, date, dieDate} = req.body
         const imageUrl = uuid.v4() + '.jpg'
         await InnerAd.create({
-            title, text, imageUrl, link, date, active: true, user: req.params.id
+            title, text, imageUrl, link, date, active: true, user: req.params.id, dieDate
         })
         FileService.insertInnerAdImage(req.files.file, imageUrl)
         res.json({msg: 'success'})
@@ -46,6 +39,9 @@ class InnerAdService {
         const ad = await InnerAd.findById(req.params.id)
         const views = ad.views + 1
         await InnerAd.findByIdAndUpdate(req.params.id, {views})
+        if(ad.dieDate.split('.')[0]+'.'+ad.dieDate.split('.')[1] === req.params.date.split('.')[0]+'.'+req.params.date.split('.')[1]) {
+            await InnerAd.findByIdAndDelete(req.params.id)
+        }
         res.json({msg: 'view'})
     }
     async click(req, res) {

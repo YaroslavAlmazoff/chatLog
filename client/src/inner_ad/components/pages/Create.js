@@ -15,6 +15,7 @@ const Create = () => {
     const [link, setLink] = useState('')
     const [text, setText] = useState('')
     const [file, setFile] = useState('')
+    const [live, setLive] = useState(1)
     const [errorText, setErrorText] = useState('')
 
     const emitOpen = () => {
@@ -39,12 +40,19 @@ const Create = () => {
             return
         }}
         const date = getCurrentDate()
+
+        let dieDate = toString(Number(date.split('.')[0]) + Number(live)) + '.' + date.split('.')[1] + '.' + date.split('.')[2]
+        if(dieDate.split('.')[0] > 28) {
+            dieDate = dieDate.split('.')[0] - 28 + '.' + Number(date.split('.')[1]) + 1 + '.' + date.split('.')[2]
+        }
+
         const formData = new FormData()
         formData.append('title', title)
         formData.append('text', text)
         formData.append('file', file)
         formData.append('date', date)
         formData.append('link', link)
+        formData.append('diedate', dieDate)
         console.log(link)
 
         await api.post(`/api/innerad/create/${auth.userId}`, formData, {headers: 
@@ -63,6 +71,7 @@ const Create = () => {
             <p style={{color: 'red'}}>{errorText}</p>
             <input value={link} onChange={e => setLink(e.target.value)} type="text" placeholder="Ссылка на сайт" className='create-ad-page-input' />
             <p className='create-ad-page-title' style={{fontSize: '11pt', color:'lightgreen'}}>Если ссылка на сайт не указана, для Вашей рекламы будет создана отдельная страница в ChatLog.ru </p>
+            <input value={live} onChange={e => setLive(e.target.value)} type="number" placeholder="Время жизни" className='create-ad-page-input' /><p className='create-ad-page-title' style={{fontSize: '11pt', color:'lightgreen'}}>дней</p>
             <div style={{marginTop: '10px', marginBottom: '10px'}}>
                 <ImagePreview imageDisplay={imageDisplay} imageUrl={imageUrl} />
             </div>
