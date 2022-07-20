@@ -3,6 +3,7 @@ import api from '../../../auth/api/auth'
 import '../../styles/card.css'
 
 const Card = ({item}) => {
+    const itemRef = useRef(null)
     const linkRef = useRef(null)
     useEffect(() => {
         const view = async () => {
@@ -10,6 +11,7 @@ const Card = ({item}) => {
             console.log(response)
         }
         view()
+        itemRef.current.classList.add('inner-ad-item')
     }, [item])
 
     const gotoAd = async (e) => {
@@ -25,7 +27,7 @@ const Card = ({item}) => {
     }
 
     return (
-        <div className="inner-ad-item" onClick={e => gotoAd(e)} style={window.innerWidth >= 500 ? {display: 'block'} : {display: 'none'}}>
+        <div ref={itemRef} onClick={e => gotoAd(e)} style={window.innerWidth >= 500 ? {display: 'block'} : {display: 'none'}}>
             {item.link ? <a ref={linkRef} className='sd-none' href={item.link}>
                 <img src={process.env.REACT_APP_API_URL + `/inneradimages/${item.imageUrl}`} alt="inner-ad-item-img" className='inner-ad-item-img' />
                 <p className='inner-ad-item-title'>{item.title}</p>
