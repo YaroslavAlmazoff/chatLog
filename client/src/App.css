@@ -13,6 +13,8 @@ h3 {
 
 .App {
   text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 
