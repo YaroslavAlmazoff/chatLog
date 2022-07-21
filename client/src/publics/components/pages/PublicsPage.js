@@ -25,8 +25,8 @@ const PublicsPage = () => {
 
     const searchedPublics = useMemo(() => {
         return [...publics].filter(el => {
-            return el.name.includes(searchValue) || 
-            el.description.includes(searchValue) ||
+            return el.name.toLowerCase().includes(searchValue.toLowerCase()) || 
+            el.description.toLowerCase().includes(searchValue.toLowerCase()) ||
             searchValue === ''
         })
     }, [publics, searchValue])
