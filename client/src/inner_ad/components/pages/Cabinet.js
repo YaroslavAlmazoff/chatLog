@@ -39,7 +39,7 @@ const Cabinet = () => {
                 <button onclick={gotoAd} className='innerad-cabinet-button'>Перейти к рекламе</button>
             </div>
             <div className='innerad-cabinet-cards'>
-                {ads.map(item => <CabinetCard item={item} selectedAd={selectedAd} setSelectedAd={setSelectedAd} setStatsDisplay={setStatsDisplay} />)}
+                {ads.length ? ads.map(item => <CabinetCard item={item} selectedAd={selectedAd} setSelectedAd={setSelectedAd} setStatsDisplay={setStatsDisplay} />) : <p className="innerad-cabinet-title">У вас нет рекламы</p>}
             </div>
         </div>
     )

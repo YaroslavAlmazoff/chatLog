@@ -11,7 +11,7 @@ const Services = () => {
             {title: 'Объявления', imageUrl: 'ads.png', link: '/ads'},
             {title: 'Облако', imageUrl: 'cloud.png', link: '/cloud'},
             {title: 'Фотограф', imageUrl: 'photographer.png', link: '/photos/new'},
-            {title: 'Реклама', imageUrl: 'photographer.png', link: '/innerad/cabinet'},
+            {title: 'Реклама', imageUrl: 'innerad.png', link: '/innerad/cabinet'},
         ])
     }, [])
 
