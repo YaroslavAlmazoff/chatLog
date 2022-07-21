@@ -5,7 +5,7 @@ const Search = ({searchValue, setSearchValue}) => {
     //Компонент поиска
     return (     
         <div className="search">
-            <input placeholder="Поиск..." value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="search" className="search-field"/>
+            <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="search" className="search-field" placeholder="Поиск..." />
         </div>
 
     )
