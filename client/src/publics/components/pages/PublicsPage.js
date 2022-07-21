@@ -35,7 +35,7 @@ const PublicsPage = () => {
         <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between'}}>
             <div className="users-ads">
                 <UsersSearchSide searchValue={searchValue} setSearchValue={setSearchValue} />  
-                <ShowAdLeft width={'28%'} />
+                <ShowAdLeft width={'100%'} />
             </div>
             <div className="publics">
                 <button onClick={createPublic} className="publics-create-public">Создать группу</button>
