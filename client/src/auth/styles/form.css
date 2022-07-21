@@ -4,7 +4,7 @@
         padding: 12px;
         margin: 0 auto;
         margin-top: 15px;
-        background-color: rgb(41, 41, 41);
+        background-color: rgba(41, 41, 41, 0.75);
         border: 1px solid rgb(83, 83, 83);
         border-radius: 12px;
     }
@@ -15,7 +15,7 @@
         padding: 12px;
         margin: 0 auto;
         margin-top: 15px;
-        background-color: rgb(41, 41, 41);
+        background-color: rgba(41, 41, 41, 0.75);
         border: 1px solid rgb(83, 83, 83);
         border-radius: 12px;
     }
