@@ -22,7 +22,6 @@ import LandingPage from "./landing_page/LandingPage"
 import SupportPage from "./landing_page/SupportPage"
 import Admin from "./admin/Admin"
 import Services from "./homepage/Services"
-import AdsPage from "./ads/AdsPage"
 import PublicsPage from './publics/components/pages/PublicsPage'
 import CreatePage from "./publics/components/pages/CreatePage"
 import PublicPage from './publics/components/pages/PublicPage'
