@@ -4,6 +4,26 @@
     align-items: center;
     justify-content: space-between;
 }
+@media screen and (width > 500px) {
+    .ads-main-content {
+        margin: 0 auto;
+        width: 45%;
+        background-color: rgba(41, 41, 41, 0.75);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+}
+@media screen and (width < 500px) {
+    .ads-main-content {
+        margin: 0 auto;
+        width: 98%;
+        background-color: rgba(41, 41, 41, 0.75);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+}
 .ads-main-content {
     background-color: rgba(41, 41, 41, 0.75);
     border: 1px solid rgb(83, 83, 83);
