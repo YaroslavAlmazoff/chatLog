@@ -68,6 +68,7 @@
     font-size: 12pt;
     display: block;
     width: 100%;
+    margin-top: -10px;
 }
 .ad-form-select {
     color: rgb(0, 140, 255);
