@@ -36,7 +36,7 @@ import CreateAd from "./ads/pages/CreateAd"
 import AdMain from "./ads/pages/AdMain"
 import AdNew from "./ads/pages/AdNew"
 import AdCity from "./ads/pages/AdCity"
-import Ad from "../../models/Ad"
+import Ad from "./ads/pages/Ad"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
