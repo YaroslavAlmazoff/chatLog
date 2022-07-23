@@ -1,0 +1,47 @@
+.ad-form {
+    background-color: rgba(41, 41, 41, 0.75);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+.ad-form-title {
+    color: white;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ad-form-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(0, 140, 255);
+    outline: none;
+    color: white;
+}
+.ad-form-area {
+    background-color: transparent;
+    border: 1px solid rgb(0, 140, 255);
+    outline: none;
+    color: white;
+    border-radius: 12px;
+}
+.ad-form-parameter {
+    color: white;
+    font-size: 12pt;
+}
+.ad-form-select {
+    color: rgb(0, 140, 255);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.ad-form-button {
+    color: white;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background-color: rgb(0, 140, 255);
+    cursor: pointer;
+}

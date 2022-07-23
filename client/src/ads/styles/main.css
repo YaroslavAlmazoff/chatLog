@@ -1,0 +1,101 @@
+.ads-main {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ads-main-content {
+    background-color: rgba(41, 41, 41, 0.75);
+    border: 1px solid rgb(83, 83, 83);
+    padding: 10px;
+}
+.ads-main-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.ads-main-title {
+    color: white;
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ads-main-input {
+    padding: 12px;
+    color:rgb(0, 140, 255);
+    background-color: transparent;
+    border: 1px solid rgb(0, 140, 255);
+    border-radius: 12px;
+    margin-left: 15px;
+}
+.ads-main-buttons {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ads-main-button {
+    color: white;
+    background-color: rgb(0, 140, 255);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+.ads-main-block {
+    border-top: 1px solid rgb(83, 83, 83);
+}
+.ads-main-block-name {
+    margin: 10px;
+    color:rgb(0, 140, 255);
+    border-radius: 12px;
+    border: 1px solid rgb(0, 140, 255);
+    padding: 12px;
+    transition: color background-color border .5s ease-in;
+}
+.ads-main-block-name:hover {
+    color: white;
+    border: 1px solid white;
+    background-color: rgb(0, 140, 255);
+}
+.ads-main-block-text {
+    color: white;
+    text-align: center;
+}
+.ads-main-categories {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.ads-main-category {
+    background-color: rgba(0, 255, 0, 0.75);
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+    transition: background-color .5 ease-in;
+}
+.ads-main-category {
+    background-color:rgb(0, 255, 0)
+}
+.ads-new {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ads-new-content {
+    width: 80%;
+    background-color: rgba(41, 41, 41, 0.75);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.ads-new-title {
+    color: white;
+    font-size: 16pt;
+}
+
+

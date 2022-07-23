@@ -32,6 +32,11 @@ import Photo from "./photographer/components/pages/Photo"
 import Create from "./inner_ad/components/pages/Create"
 import InnerAd from "./inner_ad/components/pages/InnerAd"
 import Cabinet from "./inner_ad/components/pages/Cabinet"
+import CreateAd from "./ads/pages/CreateAd"
+import AdMain from "./ads/pages/AdMain"
+import AdNew from "./ads/pages/AdNew"
+import AdCity from "./ads/pages/AdCity"
+import Ad from "../../models/Ad"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -78,6 +83,12 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/innerad/create" element={<Create />} />
             <Route exact path="/innerad/cabinet" element={<Cabinet />} />
             <Route exact path="/innerad/:id" element={<InnerAd />} />
+
+            <Route exact path="/ad/main" element={<AdMain />} />
+            <Route exact path="/ad/create" element={<CreateAd />} />
+            <Route exact path="/ad/new" element={<AdNew />} />
+            <Route exact path="/ad/city" element={<AdCity />} />
+            <Route exact path="/ad/:id" element={<Ad />} />
             
         </Routes>
     )
