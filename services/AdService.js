@@ -5,8 +5,8 @@ class AdService {
     async create(req, res) {
         const {title, description, price, city, date, dieDate, user, category, phone} = req.body
         //await Ad.create({title, description, price, date, dieDate, active: true, city, user, category})
-        console.log(req.files)
-        res.json({files: req.files})
+        console.log(req.body.files)
+        res.json({files: req.body.files})
     }
     async all(req, res) {
         const ads = await Ad.find({})
