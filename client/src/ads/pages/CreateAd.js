@@ -76,7 +76,7 @@ const CreateAd = () => {
             <textarea className="ad-form-area" value={description} onChange={e => setDesctiption(e.target.value)} placeholder="Название объявления"></textarea>
             <p className="ad-form-parameter">Стоимость: <input className="ad-form-input" type="text" value={price} onChange={e => setPrice(e.target.value)} />&#8381;</p>
             <p className="ad-form-parameter">Город: <input className="ad-form-input" type="text" value={city} onChange={e => setCity(e.target.value)} /></p>
-            <p className="ad-form-parameter">Время существования: <input className="ad-form-input" type="text" value={live} onChange={e => setLive(e.target.value)} />дней</p>
+            <p className="ad-form-parameter">Время жизни: <input className="ad-form-input" type="text" value={live} onChange={e => setLive(e.target.value)} />дней</p>
             <input className="ad-form-input" type="text" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Номер телефона" />
             <input onChange={e => getFile(e)} type="file" ref={fileRef} multiple />
             <button onClick={e => emitOpen(e)} className="ad-form-button">Загрузить изображения</button>
