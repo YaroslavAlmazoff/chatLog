@@ -18,7 +18,6 @@
     border-bottom: 2px solid rgb(0, 140, 255);
     outline: none;
     color: white;
-    display: block;
     width: 80%
 }
 .ad-form-area {
@@ -29,10 +28,14 @@
     border-radius: 12px;
     display: block;
     width: 80%; 
+    height: 100px;
 }
 .ad-form-parameter {
     color: white;
     font-size: 12pt;
+    display: block;
+    width: 100%;
+    margin: 10px;
 }
 .ad-form-select {
     color: rgb(0, 140, 255);
