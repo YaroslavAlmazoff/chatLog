@@ -66,6 +66,7 @@ const CreateAd = () => {
 
         const response = await api.post('/api/ad/create', formData)
         console.log(response.data.files)
+        window.location = '/ad/main'
     }
     const showCategories = () => {
         setCategoriesDisplay('flex')
