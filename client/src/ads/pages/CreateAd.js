@@ -18,7 +18,8 @@ const CreateAd = () => {
     const [live, setLive] = useState(0)
     const [categoriesDisplay, setCategoriesDisplay] = useState('none')
     const [phone, setPhone] = useState('')
-    const [files, setFiles] = useState(null)
+    const [files, setFiles] = useState([])
+    const [filesData, setFilesData] = useState([])
     const [imageDisplay, setImageDisplay] = useState('none')
     const [imageUrl, setImageUrl] = useState('')
 
@@ -26,15 +27,17 @@ const CreateAd = () => {
         fileRef.current.click()
     }
     const getFile = async (e) => {
-        let files = e.target.files
-        console.log(files)
-        /*const reader = new FileReader()
-        reader.onload = ev => {
-            setImageDisplay('block')
-            setImageUrl(ev.target.result)
-        }
-        reader.readAsDataURL(file)
-        setFile(file)*/
+        let fileList = e.target.files
+        const files = Array.from(fileList)
+        const reader = new FileReader()
+        files.forEach(el => {
+            console.log(el)
+            reader.onload = ev => {
+                setFilesData(prev => [...prev, ev.target.result])
+            }
+            reader.readAsDataURL(el)
+        })
+        setFiles(files)
     }
 
 
@@ -76,7 +79,7 @@ const CreateAd = () => {
             <input className="ad-form-input" type="text" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Номер телефона" />
             <input onChange={e => getFile(e)} type="file" ref={fileRef} multiple />
             <button onClick={e => emitOpen(e)} className="ad-form-button">Загрузить изображения</button>
-            <div>
+            <div className="ad-form-images-list">
                 
             </div>
             <button onClick={showCategories} className="ad-form-select">Выбрать категорию</button>
