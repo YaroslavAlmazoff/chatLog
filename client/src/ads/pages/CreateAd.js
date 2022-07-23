@@ -3,6 +3,7 @@ import useDate from "../../common_hooks/date.hook"
 import { AuthContext } from "../../context/AuthContext"
 import Categories from "../components/components/Categories"
 import ImagePreview from "../components/ImagePreview"
+import api from '../../auth/api/auth'
 import '../styles/form.css'
 
 const CreateAd = () => {
@@ -60,7 +61,8 @@ const CreateAd = () => {
         formData.append('user', auth.userId)
         formData.append('files', files)
 
-        window.location = '/ads/new'
+        const response = await api.post('/api/ad/create', formData)
+        console.log(response.data.files)
     }
     const showCategories = () => {
         setCategoriesDisplay('flex')
