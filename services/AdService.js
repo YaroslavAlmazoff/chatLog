@@ -8,7 +8,7 @@ class AdService {
         const {title, description, price, city, date, dieDate, user, category, phone} = req.body
         //await Ad.create({title, description, price, date, dieDate, active: true, city, user, category})
         console.log(typeof req.files)
-        req.files.keys().forEach((file) => {
+        Object.keys(req.files).forEach((file) => {
             const filename = uuid.v4() + '.jpg'
             FileService.insertAdImage(file, filename)
         })
