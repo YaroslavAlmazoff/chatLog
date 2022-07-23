@@ -59,6 +59,7 @@
     width: 90%; 
     padding: 5px;
     height: 100px;
+    margin-left: 10px;
 }
 .ad-form-parameter {
     color: white;
@@ -86,7 +87,7 @@
     margin: 10px;
 }
 .ad-form-images-list {
-    height: 75px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
