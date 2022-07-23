@@ -10,8 +10,7 @@ class AdService {
         console.log(typeof req.files)
         Object.keys(req.files).forEach((file) => {
             const filename = uuid.v4() + '.jpg'
-            console.log(file)
-            //FileService.insertAdImage(file, filename)
+            FileService.insertAdImage(req.files[file], filename)
         })
         res.json({files: req.files})
     }
