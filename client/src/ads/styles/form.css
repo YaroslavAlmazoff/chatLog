@@ -80,6 +80,9 @@
 }
 .ad-form-images-list {
     height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .ad-form-image {
     height: 100%;
