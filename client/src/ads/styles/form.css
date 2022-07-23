@@ -8,10 +8,6 @@
         padding: 10px;
         width: 35%;
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
     }
 }
 @media screen and (width < 500px) {
