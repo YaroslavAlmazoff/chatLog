@@ -72,8 +72,8 @@ const CreateAd = () => {
     return (
         <div className="ad-form">
             <p className="ad-form-title">Размещение объявления</p>
-            <input className="ad-form-input" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Название объявления" />
-            <textarea className="ad-form-area" value={description} onChange={e => setDesctiption(e.target.value)} placeholder="Название объявления"></textarea>
+            <input className="ad-form-main-input" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Название объявления" />
+            <textarea className="ad-form-area" value={description} onChange={e => setDesctiption(e.target.value)} placeholder="Подробнее"></textarea>
             <p className="ad-form-parameter">Стоимость: <input className="ad-form-input" type="text" value={price} onChange={e => setPrice(e.target.value)} />&#8381;</p>
             <p className="ad-form-parameter">Город: <input className="ad-form-input" type="text" value={city} onChange={e => setCity(e.target.value)} /></p>
             <p className="ad-form-parameter">Время жизни: <input className="ad-form-input" type="text" value={live} onChange={e => setLive(e.target.value)} />дней</p>
