@@ -47,7 +47,6 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/" element={<Main isAuthenticated={isAuthenticated} isVerified={isVerified} />} />
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/admin/:id" element={<Admin />} />
-            <Route exact path="/ads" element={<AdsPage />} />
             <Route exact path="/cloud" element={<FileStorage />} />
             <Route exact path="/cloud/file/:id" element={<File />} />
             <Route exact path="/home" element={<HomePage/>} />
