@@ -75,7 +75,7 @@ const CreateAd = () => {
             <p className="ad-form-parameter">Город: <input className="ads-form-input" type="text" value={city} onChange={e => setCity(e.target.value)} /></p>
             <p className="ad-form-parameter">Время существования: <input className="ads-form-input" type="text" value={live} onChange={e => setLive(e.target.value)} />дней</p>
             <input type="text" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Номер телефона" />
-            <input onChange={e => getFile(e)} type="file" ref={fileRef} />
+            <input onChange={e => getFile(e)} type="file" ref={fileRef} multiple />
             <button onClick={e => emitOpen(e)} className="ad-form-button">Загрузить изображения</button>
             <div>
                 
