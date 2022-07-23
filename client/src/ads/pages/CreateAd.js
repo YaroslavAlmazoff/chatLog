@@ -59,7 +59,10 @@ const CreateAd = () => {
         formData.append('category', category)
         formData.append('phone', phone)
         formData.append('user', auth.userId)
-        formData.append('files', files)
+
+        files.forEach((el, index) => {
+            formData.append(`file${index}`, el)
+        })
 
         const response = await api.post('/api/ad/create', formData)
         console.log(response.data.files)
