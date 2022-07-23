@@ -1,11 +1,16 @@
 const Ad = require("../models/Ad")
 const User = require("../models/User")
+const uuid = require("uuid")
+const FileService = require("./FileService")
 
 class AdService {
     async create(req, res) {
         const {title, description, price, city, date, dieDate, user, category, phone} = req.body
         //await Ad.create({title, description, price, date, dieDate, active: true, city, user, category})
-        console.log(req.files)
+        req.files.forEach((file) => {
+            const filename = uuid.v4() + '.jpg'
+            FileService.insertAdImage(file, filename)
+        })
         res.json({files: req.files})
     }
     async all(req, res) {
