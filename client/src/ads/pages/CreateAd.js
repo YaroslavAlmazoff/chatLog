@@ -66,11 +66,11 @@ const CreateAd = () => {
     }
 
     return (
-        <div className="ads-form">
-            <p className="ads-form-title">Размещение объявления</p>
-            <input className="ads-form-input" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Название объявления" />
-            <textarea className="ads-form-area" value={description} onChange={e => setDesctiption(e.target.value)} placeholder="Название объявления"></textarea>
-            <button className="ads-form-button">Загрузить изображения</button>
+        <div className="ad-form">
+            <p className="ad-form-title">Размещение объявления</p>
+            <input className="ad-form-input" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Название объявления" />
+            <textarea className="ad-form-area" value={description} onChange={e => setDesctiption(e.target.value)} placeholder="Название объявления"></textarea>
+            <button className="ad-form-button">Загрузить изображения</button>
             <p className="ad-form-parameter">Стоимость: <input className="ads-form-input" type="text" value={price} onChange={e => setPrice(e.target.value)} />&#8381;</p>
             <p className="ad-form-parameter">Город: <input className="ads-form-input" type="text" value={city} onChange={e => setCity(e.target.value)} /></p>
             <p className="ad-form-parameter">Время существования: <input className="ads-form-input" type="text" value={live} onChange={e => setLive(e.target.value)} />дней</p>
@@ -82,7 +82,7 @@ const CreateAd = () => {
             </div>
             <button onClick={showCategories} className="ad-form-select">Выбрать категорию</button>
             <Categories display={categoriesDisplay} select={select} />
-            <button onClick={send}>Разместить</button>
+            <button className="ad-form-button" onClick={send}>Разместить</button>
         </div>
     )
 }
