@@ -9,6 +9,7 @@ const AdCity = () => {
     const [ads, setAds] = useState([])
 
     useEffect(() => {
+        if(!auth.userId) return 
         const getAds = async () => {
             const response = await api.get(`/api/ad/city/${auth.userId}`)
             setAds(response.data.ads)
