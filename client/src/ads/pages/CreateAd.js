@@ -21,7 +21,6 @@ const CreateAd = () => {
     const [files, setFiles] = useState([])
     const [filesData, setFilesData] = useState([])
     const [imageDisplay, setImageDisplay] = useState('none')
-    const [imageUrl, setImageUrl] = useState('')
 
     const emitOpen = () => {
         fileRef.current.click()
@@ -29,8 +28,8 @@ const CreateAd = () => {
     const getFile = async (e) => {
         let fileList = e.target.files
         const files = Array.from(fileList)
-        const reader = new FileReader()
         files.forEach(el => {
+            const reader = new FileReader()
             console.log(el)
             reader.onload = ev => {
                 setFilesData(prev => [...prev, ev.target.result])
@@ -59,6 +58,7 @@ const CreateAd = () => {
         formData.append('category', category)
         formData.append('phone', phone)
         formData.append('user', auth.userId)
+        formData.append('files', files)
 
         window.location = '/ads/new'
     }
