@@ -21,7 +21,7 @@ const NewBlock = () => {
         <div className="ads-new-categories">
             {ads.length 
             ? ads.map(item => <AdItem item={item} />)
-            : <p classNAme="ads-main-block-text">Здесь пока что ничего нет</p>}
+            : <p className="ads-main-block-text">Здесь пока что ничего нет</p>}
         </div>
     )
 }
