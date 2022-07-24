@@ -37,7 +37,7 @@ class AdService {
         const user = await User.findById(req.params.user)
         console.log(user)
         const allAds = await Ad.find({})
-        const ads = allAds.filter(el => el.city === user.city)
+        const ads = allAds.filter(el => el.city.toLowerCase() === user.city.toLowerCase())
         let message
         if(user.city) {
             message = true
