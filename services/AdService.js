@@ -6,7 +6,11 @@ const FileService = require("./FileService")
 class AdService {
     async create(req, res) {
         const {title, description, price, city, date, dieDate, user, category, phone} = req.body
-        //await Ad.create({title, description, price, date, dieDate, active: true, city, user, category})
+        const images = req.files.map(el => {
+            const filename = uuid.v4() + '.jpg'
+            return filename
+        })
+        await Ad.create({title, description, price, city, date, dieDate, active: true, user, category, phone, images})
         console.log(typeof req.files)
         Object.keys(req.files).forEach((file) => {
             const filename = uuid.v4() + '.jpg'
