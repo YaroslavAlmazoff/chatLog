@@ -31,7 +31,7 @@ router.get('/all', (req, res) => {
         console.log(e)
     }
 })
-router.get('/category/:category', (req, res) => {
+router.post('/category/:category', (req, res) => {
     try {
         AdService.category(req, res)
     } catch(e) {
