@@ -23,7 +23,7 @@ class AdService {
     }
     async new(req, res) {
         const allAds = await Ad.find({})
-        const ads = allAds.filter(el => el.date.split('.')[0] === req.params.date.split('.')[0])
+        const ads = allAds.filter(el => el.date.split('.')[0] === req.body.date.split('.')[0])
         res.json({ads})
     }
     async city(req, res) {

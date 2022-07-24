@@ -11,7 +11,7 @@ const NewBlock = () => {
     useEffect(() => {
         const getAds = async () => {
             const date = getCurrentDate()
-            const response = await api.get(`/api/ad/new/${date}`)
+            const response = await api.post('/api/ad/new', {date})
             setAds(response.data.ads)
         }
         getAds()

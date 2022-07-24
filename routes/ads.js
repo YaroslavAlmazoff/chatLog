@@ -10,7 +10,7 @@ router.post('/create', (req, res) => {
         console.log(e)
     }
 })
-router.get('/new/:date', (req, res) => {
+router.post('/new', (req, res) => {
     try {
         AdService.new(req, res)
     } catch(e) {
