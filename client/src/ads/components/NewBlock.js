@@ -15,7 +15,7 @@ const NewBlock = () => {
             setAds(response.data.ads)
         }
         getAds()
-    }, [getCurrentDate])
+    }, [])
 
     return (
         <div className="ads-new-categories">

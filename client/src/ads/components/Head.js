@@ -6,10 +6,15 @@ const Head = ({searchValue, setSearchValue}) => {
     const [categoriesDisplay, setCategoriesDisplay] = useState('none')
 
     const showCategories = () => {
-        setCategoriesDisplay('flex')
+        if(categoriesDisplay === 'none') {
+            setCategoriesDisplay('flex')
+        } else {
+            setCategoriesDisplay('none')
+        }
+        
     }
     const goCreate = () => {
-        window.location = ''
+        window.location = '/ad/create'
     }
     const select = (el) => {
         //code here
