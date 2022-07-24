@@ -18,8 +18,8 @@ const Category = () => {
 
     return (
         <div className="ads-category">
-            <div className="ads-category-content">
-                {ads.map(item => <AdItem item={item} width={'12%'} />)}
+            <div className="ads-new-content">
+                {ads.map(item => <AdItem item={item} width={'20%'} />)}
             </div>
         </div>
     )
