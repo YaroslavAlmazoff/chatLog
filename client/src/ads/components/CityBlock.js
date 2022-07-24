@@ -16,7 +16,7 @@ const CityBlock = () => {
             setCity(response.data.message)
         }
         getAds()
-    }, [auth])
+    }, [auth.userId])
 
     const goEdit = () => {
         window.location = '/editprofile'
