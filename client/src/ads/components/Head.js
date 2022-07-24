@@ -11,6 +11,9 @@ const Head = ({searchValue, setSearchValue}) => {
     const goCreate = () => {
         window.location = ''
     }
+    const select = (el) => {
+        //code here
+    }
 
     return (
         <div className="ads-main-head">
@@ -22,7 +25,7 @@ const Head = ({searchValue, setSearchValue}) => {
                 <button onClick={showCategories} className="ads-main-button">Категории</button>
                 <button onClick={goCreate} className="ads-main-button">Разместить</button>
             </div>
-            <Categories display={categoriesDisplay} />
+            <Categories display={categoriesDisplay} select={select} />
         </div>
     )
 }
