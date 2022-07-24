@@ -24,11 +24,6 @@
         margin-top: 10px;
     }
 }
-.ads-main-content {
-    background-color: rgba(41, 41, 41, 0.75);
-    border: 1px solid rgb(83, 83, 83);
-    padding: 10px;
-}
 .ads-main-head {
     display: flex;
     align-items: center;
@@ -88,6 +83,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 98%;
 }
 .ads-main-category {
     background-color: rgba(0, 255, 0, 0.75);
@@ -101,6 +97,12 @@
 }
 .ads-new {
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ads-new-block {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
