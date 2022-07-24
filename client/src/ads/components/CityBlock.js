@@ -31,7 +31,7 @@ const CityBlock = () => {
         <div className="ads-new-categories">
             <p onClick={gotoCity} style={{color: 'rgb(0, 140, 255)', cursor: 'pointer'}}>Объявления в вашем городе</p>
             {city && ads.length 
-                ? ads.map(item => <AdItem item={item} />)
+                ? ads.map(item => <AdItem item={item} width={'25%'} />)
                 : <>{city && !ads.length
                     ? <p className="ads-main-block-text">Нет подходящих объявлений :(</p>
                     : <>{!city 

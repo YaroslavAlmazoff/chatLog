@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import api from '../../auth/api/auth'
 import AdItem from "../components/AdItem"
+import '../styles/main.css'
 
 const Category = () => {
     const params = useParams()
@@ -18,7 +19,7 @@ const Category = () => {
     return (
         <div className="ads-category">
             <div className="ads-category-content">
-                {ads.map(item => <AdItem item={item} />)}
+                {ads.map(item => <AdItem item={item} width={'12%'} />)}
             </div>
         </div>
     )

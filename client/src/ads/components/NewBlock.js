@@ -25,7 +25,7 @@ const NewBlock = () => {
         <div className="ads-new-categories">
             <p onClick={gotoNew} style={{color: 'rgb(0, 140, 255)', cursor: 'pointer'}}>Новые объявления</p>
             {ads.length 
-            ? ads.map(item => <AdItem item={item} />)
+            ? ads.map(item => <AdItem item={item} width={'25%'} />)
             : <p className="ads-main-block-text">Здесь пока что ничего нет</p>}
         </div>
     )

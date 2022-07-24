@@ -135,5 +135,13 @@
     color: white;
     font-size: 16pt;
 }
+.ads-category-content {
+    width: 80%;
+    background-color: rgba(41, 41, 41, 0.75);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
 
 

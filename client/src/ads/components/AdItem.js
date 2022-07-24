@@ -1,8 +1,8 @@
 import '../styles/ad-item.css'
 
-const AdItem = ({item}) => {
+const AdItem = ({item, width}) => {
     return (
-        <div className="ad-item">
+        <div className="ad-item" style={{width}}>
             <img className="ad-item-image" src={process.env.REACT_APP_API_URL + '/ads/' + item.images[0]} alt="ad" />
             <div className="ad-item-info">
                 <p className="ad-item-title" style={item.title.length <= 13 ? {fontSize: '16pt'} : {fontSize: '12pt'}}>{item.title}</p>

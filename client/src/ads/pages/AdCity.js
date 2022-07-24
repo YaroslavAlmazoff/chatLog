@@ -22,7 +22,7 @@ const AdCity = () => {
         <div className="ads-new">
             <div className="ads-new-content">
                 <p className="ads-new-title">Объявления в вашем городе</p>
-                {ads.map(item => <AdItem item={item} />)}
+                {ads.map(item => <AdItem item={item} width={'12%'} />)}
             </div>
         </div>
     )
