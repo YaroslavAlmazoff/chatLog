@@ -13,6 +13,7 @@ const CityBlock = () => {
         if(!auth.userId) return 
         const getAds = async () => {
             const response = await api.get(`/api/ad/city/${auth.userId}`)
+            console.log(response)
             setAds(response.data.ads)
             setCity(response.data.message)
         }

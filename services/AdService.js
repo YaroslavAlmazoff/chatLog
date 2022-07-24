@@ -49,7 +49,7 @@ class AdService {
     }
     async category(req, res) {
         const allAds = await Ad.find({})
-        const ads = ads.filter(el => el.category === req.params.category)
+        const ads = allAds.filter(el => el.category === req.params.category)
         res.json({ads})
     }
 }
