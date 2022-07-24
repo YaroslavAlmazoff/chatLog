@@ -29,6 +29,12 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px;
+    flex-direction: column;
+}
+.ads-main-head-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .ads-main-title {
     color: white;
@@ -107,7 +113,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1px solid rgb(83, 83, 83);
+    border-top: 1px solid rgb(83, 83, 83);
 }
 .ads-new-content {
     width: 80%;
