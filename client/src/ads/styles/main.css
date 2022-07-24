@@ -93,14 +93,14 @@
     width: 98%;
 }
 .ads-main-category {
-    background-color: rgba(0, 255, 0, 0.75);
+    background-color: rgba(0, 255, 0, 0.475);
     color: white;
     border-radius: 15px;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     transition: background-color .5 ease-in;
-}
-.ads-main-category {
-    background-color:rgb(0, 255, 0)
 }
 .ads-new {
     width: 100vw;
