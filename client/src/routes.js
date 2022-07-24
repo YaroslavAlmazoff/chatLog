@@ -36,6 +36,7 @@ import AdMain from "./ads/pages/AdMain"
 import AdNew from "./ads/pages/AdNew"
 import AdCity from "./ads/pages/AdCity"
 import Ad from "./ads/pages/Ad"
+import Category from "./ads/pages/Category"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -86,6 +87,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/ad/create" element={<CreateAd />} />
             <Route exact path="/ad/new" element={<AdNew />} />
             <Route exact path="/ad/city" element={<AdCity />} />
+            <Route exact path="/ad/category/:category" element={<Category />} />
             <Route exact path="/ad/:id" element={<Ad />} />
             
         </Routes>

@@ -17,7 +17,7 @@ const Head = ({searchValue, setSearchValue}) => {
         window.location = '/ad/create'
     }
     const select = (el) => {
-        //code here
+        window.location = `/ad/category/${el}`
     }
 
     return (
