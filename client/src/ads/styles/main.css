@@ -27,7 +27,7 @@
 .ads-main-head {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 15px;
 }
 .ads-main-title {
@@ -57,7 +57,8 @@
     border-radius: 12px;
     padding: 12px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14pt;
+    font-size: 11pt;
+    margin: 10px;
 }
 .ads-main-block {
     border-top: 1px solid rgb(83, 83, 83);
@@ -106,6 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1px solid rgb(83, 83, 83);
 }
 .ads-new-content {
     width: 80%;
