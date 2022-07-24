@@ -23,6 +23,7 @@
 }
 .ad-item-info {
     color: white;
+    text-align: left;
 }
 .ad-item-title {
     font-size: 16pt;
@@ -35,7 +36,7 @@
 }
 .ad-item-price {
     color: rgb(0, 140, 255);
-    font-size: 18pt;
+    font-size: 14pt;
     margin: -5px;
 }
 .ad-item-city {
