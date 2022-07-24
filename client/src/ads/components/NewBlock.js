@@ -17,9 +17,13 @@ const NewBlock = () => {
         getAds()
     }, [])
 
+    const gotoNew = () => {
+        window.location = '/ad/new'
+    }
+
     return (
         <div className="ads-new-categories">
-            <p style={{color: 'rgb(0, 140, 255)'}}>Новые объявления</p>
+            <p onClick={gotoNew} style={{color: 'rgb(0, 140, 255)', cursor: 'pointer'}}>Новые объявления</p>
             {ads.length 
             ? ads.map(item => <AdItem item={item} />)
             : <p className="ads-main-block-text">Здесь пока что ничего нет</p>}

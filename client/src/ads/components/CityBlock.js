@@ -23,10 +23,13 @@ const CityBlock = () => {
     const goEdit = () => {
         window.location = '/editprofile'
     }
+    const gotoCity = () => {
+        window.location = '/ad/new'
+    }
 
     return (
         <div className="ads-new-categories">
-            <p style={{color: 'rgb(0, 140, 255)'}}>Объявления в вашем городе</p>
+            <p onClick={gotoCity} style={{color: 'rgb(0, 140, 255)', cursor: 'pointer'}}>Объявления в вашем городе</p>
             {city && ads.length 
                 ? ads.map(item => <AdItem item={item} />)
                 : <>{city && !ads.length
