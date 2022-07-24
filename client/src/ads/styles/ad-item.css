@@ -6,6 +6,7 @@
     border-radius: 12px;
     padding: 5px;
     margin-left: 10px;
+    display: inline-block;
 }
 .ad-item-image {
     width: 98%;

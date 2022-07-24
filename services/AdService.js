@@ -35,6 +35,7 @@ class AdService {
     }
     async city(req, res) {
         const user = await User.findById(req.params.user)
+        console.log(user)
         const allAds = await Ad.find({})
         const ads = allAds.filter(el => el.city === user.city)
         let message
@@ -43,6 +44,7 @@ class AdService {
         } else {
             message = false
         }
+        console.log(ads, message)
         res.json({ads, message})
     }
     async category(req, res) {
