@@ -25,6 +25,7 @@ const CityBlock = () => {
 
     return (
         <div className="ads-new-categories">
+            <p style={{color: 'rgb(0, 140, 255)'}}>Новые объявления</p>
             {city && ads.length 
                 ? ads.map(item => <AdItem item={item} />)
                 : <>{city && !ads.length

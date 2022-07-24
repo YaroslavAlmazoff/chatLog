@@ -19,6 +19,7 @@ const NewBlock = () => {
 
     return (
         <div className="ads-new-categories">
+            <p style={{color: 'rgb(0, 140, 255)'}}>Новые объявления</p>
             {ads.length 
             ? ads.map(item => <AdItem item={item} />)
             : <p className="ads-main-block-text">Здесь пока что ничего нет</p>}
