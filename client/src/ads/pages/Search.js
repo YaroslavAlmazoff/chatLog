@@ -28,7 +28,7 @@ const Search = () => {
         <div className="ads-category">
             <div className="ads-new-content">
                 <input className="ads-main-input" value={searchValue} onChange={e => setSearchValue(e.target.value)} type="text" placeholder="Поиск по объяалениям..." />
-                {searchedAds.map(item => <AdItem item={item} width={'20%'} />)}
+                <div>{searchedAds.map(item => <AdItem item={item} width={'20%'} />)}</div>
             </div>
         </div>
     )
