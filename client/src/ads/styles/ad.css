@@ -5,6 +5,8 @@
         border: rgb(83, 83, 83);
         border-radius: 12px;
         padding: 5px;
+        margin: 0 auto;
+        margin-top: 10px;
     }
 }
 @media screen and (width < 500px) {
@@ -14,6 +16,8 @@
         border: rgb(83, 83, 83);
         border-radius: 12px;
         padding: 5px;
+        margin: 0 auto;
+        margin-top: 10px;
     }
 }
 .ad-image {
@@ -23,6 +27,9 @@
 .ad-images {
     width: 98%;
     height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .ad-small-image {
     height: 100%;
