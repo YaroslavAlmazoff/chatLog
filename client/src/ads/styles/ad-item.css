@@ -8,6 +8,7 @@
     margin-left: 10px;
     display: inline-block;
     vertical-align: top;
+    cursor: pointer;
 }
 .ad-item-image {
     width: 98%;
