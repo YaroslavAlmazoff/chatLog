@@ -13,7 +13,7 @@ const Ad = () => {
     const [ad, setAd] = useState({
         images: ['']
     })
-    const [image, setImage] = useState(process.env.REACT_APP_API_URL + '/ads/' + ad.images[0])
+    const [image, setImage] = useState('')
 
     const params = useParams()
 
@@ -21,6 +21,7 @@ const Ad = () => {
         const getAd = async () => {
             const response = await api.get(`/api/ad/ad/${params.id}`)
             setAd(response.data.ad)
+            setImage(response.data.ad.images[0])
         }
         getAd()
     }, [params])
@@ -39,7 +40,13 @@ const Ad = () => {
         <div className="ad">
             <img className="ad-image" src={image} alt="ad" />
             <div className="ad-images">
-                {ad.images.map(el => <img onClick={() => setImage(process.env.REACT_APP_API_URL + '/ads/' + el)} className="ad-small-image" src={process.env.REACT_APP_API_URL + '/ads/' + el} alt="ad" />)}
+                {ad.images.map(el => <img 
+                    style={process.env.REACT_APP_API_URL + '/ads/' + el === image ? {border: '1px solid rgb(0, 140, 255)'} : {border: 'none'}} 
+                    onClick={() => setImage(process.env.REACT_APP_API_URL + '/ads/' + el)} 
+                    className="ad-small-image" 
+                    src={process.env.REACT_APP_API_URL + '/ads/' + el} 
+                    alt="ad" 
+                />)}
             </div>
             <div className="ad-info">
                 <div className="ad-data">
