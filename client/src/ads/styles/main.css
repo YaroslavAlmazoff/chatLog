@@ -12,6 +12,7 @@
         border: 1px solid rgb(83, 83, 83);
         border-radius: 12px;
         margin-top: 10px;
+        margin-bottom: 20px;
     }
 }
 @media screen and (width < 500px) {
@@ -22,6 +23,7 @@
         border: 1px solid rgb(83, 83, 83);
         border-radius: 12px;
         margin-top: 10px;
+        margin-bottom: 20px;
     }
 }
 .ads-main-head {
@@ -48,6 +50,8 @@
     border: 1px solid rgb(0, 140, 255);
     border-radius: 12px;
     margin-left: 15px;
+    outline: none;
+    margin: 10px;
 }
 .ads-main-buttons {
     padding: 15px;
@@ -130,6 +134,7 @@
     border-radius: 12px;
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 .ads-new-title {
     color: white;
