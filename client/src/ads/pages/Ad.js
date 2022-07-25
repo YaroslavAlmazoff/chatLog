@@ -21,7 +21,7 @@ const Ad = () => {
         const getAd = async () => {
             const response = await api.get(`/api/ad/ad/${params.id}`)
             setAd(response.data.ad)
-            setImage(response.data.ad.images[0])
+            setImage(process.env.REACT_APP_API_URL + '/ads/' + response.data.ad.images[0])
         }
         getAd()
     }, [params])
