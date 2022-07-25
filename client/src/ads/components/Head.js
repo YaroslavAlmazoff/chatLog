@@ -19,12 +19,15 @@ const Head = ({searchValue, setSearchValue}) => {
     const select = (el) => {
         window.location = `/ad/category/${el}`
     }
+    const search = () => {
+        window.location = `/ad/search`
+    }
 
     return (
         <div className="ads-main-head">
             <div className="ads-main-head-top">
                 <p className="ads-main-title">ChatLog Объявления</p>
-                <input value={searchValue} onChange={e => setSearchValue(e.target.value)} type="search" className="ads-main-input" placeholder="Поиск..." />
+                <button onClick={search} className="ads-main-button">Поиск объявлений</button>
             </div>
             <div className="ads-main-buttons">
                 <button onClick={showCategories} className="ads-main-button">Категории</button>

@@ -38,5 +38,12 @@ router.post('/category', (req, res) => {
         console.log(e)
     }
 })
+router.post('/search', (req, res) => {
+    try {
+        AdService.search(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 module.exports = router

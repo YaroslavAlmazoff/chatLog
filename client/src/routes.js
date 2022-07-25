@@ -89,7 +89,7 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/ad/new" element={<AdNew />} />
             <Route exact path="/ad/city" element={<AdCity />} />
             <Route exact path="/ad/category/:category" element={<Category />} />
-            <Route exact path="/ad/search/:search" element={<Search />} />
+            <Route exact path="/ad/search" element={<Search />} />
             <Route exact path="/ad/:id" element={<Ad />} />
             
         </Routes>

@@ -52,6 +52,15 @@ class AdService {
         const ads = allAds.filter(el => el.category === req.body.category)
         res.json({ads})
     }
+    async search(req, res) {
+        const allAds = await Ad.find({})
+        const ads = allAds.filter(el => 
+            el.category === req.body.search ||
+            el.title === req.body.search ||
+            el.description === req.body.search
+        )
+        res.json({ads})
+    }
 }
 
 module.exports = new AdService()
