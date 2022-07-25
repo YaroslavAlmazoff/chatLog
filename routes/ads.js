@@ -10,6 +10,13 @@ router.post('/create', (req, res) => {
         console.log(e)
     }
 })
+router.get('/ad/:id', (req, res) => {
+    try {
+        AdService.ad(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 router.post('/new', (req, res) => {
     try {
         AdService.new(req, res)

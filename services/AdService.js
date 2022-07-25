@@ -24,6 +24,7 @@ class AdService {
     }
     async ad(req, res) {
         const ad = await Ad.findById(req.params.id)
+        res.json({ad})
     }
     async new(req, res) {
         const allAds = await Ad.find({})
