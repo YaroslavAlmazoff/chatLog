@@ -18,9 +18,7 @@ const useWord = () => {
         return result
     }
     const firstLetter = (word = 'q') => {
-        console.log(word, word[0])
-        word[0] = word[0].toUpperCase()
-        console.log(word)
+        word = word[0].toUpperCase() + word.slice(1);
         return word
     }
     return {divideWord, divideFilename, firstLetter}
