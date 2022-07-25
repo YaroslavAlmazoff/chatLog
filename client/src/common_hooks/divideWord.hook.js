@@ -17,7 +17,12 @@ const useWord = () => {
         }
         return result
     }
-    return {divideWord, divideFilename}
+    const firstLetter = (word = 'q') => {
+        const firstLetter = word[0]
+        word[0] = firstLetter.toUpperCase()
+        return word
+    }
+    return {divideWord, divideFilename, firstLetter}
 }
 
 export default useWord

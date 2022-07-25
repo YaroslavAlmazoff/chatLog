@@ -37,9 +37,10 @@
     margin: 5px;
 }
 .ad-info {
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .ad-data {
     margin: 20px;
