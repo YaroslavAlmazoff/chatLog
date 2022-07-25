@@ -8,6 +8,12 @@
         margin: 0 auto;
         margin-top: 10px;
     }
+    .ad-image {
+        width: 98%;
+        height: 60vh;
+        border-radius: 12px;
+        object-fit: cover;
+    }
 }
 @media screen and (width < 500px) {
     .ad {
@@ -19,10 +25,12 @@
         margin: 0 auto;
         margin-top: 10px;
     }
-}
-.ad-image {
-    width: 98%;
-    border-radius: 12px;
+    .ad-image {
+        width: 98%;
+        height: 80vh;
+        border-radius: 12px;
+        object-fit: cover;
+    }
 }
 .ad-images {
     width: 98%;
