@@ -18,7 +18,7 @@ const useWord = () => {
         return result
     }
     const firstLetter = (word = 'q') => {
-        console.log(word)
+        console.log(word, word[0])
     }
     return {divideWord, divideFilename, firstLetter}
 }
