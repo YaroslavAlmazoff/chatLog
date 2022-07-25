@@ -4,12 +4,10 @@ import {useParams} from 'react-router'
 import '../styles/ad.css'
 
 const Ad = () => {
-    const [ad, setAd] = useState({})
+    const [ad, setAd] = useState({
+        images: ['']
+    })
     const params = useParams()
-
-    useEffect(() => {
-        console.log(ad)
-    }, [ad])
 
     useEffect(() => {
         const getAd = async () => {
@@ -21,10 +19,10 @@ const Ad = () => {
 
     return (
         <div className="ad">
-            {/*<img className="ad-image" src={process.env.REACT_APP_API_URL + '/ads/' + ad.images[0]} alt="ad" />
+            <img className="ad-image" src={process.env.REACT_APP_API_URL + '/ads/' + ad.images[0]} alt="ad" />
             <div className="ad-images">
                 {ad.images.map(el => <img className="ad-small-image" src={process.env.REACT_APP_API_URL + '/ads/' + el} alt="ad" />)}
-            </div>*/}
+            </div>
             <div className="ad-info">
                 <p className="ad-title">{ad.title}</p>
                 <p className="ad-description">{ad.description}</p>
