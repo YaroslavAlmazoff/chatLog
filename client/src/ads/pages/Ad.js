@@ -9,9 +9,12 @@ import { AuthContext } from "../../context/AuthContext"
 const Ad = () => {
     const auth = useContext(AuthContext)
     const {firstLetter} = useWord()
+    
     const [ad, setAd] = useState({
         images: ['']
     })
+    const [image, setImage] = useState(process.env.REACT_APP_API_URL + '/ads/' + ad.images[0])
+
     const params = useParams()
 
     useEffect(() => {
@@ -34,9 +37,9 @@ const Ad = () => {
 
     return (
         <div className="ad">
-            <img className="ad-image" src={process.env.REACT_APP_API_URL + '/ads/' + ad.images[0]} alt="ad" />
+            <img className="ad-image" src={image} alt="ad" />
             <div className="ad-images">
-                {ad.images.map(el => <img className="ad-small-image" src={process.env.REACT_APP_API_URL + '/ads/' + el} alt="ad" />)}
+                {ad.images.map(el => <img onClick={() => setImage(process.env.REACT_APP_API_URL + '/ads/' + el)} className="ad-small-image" src={process.env.REACT_APP_API_URL + '/ads/' + el} alt="ad" />)}
             </div>
             <div className="ad-info">
                 <div className="ad-data">

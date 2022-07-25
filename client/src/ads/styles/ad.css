@@ -33,7 +33,6 @@
 }
 .ad-small-image {
     height: 100%;
-    border: 1px solid rgb(0, 140, 255);
     margin: 5px;
 }
 .ad-info {
@@ -69,7 +68,7 @@
 .ad-date {
     font-size: 10pt;
     font-family: 'Courier New', Courier, monospace;
-    color:rgb(83, 83, 83);
+    color:rgb(176, 176, 176);
 }
 .ad-phone {
     color:rgb(0, 140, 255);
