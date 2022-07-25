@@ -8,8 +8,12 @@ const Ad = () => {
     const params = useParams()
 
     useEffect(() => {
+        console.log(ad)
+    }, [ad])
+
+    useEffect(() => {
         const getAd = async () => {
-            const response = await api.get(`/api/ad/fullad/${params.id}`)
+            const response = await api.get(`/api/ad/ad/${params.id}`)
             setAd(response.data.ad)
         }
         getAd()
