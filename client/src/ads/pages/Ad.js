@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import api from '../../auth/api/auth'
 import {useParams} from 'react-router'
 import useWord from "../../common_hooks/divideWord.hook"
 import '../styles/ad.css'
 import '../styles/main.css'
+import { AuthContext } from "../../context/AuthContext"
 
 const Ad = () => {
+    const auth = useContext(AuthContext)
     const {firstLetter} = useWord()
     const [ad, setAd] = useState({
         images: ['']
@@ -19,6 +21,16 @@ const Ad = () => {
         }
         getAd()
     }, [params])
+
+    const createRoom = async () => {
+        await api.get(`/api/createroom/${ad.user}`, {headers: {
+            Authorization: `Bearer ${auth.token}`
+        }})
+        const response = await api.get(`/api/getroom/${ad.user}`, {headers: {
+            Authorization: `Bearer ${auth.token}`
+        }})
+        window.location = `/messages/${response.data.room._id}`
+    }
 
     return (
         <div className="ad">
@@ -35,7 +47,7 @@ const Ad = () => {
                     <p className="ad-date">{ad.date}</p>
                 </div>
                 <div className="ad-contact">
-                    <button className="ads-main-button">Связаться с объявителем</button>
+                    <button onClick={createRoom} className="ads-main-button">Связаться с объявителем</button>
                     {ad.phone ? <p className="ad-phone">Тел.: {ad.phone}</p> : <></>}
                 </div>
             </div>
