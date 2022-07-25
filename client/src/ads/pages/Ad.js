@@ -9,7 +9,7 @@ const Ad = () => {
 
     useEffect(() => {
         const getAd = async () => {
-            const response = await api.get(`/api/ad/ad/${params.id}`)
+            const response = await api.get(`/api/ad/fullad/${params.id}`)
             setAd(response.data.ad)
         }
         getAd()
