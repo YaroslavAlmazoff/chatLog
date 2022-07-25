@@ -20,6 +20,7 @@ const Search = () => {
             return el.category.toLowerCase().includes(searchValue.toLowerCase()) || 
             el.title.toLowerCase().includes(searchValue.toLowerCase()) || 
             el.description.toLowerCase().includes(searchValue.toLowerCase()) || 
+            el.city.toLowerCase().includes(searchValue.toLowerCase()) || 
             searchValue === ''
         })
     }, [ads, searchValue])
