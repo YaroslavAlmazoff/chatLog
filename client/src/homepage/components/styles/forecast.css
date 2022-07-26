@@ -7,6 +7,7 @@
         border-radius: 15px;
         text-shadow: none;
         margin-top: 15px;
+        color: white;
     }
 }
 @media screen and (width < 500px) {
@@ -18,6 +19,7 @@
         border-radius: 15px;
         text-shadow: none;
         margin-top: 10px;
+        color: white;
     }
 }
 .homepage-forecast-temp {
