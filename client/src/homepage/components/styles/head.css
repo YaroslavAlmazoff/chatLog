@@ -1,5 +1,6 @@
 @media screen and (width > 500px) {
     .body {
+        margin-top: -200px;
         margin-left: 40%;
         width: 60%;
         position: fixed;
