@@ -48,7 +48,7 @@ const Forecast = () => {
                     <strong className="homepage-forecast-temp">{Math.round(weather.main.temp)}&deg;, </strong>
                     <span className="homepage-forecast-text">{weather.weather[0].main}</span>
                 </p>
-                <img src={`https://api.openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
             </div>}
         </>
     )
