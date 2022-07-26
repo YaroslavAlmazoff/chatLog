@@ -43,7 +43,7 @@ const Forecast = () => {
         <>
             {weather.main && 
             <div className="homepage-forecast">
-                <p className="homepage-forecast-city">{city}</p>
+                <p className="homepage-forecast-city">🏠{city}</p>
                 <p>
                     <strong className="homepage-forecast-temp">{Math.round(weather.main.temp)}&deg;, </strong>
                     <span className="homepage-forecast-text">{weather.weather[0].main}</span>
