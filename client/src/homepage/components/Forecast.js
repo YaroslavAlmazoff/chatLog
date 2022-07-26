@@ -9,7 +9,7 @@ const Forecast = () => {
     const {translit} = useWord()
     const auth = useContext(AuthContext)
 
-    const [weather, setWeather] = useState(null)
+    const [weather, setWeather] = useState({})
     const [city, setCity] = useState('')
     
     useEffect(() => {
