@@ -23,13 +23,20 @@ const HomePage = () => {
         setTheme(require(`./img/backgrounds/${localStorage.getItem('theme')}/${Math.floor(Math.random() * 5) + 1}.jpg`))
         homeRef.current.scrollTop = 50;
     },[])
+    const styles = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    }
     return (
         <div ref={homeRef} className="homepage" style={{backgroundImage: `url(${theme})`}}>
             <Links />
             <div className="body">
                 <Head />
-                <Search />
-                <Forecast />
+                <div style={styles}>
+                    <Search />
+                    <Forecast />
+                </div>
                 <News />
             </div>
         </div>
