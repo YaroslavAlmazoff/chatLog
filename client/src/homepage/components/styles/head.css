@@ -15,7 +15,10 @@
         align-items: center;
         justify-content: flex-start;
         background-color: rgba(0, 0, 0, 0.654);
-        border: 1px solid rgb(83, 83, 83)
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 15px;
+        margin: 15px;
+        text-align: left;
     }
     .daytime {
         display: flex;
@@ -23,7 +26,7 @@
         justify-content: space-between;
     }
     .time {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Arial;
         font-weight: 100;
         font-size: 25pt;
         color: white;
