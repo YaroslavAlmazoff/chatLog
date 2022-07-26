@@ -1,7 +1,10 @@
 
 @media screen and (width > 700px) {
     .home-search {
-        width: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
     .search-field {
         padding: 20px;
