@@ -26,7 +26,8 @@ const HomePage = () => {
     const styles = {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        width: '100%'
     }
     return (
         <div ref={homeRef} className="homepage" style={{backgroundImage: `url(${theme})`}}>

@@ -2,6 +2,8 @@
 @media screen and (width > 700px) {
     .home-search {
         width: 100%;
+        display: inline-block;
+        vertical-align: top;
     }
     .search-field {
         padding: 20px;

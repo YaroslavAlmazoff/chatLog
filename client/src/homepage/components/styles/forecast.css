@@ -8,6 +8,8 @@
         text-shadow: none;
         margin-top: 15px;
         color: white;
+        display: inline-block;
+        vertical-align: top;
     }
 }
 @media screen and (width < 500px) {
