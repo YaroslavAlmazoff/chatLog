@@ -1,7 +1,7 @@
 
 @media screen and (width > 700px) {
     .home-search {
-        width: 100%;
+        width: 50%;
     }
     .search-field {
         padding: 20px;
