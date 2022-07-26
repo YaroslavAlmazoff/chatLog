@@ -40,7 +40,7 @@ const Forecast = () => {
     }, [auth])
 
     return (
-        <>
+        <div className="homepage-forecast-wrapper">
             {weather.main && 
             <div className="homepage-forecast">
                 <p className="homepage-forecast-city">🏠{city}</p>
@@ -50,7 +50,7 @@ const Forecast = () => {
                 </p>
                 <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="" />
             </div>}
-        </>
+        </div>
     )
 }
 

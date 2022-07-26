@@ -9,6 +9,12 @@
         margin-top: 15px;
         color: white;
     }
+    .homepage-forecast-wrapper {
+        width: 100%;
+        display: fle;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
 @media screen and (width < 500px) {
     .homepage-forecast {
