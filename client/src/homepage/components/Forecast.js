@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import api from '../../auth/api/auth'
 import { AuthContext } from "../../context/AuthContext"
 import useWord from "../../common_hooks/divideWord.hook"
+import './styles/forecast.css'
 
 const Forecast = () => {
     const {translit} = useWord()
