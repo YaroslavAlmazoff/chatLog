@@ -15,7 +15,8 @@ const User = new mongoose.Schema({
     articles: [{type: mongoose.Types.ObjectId, default: []}],
     fotos: [{type: mongoose.Types.ObjectId, default: []}],
     subscribes: [{type: mongoose.Types.ObjectId, default: []}],
-    news: [{type: mongoose.Types.ObjectId, default: []}]
+    news: [{type: mongoose.Types.ObjectId, default: []}],
+    videohostCategories: [{type: String, default: []}]
 })
 
 module.exports = mongoose.model('User', User)

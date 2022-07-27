@@ -17,6 +17,11 @@ const publicRouter = require('./routes/publics')
 const photoRouter = require('./routes/photos')
 const innerAdRouter = require('./routes/innerAds')
 const adRouter = require('./routes/ads')
+
+const videohostChannelsRouter = require('./routes/videohost/channels')
+const videohostVideosRouter = require('./routes/videohost/videos')
+const videohostCommentsRouter = require('./routes/videohost/comments')
+
 //Создание сервера
 const app = express()
 //Подключение необходимых middlewares 
@@ -36,6 +41,10 @@ app.use('/api/public', publicRouter)
 app.use('/api/photo', photoRouter)
 app.use('/api/innerad', innerAdRouter)
 app.use('/api/ad', adRouter)
+
+app.use('/api/videohost/channels', videohostChannelsRouter)
+app.use('/api/videohost/videos', videohostVideosRouter)
+app.use('/api/videohost/comments', videohostCommentsRouter)
 
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))

@@ -25,7 +25,7 @@ const RecipientItem = ({item, file}) => {
             {item._id !== auth.userId ? 
                 <div onClick={sendFile} className="recipient-item">
                     <div className="recipient-item-right-side">
-                        <div><img className="recipient-item-img" src={process.env.REACT_APP_API_URL + `/userfiles/` + item.avatarUrl} alt="user" /></div>
+                        <div><img className="recipient-item-img" src={process.env.REACT_APP_API_URL + `/useravatars/` + item.avatarUrl} alt="user" /></div>
                         <div className="recipient-item-info">
                             <h3 className="recipient-item-name">{item.name} {item.surname}</h3>
                             <p className="recipient-item-age">{item.age}</p>

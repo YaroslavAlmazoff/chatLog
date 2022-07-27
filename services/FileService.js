@@ -72,6 +72,22 @@ class FileService {
         ImageService.saveFile(file, filename, 'ads')
         return filename
     }
+    async insertVideohostChannelAvatar(file, filename) {
+        ImageService.saveFile(file, filename, 'channelavatars')
+        return filename
+    }
+    async insertVideohostChannelBanner(file, filename) {
+        ImageService.saveFile(file, filename, 'channelbanners')
+        return filename
+    }
+    async insertVideohostVideoPreview(file, filename) {
+        ImageService.saveFile(file, filename, 'videopreviews')
+        return filename
+    }
+    async insertVideohostVideo(file, filename) {
+        ImageService.saveFile(file, filename, 'videohostvideos')
+        return filename
+    }
 
 }
 
