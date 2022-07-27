@@ -104,7 +104,7 @@ class VideohostChannelsController {
     async subscribers(req, res) {
         const channel = await Channel.findById(req.params.id)
         const subscriberIDs = channel.subscribers
-        const subscribers = subscriberIDs.map(el => {
+        const subscribers = subscriberIDs.map(async el => {
             const user = await User.findById(el)
             return user
         })
