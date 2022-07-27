@@ -20,7 +20,7 @@ const adRouter = require('./routes/ads')
 
 const videohostChannelsRouter = require('./routes/videohost/channels')
 const videohostVideosRouter = require('./routes/videohost/videos')
-const videohostCommentsRouter = require('./routes/videohost/comments')
+const videohostUserActionsRouter = require('./routes/videohost/userActions')
 
 //Создание сервера
 const app = express()
@@ -44,7 +44,7 @@ app.use('/api/ad', adRouter)
 
 app.use('/api/videohost/channels', videohostChannelsRouter)
 app.use('/api/videohost/videos', videohostVideosRouter)
-app.use('/api/videohost/comments', videohostCommentsRouter)
+app.use('/api/videohost/useractions', videohostUserActionsRouter)
 
 
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
