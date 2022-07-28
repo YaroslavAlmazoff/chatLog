@@ -5,6 +5,7 @@ import {AuthContext} from '../../../context/AuthContext'
 import ImagePreview from '../components/ImagePreview'
 import Categories from '../components/Categories'
 import {useParams} from 'react-router'
+import '../../styles/form.css'
 
 const CreateChannel = () => {
     const params = useParams()

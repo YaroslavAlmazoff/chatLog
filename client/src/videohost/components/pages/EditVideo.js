@@ -3,6 +3,7 @@ import useDate from '../../../common_hooks/date.hook'
 import api from '../../../auth/api/auth'
 import ImagePreview from '../components/ImagePreview'
 import { useParams } from 'react-router'
+import '../../styles/form.css'
 
 const CreateVideo = () => {
     const params = useParams()

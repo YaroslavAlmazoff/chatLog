@@ -3,6 +3,7 @@ import useDate from '../../../common_hooks/date.hook'
 import api from '../../../auth/api/auth'
 import ImagePreview from '../components/ImagePreview'
 import VideoPreview from '../components/VideoPreview'
+import '../../styles/form.css'
 
 const CreateVideo = () => {
     const fileRef1 = useRef('')

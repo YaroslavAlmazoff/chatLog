@@ -4,6 +4,7 @@ import api from '../../../auth/api/auth'
 import {AuthContext} from '../../../context/AuthContext'
 import ImagePreview from '../components/ImagePreview'
 import Categories from '../components/Categories'
+import '../../styles/form.css'
 
 const CreateChannel = () => {
     const fileRef1 = useRef('')
