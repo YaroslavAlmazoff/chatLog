@@ -32,6 +32,13 @@ router.post('/channelbyname', (req, res) => {
         console.log(e)
     }
 })
+router.get('/channelbyadmin/:id', (req, res) => {
+    try {
+        VideohostChannelsController.channelByAdmin(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 router.get('/channels/popular', (req, res) => {
     try {

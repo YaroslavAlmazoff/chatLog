@@ -1,0 +1,40 @@
+.videohost-create {
+    width: 35%;
+    background-color: rgba(41, 41, 41, 0.75);
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+}
+.videohost-create-title {
+    color: white;
+}
+.videohost-create-empty-button {
+    color: rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 12px;
+    transition: color background-color border .5s ease-in;
+}
+.videohost-create-empty-button:hover {
+    color: white;
+    background-color: rgb(0, 140, 255);
+    border: 1px solid transparent;
+}
+.videohost-create-input {
+    border: none;
+    border-bottom: 2px solid rgb(0, 140, 255);
+    color: white;
+    padding: 15px;
+    outline: none;
+    background-color: transparent;
+    width: 98%;
+}
+.videohost-create-area {
+    border: 1px solid rgb(0, 140, 255);
+    padding: 15px;
+    color: white;
+    outline: none;
+    border-radius: 12px;
+    width: 98%;
+}
