@@ -55,6 +55,10 @@ class VideohostChannelsController {
         const channel = await Channel.findById(req.params.id)
         res.json({channel})
     }
+    async channelByName(req, res) {
+        const channel = await Channel.findOne({name: req.body.name})
+        res.json(channel)
+    }
     async popular(req, res) {
         const allChannels = await Channel.find({})
         const popular = allChannels.filter(el => el.subscribers.length >= this.subscribersToPopular)

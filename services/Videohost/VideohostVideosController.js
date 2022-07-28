@@ -31,19 +31,12 @@ class VideohostVideosController {
         const {title, description} = req.body
 
         const previewUrl = uuid.v4() + '.jpg'
-        const videoUrl = uuid.v4() + '.mp4'
 
         await Video.findByIdAndUpdate(req.body.id, {title, description})
 
-        if(req.files) {
-            if(req.files.preview) {
-                FileService.insertVideohostVideoPreview(req.files.preview, previewUrl)
-                await Video.findOneAndUpdate({title}, {previewUrl})
-            }
-            if(req.files.video) {
-                FileService.insertVideohostVideo(req.files.video, videoUrl)
-                await Video.findOneAndUpdate({title}, {videoUrl})
-            }
+        if(req.files.preview) {
+            FileService.insertVideohostVideoPreview(req.files.preview, previewUrl)
+            await Video.findOneAndUpdate({title}, {previewUrl})
         }
         res.json({msg: 'updated'})
     }
