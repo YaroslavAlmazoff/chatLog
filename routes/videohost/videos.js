@@ -26,30 +26,37 @@ router.get('/video/:id', (req, res) => {
     }
 })
 
-router.get('/videos/popular', (req, res) => {
+router.get('/popular', (req, res) => {
     try {
         VideohostVideosController.popular(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.get('/videos/new/:date', (req, res) => {
+router.get('/new/:date', (req, res) => {
     try {
         VideohostVideosController.new(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.get('/videos/recommendedmain/:id', (req, res) => {
+router.get('/recommendedmain/:id', (req, res) => {
     try {
         VideohostVideosController.recommendedMain(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.get('/videos/recommendedvideopage/:id', (req, res) => {
+router.get('/recommendedvideopage/:id', (req, res) => {
     try {
         VideohostVideosController.recommendedVideoPage(req, res)
+    } catch (e) {
+        console.log(e)
+    }
+})
+router.post('/same', (req, res) => {
+    try {
+        VideohostVideosController.same(req, res)
     } catch (e) {
         console.log(e)
     }
@@ -72,6 +79,13 @@ router.post('/checkname', (req, res) => {
 router.get('/comments/:id', (req, res) => {
     try {
         VideohostVideosController.comments(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/author/:id', (req, res) => {
+    try {
+        VideohostVideosController.author(req, res)
     } catch(e) {
         console.log(e)
     }

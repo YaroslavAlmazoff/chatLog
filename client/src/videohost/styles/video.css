@@ -1,0 +1,35 @@
+@media screen and (width > 500px) {
+    .videohost-video {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .videohost-recommended-videos-video-page {
+        width: 20%;
+    }
+    .videohost-same-videos {
+        width: 20%;
+    }
+}
+@media screen and (width > 500px) {
+    .videohost-video {
+        width: 98%;
+    }
+    .videohost-recommended-videos-video-page {
+        display: none;
+    }
+    .videohost-same-videos {
+        width: 98%;
+    }
+}
+.videohost-same-videos-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.videohost-video-frame {
+    width: 100%;
+}

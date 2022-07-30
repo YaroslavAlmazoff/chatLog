@@ -1,0 +1,42 @@
+@media screen and (width > 500px) {
+    .videohost-channel-item {
+        width: 98%;
+        height: 300px;
+        padding: 20px;
+        border-bottom: 1px solid rgb(83, 83, 83);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+@media screen and (width < 500px) {
+    .videohost-channel-item {
+        width: 98%;
+        height: 300px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.videohost-channel-item-preview {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+}
+.videohost-channel-item-title {
+    color: white;
+}
+.videohost-channel-item-subscribers {
+    color: white;
+    opacity: .75;
+}
+.videohost-channel-item-button {
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 15px;
+    background-color: rgb(0, 140, 255);
+}

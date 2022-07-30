@@ -66,6 +66,13 @@ router.get('/unscribe/:id', auth, (req, res) => {
         console.log(e)
     }
 })
+router.post('/prefer', auth, (req, res) => {
+    try {
+        VideohostUserActionsController.prefer(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 

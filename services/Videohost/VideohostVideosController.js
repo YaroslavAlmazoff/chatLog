@@ -56,6 +56,12 @@ class VideohostVideosController {
         const videos = newVideos.slice(this.newVideosToShow, newVideos.length)
         res.json({videos})
     }
+    async same(req, res) {
+        const allVideos = await Video.find({})
+        const same = allVideos.filter(el => el.category === req.body.category)
+        const videos = same.slice(this.sameVideosToShow, same.length)
+        res.json({videos})
+    }
     async recommendedMain(req, res) {
         const user = await User.findById(req.params.id)
         if(user.videohostCategories.length > 0) {
@@ -102,6 +108,11 @@ class VideohostVideosController {
     async comments(req, res) {
         const comment = await Comment.find({videoID: req.params.id})
         res.json({comment})
+    }
+    async author(req, res) {
+        const channelID = req.params.id
+        const channel = Channel.findById(channelID)
+        res.json({name: channel.name})
     }
 }
 

@@ -40,28 +40,28 @@ router.get('/channelbyadmin/:id', (req, res) => {
     }
 })
 
-router.get('/channels/popular', (req, res) => {
+router.get('/popular', (req, res) => {
     try {
         VideohostChannelsController.popular(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.get('/channels/new/:date', (req, res) => {
+router.get('/new/:date', (req, res) => {
     try {
         VideohostChannelsController.new(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.get('/channels/recommended/:id', (req, res) => {
+router.get('/recommended/:id', (req, res) => {
     try {
         VideohostChannelsController.recommended(req, res)
     } catch (e) {
         console.log(e)
     }
 })
-router.post('/channels/same', (req, res) => {
+router.post('/same', (req, res) => {
     try {
         VideohostChannelsController.same(req, res)
     } catch (e) {

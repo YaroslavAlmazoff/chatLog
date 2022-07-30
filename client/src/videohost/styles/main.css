@@ -1,0 +1,26 @@
+@media screen and (width > 500px) {
+    .videohost-main-recommended-videos {
+        width: 77%;
+    }
+    .videohost-main {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .videohost-main-recommended-channels {
+        width: 23%;
+        border-left: 1px solid rgb(83, 83, 83);
+    }
+}
+@media screen and (width < 500px) {
+    .videohost-main-recommended-videos {
+        width: 100%;
+    }
+    .videohost-main {
+        width: 98%;
+    }
+    .videohost-main-recommended-channels {
+        width: 0;
+    }
+}
