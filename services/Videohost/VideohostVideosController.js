@@ -56,11 +56,30 @@ class VideohostVideosController {
         const videos = newVideos.slice(this.newVideosToShow, newVideos.length)
         res.json({videos})
     }
-    async same(req, res) {
+    async sameMain(req, res) {
         const allVideos = await Video.find({})
         const same = allVideos.filter(el => el.category === req.body.category)
         const videos = same.slice(this.sameVideosToShow, same.length)
         res.json({videos})
+    }
+    async same(req, res) {
+        const allVideos = await Video.find({})
+        const videos = allVideos.filter(el => el.category === req.body.category)
+        res.json({videos})
+    }
+    async recommended(req, res) {
+        const user = await User.findById(req.params.id)
+        if(user.videohostCategories.length > 0) {
+            const allVideos = await Video.find({})
+            const videos = allVideos.filter(el => {
+                user.videohostCategories.forEach(item => {
+                    if(item === el.category) return true
+                });
+            })
+            res.json({videos})
+        } else {
+            res.json({videos: []})
+        }
     }
     async recommendedMain(req, res) {
         const user = await User.findById(req.params.id)
@@ -113,6 +132,24 @@ class VideohostVideosController {
         const channelID = req.params.id
         const channel = Channel.findById(channelID)
         res.json({name: channel.name})
+    }
+    async channelVideos(req, res) {
+        const videos = Video.find({channel: req.params.id})
+        res.json({videos})
+    }
+    async videosCount(req, res) {
+        const videos = await Video.find({channel: req.params.id})
+        res.json({count: videos.length})
+    }
+    async isAdmin(req, res) {
+        const user = req.user.userId
+        const video = req.params.id
+        const channel = await Channel.findById(video.channel)
+        if(channel.admin === user) {
+            res.json({isAdmin: true})
+        } else {
+            res.json({isAdmin: false})
+        }
     }
 }
 

@@ -54,6 +54,28 @@ router.get('/recommendedvideopage/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/recommended/:id', (req, res) => {
+    try {
+
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/recommendedchannels/:id', (req, res) => {
+    try {
+        
+    } catch(e) {
+        console.log(e)
+    }
+})
+
+router.post('/samemain', (req, res) => {
+    try {
+        VideohostVideosController.sameMain(req, res)
+    } catch (e) {
+        console.log(e)
+    }
+})
 router.post('/same', (req, res) => {
     try {
         VideohostVideosController.same(req, res)
@@ -90,7 +112,27 @@ router.get('/author/:id', (req, res) => {
         console.log(e)
     }
 })
-
+router.get('/channelvideos/:id', (req, res) => {
+    try {
+        VideohostVideosController.channelVideos(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/videoscount/:id', (req, res) => {
+    try {
+        VideohostVideosController.videosCount(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
+router.get('/isadmin/:id', auth, (req, res) => {
+    try {
+        VideohostVideosController.isAdmin(req, res)
+    } catch(e) {
+        console.log(e)
+    }
+})
 
 
 module.exports = router

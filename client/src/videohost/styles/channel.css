@@ -1,0 +1,104 @@
+@media screen and (width > 500px) {
+    .videohost-channel {
+        width: 90%;
+        background-color: rgba(41, 41, 41, 0.751);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    .videohost-channel-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 60%;
+    }
+    .videohost-channel-avatar {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media screen and (width < 500px) {
+    .videohost-channel {
+        width: 98%;
+        background-color: rgba(41, 41, 41, 0.751);
+        border: 1px solid rgb(83, 83, 83);
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    .videohost-channel-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 80%;
+    }
+    .videohost-channel-avatar {
+        width: 25px;
+        height: 25px;
+    }
+}
+.videohost-channel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.videohost-channel-top-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.videohost-channel-bottom-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.videohost-channel-description {
+    background-color: rgba(41, 41, 41, 0.751);
+    padding: 5px;
+    border-radius: 15px;
+    color: rgb(0, 140, 255);
+    font-style: italic;
+}
+.videohost-channel-name {
+    background-color: rgba(41, 41, 41, 0.751);
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16pt;
+}
+.videohost-channel-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 10%;
+}
+.videohost-channel-action {
+    padding: 5px;
+    width: 100%;
+}
+.videohost-channel-action-icon {
+    border: 2px solid rgb(0, 140, 255);
+    border-radius: 13px;
+    width: 100%;
+}
+.videohost-channel-action-name {
+    color: rgb(0, 140, 255);
+    font-size: 8pt;
+}
+.videohost-channel-middle-side {
+    height: 75px;
+    width: 100%;
+    border-top: 1px solid rgb(83, 83, 83);
+    border-bottom: 1px solid rgb(83, 83, 83);
+}
+.videohost-channel-middle-info {
+    color: white;
+    font-size: 14pt;
+}
+.videohost-channel-videos {
+    width: 98%;
+}

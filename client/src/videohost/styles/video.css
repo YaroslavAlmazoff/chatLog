@@ -33,3 +33,23 @@
 .videohost-video-frame {
     width: 100%;
 }
+.videohost-video-middle-side {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75px;
+    width: 100%;
+    padding: 5px;
+}
+.videohost-video-action {
+    height: 65px;
+    width: 65px;
+    border: 2px solid rgb(0, 140, 255);
+    padding: 5px;
+}
+.videohost-video-action-icon {
+    width: 98%;
+}
+.videohost-video-action-name {
+    color: rgb(0, 140, 255);
+}

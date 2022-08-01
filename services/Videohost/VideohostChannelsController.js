@@ -75,7 +75,7 @@ class VideohostChannelsController {
         const channels = newChannels.slice(this.newChannelsToShow, newChannels.length)
         res.json({channels})
     }
-    async recommended(req, res) {
+    async recommendedMain(req, res) {
         const user = await User.findById(req.params.id)
         if(user.videohostCategories.length > 0) {
             const allChannels = await Channel.find({})
@@ -85,6 +85,20 @@ class VideohostChannelsController {
                 });
             })
             const channels = recommended.slice(this.recommendedChannelsToShow, recommended.length)
+            res.json({channels})
+        } else {
+            res.json({channels: []})
+        }
+    }
+    async recommended(req, res) {
+        const user = await User.findById(req.params.id)
+        if(user.videohostCategories.length > 0) {
+            const allChannels = await Channel.find({})
+            const channels = allChannels.filter(el => {
+                user.videohostCategories.forEach(item => {
+                    if(item === el.category) return true
+                });
+            })
             res.json({channels})
         } else {
             res.json({channels: []})

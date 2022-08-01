@@ -4,6 +4,7 @@ import api from '../../../auth/api/auth'
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../context/AuthContext'
 import Categories from '../components/Categories'
+import RecommendedSide from '../components/RecommendedSide'
 
 const VideohostMain = () => {
     const auth = useContext(AuthContext)
@@ -34,7 +35,7 @@ const VideohostMain = () => {
         <div className="videohost-main">
             <MyChannel />
             <Categories display={categoriesDisplay} select={select} />
-            <RecommendedVideosMain />
+            <RecommendedSide />
         </div>
     )
 }

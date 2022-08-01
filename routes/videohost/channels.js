@@ -61,6 +61,13 @@ router.get('/recommended/:id', (req, res) => {
         console.log(e)
     }
 })
+router.get('/recommendedmain/:id', (req, res) => {
+    try {
+        VideohostChannelsController.recommendedMain(req, res)
+    } catch (e) {
+        console.log(e)
+    }
+})
 router.post('/same', (req, res) => {
     try {
         VideohostChannelsController.same(req, res)
