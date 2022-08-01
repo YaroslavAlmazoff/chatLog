@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router'
 import api from '../../../auth/api/auth'
-import VideoItem from './components/'
+import VideoItem from './components/VideoItem'
 
 const ChannelVideos = () => {
     const params = useParams()
