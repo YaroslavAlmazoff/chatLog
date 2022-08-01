@@ -1,22 +1,23 @@
-import { useContext, useEffect, useState, useMemo } from "react"
+import { useEffect, useState, useMemo } from "react"
 import VideoItem from '../../components/components/VideoItem'
 import api from '../../../../auth/api/auth'
-import {AuthContext} from '../../../../context/AuthContext'
-import '../../../styles/list.css'
+import useDate from '../../../../common_hooks/date.hook'
 import Search from "../../components/components/components/components/Search"
+import '../../../styles/list.css'
 
-const Recommended = () => {
-    const auth = useContext(AuthContext)
+const NewVideos = () => {
     const [videos, setVideos] = useState([])
+    const {getCurrentDate} = useDate()
     const [searchValue, setSearchValue] = useState('')
 
     useEffect(() => {
         const getVideos = async () => {
-            const response = await api.get(`/api/videohost/videos/recommended/${auth.userId}`)
+            const date = getCurrentDate()
+            const response = await api.get(`/api/videohost/videos/new/${date}`)
             setVideos(response.data.videos)
         }
         getVideos()
-    }, [auth])
+    }, [])
 
     const searchedVideos = useMemo(() => {
         return [...videos].filter(el => {
@@ -36,4 +37,4 @@ const Recommended = () => {
     )
 }
 
-export default Recommended
+export default NewVideos

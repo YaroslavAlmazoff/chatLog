@@ -1,20 +1,22 @@
-import { useEffect, useState, useMemo } from "react"
+import { useContext, useEffect, useState, useMemo } from "react"
 import VideoItem from '../../components/components/VideoItem'
 import api from '../../../../auth/api/auth'
-import Search from "../../components/components/components/components/Search"
+import {AuthContext} from '../../../../context/AuthContext'
 import '../../../styles/list.css'
+import Search from "../../components/components/components/components/Search"
 
-const Popular = () => {
+const RecommendedVideos = () => {
+    const auth = useContext(AuthContext)
     const [videos, setVideos] = useState([])
     const [searchValue, setSearchValue] = useState('')
 
     useEffect(() => {
         const getVideos = async () => {
-            const response = await api.get('/api/videohost/videos/popular')
+            const response = await api.get(`/api/videohost/videos/recommended/${auth.userId}`)
             setVideos(response.data.videos)
         }
         getVideos()
-    }, [])
+    }, [auth])
 
     const searchedVideos = useMemo(() => {
         return [...videos].filter(el => {
@@ -34,4 +36,4 @@ const Popular = () => {
     )
 }
 
-export default Popular
+export default RecommendedVideos

@@ -38,6 +38,18 @@ import AdCity from "./ads/pages/AdCity"
 import Ad from "./ads/pages/Ad"
 import Category from "./ads/pages/Category"
 import Search from "./ads/pages/Search"
+import VideohostMain from "./videohost/components/pages/VideohostMain"
+import Channel from "./videohost/components/pages/Channel"
+import Video from './videohost/components/pages/Video'
+import NewVideos from "./videohost/components/pages/lists/NewVideos"
+import PopularVideos from "./videohost/components/pages/lists/PopularVideos"
+import RecommendedVideos from "./videohost/components/pages/lists/RecommendedVideos"
+import RecommendedChannels from "./videohost/components/pages/lists/RecommendedChannels"
+import CreateChannel from './videohost/components/pages/CreateChannel'
+import EditChannel from './videohost/components/pages/EditChannel'
+import CreateVideo from './videohost/components/pages/CreateVideo'
+import EditVideo from './videohost/components/pages/EditVideo'
+import Same from "./videohost/components/pages/Same"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
@@ -91,7 +103,19 @@ export const useRoutes = (isAuthenticated, isVerified) => {
             <Route exact path="/ad/category/:category" element={<Category />} />
             <Route exact path="/ad/search" element={<Search />} />
             <Route exact path="/ad/:id" element={<Ad />} />
-            
+
+            <Route exaxt path="/videohost" element={<VideohostMain />} />
+            <Route exaxt path="/videohost/channel/:id" element={<Channel />} />
+            <Route exaxt path="/videohost/video/:id" element={<Video />} />
+            <Route exaxt path="/videohost/new" element={<NewVideos />} />
+            <Route exaxt path="/videohost/popular" element={<PopularVideos />} />
+            <Route exaxt path="/videohost/recommended/videos" element={<RecommendedVideos />} />
+            <Route exaxt path="/videohost/recommended/channels" element={<RecommendedChannels />} />
+            <Route exaxt path="/videohost/same/:category" element={<Same />} />
+            <Route exaxt path="/videohost/create/channel" element={<CreateChannel />} />
+            <Route exaxt path="/videohost/edit/channel/:id" element={<EditChannel />} />
+            <Route exaxt path="/videohost/create/video" element={<CreateVideo />} />
+            <Route exaxt path="/videohost/edit/video/:id" element={<EditVideo />} />
         </Routes>
     )
 }

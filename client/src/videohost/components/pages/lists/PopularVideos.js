@@ -1,19 +1,16 @@
 import { useEffect, useState, useMemo } from "react"
 import VideoItem from '../../components/components/VideoItem'
 import api from '../../../../auth/api/auth'
-import useDate from '../../../../common_hooks/date.hook'
 import Search from "../../components/components/components/components/Search"
 import '../../../styles/list.css'
 
-const New = () => {
+const PopularVideos = () => {
     const [videos, setVideos] = useState([])
-    const {getCurrentDate} = useDate()
     const [searchValue, setSearchValue] = useState('')
 
     useEffect(() => {
         const getVideos = async () => {
-            const date = getCurrentDate()
-            const response = await api.get(`/api/videohost/videos/new/${date}`)
+            const response = await api.get('/api/videohost/videos/popular')
             setVideos(response.data.videos)
         }
         getVideos()
@@ -37,4 +34,4 @@ const New = () => {
     )
 }
 
-export default New
+export default PopularVideos

@@ -5,7 +5,7 @@ import {AuthContext} from '../../../../context/AuthContext'
 import '../../../styles/list.css'
 import Search from "../../components/components/components/components/Search"
 
-const Recommended = () => {
+const RecommendedChannels = () => {
     const auth = useContext(AuthContext)
     const [channels, setChannels] = useState([])
     const [searchValue, setSearchValue] = useState('')
@@ -36,4 +36,4 @@ const Recommended = () => {
     )
 }
 
-export default Recommended
+export default RecommendedChannels
