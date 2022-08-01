@@ -49,7 +49,7 @@ import CreateChannel from './videohost/components/pages/CreateChannel'
 import EditChannel from './videohost/components/pages/EditChannel'
 import CreateVideo from './videohost/components/pages/CreateVideo'
 import EditVideo from './videohost/components/pages/EditVideo'
-import Same from "./videohost/components/pages/Same"
+import Same from "./videohost/components/pages/lists/Same"
 
 
 export const useRoutes = (isAuthenticated, isVerified) => {
