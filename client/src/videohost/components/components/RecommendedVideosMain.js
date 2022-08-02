@@ -5,7 +5,7 @@ import VideoItem from "./components/VideoItem"
 
 const RecommendedVideosMain = () => {
     const auth = useContext(AuthContext)
-    const [videos, setVideos] = useState({})
+    const [videos, setVideos] = useState([])
 
     useEffect(() => {
         const getVideos = async () => {
