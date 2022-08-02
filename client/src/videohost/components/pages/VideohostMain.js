@@ -1,5 +1,4 @@
 import MyChannel from '../components/MyChannel'
-import RecommendedVideosMain from '../components/RecommendedVideosMain'
 import api from '../../../auth/api/auth'
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../context/AuthContext'

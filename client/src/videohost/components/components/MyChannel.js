@@ -12,6 +12,7 @@ const MyChannel = () => {
     const [myChannelDisplay, setMyChannelDisplay] = useState('')
 
     useEffect(() => {
+        if(!auth.userId) return
         const getChannel = async () => {
             const response = await api.get(`/api/videohost/channels/channelbyadmin/${auth.userId}`)
             if(response.data.channel) {

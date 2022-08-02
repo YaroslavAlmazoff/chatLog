@@ -60,6 +60,10 @@ class VideohostChannelsController {
         res.json(channel)
     }
     async channelByAdmin(req, res) {
+        if(!req.params.id) {
+            res.json({msg: false})
+            return
+        }
         const channel = await Channel.findOne({admin: req.params.id})
         res.json({channel})
     }
