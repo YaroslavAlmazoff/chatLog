@@ -4,6 +4,7 @@ import api from '../../../auth/api/auth'
 import RecommendedVideosVideoPage from '../components/RecomendedVideosVideoPage'
 import SameVideos from '../components/SameVideos'
 import VideoFrame from '../components/VideoFrame'
+import '../../styles/video.css'
 
 const Video = () => {
     const params = useParams()

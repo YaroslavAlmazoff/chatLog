@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../context/AuthContext'
 import Categories from '../components/Categories'
 import RecommendedSide from '../components/RecommendedSide'
+import '../../styles/main.css'
 
 const VideohostMain = () => {
     const auth = useContext(AuthContext)

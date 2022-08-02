@@ -6,6 +6,7 @@ import { ChannelContext } from "../context/ChannelContext"
 import Head from "../components/Head"
 import ChannelMiddleSide from "../components/ChannelMiddleSide"
 import ChannelVideos from "../components/ChannelVideos"
+import '../../styles/channel.css'
 
 const Channel = () => {
     const params = useParams()
